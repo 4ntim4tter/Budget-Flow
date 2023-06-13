@@ -23,6 +23,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Audiowide")
         MainWindow.setFont(font)
+        MainWindow.setMouseTracking(True)
         MainWindow.setStyleSheet("QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -484,6 +485,8 @@ class Ui_MainWindow(object):
 "}")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.gridLayout = QtWidgets.QGridLayout(self.centralwidget)
+        self.gridLayout.setObjectName("gridLayout")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusBar.setObjectName("statusBar")
@@ -495,6 +498,7 @@ class Ui_MainWindow(object):
         self.menuOpcije.setObjectName("menuOpcije")
         MainWindow.setMenuBar(self.menuBar)
         self.actionAdd_Customer = QtGui.QAction(parent=MainWindow)
+        self.actionAdd_Customer.setCheckable(False)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("c:\\Users\\ANES\\Budget Flow\\Icons/bolter.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.actionAdd_Customer.setIcon(icon)
