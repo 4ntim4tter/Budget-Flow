@@ -7,7 +7,7 @@ app = QApplication([])
 window = Window()
 form = Form()
 form.setupUi(window)
-form.add_customer_widget.hide()
+form.add_customer_box.hide()
 
 def main():
     window.show()
