@@ -2,19 +2,16 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>793</width>
-    <height>623</height>
+    <height>537</height>
    </rect>
-  </property>
-  <property name="sizePolicy">
-   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-    <horstretch>0</horstretch>
-    <verstretch>0</verstretch>
-   </sizepolicy>
   </property>
   <property name="minimumSize">
    <size>
@@ -27,14 +24,6 @@
     <width>1920</width>
     <height>1080</height>
    </size>
-  </property>
-  <property name="font">
-   <font>
-    <family>Audiowide</family>
-   </font>
-  </property>
-  <property name="mouseTracking">
-   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>Budget Flow</string>
@@ -1030,7 +1019,7 @@ QProgressBar::chunk
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="add_customer_box">
+   <widget class="QGroupBox" name="customer_entry_box">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -1038,6 +1027,12 @@ QProgressBar::chunk
       <width>311</width>
       <height>271</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Audiowide</family>
+      <pointsize>9</pointsize>
+     </font>
     </property>
     <property name="title">
      <string>Nova Mušterija</string>
@@ -1055,10 +1050,16 @@ QProgressBar::chunk
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>60</y>
-       <width>171</width>
-       <height>20</height>
+       <y>70</y>
+       <width>291</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="placeholderText">
       <string>Prezime</string>
@@ -1069,9 +1070,15 @@ QProgressBar::chunk
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>171</width>
-       <height>20</height>
+       <width>291</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="placeholderText">
       <string>Ime</string>
@@ -1081,10 +1088,16 @@ QProgressBar::chunk
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>90</y>
-       <width>171</width>
-       <height>20</height>
+       <y>110</y>
+       <width>291</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="dragEnabled">
       <bool>false</bool>
@@ -1097,10 +1110,16 @@ QProgressBar::chunk
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>120</y>
-       <width>171</width>
-       <height>20</height>
+       <y>150</y>
+       <width>291</width>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
      </property>
      <property name="text">
       <string/>
@@ -1112,10 +1131,73 @@ QProgressBar::chunk
       <string>Registracija</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="add_customer_chasis">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>190</y>
+       <width>291</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="dragEnabled">
+      <bool>false</bool>
+     </property>
+     <property name="placeholderText">
+      <string>Broj Šasije</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="save_new_customer_button">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>230</y>
+       <width>92</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Unos</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cancel_new_customer_button">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>230</y>
+       <width>92</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Audiowide</family>
+       <pointsize>9</pointsize>
+      </font>
+     </property>
+     <property name="text">
+      <string>Odustani</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menuBar">
+  <widget class="QMenuBar" name="menu_bar">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -1124,37 +1206,24 @@ QProgressBar::chunk
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuOpcije">
+   <property name="font">
+    <font>
+     <family>Audiowide</family>
+    </font>
+   </property>
+   <widget class="QMenu" name="menu_options">
     <property name="title">
      <string>Opcije</string>
     </property>
-    <addaction name="action_open_add_customer"/>
-    <addaction name="action_open_search_customer"/>
+    <addaction name="action_open_customer_entry_box"/>
+    <addaction name="action_open_customer_search_box"/>
    </widget>
-   <addaction name="menuOpcije"/>
+   <addaction name="menu_options"/>
   </widget>
-  <action name="action_open_add_customer">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
+  <action name="action_open_customer_search_box">
    <property name="icon">
     <iconset>
-     <normaloff>../.designer/backup/Icons/bolter.png</normaloff>../.designer/backup/Icons/bolter.png</iconset>
-   </property>
-   <property name="text">
-    <string>Dodaj Mušteriju</string>
-   </property>
-   <property name="toolTip">
-    <string>Add new customer</string>
-   </property>
-   <property name="shortcut">
-    <string>Alt+C</string>
-   </property>
-  </action>
-  <action name="action_open_search_customer">
-   <property name="icon">
-    <iconset>
-     <normaloff>../.designer/backup/Icons/wrench.png</normaloff>../.designer/backup/Icons/wrench.png</iconset>
+     <normaloff>Icons/accumulator.png</normaloff>Icons/accumulator.png</iconset>
    </property>
    <property name="text">
     <string>Pretraga</string>
@@ -1162,28 +1231,38 @@ QProgressBar::chunk
    <property name="toolTip">
     <string>Find customers</string>
    </property>
+   <property name="font">
+    <font>
+     <family>Audiowide</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
    <property name="shortcut">
     <string>Alt+V</string>
    </property>
   </action>
+  <action name="action_open_customer_entry_box">
+   <property name="icon">
+    <iconset>
+     <normaloff>Icons/car.png</normaloff>Icons/car.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dodaj Mušteriju</string>
+   </property>
+   <property name="toolTip">
+    <string>Add new customer</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Audiowide</family>
+     <pointsize>9</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Alt+C</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>action_open_add_customer</sender>
-   <signal>triggered()</signal>
-   <receiver>add_customer_box</receiver>
-   <slot>show()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>155</x>
-     <y>168</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>155</x>
-     <y>168</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

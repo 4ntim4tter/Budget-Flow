@@ -7,7 +7,15 @@ app = QApplication([])
 window = Window()
 form = Form()
 form.setupUi(window)
-form.add_customer_box.hide()
+form.customer_entry_box.hide()
+
+def show_hide(window):
+    if window.isHidden():
+        window.show()
+    else:
+        window.hide()
+
+form.action_open_customer_entry_box.triggered.connect(lambda: show_hide(form.customer_entry_box))
 
 def main():
     window.show()
