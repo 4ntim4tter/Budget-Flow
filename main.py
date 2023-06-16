@@ -1,5 +1,6 @@
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
+from window_operator import WindowOperator as wop
 
 Form, Window = uic.loadUiType('untitled.ui')
 
@@ -9,13 +10,7 @@ form = Form()
 form.setupUi(window)
 form.customer_entry_box.hide()
 
-def show_hide(window):
-    if window.isHidden():
-        window.show()
-    else:
-        window.hide()
-
-form.action_open_customer_entry_box.triggered.connect(lambda: show_hide(form.customer_entry_box))
+form.action_open_customer_entry_box.triggered.connect(lambda: wop.window_visibility(form.customer_entry_box))
 
 def main():
     window.show()
