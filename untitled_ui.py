@@ -16,18 +16,21 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QGroupBox, QLineEdit, QMainWindow,
-    QMenu, QMenuBar, QPushButton, QSizePolicy,
-    QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox,
+    QLineEdit, QMainWindow, QMenu, QMenuBar,
+    QPushButton, QSizePolicy, QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
-        MainWindow.resize(793, 537)
+        MainWindow.resize(1274, 720)
         MainWindow.setMinimumSize(QSize(320, 240))
-        MainWindow.setMaximumSize(QSize(1920, 1080))
+        MainWindow.setMaximumSize(QSize(1274, 720))
+        font = QFont()
+        font.setFamilies([u"Audiowide"])
+        MainWindow.setFont(font)
         MainWindow.setStyleSheet(u"/*Copyright (c) DevSec Studio. All rights reserved.\n"
 "\n"
 "MIT License\n"
@@ -1039,66 +1042,84 @@ class Ui_MainWindow(object):
         icon = QIcon()
         icon.addFile(u"Icons/accumulator.png", QSize(), QIcon.Normal, QIcon.Off)
         self.action_open_customer_search_box.setIcon(icon)
-        font = QFont()
-        font.setFamilies([u"Audiowide"])
-        font.setPointSize(9)
-        self.action_open_customer_search_box.setFont(font)
+        font1 = QFont()
+        font1.setFamilies([u"Audiowide"])
+        font1.setPointSize(9)
+        self.action_open_customer_search_box.setFont(font1)
         self.action_open_customer_entry_box = QAction(MainWindow)
         self.action_open_customer_entry_box.setObjectName(u"action_open_customer_entry_box")
         icon1 = QIcon()
         icon1.addFile(u"Icons/car.png", QSize(), QIcon.Normal, QIcon.Off)
         self.action_open_customer_entry_box.setIcon(icon1)
-        self.action_open_customer_entry_box.setFont(font)
+        self.action_open_customer_entry_box.setFont(font1)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.formLayout = QFormLayout(self.centralwidget)
+        self.formLayout.setObjectName(u"formLayout")
         self.customer_entry_box = QGroupBox(self.centralwidget)
         self.customer_entry_box.setObjectName(u"customer_entry_box")
-        self.customer_entry_box.setGeometry(QRect(10, 10, 311, 271))
-        self.customer_entry_box.setFont(font)
+        self.customer_entry_box.setFont(font1)
         self.customer_entry_box.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.customer_entry_box.setFlat(False)
         self.customer_entry_box.setCheckable(False)
-        self.add_customer_surname = QLineEdit(self.customer_entry_box)
-        self.add_customer_surname.setObjectName(u"add_customer_surname")
-        self.add_customer_surname.setGeometry(QRect(10, 70, 291, 31))
-        self.add_customer_surname.setFont(font)
+        self.gridLayout = QGridLayout(self.customer_entry_box)
+        self.gridLayout.setObjectName(u"gridLayout")
         self.add_customer_name = QLineEdit(self.customer_entry_box)
         self.add_customer_name.setObjectName(u"add_customer_name")
-        self.add_customer_name.setGeometry(QRect(10, 30, 291, 31))
-        self.add_customer_name.setFont(font)
+        self.add_customer_name.setFont(font1)
+
+        self.gridLayout.addWidget(self.add_customer_name, 0, 0, 1, 2)
+
+        self.add_customer_surname = QLineEdit(self.customer_entry_box)
+        self.add_customer_surname.setObjectName(u"add_customer_surname")
+        self.add_customer_surname.setFont(font1)
+
+        self.gridLayout.addWidget(self.add_customer_surname, 1, 0, 1, 2)
+
         self.add_customer_vehicle = QLineEdit(self.customer_entry_box)
         self.add_customer_vehicle.setObjectName(u"add_customer_vehicle")
-        self.add_customer_vehicle.setGeometry(QRect(10, 110, 291, 31))
-        self.add_customer_vehicle.setFont(font)
+        self.add_customer_vehicle.setFont(font1)
         self.add_customer_vehicle.setDragEnabled(False)
+
+        self.gridLayout.addWidget(self.add_customer_vehicle, 2, 0, 1, 2)
+
         self.add_customer_registration = QLineEdit(self.customer_entry_box)
         self.add_customer_registration.setObjectName(u"add_customer_registration")
-        self.add_customer_registration.setGeometry(QRect(10, 150, 291, 31))
-        self.add_customer_registration.setFont(font)
+        self.add_customer_registration.setFont(font1)
         self.add_customer_registration.setDragEnabled(False)
+
+        self.gridLayout.addWidget(self.add_customer_registration, 3, 0, 1, 2)
+
         self.add_customer_chasis = QLineEdit(self.customer_entry_box)
         self.add_customer_chasis.setObjectName(u"add_customer_chasis")
-        self.add_customer_chasis.setGeometry(QRect(10, 190, 291, 31))
-        self.add_customer_chasis.setFont(font)
+        self.add_customer_chasis.setFont(font1)
         self.add_customer_chasis.setDragEnabled(False)
+
+        self.gridLayout.addWidget(self.add_customer_chasis, 4, 0, 1, 2)
+
         self.save_new_customer_button = QPushButton(self.customer_entry_box)
         self.save_new_customer_button.setObjectName(u"save_new_customer_button")
-        self.save_new_customer_button.setGeometry(QRect(20, 230, 92, 23))
-        self.save_new_customer_button.setFont(font)
+        self.save_new_customer_button.setFont(font1)
+
+        self.gridLayout.addWidget(self.save_new_customer_button, 5, 0, 1, 1)
+
         self.cancel_new_customer_button = QPushButton(self.customer_entry_box)
         self.cancel_new_customer_button.setObjectName(u"cancel_new_customer_button")
-        self.cancel_new_customer_button.setGeometry(QRect(200, 230, 92, 23))
-        self.cancel_new_customer_button.setFont(font)
+        self.cancel_new_customer_button.setFont(font1)
+
+        self.gridLayout.addWidget(self.cancel_new_customer_button, 5, 1, 1, 1)
+
+
+        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.customer_entry_box)
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QStatusBar(MainWindow)
         self.statusBar.setObjectName(u"statusBar")
         MainWindow.setStatusBar(self.statusBar)
         self.menu_bar = QMenuBar(MainWindow)
         self.menu_bar.setObjectName(u"menu_bar")
-        self.menu_bar.setGeometry(QRect(0, 0, 793, 23))
-        font1 = QFont()
-        font1.setFamilies([u"Audiowide"])
-        self.menu_bar.setFont(font1)
+        self.menu_bar.setGeometry(QRect(0, 0, 1274, 23))
+        self.menu_bar.setFont(font)
         self.menu_options = QMenu(self.menu_bar)
         self.menu_options.setObjectName(u"menu_options")
         MainWindow.setMenuBar(self.menu_bar)
@@ -1129,8 +1150,8 @@ class Ui_MainWindow(object):
         self.action_open_customer_entry_box.setShortcut(QCoreApplication.translate("MainWindow", u"Alt+C", None))
 #endif // QT_CONFIG(shortcut)
         self.customer_entry_box.setTitle(QCoreApplication.translate("MainWindow", u"Nova Mu\u0161terija", None))
-        self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
         self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
+        self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
         self.add_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vozilo", None))
         self.add_customer_registration.setText("")
         self.add_customer_registration.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registracija", None))
