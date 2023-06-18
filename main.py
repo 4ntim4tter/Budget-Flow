@@ -14,7 +14,7 @@ form.action_open_customer_entry_box.triggered.connect(lambda: wop.window_visibil
 
 def main():
     window.show()
-    window.showFullScreen()
+    window.showMaximized()
     app.exec()
     
 

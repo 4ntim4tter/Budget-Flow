@@ -16,9 +16,9 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFormLayout, QGridLayout, QGroupBox,
-    QLineEdit, QMainWindow, QMenu, QMenuBar,
-    QPushButton, QSizePolicy, QStatusBar, QWidget)
+from PySide6.QtWidgets import (QApplication, QGroupBox, QLineEdit, QMainWindow,
+    QMenu, QMenuBar, QPushButton, QSizePolicy,
+    QStatusBar, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -26,8 +26,6 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
         MainWindow.resize(1274, 720)
-        MainWindow.setMinimumSize(QSize(320, 240))
-        MainWindow.setMaximumSize(QSize(1274, 720))
         font = QFont()
         font.setFamilies([u"Audiowide"])
         MainWindow.setFont(font)
@@ -1054,71 +1052,57 @@ class Ui_MainWindow(object):
         self.action_open_customer_entry_box.setFont(font1)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.formLayout = QFormLayout(self.centralwidget)
-        self.formLayout.setObjectName(u"formLayout")
         self.customer_entry_box = QGroupBox(self.centralwidget)
         self.customer_entry_box.setObjectName(u"customer_entry_box")
+        self.customer_entry_box.setGeometry(QRect(10, 10, 311, 311))
+        self.customer_entry_box.setSizeIncrement(QSize(5, 5))
+        self.customer_entry_box.setBaseSize(QSize(311, 311))
         self.customer_entry_box.setFont(font1)
         self.customer_entry_box.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.customer_entry_box.setFlat(False)
         self.customer_entry_box.setCheckable(False)
-        self.gridLayout = QGridLayout(self.customer_entry_box)
-        self.gridLayout.setObjectName(u"gridLayout")
         self.add_customer_name = QLineEdit(self.customer_entry_box)
         self.add_customer_name.setObjectName(u"add_customer_name")
+        self.add_customer_name.setGeometry(QRect(10, 30, 291, 24))
         self.add_customer_name.setFont(font1)
-
-        self.gridLayout.addWidget(self.add_customer_name, 0, 0, 1, 2)
-
         self.add_customer_surname = QLineEdit(self.customer_entry_box)
         self.add_customer_surname.setObjectName(u"add_customer_surname")
+        self.add_customer_surname.setGeometry(QRect(10, 70, 291, 24))
         self.add_customer_surname.setFont(font1)
-
-        self.gridLayout.addWidget(self.add_customer_surname, 1, 0, 1, 2)
-
         self.add_customer_vehicle = QLineEdit(self.customer_entry_box)
         self.add_customer_vehicle.setObjectName(u"add_customer_vehicle")
+        self.add_customer_vehicle.setGeometry(QRect(10, 150, 291, 24))
         self.add_customer_vehicle.setFont(font1)
         self.add_customer_vehicle.setDragEnabled(False)
-
-        self.gridLayout.addWidget(self.add_customer_vehicle, 2, 0, 1, 2)
-
         self.add_customer_registration = QLineEdit(self.customer_entry_box)
         self.add_customer_registration.setObjectName(u"add_customer_registration")
+        self.add_customer_registration.setGeometry(QRect(10, 190, 291, 24))
         self.add_customer_registration.setFont(font1)
         self.add_customer_registration.setDragEnabled(False)
-
-        self.gridLayout.addWidget(self.add_customer_registration, 3, 0, 1, 2)
-
         self.add_customer_chasis = QLineEdit(self.customer_entry_box)
         self.add_customer_chasis.setObjectName(u"add_customer_chasis")
+        self.add_customer_chasis.setGeometry(QRect(10, 230, 291, 24))
         self.add_customer_chasis.setFont(font1)
         self.add_customer_chasis.setDragEnabled(False)
-
-        self.gridLayout.addWidget(self.add_customer_chasis, 4, 0, 1, 2)
-
         self.save_new_customer_button = QPushButton(self.customer_entry_box)
         self.save_new_customer_button.setObjectName(u"save_new_customer_button")
+        self.save_new_customer_button.setGeometry(QRect(10, 270, 92, 26))
         self.save_new_customer_button.setFont(font1)
-
-        self.gridLayout.addWidget(self.save_new_customer_button, 5, 0, 1, 1)
-
         self.cancel_new_customer_button = QPushButton(self.customer_entry_box)
         self.cancel_new_customer_button.setObjectName(u"cancel_new_customer_button")
+        self.cancel_new_customer_button.setGeometry(QRect(210, 270, 92, 26))
         self.cancel_new_customer_button.setFont(font1)
-
-        self.gridLayout.addWidget(self.cancel_new_customer_button, 5, 1, 1, 1)
-
-
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.customer_entry_box)
-
+        self.add_customer_phone = QLineEdit(self.customer_entry_box)
+        self.add_customer_phone.setObjectName(u"add_customer_phone")
+        self.add_customer_phone.setGeometry(QRect(10, 110, 291, 24))
+        self.add_customer_phone.setFont(font1)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QStatusBar(MainWindow)
         self.statusBar.setObjectName(u"statusBar")
         MainWindow.setStatusBar(self.statusBar)
         self.menu_bar = QMenuBar(MainWindow)
         self.menu_bar.setObjectName(u"menu_bar")
-        self.menu_bar.setGeometry(QRect(0, 0, 1274, 23))
+        self.menu_bar.setGeometry(QRect(0, 0, 1274, 22))
         self.menu_bar.setFont(font)
         self.menu_options = QMenu(self.menu_bar)
         self.menu_options.setObjectName(u"menu_options")
@@ -1159,6 +1143,8 @@ class Ui_MainWindow(object):
         self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
         self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
         self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        self.add_customer_phone.setText(QCoreApplication.translate("MainWindow", u"Telefon", None))
+        self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
         self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Opcije", None))
     # retranslateUi
 
