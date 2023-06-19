@@ -10,10 +10,11 @@ form = Form()
 form.setupUi(window)
 form.customer_entry_box.hide()
 
-entry_window = WindowOperator(form.customer_entry_box)
+entry_window = WindowOperator()
 
-form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility())
-form.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility())
+form.action_open_customer_entry_box.triggered.connect(lambda:entry_window.hide_opened(form.centralwidget.children()))
+form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(form.customer_entry_box))
+form.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility(form.customer_entry_box))
 form.save_new_customer_button.clicked.connect(lambda: print(form.add_customer_name.text()))
 
 

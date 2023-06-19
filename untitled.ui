@@ -15,7 +15,10 @@
   </property>
   <property name="font">
    <font>
-    <family>Audiowide</family>
+    <family>Arial</family>
+    <pointsize>9</pointsize>
+    <weight>75</weight>
+    <bold>true</bold>
    </font>
   </property>
   <property name="windowTitle">
@@ -1012,6 +1015,14 @@ QProgressBar::chunk
 </string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Arial</family>
+     <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
    <widget class="QFrame" name="customer_entry_box">
     <property name="geometry">
      <rect>
@@ -1035,8 +1046,10 @@ QProgressBar::chunk
     </property>
     <property name="font">
      <font>
-      <family>Audiowide</family>
+      <family>Arial</family>
       <pointsize>9</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="frameShape">
@@ -1062,8 +1075,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="placeholderText">
@@ -1081,8 +1096,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="placeholderText">
@@ -1100,8 +1117,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="dragEnabled">
@@ -1122,8 +1141,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -1147,8 +1168,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -1172,8 +1195,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -1191,8 +1216,10 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="text">
@@ -1210,12 +1237,83 @@ QProgressBar::chunk
      </property>
      <property name="font">
       <font>
-       <family>Audiowide</family>
+       <family>Arial</family>
        <pointsize>9</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
       </font>
      </property>
      <property name="placeholderText">
       <string>Telefon</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>110</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>92</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>330</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="pushButton_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>92</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="widget_3" native="true">
+    <property name="geometry">
+     <rect>
+      <x>710</x>
+      <y>360</y>
+      <width>120</width>
+      <height>80</height>
+     </rect>
+    </property>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>30</y>
+       <width>92</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
      </property>
     </widget>
    </widget>
@@ -1232,10 +1330,19 @@ QProgressBar::chunk
    </property>
    <property name="font">
     <font>
-     <family>Audiowide</family>
+     <family>Arial</family>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <widget class="QMenu" name="menu_options">
+    <property name="font">
+     <font>
+      <family>Arial</family>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="title">
      <string>Opcije</string>
     </property>
@@ -1257,8 +1364,10 @@ QProgressBar::chunk
    </property>
    <property name="font">
     <font>
-     <family>Audiowide</family>
+     <family>Arial</family>
      <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="shortcut">
@@ -1278,8 +1387,10 @@ QProgressBar::chunk
    </property>
    <property name="font">
     <font>
-     <family>Audiowide</family>
+     <family>Arial</family>
      <pointsize>9</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
     </font>
    </property>
    <property name="shortcut">

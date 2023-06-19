@@ -1,9 +1,14 @@
 class WindowOperator():
-    def __init__(self, window) -> None:
-        self.window = window
-    
-    def window_visibility(self):
-        if self.window.isHidden():
-            self.window.show()
+    def __init__(self) -> None:
+        pass
+
+    def window_visibility(self, widget):
+        if widget.isHidden():
+            widget.show()
         else:
-            self.window.hide()
+            widget.hide()
+    
+    def hide_opened(self, widget):
+        for item in widget:
+            if hasattr(item, 'hide'):
+                item.hide()
