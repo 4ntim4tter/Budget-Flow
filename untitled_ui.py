@@ -1103,7 +1103,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusBar)
         self.menu_bar = QMenuBar(MainWindow)
         self.menu_bar.setObjectName(u"menu_bar")
-        self.menu_bar.setGeometry(QRect(0, 0, 1274, 22))
+        self.menu_bar.setGeometry(QRect(0, 0, 1274, 23))
         self.menu_bar.setFont(font)
         self.menu_options = QMenu(self.menu_bar)
         self.menu_options.setObjectName(u"menu_options")
@@ -1143,8 +1143,7 @@ class Ui_MainWindow(object):
         self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
         self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
         self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
-        self.add_customer_phone.setText(QCoreApplication.translate("MainWindow", u"Telefon", None))
-        self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
+        self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
         self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Opcije", None))
     # retranslateUi
 

@@ -1214,11 +1214,8 @@ QProgressBar::chunk
        <pointsize>9</pointsize>
       </font>
      </property>
-     <property name="text">
-      <string>Telefon</string>
-     </property>
      <property name="placeholderText">
-      <string>Prezime</string>
+      <string>Telefon</string>
      </property>
     </widget>
    </widget>
@@ -1230,7 +1227,7 @@ QProgressBar::chunk
      <x>0</x>
      <y>0</y>
      <width>1274</width>
-     <height>22</height>
+     <height>23</height>
     </rect>
    </property>
    <property name="font">
