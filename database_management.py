@@ -2,8 +2,8 @@ import sqlite3 as sql3
 
 class DataManager():
     def __init__(self) -> None:
-        self.db_link = None
-        self.db_cursor = None
+        self.db_link:sql3.Connection
+        self.db_cursor:sql3.Cursor
 
     def db_connection(self, database):
         self.db_link = sql3.connect(database)
