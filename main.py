@@ -15,15 +15,15 @@ form.customer_entry_box.hide()
 entry_window = WindowOperator()
 db_manager = DataManager()
 
-db_manager.db_connection('table.db')
-db_manager.db_create_table('customers', ['name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])
+db_manager.db_connect('table.db')
+db_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])
+
 
 
 form.action_open_customer_entry_box.triggered.connect(lambda:entry_window.hide_opened(form.centralwidget.children()))
 form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(form.customer_entry_box))
 form.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility(form.customer_entry_box))
-form.save_new_customer_button.clicked.connect(lambda: print(form.add_customer_name.text()))
-
+form.save_new_customer_button.clicked.connect(lambda: db_manager.db_insert_customer('customers', entry_window.get_customer_values(form)))
 
 def main():
     window.show()

@@ -1032,18 +1032,6 @@ QProgressBar::chunk
       <height>231</height>
      </rect>
     </property>
-    <property name="sizeIncrement">
-     <size>
-      <width>5</width>
-      <height>5</height>
-     </size>
-    </property>
-    <property name="baseSize">
-     <size>
-      <width>311</width>
-      <height>311</height>
-     </size>
-    </property>
     <property name="font">
      <font>
       <family>Arial</family>
@@ -1130,7 +1118,7 @@ QProgressBar::chunk
       <string>Vozilo</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="add_customer_registration">
+    <widget class="QLineEdit" name="add_customer_plates">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -1146,12 +1134,6 @@ QProgressBar::chunk
        <weight>75</weight>
        <bold>true</bold>
       </font>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-     <property name="dragEnabled">
-      <bool>false</bool>
      </property>
      <property name="placeholderText">
       <string>Registracija</string>
@@ -1173,9 +1155,6 @@ QProgressBar::chunk
        <weight>75</weight>
        <bold>true</bold>
       </font>
-     </property>
-     <property name="text">
-      <string/>
      </property>
      <property name="dragEnabled">
       <bool>false</bool>
@@ -1398,6 +1377,19 @@ QProgressBar::chunk
    </property>
   </action>
  </widget>
+ <tabstops>
+  <tabstop>add_customer_name</tabstop>
+  <tabstop>add_customer_surname</tabstop>
+  <tabstop>add_customer_phone</tabstop>
+  <tabstop>add_customer_vehicle</tabstop>
+  <tabstop>add_customer_plates</tabstop>
+  <tabstop>add_customer_chasis</tabstop>
+  <tabstop>save_new_customer_button</tabstop>
+  <tabstop>cancel_new_customer_button</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
