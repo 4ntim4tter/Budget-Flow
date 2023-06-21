@@ -1222,6 +1222,9 @@ QProgressBar::chunk
        <bold>true</bold>
       </font>
      </property>
+     <property name="inputMask">
+      <string>000 0 000</string>
+     </property>
      <property name="placeholderText">
       <string>Telefon</string>
      </property>
@@ -1230,8 +1233,8 @@ QProgressBar::chunk
    <widget class="QWidget" name="widget" native="true">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>110</y>
+      <x>460</x>
+      <y>130</y>
       <width>120</width>
       <height>80</height>
      </rect>
@@ -1239,8 +1242,8 @@ QProgressBar::chunk
     <widget class="QPushButton" name="pushButton">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>20</y>
+       <x>0</x>
+       <y>10</y>
        <width>92</width>
        <height>23</height>
       </rect>
@@ -1262,8 +1265,8 @@ QProgressBar::chunk
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
+       <x>0</x>
+       <y>10</y>
        <width>92</width>
        <height>23</height>
       </rect>
@@ -1276,8 +1279,8 @@ QProgressBar::chunk
    <widget class="QWidget" name="widget_3" native="true">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>360</y>
+      <x>460</x>
+      <y>230</y>
       <width>120</width>
       <height>80</height>
      </rect>
@@ -1285,8 +1288,8 @@ QProgressBar::chunk
     <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
+       <x>0</x>
+       <y>10</y>
        <width>92</width>
        <height>23</height>
       </rect>
