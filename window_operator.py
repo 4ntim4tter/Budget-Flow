@@ -25,3 +25,4 @@ class WindowOperator():
                             form.add_customer_chasis.text())
 
         return customer.get_data()
+

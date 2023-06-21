@@ -6,7 +6,8 @@ from database_management import DataManager
 
 Form, Window = uic.loadUiType('untitled.ui')
 
-app = QApplication([])
+app = QApplication([]) 
+
 window = Window()
 form = Form()
 form.setupUi(window)
