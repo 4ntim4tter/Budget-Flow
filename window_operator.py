@@ -26,6 +26,11 @@ class WindowOperator():
 
         return customer.get_data()
     
-    def line_focus_changed(self, form):
-        print(form)
+    def line_focus_changed(self, event):
+        placeholder_text = ''
+        inputMask = ''
+        if event is not None and hasattr(event, 'placeholderText'):
+            placeholder_text = event.placeholderText()
+            inputMask = event.inputMask()
+            print(placeholder_text, inputMask)
 
