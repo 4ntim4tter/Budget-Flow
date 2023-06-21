@@ -25,4 +25,7 @@ class WindowOperator():
                             form.add_customer_chasis.text())
 
         return customer.get_data()
+    
+    def line_focus_changed(self, form):
+        print(form)
 

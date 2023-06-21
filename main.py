@@ -20,6 +20,8 @@ new_customer_window = form.customer_entry_box
 db_manager.db_connect('table.db')
 db_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])
 
+app.focusChanged.connect(entry_window.line_focus_changed)
+
 #Customer Entry Window
 form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children()))
 form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))
