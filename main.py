@@ -1,5 +1,5 @@
-from PyQt6 import uic
-from PyQt6.QtWidgets import QApplication
+from PyQt6 import QtGui, uic
+from PyQt6.QtWidgets import QApplication, QLineEdit
 
 from window_operator import WindowOperator
 from database_management import DataManager

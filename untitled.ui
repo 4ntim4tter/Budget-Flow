@@ -1222,11 +1222,8 @@ QProgressBar::chunk
        <bold>true</bold>
       </font>
      </property>
-     <property name="inputMask">
-      <string>999-999-9999</string>
-     </property>
      <property name="maxLength">
-      <number>12</number>
+      <number>32767</number>
      </property>
      <property name="placeholderText">
       <string>Telefon</string>

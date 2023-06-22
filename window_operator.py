@@ -26,11 +26,16 @@ class WindowOperator():
 
         return customer.get_data()
     
-    def line_focus_changed(self, event):
+    def line_focus_changed(self, new, old):
         placeholder_text = ''
         inputMask = ''
-        if event is not None and hasattr(event, 'placeholderText'):
-            placeholder_text = event.placeholderText()
-            inputMask = event.inputMask()
-            print(placeholder_text, inputMask)
+        if old is not None and hasattr(old, 'placeholderText'):
+            placeholder_text = old.placeholderText()
+            inputMask = old.inputMask()
+
+            if old.placeholderText() == 'Registracija':
+                old.setInputMask('NNN-N-NNN')
+
+            if old.placeholderText() == 'Telefon':
+                old.setInputMask('999-999-999')
 
