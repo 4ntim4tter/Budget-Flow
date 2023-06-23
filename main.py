@@ -1,5 +1,5 @@
-from PyQt6 import QtGui, uic
-from PyQt6.QtWidgets import QApplication, QLineEdit
+from PyQt6 import uic
+from PyQt6.QtWidgets import QApplication
 
 from window_operator import WindowOperator
 from database_management import DataManager
@@ -20,9 +20,9 @@ new_customer_window = form.customer_entry_box
 db_manager.db_connect('table.db')
 db_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])
 
-app.focusChanged.connect(entry_window.line_focus_changed)
 
 #Customer Entry Window
+app.focusChanged.connect(entry_window.line_focus_changed)
 form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children()))
 form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))
 form.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility(new_customer_window))

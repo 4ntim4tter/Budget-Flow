@@ -1,3 +1,4 @@
+from PyQt6.QtWidgets import QLineEdit
 from customer import Customer
 
 
@@ -10,19 +11,23 @@ class WindowOperator():
             widget.show()
         else:
             widget.hide()
-    
+            widgets = widget.children()
+            for child in widgets:
+                if isinstance(child, QLineEdit):
+                    child.setText('')
+        
     def hide_opened(self, widget):
         for item in widget:
             if hasattr(item, 'hide'):
                 item.hide()
 
-    def get_customer_values(self, form):
-        customer = Customer(form.add_customer_name.text(), 
-                            form.add_customer_surname.text(), 
-                            form.add_customer_phone.text(), 
-                            form.add_customer_vehicle.text(), 
-                            form.add_customer_plates.text(), 
-                            form.add_customer_chasis.text())
+    def get_customer_values(self, widget):
+        customer = Customer(widget.add_customer_name.text(), 
+                            widget.add_customer_surname.text(), 
+                            widget.add_customer_phone.text(), 
+                            widget.add_customer_vehicle.text(), 
+                            widget.add_customer_plates.text(), 
+                            widget.add_customer_chasis.text())
 
         return customer.get_data()
     
