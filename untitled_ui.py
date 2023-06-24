@@ -16,10 +16,10 @@ from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
     QIcon, QImage, QKeySequence, QLinearGradient,
     QPainter, QPalette, QPixmap, QRadialGradient,
     QTransform)
-from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QHeaderView,
-    QLineEdit, QMainWindow, QMenu, QMenuBar,
-    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
-    QTableWidgetItem, QWidget)
+from PySide6.QtWidgets import (QApplication, QFrame, QGridLayout, QHBoxLayout,
+    QHeaderView, QLineEdit, QMainWindow, QMenu,
+    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
+    QTableWidget, QTableWidgetItem, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1054,6 +1054,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName(u"centralwidget")
         self.centralwidget.setFont(font)
         self.horizontalLayout = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.left_frame = QFrame(self.centralwidget)
         self.left_frame.setObjectName(u"left_frame")
@@ -1061,7 +1062,7 @@ class Ui_MainWindow(object):
         self.left_frame.setFrameShadow(QFrame.Raised)
         self.customer_entry_box = QFrame(self.left_frame)
         self.customer_entry_box.setObjectName(u"customer_entry_box")
-        self.customer_entry_box.setGeometry(QRect(0, 0, 311, 241))
+        self.customer_entry_box.setGeometry(QRect(0, 0, 221, 241))
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1075,24 +1076,24 @@ class Ui_MainWindow(object):
         self.customer_entry_box.setMidLineWidth(5)
         self.add_customer_name = QLineEdit(self.customer_entry_box)
         self.add_customer_name.setObjectName(u"add_customer_name")
-        self.add_customer_name.setGeometry(QRect(14, 14, 133, 25))
+        self.add_customer_name.setGeometry(QRect(14, 14, 191, 25))
         self.add_customer_name.setFont(font)
         self.add_customer_surname = QLineEdit(self.customer_entry_box)
         self.add_customer_surname.setObjectName(u"add_customer_surname")
-        self.add_customer_surname.setGeometry(QRect(14, 45, 133, 25))
+        self.add_customer_surname.setGeometry(QRect(14, 45, 191, 25))
         self.add_customer_surname.setFont(font)
         self.add_customer_vehicle = QLineEdit(self.customer_entry_box)
         self.add_customer_vehicle.setObjectName(u"add_customer_vehicle")
-        self.add_customer_vehicle.setGeometry(QRect(14, 107, 133, 25))
+        self.add_customer_vehicle.setGeometry(QRect(14, 107, 191, 25))
         self.add_customer_vehicle.setFont(font)
         self.add_customer_vehicle.setDragEnabled(False)
         self.add_customer_plates = QLineEdit(self.customer_entry_box)
         self.add_customer_plates.setObjectName(u"add_customer_plates")
-        self.add_customer_plates.setGeometry(QRect(14, 138, 133, 25))
+        self.add_customer_plates.setGeometry(QRect(14, 138, 191, 25))
         self.add_customer_plates.setFont(font)
         self.add_customer_chasis = QLineEdit(self.customer_entry_box)
         self.add_customer_chasis.setObjectName(u"add_customer_chasis")
-        self.add_customer_chasis.setGeometry(QRect(14, 169, 133, 25))
+        self.add_customer_chasis.setGeometry(QRect(14, 169, 191, 25))
         self.add_customer_chasis.setFont(font)
         self.add_customer_chasis.setDragEnabled(False)
         self.save_new_customer_button = QPushButton(self.customer_entry_box)
@@ -1105,7 +1106,7 @@ class Ui_MainWindow(object):
         self.cancel_new_customer_button.setFont(font)
         self.add_customer_phone = QLineEdit(self.customer_entry_box)
         self.add_customer_phone.setObjectName(u"add_customer_phone")
-        self.add_customer_phone.setGeometry(QRect(14, 76, 133, 25))
+        self.add_customer_phone.setGeometry(QRect(14, 76, 191, 25))
         self.add_customer_phone.setFont(font)
         self.add_customer_phone.setMaxLength(32767)
 
@@ -1113,6 +1114,7 @@ class Ui_MainWindow(object):
 
         self.middle_frame = QFrame(self.centralwidget)
         self.middle_frame.setObjectName(u"middle_frame")
+        self.middle_frame.setMinimumSize(QSize(0, 450))
         self.middle_frame.setFrameShape(QFrame.StyledPanel)
         self.middle_frame.setFrameShadow(QFrame.Raised)
 
@@ -1122,51 +1124,64 @@ class Ui_MainWindow(object):
         self.right_frame.setObjectName(u"right_frame")
         self.right_frame.setFrameShape(QFrame.StyledPanel)
         self.right_frame.setFrameShadow(QFrame.Raised)
-        self.tableWidget = QTableWidget(self.right_frame)
-        if (self.tableWidget.columnCount() < 6):
-            self.tableWidget.setColumnCount(6)
+        self.gridLayout = QGridLayout(self.right_frame)
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.customer_table = QTableWidget(self.right_frame)
+        if (self.customer_table.columnCount() < 4):
+            self.customer_table.setColumnCount(4)
         font1 = QFont()
         font1.setFamilies([u"Arial"])
         font1.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        self.customer_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
         __qtablewidgetitem1 = QTableWidgetItem()
         __qtablewidgetitem1.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        self.customer_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
         __qtablewidgetitem2.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        self.customer_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
         __qtablewidgetitem3.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font1);
-        self.tableWidget.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        if (self.tableWidget.rowCount() < 1):
-            self.tableWidget.setRowCount(1)
-        self.tableWidget.setObjectName(u"tableWidget")
-        self.tableWidget.setGeometry(QRect(0, 0, 311, 651))
-        sizePolicy.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
-        self.tableWidget.setSizePolicy(sizePolicy)
-        self.tableWidget.setFont(font1)
-        self.tableWidget.setLayoutDirection(Qt.LeftToRight)
-        self.tableWidget.setAlternatingRowColors(True)
-        self.tableWidget.setTextElideMode(Qt.ElideMiddle)
-        self.tableWidget.setGridStyle(Qt.SolidLine)
-        self.tableWidget.setSortingEnabled(True)
-        self.tableWidget.setRowCount(1)
-        self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(100)
-        self.tableWidget.horizontalHeader().setProperty("showSortIndicator", True)
-        self.tableWidget.horizontalHeader().setStretchLastSection(False)
-        self.tableWidget.verticalHeader().setHighlightSections(True)
+        self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        if (self.customer_table.rowCount() < 1):
+            self.customer_table.setRowCount(1)
+        self.customer_table.setObjectName(u"customer_table")
+        sizePolicy.setHeightForWidth(self.customer_table.sizePolicy().hasHeightForWidth())
+        self.customer_table.setSizePolicy(sizePolicy)
+        self.customer_table.setFont(font1)
+        self.customer_table.setFrameShape(QFrame.Panel)
+        self.customer_table.setLineWidth(5)
+        self.customer_table.setMidLineWidth(5)
+        self.customer_table.setAutoScrollMargin(2)
+        self.customer_table.setAlternatingRowColors(False)
+        self.customer_table.setTextElideMode(Qt.ElideMiddle)
+        self.customer_table.setShowGrid(True)
+        self.customer_table.setGridStyle(Qt.SolidLine)
+        self.customer_table.setSortingEnabled(True)
+        self.customer_table.setWordWrap(False)
+        self.customer_table.setCornerButtonEnabled(True)
+        self.customer_table.setRowCount(1)
+        self.customer_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.customer_table.horizontalHeader().setMinimumSectionSize(45)
+        self.customer_table.horizontalHeader().setDefaultSectionSize(60)
+        self.customer_table.horizontalHeader().setHighlightSections(True)
+        self.customer_table.horizontalHeader().setProperty("showSortIndicator", True)
+        self.customer_table.horizontalHeader().setStretchLastSection(True)
+        self.customer_table.verticalHeader().setVisible(True)
+        self.customer_table.verticalHeader().setCascadingSectionResizes(False)
+        self.customer_table.verticalHeader().setDefaultSectionSize(25)
+        self.customer_table.verticalHeader().setHighlightSections(True)
+        self.customer_table.verticalHeader().setStretchLastSection(False)
+
+        self.gridLayout.addWidget(self.customer_table, 0, 0, 1, 1)
+
 
         self.horizontalLayout.addWidget(self.right_frame)
 
+        self.horizontalLayout.setStretch(0, 3)
+        self.horizontalLayout.setStretch(1, 10)
+        self.horizontalLayout.setStretch(2, 4)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QStatusBar(MainWindow)
         self.statusBar.setObjectName(u"statusBar")
@@ -1220,18 +1235,14 @@ class Ui_MainWindow(object):
         self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
         self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
         self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
-        ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
+        ___qtablewidgetitem = self.customer_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
-        ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
+        ___qtablewidgetitem1 = self.customer_table.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
-        ___qtablewidgetitem2 = self.tableWidget.horizontalHeaderItem(2)
+        ___qtablewidgetitem2 = self.customer_table.horizontalHeaderItem(2)
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
-        ___qtablewidgetitem3 = self.tableWidget.horizontalHeaderItem(3)
+        ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
-        ___qtablewidgetitem4 = self.tableWidget.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Registracija", None));
-        ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None));
         self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Opcije", None))
     # retranslateUi
 
