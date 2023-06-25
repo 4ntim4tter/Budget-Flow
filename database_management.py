@@ -34,7 +34,6 @@ class DataManager():
         rows = self.db_cursor.fetchall()
         selected_row = 0
         for row in rows:
-            print(type(row[3]), row[3])
             table_widget.setItem(selected_row, 0, QTableWidgetItem(row[1]))
             table_widget.setItem(selected_row, 1, QTableWidgetItem(row[2]))
             table_widget.setItem(selected_row, 2, QTableWidgetItem(row[3]))
