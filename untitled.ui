@@ -1030,6 +1030,9 @@ QProgressBar::chunk
     </font>
    </property>
    <layout class="QGridLayout" name="gridLayout_4" columnstretch="3,10,5">
+    <property name="topMargin">
+     <number>30</number>
+    </property>
     <item row="0" column="2">
      <widget class="QFrame" name="right_frame">
       <property name="sizePolicy">
@@ -1211,23 +1214,52 @@ QProgressBar::chunk
       <property name="midLineWidth">
        <number>5</number>
       </property>
-      <layout class="QFormLayout" name="formLayout">
-       <property name="fieldGrowthPolicy">
-        <enum>QFormLayout::ExpandingFieldsGrow</enum>
-       </property>
-       <property name="formAlignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-       <property name="horizontalSpacing">
-        <number>0</number>
-       </property>
-       <property name="verticalSpacing">
-        <number>40</number>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="leftMargin">
+        <number>1</number>
        </property>
        <property name="topMargin">
         <number>50</number>
        </property>
-       <item row="0" column="0">
+       <property name="rightMargin">
+        <number>1</number>
+       </property>
+       <property name="bottomMargin">
+        <number>50</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="add_customer_label">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>5</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+         <property name="text">
+          <string>Nova Mušterija</string>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QFrame" name="customer_entry_box">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1256,7 +1288,7 @@ QProgressBar::chunk
           <number>5</number>
          </property>
          <layout class="QFormLayout" name="formLayout_2">
-          <item row="0" column="0" colspan="2">
+          <item row="1" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_name">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1280,7 +1312,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="2">
+          <item row="2" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_surname">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1304,7 +1336,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="2">
+          <item row="3" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_phone">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1331,7 +1363,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="2">
+          <item row="4" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_vehicle">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1358,7 +1390,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="2">
+          <item row="5" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_plates">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1382,7 +1414,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="5" column="0" colspan="2">
+          <item row="6" column="0" colspan="2">
            <widget class="QLineEdit" name="add_customer_chasis">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1409,7 +1441,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
+          <item row="7" column="0">
            <widget class="QPushButton" name="save_new_customer_button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1430,7 +1462,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="7" column="1">
            <widget class="QPushButton" name="cancel_new_customer_button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1454,7 +1486,42 @@ QProgressBar::chunk
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item>
+        <widget class="QLabel" name="search_customer_label">
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>5</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+         <property name="text">
+          <string>Pretraga Mušterije</string>
+         </property>
+         <property name="textFormat">
+          <enum>Qt::AutoText</enum>
+         </property>
+         <property name="scaledContents">
+          <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
         <widget class="QFrame" name="customer_search_box">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1486,7 +1553,7 @@ QProgressBar::chunk
           <number>5</number>
          </property>
          <layout class="QFormLayout" name="formLayout_3">
-          <item row="0" column="0" colspan="2">
+          <item row="1" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_name">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1510,7 +1577,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="2">
+          <item row="2" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_surname">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1534,7 +1601,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="2" column="0" colspan="2">
+          <item row="3" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_phone">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1561,7 +1628,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="2">
+          <item row="4" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_vehicle">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1588,7 +1655,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="2">
+          <item row="5" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_plates">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1612,7 +1679,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="5" column="0" colspan="2">
+          <item row="6" column="0" colspan="2">
            <widget class="QLineEdit" name="search_customer_chasis">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1639,7 +1706,7 @@ QProgressBar::chunk
             </property>
            </widget>
           </item>
-          <item row="6" column="0">
+          <item row="7" column="0">
            <widget class="QPushButton" name="search_customer_button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1656,11 +1723,11 @@ QProgressBar::chunk
              </font>
             </property>
             <property name="text">
-             <string>Unos</string>
+             <string>Traži</string>
             </property>
            </widget>
           </item>
-          <item row="6" column="1">
+          <item row="7" column="1">
            <widget class="QPushButton" name="cancel_search_customer_button">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
@@ -1684,8 +1751,8 @@ QProgressBar::chunk
          </layout>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QWidget" name="emptyRowWidget" native="true"/>
+       <item>
+        <widget class="QFrame" name="emptyRowFrame"/>
        </item>
       </layout>
      </widget>
@@ -1715,84 +1782,6 @@ QProgressBar::chunk
    </layout>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <widget class="QMenuBar" name="menu_bar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>1274</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <widget class="QMenu" name="menu_options">
-    <property name="font">
-     <font>
-      <family>Arial</family>
-      <weight>75</weight>
-      <bold>true</bold>
-     </font>
-    </property>
-    <property name="title">
-     <string>Opcije</string>
-    </property>
-    <addaction name="action_open_customer_entry_box"/>
-    <addaction name="action_open_customer_search_box"/>
-   </widget>
-   <addaction name="menu_options"/>
-  </widget>
-  <action name="action_open_customer_search_box">
-   <property name="icon">
-    <iconset>
-     <normaloff>Icons/accumulator.png</normaloff>Icons/accumulator.png</iconset>
-   </property>
-   <property name="text">
-    <string>Pretraga</string>
-   </property>
-   <property name="toolTip">
-    <string>Find customers</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>9</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="shortcut">
-    <string>Alt+V</string>
-   </property>
-  </action>
-  <action name="action_open_customer_entry_box">
-   <property name="icon">
-    <iconset>
-     <normaloff>Icons/car.png</normaloff>Icons/car.png</iconset>
-   </property>
-   <property name="text">
-    <string>Dodaj Mušteriju</string>
-   </property>
-   <property name="toolTip">
-    <string>Add new customer</string>
-   </property>
-   <property name="font">
-    <font>
-     <family>Arial</family>
-     <pointsize>9</pointsize>
-     <weight>75</weight>
-     <bold>true</bold>
-    </font>
-   </property>
-   <property name="shortcut">
-    <string>Alt+C</string>
-   </property>
-  </action>
  </widget>
  <tabstops>
   <tabstop>add_customer_name</tabstop>

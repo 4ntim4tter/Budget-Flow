@@ -177,14 +177,6 @@
         "documentation": {}
     },
     {
-        "label": "QAction",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
         "label": "QBrush",
         "importPath": "PySide6.QtGui",
         "description": "PySide6.QtGui",
@@ -353,6 +345,14 @@
         "documentation": {}
     },
     {
+        "label": "QLabel",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "QLineEdit",
         "importPath": "PySide6.QtWidgets",
         "description": "PySide6.QtWidgets",
@@ -362,22 +362,6 @@
     },
     {
         "label": "QMainWindow",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QMenu",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QMenuBar",
         "importPath": "PySide6.QtWidgets",
         "description": "PySide6.QtWidgets",
         "isExtraImport": true,
@@ -418,6 +402,14 @@
     },
     {
         "label": "QTableWidgetItem",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
         "importPath": "PySide6.QtWidgets",
         "description": "PySide6.QtWidgets",
         "isExtraImport": true,
@@ -499,7 +491,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([]) \nwindow = Window()\nform = Form()\nform.setupUi(window)\nform.customer_entry_box.hide()\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')",
+        "peekOfCode": "app = QApplication([]) \nwindow = Window()\nform = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])",
         "detail": "main",
         "documentation": {}
     },
@@ -508,7 +500,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\nform.customer_entry_box.hide()\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])",
+        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal",
         "detail": "main",
         "documentation": {}
     },
@@ -517,7 +509,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "form = Form()\nform.setupUi(window)\nform.customer_entry_box.hide()\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#Customer Entry Window",
+        "peekOfCode": "form = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
         "detail": "main",
         "documentation": {}
     },
@@ -526,7 +518,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "entry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#Customer Entry Window\napp.focusChanged.connect(entry_window.line_focus_changed)\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\nform.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))",
+        "peekOfCode": "entry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n#Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets",
         "detail": "main",
         "documentation": {}
     },
@@ -535,7 +527,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "db_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#Customer Entry Window\napp.focusChanged.connect(entry_window.line_focus_changed)\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\nform.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))\nform.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility(new_customer_window))",
+        "peekOfCode": "db_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n#Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))",
         "detail": "main",
         "documentation": {}
     },
@@ -544,7 +536,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_window = form.customer_entry_box\nprint(new_customer_window)\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#Customer Entry Window\napp.focusChanged.connect(entry_window.line_focus_changed)\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\nform.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))\nform.cancel_new_customer_button.clicked.connect(lambda: entry_window.window_visibility(new_customer_window))\nform.save_new_customer_button.clicked.connect(lambda: db_manager.db_insert_customer('customers', entry_window.get_customer_values(form)))",
+        "peekOfCode": "new_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n#Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))\nform.cancel_new_customer_button.clicked.connect(lambda: entry_window.wipe_entered_data(new_customer_window))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "new_customer_search_window",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "new_customer_search_window = form.customer_search_box\ndb_manager.db_connect('table.db')\ndb_manager.db_create_table('customers', ['id', 'name', 'surname', 'phone', 'vehicle', 'plates', 'chasis'])\n#focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n#Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))\nform.cancel_new_customer_button.clicked.connect(lambda: entry_window.wipe_entered_data(new_customer_window))\nform.save_new_customer_button.clicked.connect(lambda: db_manager.db_insert_customer('customers', entry_window.get_customer_values(form)))",
         "detail": "main",
         "documentation": {}
     },
@@ -562,7 +563,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator():\n    def __init__(self) -> None:\n        pass\n    def window_visibility(self, widget):\n        if widget.isHidden():\n            widget.show()\n        else:\n            widget.hide()\n            widgets = widget.children()\n            for child in widgets:",
+        "peekOfCode": "class WindowOperator():\n    def __init__(self) -> None:\n        pass\n    def wipe_entered_data(self, widget): #changed form visibility modification to deletion of entered data\n        # if widget.isHidden():\n        #     widget.show()\n        # else:\n        #     widget.hide()\n        widgets = widget.children()\n        for child in widgets:",
         "detail": "window_operator",
         "documentation": {}
     }

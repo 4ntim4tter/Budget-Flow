@@ -6,15 +6,18 @@ class WindowOperator():
     def __init__(self) -> None:
         pass
 
-    def window_visibility(self, widget):
-        if widget.isHidden():
-            widget.show()
-        else:
-            widget.hide()
-            widgets = widget.children()
-            for child in widgets:
-                if isinstance(child, QLineEdit):
-                    child.setText('')
+    def wipe_entered_data(self, widget): #changed form visibility modification to deletion of entered data
+        # if widget.isHidden():
+        #     widget.show()
+        # else:
+        #     widget.hide()
+        widgets = widget.children()
+        for child in widgets:
+            if isinstance(child, QLineEdit):
+                p_text = child.placeholderText()
+                child.setText('')
+                child.setInputMask('')
+                child.setPlaceholderText(p_text)
         
     def hide_opened(self, widget):
         for item in widget:

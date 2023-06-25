@@ -11,15 +11,14 @@
 from PySide6.QtCore import (QCoreApplication, QDate, QDateTime, QLocale,
     QMetaObject, QObject, QPoint, QRect,
     QSize, QTime, QUrl, Qt)
-from PySide6.QtGui import (QAction, QBrush, QColor, QConicalGradient,
-    QCursor, QFont, QFontDatabase, QGradient,
-    QIcon, QImage, QKeySequence, QLinearGradient,
-    QPainter, QPalette, QPixmap, QRadialGradient,
-    QTransform)
+from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
+    QFont, QFontDatabase, QGradient, QIcon,
+    QImage, QKeySequence, QLinearGradient, QPainter,
+    QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFormLayout, QFrame, QGridLayout,
-    QHeaderView, QLineEdit, QMainWindow, QMenu,
-    QMenuBar, QPushButton, QSizePolicy, QStatusBar,
-    QTableWidget, QTableWidgetItem, QWidget)
+    QHeaderView, QLabel, QLineEdit, QMainWindow,
+    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
+    QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1038,18 +1037,6 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "")
-        self.action_open_customer_search_box = QAction(MainWindow)
-        self.action_open_customer_search_box.setObjectName(u"action_open_customer_search_box")
-        icon = QIcon()
-        icon.addFile(u"Icons/accumulator.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.action_open_customer_search_box.setIcon(icon)
-        self.action_open_customer_search_box.setFont(font)
-        self.action_open_customer_entry_box = QAction(MainWindow)
-        self.action_open_customer_entry_box.setObjectName(u"action_open_customer_entry_box")
-        icon1 = QIcon()
-        icon1.addFile(u"Icons/car.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.action_open_customer_entry_box.setIcon(icon1)
-        self.action_open_customer_entry_box.setFont(font)
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -1060,6 +1047,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setFont(font)
         self.gridLayout_4 = QGridLayout(self.centralwidget)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.gridLayout_4.setContentsMargins(-1, 30, -1, -1)
         self.right_frame = QFrame(self.centralwidget)
         self.right_frame.setObjectName(u"right_frame")
         sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
@@ -1141,13 +1129,21 @@ class Ui_MainWindow(object):
         self.left_frame.setFrameShadow(QFrame.Sunken)
         self.left_frame.setLineWidth(5)
         self.left_frame.setMidLineWidth(5)
-        self.formLayout = QFormLayout(self.left_frame)
-        self.formLayout.setObjectName(u"formLayout")
-        self.formLayout.setFieldGrowthPolicy(QFormLayout.ExpandingFieldsGrow)
-        self.formLayout.setFormAlignment(Qt.AlignCenter)
-        self.formLayout.setHorizontalSpacing(0)
-        self.formLayout.setVerticalSpacing(40)
-        self.formLayout.setContentsMargins(-1, 50, -1, -1)
+        self.verticalLayout = QVBoxLayout(self.left_frame)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.verticalLayout.setContentsMargins(1, 50, 1, 50)
+        self.add_customer_label = QLabel(self.left_frame)
+        self.add_customer_label.setObjectName(u"add_customer_label")
+        self.add_customer_label.setFont(font1)
+        self.add_customer_label.setFrameShape(QFrame.StyledPanel)
+        self.add_customer_label.setFrameShadow(QFrame.Sunken)
+        self.add_customer_label.setLineWidth(5)
+        self.add_customer_label.setMidLineWidth(5)
+        self.add_customer_label.setScaledContents(True)
+        self.add_customer_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout.addWidget(self.add_customer_label)
+
         self.customer_entry_box = QFrame(self.left_frame)
         self.customer_entry_box.setObjectName(u"customer_entry_box")
         sizePolicy2.setHeightForWidth(self.customer_entry_box.sizePolicy().hasHeightForWidth())
@@ -1166,7 +1162,7 @@ class Ui_MainWindow(object):
         self.add_customer_name.setFont(font)
         self.add_customer_name.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(0, QFormLayout.SpanningRole, self.add_customer_name)
+        self.formLayout_2.setWidget(1, QFormLayout.SpanningRole, self.add_customer_name)
 
         self.add_customer_surname = QLineEdit(self.customer_entry_box)
         self.add_customer_surname.setObjectName(u"add_customer_surname")
@@ -1175,7 +1171,7 @@ class Ui_MainWindow(object):
         self.add_customer_surname.setFont(font)
         self.add_customer_surname.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(1, QFormLayout.SpanningRole, self.add_customer_surname)
+        self.formLayout_2.setWidget(2, QFormLayout.SpanningRole, self.add_customer_surname)
 
         self.add_customer_phone = QLineEdit(self.customer_entry_box)
         self.add_customer_phone.setObjectName(u"add_customer_phone")
@@ -1185,7 +1181,7 @@ class Ui_MainWindow(object):
         self.add_customer_phone.setMaxLength(32767)
         self.add_customer_phone.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(2, QFormLayout.SpanningRole, self.add_customer_phone)
+        self.formLayout_2.setWidget(3, QFormLayout.SpanningRole, self.add_customer_phone)
 
         self.add_customer_vehicle = QLineEdit(self.customer_entry_box)
         self.add_customer_vehicle.setObjectName(u"add_customer_vehicle")
@@ -1195,7 +1191,7 @@ class Ui_MainWindow(object):
         self.add_customer_vehicle.setAlignment(Qt.AlignCenter)
         self.add_customer_vehicle.setDragEnabled(False)
 
-        self.formLayout_2.setWidget(3, QFormLayout.SpanningRole, self.add_customer_vehicle)
+        self.formLayout_2.setWidget(4, QFormLayout.SpanningRole, self.add_customer_vehicle)
 
         self.add_customer_plates = QLineEdit(self.customer_entry_box)
         self.add_customer_plates.setObjectName(u"add_customer_plates")
@@ -1204,7 +1200,7 @@ class Ui_MainWindow(object):
         self.add_customer_plates.setFont(font)
         self.add_customer_plates.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_2.setWidget(4, QFormLayout.SpanningRole, self.add_customer_plates)
+        self.formLayout_2.setWidget(5, QFormLayout.SpanningRole, self.add_customer_plates)
 
         self.add_customer_chasis = QLineEdit(self.customer_entry_box)
         self.add_customer_chasis.setObjectName(u"add_customer_chasis")
@@ -1214,7 +1210,7 @@ class Ui_MainWindow(object):
         self.add_customer_chasis.setAlignment(Qt.AlignCenter)
         self.add_customer_chasis.setDragEnabled(False)
 
-        self.formLayout_2.setWidget(5, QFormLayout.SpanningRole, self.add_customer_chasis)
+        self.formLayout_2.setWidget(6, QFormLayout.SpanningRole, self.add_customer_chasis)
 
         self.save_new_customer_button = QPushButton(self.customer_entry_box)
         self.save_new_customer_button.setObjectName(u"save_new_customer_button")
@@ -1225,7 +1221,7 @@ class Ui_MainWindow(object):
         self.save_new_customer_button.setSizePolicy(sizePolicy4)
         self.save_new_customer_button.setFont(font)
 
-        self.formLayout_2.setWidget(6, QFormLayout.LabelRole, self.save_new_customer_button)
+        self.formLayout_2.setWidget(7, QFormLayout.LabelRole, self.save_new_customer_button)
 
         self.cancel_new_customer_button = QPushButton(self.customer_entry_box)
         self.cancel_new_customer_button.setObjectName(u"cancel_new_customer_button")
@@ -1233,10 +1229,23 @@ class Ui_MainWindow(object):
         self.cancel_new_customer_button.setSizePolicy(sizePolicy4)
         self.cancel_new_customer_button.setFont(font)
 
-        self.formLayout_2.setWidget(6, QFormLayout.FieldRole, self.cancel_new_customer_button)
+        self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.cancel_new_customer_button)
 
 
-        self.formLayout.setWidget(0, QFormLayout.LabelRole, self.customer_entry_box)
+        self.verticalLayout.addWidget(self.customer_entry_box)
+
+        self.search_customer_label = QLabel(self.left_frame)
+        self.search_customer_label.setObjectName(u"search_customer_label")
+        self.search_customer_label.setFont(font1)
+        self.search_customer_label.setFrameShape(QFrame.StyledPanel)
+        self.search_customer_label.setFrameShadow(QFrame.Sunken)
+        self.search_customer_label.setLineWidth(5)
+        self.search_customer_label.setMidLineWidth(5)
+        self.search_customer_label.setTextFormat(Qt.AutoText)
+        self.search_customer_label.setScaledContents(True)
+        self.search_customer_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout.addWidget(self.search_customer_label)
 
         self.customer_search_box = QFrame(self.left_frame)
         self.customer_search_box.setObjectName(u"customer_search_box")
@@ -1257,7 +1266,7 @@ class Ui_MainWindow(object):
         self.search_customer_name.setFont(font)
         self.search_customer_name.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(0, QFormLayout.SpanningRole, self.search_customer_name)
+        self.formLayout_3.setWidget(1, QFormLayout.SpanningRole, self.search_customer_name)
 
         self.search_customer_surname = QLineEdit(self.customer_search_box)
         self.search_customer_surname.setObjectName(u"search_customer_surname")
@@ -1266,7 +1275,7 @@ class Ui_MainWindow(object):
         self.search_customer_surname.setFont(font)
         self.search_customer_surname.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(1, QFormLayout.SpanningRole, self.search_customer_surname)
+        self.formLayout_3.setWidget(2, QFormLayout.SpanningRole, self.search_customer_surname)
 
         self.search_customer_phone = QLineEdit(self.customer_search_box)
         self.search_customer_phone.setObjectName(u"search_customer_phone")
@@ -1276,7 +1285,7 @@ class Ui_MainWindow(object):
         self.search_customer_phone.setMaxLength(32767)
         self.search_customer_phone.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(2, QFormLayout.SpanningRole, self.search_customer_phone)
+        self.formLayout_3.setWidget(3, QFormLayout.SpanningRole, self.search_customer_phone)
 
         self.search_customer_vehicle = QLineEdit(self.customer_search_box)
         self.search_customer_vehicle.setObjectName(u"search_customer_vehicle")
@@ -1286,7 +1295,7 @@ class Ui_MainWindow(object):
         self.search_customer_vehicle.setAlignment(Qt.AlignCenter)
         self.search_customer_vehicle.setDragEnabled(False)
 
-        self.formLayout_3.setWidget(3, QFormLayout.SpanningRole, self.search_customer_vehicle)
+        self.formLayout_3.setWidget(4, QFormLayout.SpanningRole, self.search_customer_vehicle)
 
         self.search_customer_plates = QLineEdit(self.customer_search_box)
         self.search_customer_plates.setObjectName(u"search_customer_plates")
@@ -1295,7 +1304,7 @@ class Ui_MainWindow(object):
         self.search_customer_plates.setFont(font)
         self.search_customer_plates.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(4, QFormLayout.SpanningRole, self.search_customer_plates)
+        self.formLayout_3.setWidget(5, QFormLayout.SpanningRole, self.search_customer_plates)
 
         self.search_customer_chasis = QLineEdit(self.customer_search_box)
         self.search_customer_chasis.setObjectName(u"search_customer_chasis")
@@ -1305,7 +1314,7 @@ class Ui_MainWindow(object):
         self.search_customer_chasis.setAlignment(Qt.AlignCenter)
         self.search_customer_chasis.setDragEnabled(False)
 
-        self.formLayout_3.setWidget(5, QFormLayout.SpanningRole, self.search_customer_chasis)
+        self.formLayout_3.setWidget(6, QFormLayout.SpanningRole, self.search_customer_chasis)
 
         self.search_customer_button = QPushButton(self.customer_search_box)
         self.search_customer_button.setObjectName(u"search_customer_button")
@@ -1313,7 +1322,7 @@ class Ui_MainWindow(object):
         self.search_customer_button.setSizePolicy(sizePolicy4)
         self.search_customer_button.setFont(font)
 
-        self.formLayout_3.setWidget(6, QFormLayout.LabelRole, self.search_customer_button)
+        self.formLayout_3.setWidget(7, QFormLayout.LabelRole, self.search_customer_button)
 
         self.cancel_search_customer_button = QPushButton(self.customer_search_box)
         self.cancel_search_customer_button.setObjectName(u"cancel_search_customer_button")
@@ -1321,15 +1330,15 @@ class Ui_MainWindow(object):
         self.cancel_search_customer_button.setSizePolicy(sizePolicy4)
         self.cancel_search_customer_button.setFont(font)
 
-        self.formLayout_3.setWidget(6, QFormLayout.FieldRole, self.cancel_search_customer_button)
+        self.formLayout_3.setWidget(7, QFormLayout.FieldRole, self.cancel_search_customer_button)
 
 
-        self.formLayout.setWidget(1, QFormLayout.LabelRole, self.customer_search_box)
+        self.verticalLayout.addWidget(self.customer_search_box)
 
-        self.emptyRowWidget = QWidget(self.left_frame)
-        self.emptyRowWidget.setObjectName(u"emptyRowWidget")
+        self.emptyRowFrame = QFrame(self.left_frame)
+        self.emptyRowFrame.setObjectName(u"emptyRowFrame")
 
-        self.formLayout.setWidget(2, QFormLayout.FieldRole, self.emptyRowWidget)
+        self.verticalLayout.addWidget(self.emptyRowFrame)
 
 
         self.gridLayout_4.addWidget(self.left_frame, 0, 0, 1, 1)
@@ -1351,14 +1360,6 @@ class Ui_MainWindow(object):
         self.statusBar = QStatusBar(MainWindow)
         self.statusBar.setObjectName(u"statusBar")
         MainWindow.setStatusBar(self.statusBar)
-        self.menu_bar = QMenuBar(MainWindow)
-        self.menu_bar.setObjectName(u"menu_bar")
-        self.menu_bar.setGeometry(QRect(0, 0, 1274, 23))
-        self.menu_bar.setFont(font1)
-        self.menu_options = QMenu(self.menu_bar)
-        self.menu_options.setObjectName(u"menu_options")
-        self.menu_options.setFont(font1)
-        MainWindow.setMenuBar(self.menu_bar)
         QWidget.setTabOrder(self.add_customer_name, self.add_customer_surname)
         QWidget.setTabOrder(self.add_customer_surname, self.add_customer_phone)
         QWidget.setTabOrder(self.add_customer_phone, self.add_customer_vehicle)
@@ -1367,10 +1368,6 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.add_customer_chasis, self.save_new_customer_button)
         QWidget.setTabOrder(self.save_new_customer_button, self.cancel_new_customer_button)
 
-        self.menu_bar.addAction(self.menu_options.menuAction())
-        self.menu_options.addAction(self.action_open_customer_entry_box)
-        self.menu_options.addAction(self.action_open_customer_search_box)
-
         self.retranslateUi(MainWindow)
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -1378,20 +1375,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Budget Flow", None))
-        self.action_open_customer_search_box.setText(QCoreApplication.translate("MainWindow", u"Pretraga", None))
-#if QT_CONFIG(tooltip)
-        self.action_open_customer_search_box.setToolTip(QCoreApplication.translate("MainWindow", u"Find customers", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(shortcut)
-        self.action_open_customer_search_box.setShortcut(QCoreApplication.translate("MainWindow", u"Alt+V", None))
-#endif // QT_CONFIG(shortcut)
-        self.action_open_customer_entry_box.setText(QCoreApplication.translate("MainWindow", u"Dodaj Mu\u0161teriju", None))
-#if QT_CONFIG(tooltip)
-        self.action_open_customer_entry_box.setToolTip(QCoreApplication.translate("MainWindow", u"Add new customer", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(shortcut)
-        self.action_open_customer_entry_box.setShortcut(QCoreApplication.translate("MainWindow", u"Alt+C", None))
-#endif // QT_CONFIG(shortcut)
         ___qtablewidgetitem = self.customer_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
         ___qtablewidgetitem1 = self.customer_table.horizontalHeaderItem(1)
@@ -1400,6 +1383,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
         ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        self.add_customer_label.setText(QCoreApplication.translate("MainWindow", u"Nova Mu\u0161terija", None))
         self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
         self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
         self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
@@ -1408,14 +1392,14 @@ class Ui_MainWindow(object):
         self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
         self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
         self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        self.search_customer_label.setText(QCoreApplication.translate("MainWindow", u"Pretraga Mu\u0161terije", None))
         self.search_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
         self.search_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
         self.search_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
         self.search_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vozilo", None))
         self.search_customer_plates.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registracija", None))
         self.search_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
-        self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
+        self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Tra\u017ei", None))
         self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
-        self.menu_options.setTitle(QCoreApplication.translate("MainWindow", u"Opcije", None))
     # retranslateUi
 
