@@ -33,11 +33,12 @@ form.save_new_customer_button.clicked.connect(lambda: db_manager.db_insert_custo
 form.cancel_search_customer_button.clicked.connect(lambda: entry_window.wipe_entered_data(new_customer_search_window))
 
 #Customer Table
-db_manager.populate_customer_table('customers', form.customer_table)
+form.populate_table_button.clicked.connect(lambda: db_manager.populate_customer_table('customers', form.customer_table))
+form.clear_table_button.clicked.connect(lambda: db_manager.clear_customer_table(form.customer_table))
 
 def main():
     window.show()
-    window.showMaximized()
+    # window.showMaximized()
     app.exec()
 
 if __name__ == "__main__":

@@ -41,3 +41,12 @@ class DataManager():
             selected_row += 1
             table_widget.insertRow(selected_row)
         self.db_disconnect()
+
+    def clear_customer_table(self, table_widget:QTableWidget):
+        # table_widget.clear()
+        for i in range(table_widget.rowCount(),0,-1):
+            table_widget.removeRow(i)
+        table_widget.setItem(0, 0, QTableWidgetItem(''))
+        table_widget.setItem(0, 1, QTableWidgetItem(''))
+        table_widget.setItem(0, 2, QTableWidgetItem(''))
+        table_widget.setItem(0, 3, QTableWidgetItem(''))
