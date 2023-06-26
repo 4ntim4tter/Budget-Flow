@@ -28,6 +28,7 @@ class DataManager():
         self.db_disconnect()
 
     def populate_customer_table(self, table:str, table_widget:QTableWidget):
+        self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(f'SELECT * FROM {table}')
