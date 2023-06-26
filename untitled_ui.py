@@ -16,16 +16,16 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QFormLayout, QFrame, QGridLayout,
-    QHeaderView, QLabel, QLineEdit, QMainWindow,
-    QPushButton, QSizePolicy, QStatusBar, QTableWidget,
-    QTableWidgetItem, QVBoxLayout, QWidget)
+    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
+    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
+    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
-        MainWindow.resize(1274, 720)
+        MainWindow.resize(1274, 727)
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(9)
@@ -1059,8 +1059,10 @@ class Ui_MainWindow(object):
         self.right_frame.setFrameShadow(QFrame.Sunken)
         self.right_frame.setLineWidth(5)
         self.right_frame.setMidLineWidth(5)
-        self.gridLayout = QGridLayout(self.right_frame)
-        self.gridLayout.setObjectName(u"gridLayout")
+        self.verticalLayout_2 = QVBoxLayout(self.right_frame)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(1, 1, 1, 1)
         self.customer_table = QTableWidget(self.right_frame)
         if (self.customer_table.columnCount() < 5):
             self.customer_table.setColumnCount(5)
@@ -1112,8 +1114,53 @@ class Ui_MainWindow(object):
         self.customer_table.verticalHeader().setHighlightSections(True)
         self.customer_table.verticalHeader().setStretchLastSection(False)
 
-        self.gridLayout.addWidget(self.customer_table, 0, 0, 1, 1)
+        self.verticalLayout_2.addWidget(self.customer_table)
 
+        self.frame_2 = QFrame(self.right_frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_3.setSpacing(1)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(1, 1, 1, 1)
+        self.lineEdit = QLineEdit(self.frame_2)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.verticalLayout_3.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_2.addWidget(self.frame_2)
+
+        self.frame = QFrame(self.right_frame)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setSpacing(1)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(1, 1, 1, 1)
+        self.clear_table_button = QPushButton(self.frame)
+        self.clear_table_button.setObjectName(u"clear_table_button")
+
+        self.horizontalLayout.addWidget(self.clear_table_button)
+
+        self.filter_table_button = QPushButton(self.frame)
+        self.filter_table_button.setObjectName(u"filter_table_button")
+
+        self.horizontalLayout.addWidget(self.filter_table_button)
+
+        self.populate_table_button = QPushButton(self.frame)
+        self.populate_table_button.setObjectName(u"populate_table_button")
+
+        self.horizontalLayout.addWidget(self.populate_table_button)
+
+
+        self.verticalLayout_2.addWidget(self.frame)
+
+        self.verticalLayout_2.setStretch(0, 99)
+        self.verticalLayout_2.setStretch(1, 1)
+        self.verticalLayout_2.setStretch(2, 1)
 
         self.gridLayout_4.addWidget(self.right_frame, 0, 2, 1, 1)
 
@@ -1383,6 +1430,9 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
         ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
+        self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))
+        self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
         self.add_customer_label.setText(QCoreApplication.translate("MainWindow", u"Nova Mu\u0161terija", None))
         self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
         self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
