@@ -1,10 +1,11 @@
 from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
 import sqlite3 as sql3
 
-class DataManager():
+
+class DataManager:
     def __init__(self) -> None:
-        self.db_link:sql3.Connection
-        self.db_cursor:sql3.Cursor
+        self.db_link: sql3.Connection
+        self.db_cursor: sql3.Cursor
         self.database = None
 
     def db_connect(self, database):
@@ -15,23 +16,28 @@ class DataManager():
         self.db_link.commit()
         self.db_link.close()
 
-    def db_create_table(self, table:str, fields:list):
+    def db_create_table(self, table: str, fields: list):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(f'CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, {fields[1]} STRING, {fields[2]} STRING, {fields[3]} STRING, {fields[4]} STRING, {fields[5]} STRING, {fields[6]} STRING)')
+        self.db_cursor.execute(
+            f"CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, {fields[1]} STRING, {fields[2]} STRING, {fields[3]} STRING, {fields[4]} STRING, {fields[5]} STRING, {fields[6]} STRING)"
+        )
         self.db_disconnect()
 
-    def db_insert_customer(self, table:str, customer:list):
+    def db_insert_customer(self, table: str, customer: list):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(f'INSERT INTO {table} (name, surname, phone, vehicle, plates, chasis) values (?,?,?,?,?,?)', customer)
+        self.db_cursor.execute(
+            f"INSERT INTO {table} (name, surname, phone, vehicle, plates, chasis) values (?,?,?,?,?,?)",
+            customer,
+        )
         self.db_disconnect()
 
-    def populate_customer_table(self, table:str, table_widget:QTableWidget):
+    def populate_customer_table(self, table: str, table_widget: QTableWidget):
         self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(f'SELECT * FROM {table}')
+        self.db_cursor.execute(f"SELECT * FROM {table}")
         rows = self.db_cursor.fetchall()
         selected_row = 0
         for row in rows:
@@ -43,11 +49,11 @@ class DataManager():
             table_widget.insertRow(selected_row)
         self.db_disconnect()
 
-    def clear_customer_table(self, table_widget:QTableWidget):
+    def clear_customer_table(self, table_widget: QTableWidget):
         # table_widget.clear()
-        for i in range(table_widget.rowCount(),0,-1):
+        for i in range(table_widget.rowCount(), 0, -1):
             table_widget.removeRow(i)
-        table_widget.setItem(0, 0, QTableWidgetItem(''))
-        table_widget.setItem(0, 1, QTableWidgetItem(''))
-        table_widget.setItem(0, 2, QTableWidgetItem(''))
-        table_widget.setItem(0, 3, QTableWidgetItem(''))
+        table_widget.setItem(0, 0, QTableWidgetItem(""))
+        table_widget.setItem(0, 1, QTableWidgetItem(""))
+        table_widget.setItem(0, 2, QTableWidgetItem(""))
+        table_widget.setItem(0, 3, QTableWidgetItem(""))
