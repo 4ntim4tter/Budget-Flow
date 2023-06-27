@@ -15,10 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QFormLayout, QFrame, QGridLayout,
-    QHBoxLayout, QHeaderView, QLabel, QLineEdit,
-    QMainWindow, QPushButton, QSizePolicy, QStatusBar,
-    QTableWidget, QTableWidgetItem, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFormLayout, QFrame,
+    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
+    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
+    QStatusBar, QTableWidget, QTableWidgetItem, QVBoxLayout,
+    QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1094,6 +1095,7 @@ class Ui_MainWindow(object):
         self.customer_table.setFont(font1)
         self.customer_table.setFrameShape(QFrame.NoFrame)
         self.customer_table.setAutoScrollMargin(2)
+        self.customer_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.customer_table.setTextElideMode(Qt.ElideMiddle)
         self.customer_table.setShowGrid(True)
         self.customer_table.setGridStyle(Qt.SolidLine)

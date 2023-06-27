@@ -1,18 +1,13 @@
-from PyQt6.QtWidgets import QLineEdit
+from PyQt6.QtWidgets import QLineEdit, QWidget
 from customer import Customer
+from database_management import DataManager
 
 
 class WindowOperator:
     def __init__(self) -> None:
         pass
 
-    def wipe_entered_data(
-        self, widget
-    ):  # changed form visibility modification to deletion of entered data
-        # if widget.isHidden():
-        #     widget.show()
-        # else:
-        #     widget.hide()
+    def wipe_entered_data(self, widget):
         widgets = widget.children()
         for child in widgets:
             if isinstance(child, QLineEdit):
@@ -20,6 +15,12 @@ class WindowOperator:
                 child.setText("")
                 child.setInputMask("")
                 child.setPlaceholderText(p_text)
+
+    def store_entered_data(self, table: str, customer: list, entry_widget:QWidget, popup_window:QWidget):
+        db_manager = DataManager("table.db")
+        accepted = db_manager.db_insert_customer(table, customer, entry_widget, popup_window)
+        if accepted:
+            self.wipe_entered_data(entry_widget)
 
     def hide_opened(self, widget):
         for item in widget:

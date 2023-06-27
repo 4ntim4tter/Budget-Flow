@@ -16,7 +16,31 @@
         "documentation": {}
     },
     {
+        "label": "QWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "QApplication",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMessageBox",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
         "isExtraImport": true,
@@ -29,6 +53,22 @@
         "description": "PyQt6.QtWidgets",
         "isExtraImport": true,
         "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "PopupModule",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
         "documentation": {}
     },
     {
@@ -70,6 +110,14 @@
         "description": "window_operator",
         "isExtraImport": true,
         "detail": "window_operator",
+        "documentation": {}
+    },
+    {
+        "label": "DataManager",
+        "importPath": "database_management",
+        "description": "database_management",
+        "isExtraImport": true,
+        "detail": "database_management",
         "documentation": {}
     },
     {
@@ -305,6 +353,14 @@
         "documentation": {}
     },
     {
+        "label": "QAbstractItemView",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "QApplication",
         "importPath": "PySide6.QtWidgets",
         "description": "PySide6.QtWidgets",
@@ -454,7 +510,7 @@
         "kind": 6,
         "importPath": "database_management",
         "description": "database_management",
-        "peekOfCode": "class DataManager:\n    def __init__(self) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = None\n    def db_connect(self, database):\n        self.database = database\n        self.db_link = sql3.connect(database)\n    def db_disconnect(self):\n        self.db_link.commit()",
+        "peekOfCode": "class DataManager:\n    def __init__(self, database:str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        self.database = database",
         "detail": "database_management",
         "documentation": {}
     },
@@ -499,7 +555,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([])\nwindow = Window()\nform = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
+        "peekOfCode": "app = QApplication([])\nwindow = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
         "detail": "main",
         "documentation": {}
     },
@@ -508,7 +564,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
+        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
         "detail": "main",
         "documentation": {}
     },
@@ -517,16 +573,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "form = Form()\nform.setupUi(window)\nentry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)",
-        "detail": "main",
-        "documentation": {}
-    },
-    {
-        "label": "entry_window",
-        "kind": 5,
-        "importPath": "main",
-        "description": "main",
-        "peekOfCode": "entry_window = WindowOperator()\ndb_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
+        "peekOfCode": "form = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)",
         "detail": "main",
         "documentation": {}
     },
@@ -535,7 +582,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "db_manager = DataManager()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window",
+        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "entry_window",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window",
         "detail": "main",
         "documentation": {}
     },
@@ -544,7 +600,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets",
+        "peekOfCode": "new_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(",
         "detail": "main",
         "documentation": {}
     },
@@ -553,8 +609,17 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.hide_opened(form.centralwidget.children())) #hides all shown widgets\n# form.action_open_customer_entry_box.triggered.connect(lambda: entry_window.window_visibility(new_customer_window))",
+        "peekOfCode": "new_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(\n    lambda: entry_window.wipe_entered_data(new_customer_window)",
         "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "PopupModule",
+        "kind": 6,
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "peekOfCode": "class PopupModule:\n    def __init__(self, yes: str, no: str, title: str, question: str) -> None:\n        self.yes = yes\n        self.no = no\n        self.title = title\n        self.question = question\n        self.style = \"\"\"QMessageBox {\n                background-color: #333333;\n            }\n            QPushButton {",
+        "detail": "popup_module",
         "documentation": {}
     },
     {
@@ -571,7 +636,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        pass\n    def wipe_entered_data(\n        self, widget\n    ):  # changed form visibility modification to deletion of entered data\n        # if widget.isHidden():\n        #     widget.show()\n        # else:\n        #     widget.hide()",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        pass\n    def wipe_entered_data(self, widget):\n        widgets = widget.children()\n        for child in widgets:\n            if isinstance(child, QLineEdit):\n                p_text = child.placeholderText()\n                child.setText(\"\")\n                child.setInputMask(\"\")",
         "detail": "window_operator",
         "documentation": {}
     }

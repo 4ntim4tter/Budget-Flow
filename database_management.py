@@ -1,12 +1,17 @@
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QWidget
+from popup_module import PopupModule
+
 import sqlite3 as sql3
 
 
 class DataManager:
-    def __init__(self) -> None:
+    def __init__(self, database:str) -> None:
         self.db_link: sql3.Connection
         self.db_cursor: sql3.Cursor
-        self.database = None
+        self.database = database
+        self.popup_module = PopupModule(
+            "Yes", "No", "Unos Mušterije", "Da li želite unijeti mušteriju?"
+        )
 
     def db_connect(self, database):
         self.database = database
@@ -24,14 +29,18 @@ class DataManager:
         )
         self.db_disconnect()
 
-    def db_insert_customer(self, table: str, customer: list):
-        self.db_connect(self.database)
-        self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(
-            f"INSERT INTO {table} (name, surname, phone, vehicle, plates, chasis) values (?,?,?,?,?,?)",
-            customer,
-        )
-        self.db_disconnect()
+    def db_insert_customer(self, table: str, customer: list, entry_widget:QWidget, popup_window:QWidget):
+        answer = self.popup_module.confirmation_dialog(popup_window)
+        if answer:
+            self.db_connect(self.database)
+            self.db_cursor = self.db_link.cursor()
+            self.db_cursor.execute(
+                f"INSERT INTO {table} (name, surname, phone, vehicle, plates, chasis) values (?,?,?,?,?,?)",
+                customer,
+            )
+            self.db_disconnect()
+            return True
+
 
     def populate_customer_table(self, table: str, table_widget: QTableWidget):
         self.clear_customer_table(table_widget)

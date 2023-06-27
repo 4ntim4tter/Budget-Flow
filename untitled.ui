@@ -1090,6 +1090,9 @@ QProgressBar::chunk
          <property name="autoScrollMargin">
           <number>2</number>
          </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
          <property name="textElideMode">
           <enum>Qt::ElideMiddle</enum>
          </property>
