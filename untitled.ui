@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>1274</width>
-    <height>727</height>
+    <height>729</height>
    </rect>
   </property>
   <property name="font">
@@ -1260,6 +1260,13 @@ QProgressBar::chunk
           <property name="bottomMargin">
            <number>1</number>
           </property>
+          <item>
+           <widget class="QPushButton" name="delete_selected_table_button">
+            <property name="text">
+             <string>Obriši</string>
+            </property>
+           </widget>
+          </item>
           <item>
            <widget class="QPushButton" name="clear_table_button">
             <property name="text">

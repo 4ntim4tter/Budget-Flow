@@ -31,7 +31,10 @@ form.cancel_new_customer_button.clicked.connect(
 )
 form.save_new_customer_button.clicked.connect(
     lambda: entry_window.store_entered_data(
-        "customers", entry_window.get_customer_values(form), new_customer_window, form.centralwidget
+        "customers",
+        entry_window.get_customer_values(form),
+        new_customer_window,
+        form.centralwidget,
     )
 )
 
@@ -46,6 +49,10 @@ form.populate_table_button.clicked.connect(
 )
 form.clear_table_button.clicked.connect(
     lambda: db_manager.clear_customer_table(form.customer_table)
+)
+
+form.delete_selected_table_button.clicked.connect(
+    lambda: db_manager.delete_selected_customer("customers", form.customer_table)
 )
 
 

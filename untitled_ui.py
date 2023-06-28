@@ -26,7 +26,7 @@ class Ui_MainWindow(object):
         if not MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.setWindowModality(Qt.NonModal)
-        MainWindow.resize(1274, 727)
+        MainWindow.resize(1274, 729)
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(9)
@@ -1142,6 +1142,11 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(1)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setContentsMargins(1, 1, 1, 1)
+        self.delete_selected_table_button = QPushButton(self.frame)
+        self.delete_selected_table_button.setObjectName(u"delete_selected_table_button")
+
+        self.horizontalLayout.addWidget(self.delete_selected_table_button)
+
         self.clear_table_button = QPushButton(self.frame)
         self.clear_table_button.setObjectName(u"clear_table_button")
 
@@ -1432,6 +1437,7 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
         ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
         self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
         self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))
         self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))

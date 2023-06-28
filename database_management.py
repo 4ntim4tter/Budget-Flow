@@ -5,7 +5,7 @@ import sqlite3 as sql3
 
 
 class DataManager:
-    def __init__(self, database:str) -> None:
+    def __init__(self, database: str) -> None:
         self.db_link: sql3.Connection
         self.db_cursor: sql3.Cursor
         self.database = database
@@ -29,7 +29,7 @@ class DataManager:
         )
         self.db_disconnect()
 
-    def db_insert_customer(self, table: str, customer: list, entry_widget:QWidget, popup_window:QWidget):
+    def db_insert_customer(self, table: str, customer: list, popup_window: QWidget):
         answer = self.popup_module.confirmation_dialog(popup_window)
         if answer:
             self.db_connect(self.database)
@@ -41,28 +41,30 @@ class DataManager:
             self.db_disconnect()
             return True
 
-
     def populate_customer_table(self, table: str, table_widget: QTableWidget):
         self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(f"SELECT * FROM {table}")
         rows = self.db_cursor.fetchall()
-        selected_row = 0
-        for row in rows:
-            table_widget.setItem(selected_row, 0, QTableWidgetItem(row[1]))
-            table_widget.setItem(selected_row, 1, QTableWidgetItem(row[2]))
-            table_widget.setItem(selected_row, 2, QTableWidgetItem(row[3]))
-            table_widget.setItem(selected_row, 3, QTableWidgetItem(row[4]))
-            selected_row += 1
-            table_widget.insertRow(selected_row)
+        for index, row in enumerate(rows):
+            for i in range(4):
+                table_widget.setItem(index, i, QTableWidgetItem(row[i+1]))
+            table_widget.insertRow(index+1)
         self.db_disconnect()
 
+    def delete_selected_customer(self, table: str, table_widget: QTableWidget):
+        if table_widget.currentItem() is not None:
+            selected_row = table_widget.currentItem().row()+1
+            self.db_connect(self.database)
+            self.db_cursor = self.db_link.cursor()
+            self.db_cursor.execute(f"DELETE FROM {table} WHERE rowid IN (SELECT rowid FROM {table} ORDER BY rowid LIMIT ?, 1)", (selected_row-1,))
+            self.db_disconnect()
+            self.populate_customer_table(table, table_widget)
+
     def clear_customer_table(self, table_widget: QTableWidget):
-        # table_widget.clear()
         for i in range(table_widget.rowCount(), 0, -1):
             table_widget.removeRow(i)
-        table_widget.setItem(0, 0, QTableWidgetItem(""))
-        table_widget.setItem(0, 1, QTableWidgetItem(""))
-        table_widget.setItem(0, 2, QTableWidgetItem(""))
-        table_widget.setItem(0, 3, QTableWidgetItem(""))
+
+        for i in range(4):
+            table_widget.setItem(0, i, QTableWidgetItem(""))

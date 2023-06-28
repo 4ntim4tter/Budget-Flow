@@ -510,7 +510,7 @@
         "kind": 6,
         "importPath": "database_management",
         "description": "database_management",
-        "peekOfCode": "class DataManager:\n    def __init__(self, database:str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        self.database = database",
+        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        self.database = database",
         "detail": "database_management",
         "documentation": {}
     },
@@ -519,7 +519,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "db_connection = sqlite3.connect('table.db')\ncursor = db_connection.cursor()\ncursor.execute('DELETE FROM customers')\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(50):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text='###-###-###')\n    vehicle = fake.vehicle_model()",
+        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -528,7 +528,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute('DELETE FROM customers')\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(50):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text='###-###-###')\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text='###-#-???')",
+        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -537,7 +537,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(50):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text='###-###-###')\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text='###-#-???')\n    chasis = fake.bothify(text='???###?##??#?#?#??#')\n    cursor.execute(\"INSERT INTO customers (name, surname, phone, vehicle, plates, chasis) VALUES (?, ?, ?, ?, ?, ?)\", (name, surname, phone, vehicle, plates, chasis))",
+        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    # cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -627,7 +627,7 @@
         "kind": 6,
         "importPath": "untitled_ui",
         "description": "untitled_ui",
-        "peekOfCode": "class Ui_MainWindow(object):\n    def setupUi(self, MainWindow):\n        if not MainWindow.objectName():\n            MainWindow.setObjectName(u\"MainWindow\")\n        MainWindow.setWindowModality(Qt.NonModal)\n        MainWindow.resize(1274, 727)\n        font = QFont()\n        font.setFamilies([u\"Arial\"])\n        font.setPointSize(9)\n        font.setBold(True)",
+        "peekOfCode": "class Ui_MainWindow(object):\n    def setupUi(self, MainWindow):\n        if not MainWindow.objectName():\n            MainWindow.setObjectName(u\"MainWindow\")\n        MainWindow.setWindowModality(Qt.NonModal)\n        MainWindow.resize(1274, 729)\n        font = QFont()\n        font.setFamilies([u\"Arial\"])\n        font.setPointSize(9)\n        font.setBold(True)",
         "detail": "untitled_ui",
         "documentation": {}
     },

@@ -16,9 +16,11 @@ class WindowOperator:
                 child.setInputMask("")
                 child.setPlaceholderText(p_text)
 
-    def store_entered_data(self, table: str, customer: list, entry_widget:QWidget, popup_window:QWidget):
+    def store_entered_data(
+        self, table: str, customer: list, entry_widget: QWidget, popup_window: QWidget
+    ):
         db_manager = DataManager("table.db")
-        accepted = db_manager.db_insert_customer(table, customer, entry_widget, popup_window)
+        accepted = db_manager.db_insert_customer(table, customer, popup_window)
         if accepted:
             self.wipe_entered_data(entry_widget)
 
