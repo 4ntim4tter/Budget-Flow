@@ -47,3 +47,6 @@ class WindowOperator:
                 old.setInputMask("NNN-N-NNN")
             if old.placeholderText() == "Telefon":
                 old.setInputMask("999-999-999")
+
+    def search_for_customer(self, widget):
+        pass

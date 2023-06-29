@@ -537,7 +537,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    # cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
+        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -555,7 +555,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([])\nwindow = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
+        "peekOfCode": "app = QApplication([])\nwindow = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
         "detail": "main",
         "documentation": {}
     },
@@ -564,7 +564,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
+        "peekOfCode": "window = Window()\nform = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
         "detail": "main",
         "documentation": {}
     },
@@ -573,7 +573,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "form = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)",
+        "peekOfCode": "form = Form()\nform.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)",
         "detail": "main",
         "documentation": {}
     },
@@ -582,7 +582,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
+        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
         "detail": "main",
         "documentation": {}
     },
@@ -591,7 +591,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window",
+        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window",
         "detail": "main",
         "documentation": {}
     },
@@ -600,16 +600,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_window = form.customer_entry_box\nnew_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(",
+        "peekOfCode": "new_customer_window = form.customer_entry_box\ncustomer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "new_customer_search_window",
+        "label": "customer_search_window",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(\n    lambda: entry_window.wipe_entered_data(new_customer_window)",
+        "peekOfCode": "customer_search_window = form.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nform.cancel_new_customer_button.clicked.connect(\n    lambda: entry_window.wipe_entered_data(new_customer_window)",
         "detail": "main",
         "documentation": {}
     },

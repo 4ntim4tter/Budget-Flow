@@ -15,7 +15,7 @@ form.setupUi(window)
 db_manager = DataManager("table.db")
 entry_window = WindowOperator()
 new_customer_window = form.customer_entry_box
-new_customer_search_window = form.customer_search_box
+customer_search_window = form.customer_search_box
 
 db_manager.db_connect("table.db")
 db_manager.db_create_table(
@@ -40,7 +40,11 @@ form.save_new_customer_button.clicked.connect(
 
 # Customer Search Window
 form.cancel_search_customer_button.clicked.connect(
-    lambda: entry_window.wipe_entered_data(new_customer_search_window)
+    lambda: entry_window.wipe_entered_data(customer_search_window)
+)
+
+form.search_customer_button.clicked.connect(
+    lambda: entry_window.search_for_customer(customer_search_window)
 )
 
 # Customer Table
