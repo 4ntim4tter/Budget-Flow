@@ -17,7 +17,7 @@ for _ in range(10):
     vehicle = fake.vehicle_model()
     plates = fake.bothify(text="###-#-???")
     chasis = fake.bothify(text="???###?##??#?#?#??#")
-    # cursor.execute("DELETE FROM sqlite_sequence WHERE name = 'customers'")
+    cursor.execute("DELETE FROM sqlite_sequence WHERE name = 'customers'")
     cursor.execute(
         "INSERT INTO customers (name, surname, phone, vehicle, plates, chasis) VALUES (?, ?, ?, ?, ?, ?)",
         (name, surname, phone, vehicle, plates, chasis),

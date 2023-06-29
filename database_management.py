@@ -49,16 +49,19 @@ class DataManager:
         rows = self.db_cursor.fetchall()
         for index, row in enumerate(rows):
             for i in range(4):
-                table_widget.setItem(index, i, QTableWidgetItem(row[i+1]))
-            table_widget.insertRow(index+1)
+                table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
+            table_widget.insertRow(index + 1)
         self.db_disconnect()
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
         if table_widget.currentItem() is not None:
-            selected_row = table_widget.currentItem().row()+1
+            selected_row = table_widget.currentItem().row() + 1
             self.db_connect(self.database)
             self.db_cursor = self.db_link.cursor()
-            self.db_cursor.execute(f"DELETE FROM {table} WHERE rowid IN (SELECT rowid FROM {table} ORDER BY rowid LIMIT ?, 1)", (selected_row-1,))
+            self.db_cursor.execute(
+                f"DELETE FROM {table} WHERE rowid IN (SELECT rowid FROM {table} ORDER BY rowid LIMIT ?, 1)",
+                (selected_row - 1,),
+            )
             self.db_disconnect()
             self.populate_customer_table(table, table_widget)
 
