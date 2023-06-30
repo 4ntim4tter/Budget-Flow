@@ -42,19 +42,17 @@ form.save_new_customer_button.clicked.connect(
 form.cancel_search_customer_button.clicked.connect(
     lambda: entry_window.wipe_entered_data(customer_search_window)
 )
-
 form.search_customer_button.clicked.connect(
-    lambda: entry_window.search_for_customer(customer_search_window)
+    lambda: entry_window.search_for_customer("customers", form.customer_table, form)
 )
 
 # Customer Table
 form.populate_table_button.clicked.connect(
-    lambda: db_manager.populate_customer_table("customers", form.customer_table)
+    lambda: db_manager.populate_customer_table("customers", form.customer_table, (), '')
 )
 form.clear_table_button.clicked.connect(
     lambda: db_manager.clear_customer_table(form.customer_table)
 )
-
 form.delete_selected_table_button.clicked.connect(
     lambda: db_manager.delete_selected_customer("customers", form.customer_table)
 )

@@ -41,17 +41,36 @@ class DataManager:
             self.db_disconnect()
             return True
 
-    def populate_customer_table(self, table: str, table_widget: QTableWidget):
+    def db_customer_interaction(self, table, table_widget:QTableWidget, search_params:tuple, query_string:str):
         self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(f"SELECT * FROM {table}")
+        if search_params == () or query_string == '':
+            self.db_cursor.execute(f"SELECT * FROM {table}")
+        else:
+            print(query_string, search_params)
+            self.db_cursor.execute(
+            f"SELECT * FROM {table} {query_string}", search_params,
+        )
         rows = self.db_cursor.fetchall()
+        self.db_disconnect()
+        return rows
+        
+    def populate_customer_table(self, table: str, table_widget: QTableWidget, search_params:tuple, query_string:str):
+        rows = self.db_customer_interaction(table, table_widget, search_params, query_string)
         for index, row in enumerate(rows):
             for i in range(4):
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
             table_widget.insertRow(index + 1)
-        self.db_disconnect()
+
+    def search_customers_populate_table(
+        self, table: str, table_widget: QTableWidget, search_params:tuple, query_string:str
+    ):
+        rows = self.db_customer_interaction(table, table_widget, search_params, query_string)
+        for index, row in enumerate(rows):
+            for i in range(4):
+                table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
+            table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
         if table_widget.currentItem() is not None:
@@ -63,7 +82,7 @@ class DataManager:
                 (selected_row - 1,),
             )
             self.db_disconnect()
-            self.populate_customer_table(table, table_widget)
+            self.populate_customer_table(table, table_widget, (), '')
 
     def clear_customer_table(self, table_widget: QTableWidget):
         for i in range(table_widget.rowCount(), 0, -1):
