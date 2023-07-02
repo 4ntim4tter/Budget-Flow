@@ -64,6 +64,14 @@
         "documentation": {}
     },
     {
+        "label": "QTableWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "PopupModule",
         "importPath": "popup_module",
         "description": "popup_module",
@@ -489,6 +497,14 @@
         "documentation": {}
     },
     {
+        "label": "S",
+        "importPath": "re",
+        "description": "re",
+        "isExtraImport": true,
+        "detail": "re",
+        "documentation": {}
+    },
+    {
         "label": "Customer",
         "importPath": "customer",
         "description": "customer",
@@ -636,7 +652,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        pass\n    def wipe_entered_data(self, widget):\n        widgets = widget.children()\n        for child in widgets:\n            if isinstance(child, QLineEdit):\n                p_text = child.placeholderText()\n                child.setText(\"\")\n                child.setInputMask(\"\")",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n    def wipe_entered_data(self, widget):\n        widgets = widget.children()\n        for child in widgets:\n            if isinstance(child, QLineEdit):\n                p_text = child.placeholderText()\n                child.setText(\"\")\n                child.setInputMask(\"\")",
         "detail": "window_operator",
         "documentation": {}
     }

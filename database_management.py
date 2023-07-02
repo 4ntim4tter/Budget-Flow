@@ -61,6 +61,7 @@ class DataManager:
         for index, row in enumerate(rows):
             for i in range(4):
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
+            table_widget.setItem(index, 4, QTableWidgetItem(f'{row[0]}'))
             table_widget.insertRow(index + 1)
 
     def search_customers_populate_table(
@@ -70,16 +71,17 @@ class DataManager:
         for index, row in enumerate(rows):
             for i in range(4):
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
+            table_widget.setItem(index, 4, QTableWidgetItem(f'{row[0]}'))
             table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
-        if table_widget.currentItem() is not None:
-            selected_row = table_widget.currentItem().row() + 1
+        if table_widget.selectedItems() != [] and table_widget.selectedItems() is not None:
+            selected_row = table_widget.selectedItems()
             self.db_connect(self.database)
             self.db_cursor = self.db_link.cursor()
             self.db_cursor.execute(
-                f"DELETE FROM {table} WHERE rowid IN (SELECT rowid FROM {table} ORDER BY rowid LIMIT ?, 1)",
-                (selected_row - 1,),
+                f"DELETE FROM {table} WHERE id = ?",
+                (selected_row[4].text()),
             )
             self.db_disconnect()
             self.populate_customer_table(table, table_widget, (), '')
@@ -88,5 +90,5 @@ class DataManager:
         for i in range(table_widget.rowCount(), 0, -1):
             table_widget.removeRow(i)
 
-        for i in range(4):
+        for i in range(5):
             table_widget.setItem(0, i, QTableWidgetItem(""))

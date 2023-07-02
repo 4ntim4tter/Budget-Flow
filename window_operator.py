@@ -20,7 +20,6 @@ class WindowOperator:
     def store_entered_data(
         self, table: str, customer: list, entry_widget: QWidget, popup_window: QWidget
     ):
-
         accepted = self.db_manager.db_insert_customer(table, customer, popup_window)
         if accepted:
             self.wipe_entered_data(entry_widget)
@@ -49,7 +48,7 @@ class WindowOperator:
             if old.placeholderText() == "Telefon":
                 old.setInputMask("999-999-999")
 
-    def search_for_customer(self, table:str, table_widget: QTableWidget,  widget):
+    def search_for_customer(self, table: str, table_widget: QTableWidget, widget):
         customer = Customer(
             widget.search_customer_name.text(),
             widget.search_customer_surname.text(),
@@ -59,37 +58,51 @@ class WindowOperator:
             widget.search_customer_chasis.text(),
         )
         temporary_params = []
-        query = ['name LIKE ?' , 'surname LIKE ?' , 'phone LIKE ?' , 'vehicle LIKE ?' , 'plates LIKE ?' , 'chasis LIKE ?' ]
+        query = [
+            "name LIKE ?",
+            "surname LIKE ?",
+            "phone LIKE ?",
+            "vehicle LIKE ?",
+            "plates LIKE ?",
+            "chasis LIKE ?",
+        ]
         for index, item in enumerate(customer.get_data()):
-            if item != '' or item != None or item != '--':
+            if item != "" or item != None or item != "--":
                 temporary_params.append(item)
-            if item == '' or item == None or item == '--':
-                query[index] = ''
+            if item == "" or item == None or item == "--":
+                query[index] = ""
 
         search_param = []
-        query_string = ''
+        query_string = ""
         for index in range(len(temporary_params)):
-            if temporary_params[index] != '':
+            if temporary_params[index] != "":
                 match index:
                     case 2:
-                        if len(temporary_params[index].replace('-','')) < 4:
-                            search_param.append('%'+temporary_params[index].replace('-','')+'%')
+                        if len(temporary_params[index].replace("-", "")) < 4:
+                            search_param.append(
+                                "%" + temporary_params[index].replace("-", "") + "%"
+                            )
                         else:
                             search_param.append(temporary_params[index])
                     case 4:
-                        if len(temporary_params[index].replace('-','')) < 4:
-                            search_param.append('%'+temporary_params[index].replace('-','')+'%')
+                        if len(temporary_params[index].replace("-", "")) < 4:
+                            search_param.append(
+                                "%" + temporary_params[index].replace("-", "") + "%"
+                            )
                         else:
                             search_param.append(temporary_params[index])
                     case _:
                         search_param.append(temporary_params[index])
-                query_string += query[index] + ' OR '
-                
-        query_string = 'WHERE ' + query_string
-        
-        print(tuple(search_param))
-        print(query_string[:-4])
-        self.db_manager.search_customers_populate_table(table, table_widget, tuple(search_param), query_string[:-4])
+                query_string += query[index] + " OR "
 
+        query_string = "WHERE " + query_string
 
+        self.db_manager.search_customers_populate_table(
+            table, table_widget, tuple(search_param), query_string[:-4]
+        )
 
+    def select_customer_from_table(self, item):
+        """
+        docstring
+        """
+        print('gottem', item.text())

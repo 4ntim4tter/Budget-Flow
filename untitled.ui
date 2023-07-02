@@ -1093,6 +1093,9 @@ QProgressBar::chunk
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
          <property name="textElideMode">
           <enum>Qt::ElideMiddle</enum>
          </property>
@@ -1190,6 +1193,18 @@ QProgressBar::chunk
          <column>
           <property name="text">
            <string>Vozilo</string>
+          </property>
+          <property name="font">
+           <font>
+            <family>Arial</family>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>ID</string>
           </property>
           <property name="font">
            <font>

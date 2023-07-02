@@ -1065,8 +1065,8 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.verticalLayout_2.setContentsMargins(1, 1, 1, 1)
         self.customer_table = QTableWidget(self.right_frame)
-        if (self.customer_table.columnCount() < 5):
-            self.customer_table.setColumnCount(5)
+        if (self.customer_table.columnCount() < 6):
+            self.customer_table.setColumnCount(6)
         font1 = QFont()
         font1.setFamilies([u"Arial"])
         font1.setBold(True)
@@ -1083,7 +1083,10 @@ class Ui_MainWindow(object):
         __qtablewidgetitem3.setFont(font1);
         self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setFont(font1);
         self.customer_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        self.customer_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         if (self.customer_table.rowCount() < 1):
             self.customer_table.setRowCount(1)
         self.customer_table.setObjectName(u"customer_table")
@@ -1096,6 +1099,7 @@ class Ui_MainWindow(object):
         self.customer_table.setFrameShape(QFrame.NoFrame)
         self.customer_table.setAutoScrollMargin(2)
         self.customer_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.customer_table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.customer_table.setTextElideMode(Qt.ElideMiddle)
         self.customer_table.setShowGrid(True)
         self.customer_table.setGridStyle(Qt.SolidLine)
@@ -1437,6 +1441,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
         ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
         ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        ___qtablewidgetitem4 = self.customer_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
         self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
         self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))

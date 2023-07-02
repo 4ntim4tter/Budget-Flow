@@ -57,6 +57,9 @@ form.delete_selected_table_button.clicked.connect(
     lambda: db_manager.delete_selected_customer("customers", form.customer_table)
 )
 
+form.customer_table.itemDoubleClicked.connect(
+    entry_window.select_customer_from_table
+)
 
 def main():
     window.show()
