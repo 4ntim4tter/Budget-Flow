@@ -535,7 +535,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
+        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -544,7 +544,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")",
+        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -553,7 +553,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(10):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
+        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },

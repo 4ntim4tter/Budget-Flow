@@ -47,7 +47,6 @@ class DataManager:
         self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        print(search_params, query_string)
         if search_params == () or query_string == "" or query_string == "WH":
             self.db_cursor.execute(f"SELECT * FROM {table}")
         else:
@@ -101,10 +100,11 @@ class DataManager:
             self.db_cursor = self.db_link.cursor()
             self.db_cursor.execute(
                 f"DELETE FROM {table} WHERE id = ?",
-                (selected_row[4].text()),
+                (selected_row[4].text(),),
             )
             self.db_disconnect()
-            self.populate_customer_table(table, table_widget, (), "")
+            table_widget.removeRow(table_widget.currentRow())
+            # self.populate_customer_table(table, table_widget, (), "")
 
     def clear_customer_table(self, table_widget: QTableWidget):
         for i in range(table_widget.rowCount(), 0, -1):

@@ -58,7 +58,7 @@ class WindowOperator:
             widget.search_customer_chasis.text(),
         )
         temporary_params = []
-        query = [
+        all_queries = [
             "name LIKE ?",
             "surname LIKE ?",
             "phone LIKE ?",
@@ -66,11 +66,11 @@ class WindowOperator:
             "plates LIKE ?",
             "chasis LIKE ?",
         ]
+        query = []
         for index, item in enumerate(customer.get_data()):
             if item != "" and item != None and item != "--":
                 temporary_params.append(item)
-            if item == "" or item == None or item == "--":
-                query[index] = ""
+                query.append(all_queries[index])
 
         search_param = []
         query_string = ""
@@ -80,7 +80,6 @@ class WindowOperator:
                 for part in item.split('-'):
                     if part != '':
                         temp += (part + "%")
-            
             if temp != "%":
                 search_param.append(temp)
                 query_string += query[index] + " OR "            
@@ -89,7 +88,6 @@ class WindowOperator:
                 query_string += query[index] + " OR "
 
         query_string = "WHERE " + query_string
-
         self.db_manager.search_customers_populate_table(
             table, table_widget, tuple(search_param), query_string[:-4]
         )
