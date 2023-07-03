@@ -67,32 +67,25 @@ class WindowOperator:
             "chasis LIKE ?",
         ]
         for index, item in enumerate(customer.get_data()):
-            if item != "" or item != None or item != "--":
+            if item != "" and item != None and item != "--":
                 temporary_params.append(item)
             if item == "" or item == None or item == "--":
                 query[index] = ""
 
         search_param = []
         query_string = ""
-        for index in range(len(temporary_params)):
-            if temporary_params[index] != "":
-                match index:
-                    case 2:
-                        if len(temporary_params[index].replace("-", "")) < 4:
-                            search_param.append(
-                                "%" + temporary_params[index].replace("-", "") + "%"
-                            )
-                        else:
-                            search_param.append(temporary_params[index])
-                    case 4:
-                        if len(temporary_params[index].replace("-", "")) < 4:
-                            search_param.append(
-                                "%" + temporary_params[index].replace("-", "") + "%"
-                            )
-                        else:
-                            search_param.append(temporary_params[index])
-                    case _:
-                        search_param.append(temporary_params[index])
+        for index, item in enumerate(temporary_params):
+            temp = '%'
+            if len(item.split('-'))>1:
+                for part in item.split('-'):
+                    if part != '':
+                        temp += (part + "%")
+            
+            if temp != "%":
+                search_param.append(temp)
+                query_string += query[index] + " OR "            
+            elif item != "":
+                search_param.append(item)
                 query_string += query[index] + " OR "
 
         query_string = "WHERE " + query_string
@@ -105,4 +98,4 @@ class WindowOperator:
         """
         docstring
         """
-        print('gottem', item.text())
+        print("gottem", item.text())

@@ -41,41 +41,61 @@ class DataManager:
             self.db_disconnect()
             return True
 
-    def db_customer_interaction(self, table, table_widget:QTableWidget, search_params:tuple, query_string:str):
+    def db_customer_interaction(
+        self, table, table_widget: QTableWidget, search_params: tuple, query_string: str
+    ):
         self.clear_customer_table(table_widget)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        if search_params == () or query_string == '':
+        print(search_params, query_string)
+        if search_params == () or query_string == "" or query_string == "WH":
             self.db_cursor.execute(f"SELECT * FROM {table}")
         else:
-            print(query_string, search_params)
             self.db_cursor.execute(
-            f"SELECT * FROM {table} {query_string}", search_params,
-        )
+                f"SELECT * FROM {table} {query_string}",
+                search_params,
+            )
         rows = self.db_cursor.fetchall()
         self.db_disconnect()
         return rows
-        
-    def populate_customer_table(self, table: str, table_widget: QTableWidget, search_params:tuple, query_string:str):
-        rows = self.db_customer_interaction(table, table_widget, search_params, query_string)
+
+    def populate_customer_table(
+        self,
+        table: str,
+        table_widget: QTableWidget,
+        search_params: tuple,
+        query_string: str,
+    ):
+        rows = self.db_customer_interaction(
+            table, table_widget, search_params, query_string
+        )
         for index, row in enumerate(rows):
             for i in range(4):
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
-            table_widget.setItem(index, 4, QTableWidgetItem(f'{row[0]}'))
+            table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
 
     def search_customers_populate_table(
-        self, table: str, table_widget: QTableWidget, search_params:tuple, query_string:str
+        self,
+        table: str,
+        table_widget: QTableWidget,
+        search_params: tuple,
+        query_string: str,
     ):
-        rows = self.db_customer_interaction(table, table_widget, search_params, query_string)
+        rows = self.db_customer_interaction(
+            table, table_widget, search_params, query_string
+        )
         for index, row in enumerate(rows):
             for i in range(4):
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
-            table_widget.setItem(index, 4, QTableWidgetItem(f'{row[0]}'))
+            table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
-        if table_widget.selectedItems() != [] and table_widget.selectedItems() is not None:
+        if (
+            table_widget.selectedItems() != []
+            and table_widget.selectedItems() is not None
+        ):
             selected_row = table_widget.selectedItems()
             self.db_connect(self.database)
             self.db_cursor = self.db_link.cursor()
@@ -84,7 +104,7 @@ class DataManager:
                 (selected_row[4].text()),
             )
             self.db_disconnect()
-            self.populate_customer_table(table, table_widget, (), '')
+            self.populate_customer_table(table, table_widget, (), "")
 
     def clear_customer_table(self, table_widget: QTableWidget):
         for i in range(table_widget.rowCount(), 0, -1):

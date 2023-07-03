@@ -10,7 +10,7 @@ cursor.execute("DELETE FROM customers")
 fake = Faker()
 fake.add_provider(VehicleProvider)
 
-for _ in range(10):
+for _ in range(20):
     name = fake.first_name()
     surname = fake.last_name()
     phone = fake.bothify(text="###-###-###")
