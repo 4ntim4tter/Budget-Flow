@@ -1397,7 +1397,7 @@ QProgressBar::chunk
           <enum>QFrame::Panel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
+          <enum>QFrame::Raised</enum>
          </property>
          <property name="lineWidth">
           <number>5</number>
@@ -1662,7 +1662,7 @@ QProgressBar::chunk
           <enum>QFrame::Panel</enum>
          </property>
          <property name="frameShadow">
-          <enum>QFrame::Sunken</enum>
+          <enum>QFrame::Raised</enum>
          </property>
          <property name="lineWidth">
           <number>5</number>
@@ -1895,6 +1895,40 @@ QProgressBar::chunk
       <property name="midLineWidth">
        <number>5</number>
       </property>
+      <layout class="QVBoxLayout" name="verticalLayout_4" stretch="2,3">
+       <item>
+        <widget class="QFrame" name="user_data_frame">
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>5</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="user_work_orders_frame">
+         <property name="frameShape">
+          <enum>QFrame::Panel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>5</number>
+         </property>
+         <property name="midLineWidth">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
     </item>
    </layout>

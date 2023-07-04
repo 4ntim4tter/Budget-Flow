@@ -1208,7 +1208,7 @@ class Ui_MainWindow(object):
         self.customer_entry_box.setSizePolicy(sizePolicy2)
         self.customer_entry_box.setFont(font)
         self.customer_entry_box.setFrameShape(QFrame.Panel)
-        self.customer_entry_box.setFrameShadow(QFrame.Sunken)
+        self.customer_entry_box.setFrameShadow(QFrame.Raised)
         self.customer_entry_box.setLineWidth(5)
         self.customer_entry_box.setMidLineWidth(5)
         self.formLayout_2 = QFormLayout(self.customer_entry_box)
@@ -1312,7 +1312,7 @@ class Ui_MainWindow(object):
         self.customer_search_box.setFont(font)
         self.customer_search_box.setLayoutDirection(Qt.LeftToRight)
         self.customer_search_box.setFrameShape(QFrame.Panel)
-        self.customer_search_box.setFrameShadow(QFrame.Sunken)
+        self.customer_search_box.setFrameShadow(QFrame.Raised)
         self.customer_search_box.setLineWidth(5)
         self.customer_search_box.setMidLineWidth(5)
         self.formLayout_3 = QFormLayout(self.customer_search_box)
@@ -1408,6 +1408,28 @@ class Ui_MainWindow(object):
         self.middle_frame.setFrameShadow(QFrame.Sunken)
         self.middle_frame.setLineWidth(5)
         self.middle_frame.setMidLineWidth(5)
+        self.verticalLayout_4 = QVBoxLayout(self.middle_frame)
+        self.verticalLayout_4.setObjectName(u"verticalLayout_4")
+        self.user_data_frame = QFrame(self.middle_frame)
+        self.user_data_frame.setObjectName(u"user_data_frame")
+        self.user_data_frame.setFrameShape(QFrame.Panel)
+        self.user_data_frame.setFrameShadow(QFrame.Raised)
+        self.user_data_frame.setLineWidth(5)
+        self.user_data_frame.setMidLineWidth(5)
+
+        self.verticalLayout_4.addWidget(self.user_data_frame)
+
+        self.user_work_orders_frame = QFrame(self.middle_frame)
+        self.user_work_orders_frame.setObjectName(u"user_work_orders_frame")
+        self.user_work_orders_frame.setFrameShape(QFrame.Panel)
+        self.user_work_orders_frame.setFrameShadow(QFrame.Raised)
+        self.user_work_orders_frame.setLineWidth(5)
+        self.user_work_orders_frame.setMidLineWidth(5)
+
+        self.verticalLayout_4.addWidget(self.user_work_orders_frame)
+
+        self.verticalLayout_4.setStretch(0, 2)
+        self.verticalLayout_4.setStretch(1, 3)
 
         self.gridLayout_4.addWidget(self.middle_frame, 0, 1, 1, 1)
 
