@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget, QMessageBox
+from PyQt6.QtWidgets import QMessageBox
 
 
 class PopupModule:
@@ -21,7 +21,7 @@ class PopupModule:
             }
             """
 
-    def confirmation_dialog(self, popup_window: QWidget):
+    def confirmation_dialog(self):
         conf_dialog = QMessageBox()
         conf_dialog.setStyleSheet(self.style)
         conf_dialog.setWindowTitle(self.title)

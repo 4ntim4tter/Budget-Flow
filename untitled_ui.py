@@ -1722,17 +1722,53 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.frame_6)
 
+        self.line_10 = QFrame(self.frame_3)
+        self.line_10.setObjectName(u"line_10")
+        self.line_10.setFrameShape(QFrame.VLine)
+        self.line_10.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_10)
+
         self.horizontalLayout_4.setStretch(1, 2)
         self.horizontalLayout_4.setStretch(3, 8)
 
         self.horizontalLayout_2.addWidget(self.frame_3)
 
-        self.line_10 = QFrame(self.user_data_frame)
-        self.line_10.setObjectName(u"line_10")
-        self.line_10.setFrameShape(QFrame.VLine)
-        self.line_10.setFrameShadow(QFrame.Sunken)
+        self.frame_4 = QFrame(self.user_data_frame)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.add_receipt_button = QPushButton(self.frame_4)
+        self.add_receipt_button.setObjectName(u"add_receipt_button")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.add_receipt_button.sizePolicy().hasHeightForWidth())
+        self.add_receipt_button.setSizePolicy(sizePolicy5)
+        self.add_receipt_button.setFont(font)
+        self.add_receipt_button.setFlat(False)
 
-        self.horizontalLayout_2.addWidget(self.line_10)
+        self.verticalLayout_7.addWidget(self.add_receipt_button)
+
+        self.line_18 = QFrame(self.frame_4)
+        self.line_18.setObjectName(u"line_18")
+        self.line_18.setFrameShape(QFrame.HLine)
+        self.line_18.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_7.addWidget(self.line_18)
+
+        self.show_receipts_button = QPushButton(self.frame_4)
+        self.show_receipts_button.setObjectName(u"show_receipts_button")
+        sizePolicy5.setHeightForWidth(self.show_receipts_button.sizePolicy().hasHeightForWidth())
+        self.show_receipts_button.setSizePolicy(sizePolicy5)
+        self.show_receipts_button.setFont(font)
+
+        self.verticalLayout_7.addWidget(self.show_receipts_button)
+
+
+        self.horizontalLayout_2.addWidget(self.frame_4)
 
 
         self.verticalLayout_4.addWidget(self.user_data_frame)
@@ -1819,5 +1855,9 @@ class Ui_MainWindow(object):
         self.plates_text_data.setText("")
         self.chasis_text_data.setText("")
         self.id_text_data.setText("")
+        self.add_receipt_button.setText(QCoreApplication.translate("MainWindow", u"Svi\n"
+"Predra\u010duni", None))
+        self.show_receipts_button.setText(QCoreApplication.translate("MainWindow", u"Novi \n"
+"Predra\u010dun", None))
     # retranslateUi
 

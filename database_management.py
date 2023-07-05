@@ -29,8 +29,8 @@ class DataManager:
         )
         self.db_disconnect()
 
-    def db_insert_customer(self, table: str, customer: list, popup_window: QWidget):
-        answer = self.popup_module.confirmation_dialog(popup_window)
+    def db_insert_customer(self, table: str, customer: list):
+        answer = self.popup_module.confirmation_dialog()
         if answer:
             self.db_connect(self.database)
             self.db_cursor = self.db_link.cursor()

@@ -33,8 +33,7 @@ form.save_new_customer_button.clicked.connect(
     lambda: entry_window.store_entered_data(
         "customers",
         entry_window.get_customer_values(form),
-        new_customer_window,
-        form.centralwidget,
+        new_customer_window
     )
 )
 

@@ -32,14 +32,6 @@
         "documentation": {}
     },
     {
-        "label": "QWidget",
-        "importPath": "PyQt6.QtWidgets",
-        "description": "PyQt6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtWidgets",
-        "documentation": {}
-    },
-    {
         "label": "QMessageBox",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
@@ -105,11 +97,11 @@
         "documentation": {}
     },
     {
-        "label": "uic",
-        "importPath": "PyQt6",
-        "description": "PyQt6",
+        "label": "loadUiType",
+        "importPath": "PyQt6.uic.load_ui",
+        "description": "PyQt6.uic.load_ui",
         "isExtraImport": true,
-        "detail": "PyQt6",
+        "detail": "PyQt6.uic.load_ui",
         "documentation": {}
     },
     {
