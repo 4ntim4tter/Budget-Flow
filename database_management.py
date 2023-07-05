@@ -58,6 +58,17 @@ class DataManager:
         self.db_disconnect()
         return rows
 
+    def veiw_selected_customer(
+        self, table, id:tuple
+    ):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        if id != "" and id is not None:
+            self.db_cursor.execute(f"SELECT * FROM {table} WHERE id = ?", id)
+        rows = self.db_cursor.fetchall()
+        self.db_disconnect()
+        return rows
+        
     def populate_customer_table(
         self,
         table: str,

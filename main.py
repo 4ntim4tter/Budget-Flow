@@ -1,10 +1,10 @@
-from PyQt6 import uic
+from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication
 
 from window_operator import WindowOperator
 from database_management import DataManager
 
-Form, Window = uic.loadUiType("untitled.ui")
+Form, Window = loadUiType("untitled.ui")
 
 app = QApplication([])
 
@@ -48,7 +48,7 @@ form.search_customer_button.clicked.connect(
 
 # Customer Table
 form.populate_table_button.clicked.connect(
-    lambda: db_manager.populate_customer_table("customers", form.customer_table, (), '')
+    lambda: db_manager.populate_customer_table("customers", form.customer_table, (), "")
 )
 form.clear_table_button.clicked.connect(
     lambda: db_manager.clear_customer_table(form.customer_table)
@@ -58,8 +58,9 @@ form.delete_selected_table_button.clicked.connect(
 )
 
 form.customer_table.itemDoubleClicked.connect(
-    entry_window.select_customer_from_table
+    lambda: entry_window.select_customer_from_table(form, form.customer_table)
 )
+
 
 def main():
     window.show()

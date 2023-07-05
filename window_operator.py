@@ -75,14 +75,14 @@ class WindowOperator:
         search_param = []
         query_string = ""
         for index, item in enumerate(temporary_params):
-            temp = '%'
-            if len(item.split('-'))>1:
-                for part in item.split('-'):
-                    if part != '':
-                        temp += (part + "%")
+            temp = "%"
+            if len(item.split("-")) > 1:
+                for part in item.split("-"):
+                    if part != "":
+                        temp += part + "%"
             if temp != "%":
                 search_param.append(temp)
-                query_string += query[index] + " OR "            
+                query_string += query[index] + " OR "
             elif item != "":
                 search_param.append(item)
                 query_string += query[index] + " OR "
@@ -92,8 +92,17 @@ class WindowOperator:
             table, table_widget, tuple(search_param), query_string[:-4]
         )
 
-    def select_customer_from_table(self, item):
-        """
-        docstring
-        """
-        print("gottem", item.text())
+    def select_customer_from_table(
+        self, form, table_widget: QTableWidget
+    ):
+        customer_displayed = self.db_manager.veiw_selected_customer(
+            "customers",
+            tuple([table_widget.selectedItems()[4].text()])
+        )[0]
+        form.id_text_data.setText(str(customer_displayed[0]))
+        form.name_text_data.setText(str(customer_displayed[1]))
+        form.surname_text_data.setText(str(customer_displayed[2]))
+        form.phone_text_data.setText(str(customer_displayed[3]))
+        form.vehicle_text_data.setText(str(customer_displayed[4]))
+        form.plates_text_data.setText(str(customer_displayed[5]))
+        form.chasis_text_data.setText(str(customer_displayed[6]))

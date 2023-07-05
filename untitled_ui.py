@@ -1416,6 +1416,324 @@ class Ui_MainWindow(object):
         self.user_data_frame.setFrameShadow(QFrame.Raised)
         self.user_data_frame.setLineWidth(5)
         self.user_data_frame.setMidLineWidth(5)
+        self.horizontalLayout_2 = QHBoxLayout(self.user_data_frame)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.frame_3 = QFrame(self.user_data_frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.line_8 = QFrame(self.frame_3)
+        self.line_8.setObjectName(u"line_8")
+        self.line_8.setFrameShape(QFrame.VLine)
+        self.line_8.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_8)
+
+        self.frame_5 = QFrame(self.frame_3)
+        self.frame_5.setObjectName(u"frame_5")
+        font2 = QFont()
+        font2.setPointSize(11)
+        self.frame_5.setFont(font2)
+        self.frame_5.setFrameShape(QFrame.StyledPanel)
+        self.frame_5.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_5 = QVBoxLayout(self.frame_5)
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
+        self.name_label = QLabel(self.frame_5)
+        self.name_label.setObjectName(u"name_label")
+        font3 = QFont()
+        font3.setFamilies([u"Arial"])
+        font3.setPointSize(11)
+        font3.setBold(True)
+        self.name_label.setFont(font3)
+        self.name_label.setFrameShape(QFrame.NoFrame)
+        self.name_label.setFrameShadow(QFrame.Plain)
+        self.name_label.setLineWidth(0)
+        self.name_label.setMidLineWidth(0)
+        self.name_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.name_label)
+
+        self.line = QFrame(self.frame_5)
+        self.line.setObjectName(u"line")
+        self.line.setFont(font2)
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line)
+
+        self.surname_label = QLabel(self.frame_5)
+        self.surname_label.setObjectName(u"surname_label")
+        self.surname_label.setFont(font3)
+        self.surname_label.setFrameShape(QFrame.NoFrame)
+        self.surname_label.setFrameShadow(QFrame.Plain)
+        self.surname_label.setLineWidth(0)
+        self.surname_label.setMidLineWidth(0)
+        self.surname_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.surname_label)
+
+        self.line_2 = QFrame(self.frame_5)
+        self.line_2.setObjectName(u"line_2")
+        self.line_2.setFont(font2)
+        self.line_2.setFrameShape(QFrame.HLine)
+        self.line_2.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_2)
+
+        self.phone_label = QLabel(self.frame_5)
+        self.phone_label.setObjectName(u"phone_label")
+        self.phone_label.setFont(font3)
+        self.phone_label.setFrameShape(QFrame.NoFrame)
+        self.phone_label.setFrameShadow(QFrame.Plain)
+        self.phone_label.setLineWidth(0)
+        self.phone_label.setMidLineWidth(0)
+        self.phone_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.phone_label)
+
+        self.line_3 = QFrame(self.frame_5)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setFont(font2)
+        self.line_3.setFrameShape(QFrame.HLine)
+        self.line_3.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_3)
+
+        self.vehicle_label = QLabel(self.frame_5)
+        self.vehicle_label.setObjectName(u"vehicle_label")
+        self.vehicle_label.setFont(font3)
+        self.vehicle_label.setFrameShape(QFrame.NoFrame)
+        self.vehicle_label.setFrameShadow(QFrame.Plain)
+        self.vehicle_label.setLineWidth(0)
+        self.vehicle_label.setMidLineWidth(0)
+        self.vehicle_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.vehicle_label)
+
+        self.line_4 = QFrame(self.frame_5)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFont(font2)
+        self.line_4.setFrameShape(QFrame.HLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_4)
+
+        self.plates_label = QLabel(self.frame_5)
+        self.plates_label.setObjectName(u"plates_label")
+        self.plates_label.setFont(font3)
+        self.plates_label.setFrameShape(QFrame.NoFrame)
+        self.plates_label.setFrameShadow(QFrame.Plain)
+        self.plates_label.setLineWidth(0)
+        self.plates_label.setMidLineWidth(0)
+        self.plates_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.plates_label)
+
+        self.line_5 = QFrame(self.frame_5)
+        self.line_5.setObjectName(u"line_5")
+        self.line_5.setFont(font2)
+        self.line_5.setFrameShape(QFrame.HLine)
+        self.line_5.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_5)
+
+        self.chasis_label = QLabel(self.frame_5)
+        self.chasis_label.setObjectName(u"chasis_label")
+        self.chasis_label.setFont(font3)
+        self.chasis_label.setFrameShape(QFrame.NoFrame)
+        self.chasis_label.setFrameShadow(QFrame.Plain)
+        self.chasis_label.setLineWidth(0)
+        self.chasis_label.setMidLineWidth(0)
+        self.chasis_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.chasis_label)
+
+        self.line_6 = QFrame(self.frame_5)
+        self.line_6.setObjectName(u"line_6")
+        self.line_6.setFont(font2)
+        self.line_6.setFrameShape(QFrame.HLine)
+        self.line_6.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_6)
+
+        self.ID_label = QLabel(self.frame_5)
+        self.ID_label.setObjectName(u"ID_label")
+        self.ID_label.setFont(font3)
+        self.ID_label.setFrameShape(QFrame.NoFrame)
+        self.ID_label.setFrameShadow(QFrame.Plain)
+        self.ID_label.setLineWidth(0)
+        self.ID_label.setMidLineWidth(0)
+        self.ID_label.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_5.addWidget(self.ID_label)
+
+        self.line_7 = QFrame(self.frame_5)
+        self.line_7.setObjectName(u"line_7")
+        self.line_7.setFont(font2)
+        self.line_7.setFrameShape(QFrame.HLine)
+        self.line_7.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_5.addWidget(self.line_7)
+
+
+        self.horizontalLayout_4.addWidget(self.frame_5)
+
+        self.line_9 = QFrame(self.frame_3)
+        self.line_9.setObjectName(u"line_9")
+        self.line_9.setFrameShape(QFrame.VLine)
+        self.line_9.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_4.addWidget(self.line_9)
+
+        self.frame_6 = QFrame(self.frame_3)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setFrameShape(QFrame.StyledPanel)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_6 = QVBoxLayout(self.frame_6)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.name_text_data = QLabel(self.frame_6)
+        self.name_text_data.setObjectName(u"name_text_data")
+        self.name_text_data.setFont(font3)
+        self.name_text_data.setFrameShape(QFrame.NoFrame)
+        self.name_text_data.setFrameShadow(QFrame.Plain)
+        self.name_text_data.setLineWidth(0)
+        self.name_text_data.setMidLineWidth(0)
+        self.name_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.name_text_data)
+
+        self.line_11 = QFrame(self.frame_6)
+        self.line_11.setObjectName(u"line_11")
+        self.line_11.setFrameShape(QFrame.HLine)
+        self.line_11.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_11)
+
+        self.surname_text_data = QLabel(self.frame_6)
+        self.surname_text_data.setObjectName(u"surname_text_data")
+        self.surname_text_data.setFont(font3)
+        self.surname_text_data.setFrameShape(QFrame.NoFrame)
+        self.surname_text_data.setFrameShadow(QFrame.Plain)
+        self.surname_text_data.setLineWidth(0)
+        self.surname_text_data.setMidLineWidth(0)
+        self.surname_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.surname_text_data)
+
+        self.line_12 = QFrame(self.frame_6)
+        self.line_12.setObjectName(u"line_12")
+        self.line_12.setFrameShape(QFrame.HLine)
+        self.line_12.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_12)
+
+        self.phone_text_data = QLabel(self.frame_6)
+        self.phone_text_data.setObjectName(u"phone_text_data")
+        self.phone_text_data.setFont(font3)
+        self.phone_text_data.setFrameShape(QFrame.NoFrame)
+        self.phone_text_data.setFrameShadow(QFrame.Plain)
+        self.phone_text_data.setLineWidth(0)
+        self.phone_text_data.setMidLineWidth(0)
+        self.phone_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.phone_text_data)
+
+        self.line_13 = QFrame(self.frame_6)
+        self.line_13.setObjectName(u"line_13")
+        self.line_13.setFrameShape(QFrame.HLine)
+        self.line_13.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_13)
+
+        self.vehicle_text_data = QLabel(self.frame_6)
+        self.vehicle_text_data.setObjectName(u"vehicle_text_data")
+        self.vehicle_text_data.setFont(font3)
+        self.vehicle_text_data.setFrameShape(QFrame.NoFrame)
+        self.vehicle_text_data.setFrameShadow(QFrame.Plain)
+        self.vehicle_text_data.setLineWidth(0)
+        self.vehicle_text_data.setMidLineWidth(0)
+        self.vehicle_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.vehicle_text_data)
+
+        self.line_14 = QFrame(self.frame_6)
+        self.line_14.setObjectName(u"line_14")
+        self.line_14.setFrameShape(QFrame.HLine)
+        self.line_14.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_14)
+
+        self.plates_text_data = QLabel(self.frame_6)
+        self.plates_text_data.setObjectName(u"plates_text_data")
+        self.plates_text_data.setFont(font3)
+        self.plates_text_data.setFrameShape(QFrame.NoFrame)
+        self.plates_text_data.setFrameShadow(QFrame.Plain)
+        self.plates_text_data.setLineWidth(0)
+        self.plates_text_data.setMidLineWidth(0)
+        self.plates_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.plates_text_data)
+
+        self.line_15 = QFrame(self.frame_6)
+        self.line_15.setObjectName(u"line_15")
+        self.line_15.setFrameShape(QFrame.HLine)
+        self.line_15.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_15)
+
+        self.chasis_text_data = QLabel(self.frame_6)
+        self.chasis_text_data.setObjectName(u"chasis_text_data")
+        self.chasis_text_data.setFont(font3)
+        self.chasis_text_data.setFrameShape(QFrame.NoFrame)
+        self.chasis_text_data.setFrameShadow(QFrame.Plain)
+        self.chasis_text_data.setLineWidth(0)
+        self.chasis_text_data.setMidLineWidth(0)
+        self.chasis_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.chasis_text_data)
+
+        self.line_16 = QFrame(self.frame_6)
+        self.line_16.setObjectName(u"line_16")
+        self.line_16.setFrameShape(QFrame.HLine)
+        self.line_16.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_16)
+
+        self.id_text_data = QLabel(self.frame_6)
+        self.id_text_data.setObjectName(u"id_text_data")
+        self.id_text_data.setFont(font3)
+        self.id_text_data.setFrameShape(QFrame.NoFrame)
+        self.id_text_data.setFrameShadow(QFrame.Plain)
+        self.id_text_data.setLineWidth(0)
+        self.id_text_data.setMidLineWidth(0)
+        self.id_text_data.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+
+        self.verticalLayout_6.addWidget(self.id_text_data)
+
+        self.line_17 = QFrame(self.frame_6)
+        self.line_17.setObjectName(u"line_17")
+        self.line_17.setFrameShape(QFrame.HLine)
+        self.line_17.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_6.addWidget(self.line_17)
+
+
+        self.horizontalLayout_4.addWidget(self.frame_6)
+
+        self.horizontalLayout_4.setStretch(1, 2)
+        self.horizontalLayout_4.setStretch(3, 8)
+
+        self.horizontalLayout_2.addWidget(self.frame_3)
+
+        self.line_10 = QFrame(self.user_data_frame)
+        self.line_10.setObjectName(u"line_10")
+        self.line_10.setFrameShape(QFrame.VLine)
+        self.line_10.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_2.addWidget(self.line_10)
+
 
         self.verticalLayout_4.addWidget(self.user_data_frame)
 
@@ -1429,7 +1747,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.user_work_orders_frame)
 
         self.verticalLayout_4.setStretch(0, 2)
-        self.verticalLayout_4.setStretch(1, 3)
+        self.verticalLayout_4.setStretch(1, 6)
 
         self.gridLayout_4.addWidget(self.middle_frame, 0, 1, 1, 1)
 
@@ -1487,5 +1805,19 @@ class Ui_MainWindow(object):
         self.search_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
         self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Tra\u017ei", None))
         self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        self.name_label.setText(QCoreApplication.translate("MainWindow", u"Ime:", None))
+        self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Prezime:", None))
+        self.phone_label.setText(QCoreApplication.translate("MainWindow", u"#Telefon:", None))
+        self.vehicle_label.setText(QCoreApplication.translate("MainWindow", u"Vozilo:", None))
+        self.plates_label.setText(QCoreApplication.translate("MainWindow", u"#Registracija:", None))
+        self.chasis_label.setText(QCoreApplication.translate("MainWindow", u"#\u0160asija:", None))
+        self.ID_label.setText(QCoreApplication.translate("MainWindow", u"#ID:", None))
+        self.name_text_data.setText("")
+        self.surname_text_data.setText("")
+        self.phone_text_data.setText("")
+        self.vehicle_text_data.setText("")
+        self.plates_text_data.setText("")
+        self.chasis_text_data.setText("")
+        self.id_text_data.setText("")
     # retranslateUi
 
