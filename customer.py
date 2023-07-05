@@ -1,4 +1,6 @@
 class Customer:
+    """Customer class model.
+    """
     def __init__(
         self,
         name: str,
@@ -16,6 +18,11 @@ class Customer:
         self.chasis = chasis
 
     def get_data(self):
+        """Returns customer data.
+
+        Returns:
+            list: returns a list of customer data
+        """
         return [
             self.name,
             self.surname,

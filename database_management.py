@@ -14,6 +14,11 @@ class DataManager:
         )
 
     def db_connect(self, database):
+        """Connect to database -> Sqlite3
+
+        Args:
+            database (string): database table to connect to
+        """
         self.database = database
         self.db_link = sql3.connect(database)
 

@@ -509,7 +509,7 @@
         "kind": 6,
         "importPath": "customer",
         "description": "customer",
-        "peekOfCode": "class Customer:\n    def __init__(\n        self,\n        name: str,\n        surname: str,\n        phone: int,\n        vehicle: str,\n        registration: str,\n        chasis: str,\n    ) -> None:",
+        "peekOfCode": "class Customer:\n    \"\"\"Customer class model.\n    \"\"\"\n    def __init__(\n        self,\n        name: str,\n        surname: str,\n        phone: int,\n        vehicle: str,\n        registration: str,",
         "detail": "customer",
         "documentation": {}
     },
@@ -518,7 +518,7 @@
         "kind": 6,
         "importPath": "database_management",
         "description": "database_management",
-        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        self.database = database",
+        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        \"\"\"Connect to database -> Sqlite3",
         "detail": "database_management",
         "documentation": {}
     },
