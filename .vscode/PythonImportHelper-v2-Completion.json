@@ -72,6 +72,14 @@
         "documentation": {}
     },
     {
+        "label": "PopupModule",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
         "label": "sqlite3",
         "kind": 6,
         "isExtraImport": true,
@@ -518,7 +526,7 @@
         "kind": 6,
         "importPath": "database_management",
         "description": "database_management",
-        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\n            \"Yes\", \"No\", \"Unos Mušterije\", \"Da li želite unijeti mušteriju?\"\n        )\n    def db_connect(self, database):\n        \"\"\"Connect to database -> Sqlite3",
+        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def db_connect(self, database):\n        \"\"\"Connect to database -> Sqlite3\n        Args:\n            database (string): database table to connect to",
         "detail": "database_management",
         "documentation": {}
     },
@@ -644,7 +652,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n    def wipe_entered_data(self, widget):\n        widgets = widget.children()\n        for child in widgets:\n            if isinstance(child, QLineEdit):\n                p_text = child.placeholderText()\n                child.setText(\"\")\n                child.setInputMask(\"\")",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", '', '')\n    def wipe_entered_data(self, widget):\n        self.popup_module.set_title('Brisanje')\n        self.popup_module.set_question('Da li želite obrisati unesene podatke?')\n        answer = self.popup_module.confirmation_dialog()\n        if answer:\n            widgets = widget.children()",
         "detail": "window_operator",
         "documentation": {}
     }
