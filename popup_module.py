@@ -20,6 +20,12 @@ class PopupModule:
                 color: white;
             }
             """
+            
+    def set_title(self, title):
+        self.title = title
+        
+    def set_question(self, question):
+        self.question = question
 
     def confirmation_dialog(self):
         conf_dialog = QMessageBox()

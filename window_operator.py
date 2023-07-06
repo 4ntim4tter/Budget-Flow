@@ -2,20 +2,26 @@ from re import S
 from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget
 from customer import Customer
 from database_management import DataManager
+from popup_module import PopupModule
 
 
 class WindowOperator:
     def __init__(self) -> None:
         self.db_manager = DataManager("table.db")
+        self.popup_module = PopupModule("Yes", "No", '', '')
 
     def wipe_entered_data(self, widget):
-        widgets = widget.children()
-        for child in widgets:
-            if isinstance(child, QLineEdit):
-                p_text = child.placeholderText()
-                child.setText("")
-                child.setInputMask("")
-                child.setPlaceholderText(p_text)
+        self.popup_module.set_title('Brisanje')
+        self.popup_module.set_question('Da li želite obrisati unesene podatke?')
+        answer = self.popup_module.confirmation_dialog()
+        if answer:
+            widgets = widget.children()
+            for child in widgets:
+                if isinstance(child, QLineEdit):
+                    p_text = child.placeholderText()
+                    child.setText("")
+                    child.setInputMask("")
+                    child.setPlaceholderText(p_text)
 
     def store_entered_data(
         self, table: str, customer: list, entry_widget: QWidget
