@@ -9,9 +9,7 @@ class DataManager:
         self.db_link: sql3.Connection
         self.db_cursor: sql3.Cursor
         self.database = database
-        self.popup_module = PopupModule(
-            "Yes", "No", "", ""
-        )
+        self.popup_module = PopupModule("Yes", "No", "", "")
 
     def db_connect(self, database):
         """Connect to database -> Sqlite3
@@ -35,8 +33,8 @@ class DataManager:
         self.db_disconnect()
 
     def db_insert_customer(self, table: str, customer: list):
-        self.popup_module.set_title('Unos')
-        self.popup_module.set_question('Da li želite spremiti unesene podatke?')
+        self.popup_module.set_title("Unos")
+        self.popup_module.set_question("Da li želite spremiti unesene podatke?")
         answer = self.popup_module.confirmation_dialog()
         if answer:
             self.db_connect(self.database)
@@ -65,9 +63,7 @@ class DataManager:
         self.db_disconnect()
         return rows
 
-    def veiw_selected_customer(
-        self, table, id:tuple
-    ):
+    def veiw_selected_customer(self, table, id: tuple):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         if id != "" and id is not None:
@@ -75,7 +71,7 @@ class DataManager:
         rows = self.db_cursor.fetchall()
         self.db_disconnect()
         return rows
-        
+
     def populate_customer_table(
         self,
         table: str,
@@ -109,8 +105,10 @@ class DataManager:
             table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
-        self.popup_module.set_title('Brisanje')
-        self.popup_module.set_question('Da li želite obrisati mušteriju iz baze podataka? \n (Upozorenje: Ova radnja je nepovratna!)')
+        self.popup_module.set_title("Brisanje")
+        self.popup_module.set_question(
+            "Da li želite obrisati mušteriju iz baze podataka? \n (Upozorenje: Ova radnja je nepovratna!)"
+        )
         answer = self.popup_module.confirmation_dialog()
         if answer:
             if (
