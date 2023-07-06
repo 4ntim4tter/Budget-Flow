@@ -1,4 +1,3 @@
-from re import S
 from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget
 from customer import Customer
 from database_management import DataManager
@@ -65,7 +64,7 @@ class WindowOperator:
         )
         temporary_params = []
         all_queries = [
-            "name LIKE ?",
+            "name LIKE ? COLLATE NOCASE",
             "surname LIKE ?",
             "phone LIKE ?",
             "vehicle LIKE ?",
@@ -80,12 +79,12 @@ class WindowOperator:
 
         search_param = []
         query_string = ""
+        print(temporary_params)
         for index, item in enumerate(temporary_params):
             temp = "%"
-            if len(item.split("-")) > 1:
-                for part in item.split("-"):
-                    if part != "":
-                        temp += part + "%"
+            for part in item.split("-"):
+                if part != "":
+                    temp += part + "%"
             if temp != "%":
                 search_param.append(temp)
                 query_string += query[index] + " OR "
@@ -94,6 +93,8 @@ class WindowOperator:
                 query_string += query[index] + " OR "
 
         query_string = "WHERE " + query_string
+        print(query_string[:-4])
+        print(search_param)
         self.db_manager.search_customers_populate_table(
             table, table_widget, tuple(search_param), query_string[:-4]
         )

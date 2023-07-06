@@ -497,14 +497,6 @@
         "documentation": {}
     },
     {
-        "label": "S",
-        "importPath": "re",
-        "description": "re",
-        "isExtraImport": true,
-        "detail": "re",
-        "documentation": {}
-    },
-    {
         "label": "Customer",
         "importPath": "customer",
         "description": "customer",
