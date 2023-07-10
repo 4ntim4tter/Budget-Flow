@@ -21,6 +21,20 @@ db_manager.db_connect("table.db")
 db_manager.db_create_table(
     "customers", ["id", "name", "surname", "phone", "vehicle", "plates", "chasis"]
 )
+db_manager.db_create_table(
+    "receipts",
+    [
+        "id",
+        "customer_id",
+        "material",
+        "brand",
+        "price",
+        "amount",
+        "full_amount",
+        "service",
+        "full_price",
+    ],
+)
 
 # focus changed signal
 app.focusChanged.connect(entry_window.line_focus_changed)
@@ -31,9 +45,7 @@ formMain.cancel_new_customer_button.clicked.connect(
 )
 formMain.save_new_customer_button.clicked.connect(
     lambda: entry_window.store_entered_data(
-        "customers",
-        entry_window.get_customer_values(formMain),
-        new_customer_window
+        "customers", entry_window.get_customer_values(formMain), new_customer_window
     )
 )
 
@@ -42,12 +54,16 @@ formMain.cancel_search_customer_button.clicked.connect(
     lambda: entry_window.wipe_entered_data(customer_search_window)
 )
 formMain.search_customer_button.clicked.connect(
-    lambda: entry_window.search_for_customer("customers", formMain.customer_table, formMain)
+    lambda: entry_window.search_for_customer(
+        "customers", formMain.customer_table, formMain
+    )
 )
 
 # Customer Table
 formMain.populate_table_button.clicked.connect(
-    lambda: db_manager.populate_customer_table("customers", formMain.customer_table, (), "")
+    lambda: db_manager.populate_customer_table(
+        "customers", formMain.customer_table, (), ""
+    )
 )
 formMain.clear_table_button.clicked.connect(
     lambda: db_manager.clear_customer_table(formMain.customer_table)

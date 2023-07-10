@@ -27,9 +27,22 @@ class DataManager:
     def db_create_table(self, table: str, fields: list):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(
-            f"CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, {fields[1]} STRING, {fields[2]} STRING, {fields[3]} STRING, {fields[4]} STRING, {fields[5]} STRING, {fields[6]} STRING)"
-        )
+        if table == "customers":
+            self.db_cursor.execute(
+                f"CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, {fields[1]} STRING, {fields[2]} STRING, {fields[3]} STRING, {fields[4]} STRING, {fields[5]} STRING, {fields[6]} STRING)"
+            )
+        if table == "receipts":
+            self.db_cursor.execute(
+                f"""CREATE TABLE IF NOT EXISTS {table}(
+                    {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
+                    {fields[1]} INTEGER,
+                    FOREIGN KEY ({fields[1]}) REFERENCES customers (id), 
+                    {fields[2]} STRING, 
+                    {fields[3]} STRING, 
+                    {fields[4]} STRING, 
+                    {fields[5]} STRING, 
+                    {fields[6]} STRING)"""
+            )
         self.db_disconnect()
 
     def db_insert_customer(self, table: str, customer: list):
