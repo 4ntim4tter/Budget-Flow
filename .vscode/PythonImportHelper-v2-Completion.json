@@ -89,6 +89,14 @@
         "documentation": {}
     },
     {
+        "label": "randint",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
         "label": "Faker",
         "importPath": "faker",
         "description": "faker",
@@ -527,7 +535,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
+        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\ncursor.execute(\"DELETE FROM receipts\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -536,7 +544,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")",
+        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\ncursor.execute(\"DELETE FROM receipts\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -590,7 +598,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)",
+        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",",
         "detail": "main",
         "documentation": {}
     },
@@ -599,7 +607,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window",
+        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",\n    [",
         "detail": "main",
         "documentation": {}
     },
@@ -608,7 +616,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "new_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nformMain.cancel_new_customer_button.clicked.connect(",
+        "peekOfCode": "new_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",\n    [\n        \"id\",",
         "detail": "main",
         "documentation": {}
     },
@@ -617,7 +625,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "customer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\n# focus changed signal\napp.focusChanged.connect(entry_window.line_focus_changed)\n# Customer Entry Window\nformMain.cancel_new_customer_button.clicked.connect(\n    lambda: entry_window.wipe_entered_data(new_customer_window)",
+        "peekOfCode": "customer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",\n    [\n        \"id\",\n        \"customer_id\",",
         "detail": "main",
         "documentation": {}
     },

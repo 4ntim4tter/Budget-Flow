@@ -36,12 +36,15 @@ class DataManager:
                 f"""CREATE TABLE IF NOT EXISTS {table}(
                     {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
                     {fields[1]} INTEGER,
-                    FOREIGN KEY ({fields[1]}) REFERENCES customers (id), 
                     {fields[2]} STRING, 
                     {fields[3]} STRING, 
-                    {fields[4]} STRING, 
-                    {fields[5]} STRING, 
-                    {fields[6]} STRING)"""
+                    {fields[4]} FLOAT, 
+                    {fields[5]} INTEGER, 
+                    {fields[6]} FLOAT,
+                    {fields[7]} FLOAT,
+                    {fields[8]} FLOAT,
+                    FOREIGN KEY ({fields[1]}) REFERENCES customers (id))
+"""
             )
         self.db_disconnect()
 
