@@ -7,11 +7,11 @@ from popup_module import PopupModule
 class WindowOperator:
     def __init__(self) -> None:
         self.db_manager = DataManager("table.db")
-        self.popup_module = PopupModule("Yes", "No", '', '')
+        self.popup_module = PopupModule("Yes", "No", "", "")
 
     def wipe_entered_data(self, widget):
-        self.popup_module.set_title('Brisanje')
-        self.popup_module.set_question('Da li želite obrisati unesene podatke?')
+        self.popup_module.set_title("Brisanje")
+        self.popup_module.set_question("Da li želite obrisati unesene podatke?")
         answer = self.popup_module.confirmation_dialog()
         if answer:
             widgets = widget.children()
@@ -22,9 +22,7 @@ class WindowOperator:
                     child.setInputMask("")
                     child.setPlaceholderText(p_text)
 
-    def store_entered_data(
-        self, table: str, customer: list, entry_widget: QWidget
-    ):
+    def store_entered_data(self, table: str, customer: list, entry_widget: QWidget):
         accepted = self.db_manager.db_insert_customer(table, customer)
         if accepted:
             self.wipe_entered_data(entry_widget)
@@ -99,12 +97,9 @@ class WindowOperator:
             table, table_widget, tuple(search_param), query_string[:-4]
         )
 
-    def select_customer_from_table(
-        self, form, table_widget: QTableWidget
-    ):
+    def select_customer_from_table(self, form, table_widget: QTableWidget):
         customer_displayed = self.db_manager.veiw_selected_customer(
-            "customers",
-            tuple([table_widget.selectedItems()[4].text()])
+            "customers", tuple([table_widget.selectedItems()[4].text()])
         )[0]
         form.id_text_data.setText(str(customer_displayed[0]))
         form.name_text_data.setText(str(customer_displayed[1]))
@@ -113,3 +108,9 @@ class WindowOperator:
         form.vehicle_text_data.setText(str(customer_displayed[4]))
         form.plates_text_data.setText(str(customer_displayed[5]))
         form.chasis_text_data.setText(str(customer_displayed[6]))
+
+        self.db_manager.customer_receipts_populate_table(
+            "receipts", 
+            form.customer_reciepts_table, 
+            int(customer_displayed[0])
+        )

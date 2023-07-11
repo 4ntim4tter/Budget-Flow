@@ -66,7 +66,7 @@ formMain.populate_table_button.clicked.connect(
     )
 )
 formMain.clear_table_button.clicked.connect(
-    lambda: db_manager.clear_customer_table(formMain.customer_table)
+    lambda: db_manager.clear_table(formMain.customer_table, 5)
 )
 formMain.delete_selected_table_button.clicked.connect(
     lambda: db_manager.delete_selected_customer("customers", formMain.customer_table)

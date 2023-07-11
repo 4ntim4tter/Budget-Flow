@@ -1104,7 +1104,7 @@ class Ui_MainWindow(object):
         self.customer_table.setShowGrid(True)
         self.customer_table.setGridStyle(Qt.SolidLine)
         self.customer_table.setSortingEnabled(True)
-        self.customer_table.setWordWrap(False)
+        self.customer_table.setWordWrap(True)
         self.customer_table.setCornerButtonEnabled(True)
         self.customer_table.setRowCount(1)
         self.customer_table.horizontalHeader().setVisible(True)
@@ -1782,8 +1782,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QHBoxLayout(self.user_work_orders_frame)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.customer_reciepts_table = QTableWidget(self.user_work_orders_frame)
-        if (self.customer_reciepts_table.columnCount() < 5):
-            self.customer_reciepts_table.setColumnCount(5)
+        if (self.customer_reciepts_table.columnCount() < 8):
+            self.customer_reciepts_table.setColumnCount(8)
         font4 = QFont()
         font4.setBold(True)
         __qtablewidgetitem6 = QTableWidgetItem()
@@ -1801,105 +1801,37 @@ class Ui_MainWindow(object):
         __qtablewidgetitem10 = QTableWidgetItem()
         __qtablewidgetitem10.setFont(font);
         self.customer_reciepts_table.setHorizontalHeaderItem(4, __qtablewidgetitem10)
-        if (self.customer_reciepts_table.rowCount() < 1):
-            self.customer_reciepts_table.setRowCount(1)
         __qtablewidgetitem11 = QTableWidgetItem()
         __qtablewidgetitem11.setFont(font);
-        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem11)
+        self.customer_reciepts_table.setHorizontalHeaderItem(5, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        __qtablewidgetitem12.setFont(font1);
+        self.customer_reciepts_table.setHorizontalHeaderItem(6, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        __qtablewidgetitem13.setFont(font1);
+        self.customer_reciepts_table.setHorizontalHeaderItem(7, __qtablewidgetitem13)
+        if (self.customer_reciepts_table.rowCount() < 1):
+            self.customer_reciepts_table.setRowCount(1)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        __qtablewidgetitem14.setFont(font);
+        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem14)
         self.customer_reciepts_table.setObjectName(u"customer_reciepts_table")
         self.customer_reciepts_table.setFont(font)
+        self.customer_reciepts_table.setAutoScrollMargin(2)
+        self.customer_reciepts_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.customer_reciepts_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.customer_reciepts_table.setSortingEnabled(True)
         self.customer_reciepts_table.setRowCount(1)
-        self.customer_reciepts_table.horizontalHeader().setCascadingSectionResizes(False)
-        self.customer_reciepts_table.horizontalHeader().setDefaultSectionSize(80)
+        self.customer_reciepts_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.customer_reciepts_table.horizontalHeader().setDefaultSectionSize(75)
         self.customer_reciepts_table.horizontalHeader().setProperty("showSortIndicator", True)
         self.customer_reciepts_table.horizontalHeader().setStretchLastSection(True)
+        self.customer_reciepts_table.verticalHeader().setVisible(True)
         self.customer_reciepts_table.verticalHeader().setCascadingSectionResizes(False)
 
         self.horizontalLayout_3.addWidget(self.customer_reciepts_table)
 
-        self.frame_7 = QFrame(self.user_work_orders_frame)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFont(font)
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_8 = QVBoxLayout(self.frame_7)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.line_21 = QFrame(self.frame_7)
-        self.line_21.setObjectName(u"line_21")
-        self.line_21.setFrameShape(QFrame.HLine)
-        self.line_21.setFrameShadow(QFrame.Sunken)
-
-        self.verticalLayout_8.addWidget(self.line_21)
-
-        self.label = QLabel(self.frame_7)
-        self.label.setObjectName(u"label")
-        self.label.setFont(font)
-        self.label.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label)
-
-        self.label_4 = QLabel(self.frame_7)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setFont(font)
-        self.label_4.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label_4)
-
-        self.line_20 = QFrame(self.frame_7)
-        self.line_20.setObjectName(u"line_20")
-        self.line_20.setFrameShape(QFrame.HLine)
-        self.line_20.setFrameShadow(QFrame.Sunken)
-
-        self.verticalLayout_8.addWidget(self.line_20)
-
-        self.label_2 = QLabel(self.frame_7)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setFont(font)
-        self.label_2.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label_2)
-
-        self.label_5 = QLabel(self.frame_7)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setFont(font)
-        self.label_5.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label_5)
-
-        self.line_19 = QFrame(self.frame_7)
-        self.line_19.setObjectName(u"line_19")
-        self.line_19.setFrameShape(QFrame.HLine)
-        self.line_19.setFrameShadow(QFrame.Sunken)
-
-        self.verticalLayout_8.addWidget(self.line_19)
-
-        self.label_3 = QLabel(self.frame_7)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setFont(font)
-        self.label_3.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label_3)
-
-        self.label_6 = QLabel(self.frame_7)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setFont(font)
-        self.label_6.setAlignment(Qt.AlignCenter)
-
-        self.verticalLayout_8.addWidget(self.label_6)
-
-        self.line_22 = QFrame(self.frame_7)
-        self.line_22.setObjectName(u"line_22")
-        self.line_22.setFrameShape(QFrame.HLine)
-        self.line_22.setFrameShadow(QFrame.Sunken)
-
-        self.verticalLayout_8.addWidget(self.line_22)
-
-
-        self.horizontalLayout_3.addWidget(self.frame_7)
-
         self.horizontalLayout_3.setStretch(0, 8)
-        self.horizontalLayout_3.setStretch(1, 2)
 
         self.verticalLayout_4.addWidget(self.user_work_orders_frame)
 
@@ -1990,16 +1922,18 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Cijena[KM]", None));
         ___qtablewidgetitem9 = self.customer_reciepts_table.horizontalHeaderItem(4)
         ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None));
+        ___qtablewidgetitem10 = self.customer_reciepts_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+"Dijelovi[KM]", None));
+        ___qtablewidgetitem11 = self.customer_reciepts_table.horizontalHeaderItem(6)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
+        ___qtablewidgetitem12 = self.customer_reciepts_table.horizontalHeaderItem(7)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+"Cijena[KM]", None));
 
         __sortingEnabled = self.customer_reciepts_table.isSortingEnabled()
         self.customer_reciepts_table.setSortingEnabled(False)
         self.customer_reciepts_table.setSortingEnabled(__sortingEnabled)
 
-        self.label.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt;\">RAD [KM]:</span></p></body></html>", None))
-        self.label_4.setText("")
-        self.label_2.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">UKUPNO </span></p><p align=\"center\"><span style=\" font-size:10pt;\">DIJELOVI [KM]:</span></p></body></html>", None))
-        self.label_5.setText("")
-        self.label_3.setText(QCoreApplication.translate("MainWindow", u"<html><head/><body><p><span style=\" font-size:10pt;\">UKUPNA</span></p><p><span style=\" font-size:10pt;\">CIJENA [KM]:</span></p></body></html>", None))
-        self.label_6.setText("")
     # retranslateUi
 

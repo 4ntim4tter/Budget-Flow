@@ -65,7 +65,7 @@ class DataManager:
     def db_customer_interaction(
         self, table, table_widget: QTableWidget, search_params: tuple, query_string: str
     ):
-        self.clear_customer_table(table_widget)
+        self.clear_table(table_widget, 5)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         if search_params == () or query_string == "" or query_string == "WH":
@@ -119,6 +119,25 @@ class DataManager:
                 table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
             table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
+    
+    def customer_receipts_populate_table(self, table:str, table_widget:QTableWidget, customer_id:int):
+        self.clear_table(table_widget, 8)
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+                f"SELECT * FROM {table} WHERE customer_id = {customer_id}"
+            )
+        rows = self.db_cursor.fetchall()
+        self.db_disconnect()
+        
+        for index, row in enumerate(rows):
+            for i in range(8):
+                if i == 0:
+                    table_widget.setItem(index, i, QTableWidgetItem(f"{row[i]}"))
+                else:    
+                    table_widget.setItem(index, i, QTableWidgetItem(f"{row[i + 1]}"))
+            table_widget.setItem(index, 8, QTableWidgetItem(f"{row[0]}"))
+            table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
         self.popup_module.set_title("Brisanje")
@@ -142,9 +161,9 @@ class DataManager:
                 table_widget.removeRow(table_widget.currentRow())
             # self.populate_customer_table(table, table_widget, (), "")
 
-    def clear_customer_table(self, table_widget: QTableWidget):
+    def clear_table(self, table_widget: QTableWidget, row_size):
         for i in range(table_widget.rowCount(), 0, -1):
             table_widget.removeRow(i)
 
-        for i in range(5):
+        for i in range(row_size):
             table_widget.setItem(0, i, QTableWidgetItem(""))
