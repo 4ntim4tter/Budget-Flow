@@ -64,6 +64,14 @@
         "documentation": {}
     },
     {
+        "label": "QFrame",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "PopupModule",
         "importPath": "popup_module",
         "description": "popup_module",
@@ -661,7 +669,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", '', '')\n    def wipe_entered_data(self, widget):\n        self.popup_module.set_title('Brisanje')\n        self.popup_module.set_question('Da li želite obrisati unesene podatke?')\n        answer = self.popup_module.confirmation_dialog()\n        if answer:\n            widgets = widget.children()",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def wipe_entered_data(self, widget):\n        self.popup_module.set_title(\"Brisanje\")\n        self.popup_module.set_question(\"Da li želite obrisati unesene podatke?\")\n        answer = self.popup_module.confirmation_dialog()\n        if answer:\n            widgets = widget.children()",
         "detail": "window_operator",
         "documentation": {}
     }

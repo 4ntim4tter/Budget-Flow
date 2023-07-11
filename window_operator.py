@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget
+from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame
 from customer import Customer
 from database_management import DataManager
 from popup_module import PopupModule
@@ -114,3 +114,9 @@ class WindowOperator:
             form.customer_reciepts_table, 
             int(customer_displayed[0])
         )
+
+    def hide_customer_form(self, customer_form: QFrame):
+        if customer_form.isHidden():
+            customer_form.show()
+        else:
+            customer_form.hide()

@@ -25,7 +25,7 @@ for _ in range(20):
         (name, surname, phone, vehicle, plates, chasis),
     )
 
-for _ in range(20):
+for _ in range(80):
     customer_id_query = "SELECT id FROM customers ORDER BY RANDOM() LIMIT 1"  
     cursor.execute(customer_id_query)
     customer_id = cursor.fetchone()[0]

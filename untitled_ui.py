@@ -1418,20 +1418,20 @@ class Ui_MainWindow(object):
         self.user_data_frame.setMidLineWidth(5)
         self.horizontalLayout_2 = QHBoxLayout(self.user_data_frame)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.frame_3 = QFrame(self.user_data_frame)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_4 = QHBoxLayout(self.frame_3)
+        self.customer_form_frame = QFrame(self.user_data_frame)
+        self.customer_form_frame.setObjectName(u"customer_form_frame")
+        self.customer_form_frame.setFrameShape(QFrame.StyledPanel)
+        self.customer_form_frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_4 = QHBoxLayout(self.customer_form_frame)
         self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.line_8 = QFrame(self.frame_3)
+        self.line_8 = QFrame(self.customer_form_frame)
         self.line_8.setObjectName(u"line_8")
         self.line_8.setFrameShape(QFrame.VLine)
         self.line_8.setFrameShadow(QFrame.Sunken)
 
         self.horizontalLayout_4.addWidget(self.line_8)
 
-        self.frame_5 = QFrame(self.frame_3)
+        self.frame_5 = QFrame(self.customer_form_frame)
         self.frame_5.setObjectName(u"frame_5")
         font2 = QFont()
         font2.setPointSize(11)
@@ -1580,14 +1580,14 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.frame_5)
 
-        self.line_9 = QFrame(self.frame_3)
+        self.line_9 = QFrame(self.customer_form_frame)
         self.line_9.setObjectName(u"line_9")
         self.line_9.setFrameShape(QFrame.VLine)
         self.line_9.setFrameShadow(QFrame.Sunken)
 
         self.horizontalLayout_4.addWidget(self.line_9)
 
-        self.frame_6 = QFrame(self.frame_3)
+        self.frame_6 = QFrame(self.customer_form_frame)
         self.frame_6.setObjectName(u"frame_6")
         self.frame_6.setFrameShape(QFrame.StyledPanel)
         self.frame_6.setFrameShadow(QFrame.Raised)
@@ -1722,7 +1722,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_4.addWidget(self.frame_6)
 
-        self.line_10 = QFrame(self.frame_3)
+        self.line_10 = QFrame(self.customer_form_frame)
         self.line_10.setObjectName(u"line_10")
         self.line_10.setFrameShape(QFrame.VLine)
         self.line_10.setFrameShadow(QFrame.Sunken)
@@ -1732,7 +1732,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setStretch(1, 2)
         self.horizontalLayout_4.setStretch(3, 8)
 
-        self.horizontalLayout_2.addWidget(self.frame_3)
+        self.horizontalLayout_2.addWidget(self.customer_form_frame)
 
         self.frame_4 = QFrame(self.user_data_frame)
         self.frame_4.setObjectName(u"frame_4")

@@ -76,6 +76,10 @@ formMain.customer_table.itemDoubleClicked.connect(
     lambda: entry_window.select_customer_from_table(formMain, formMain.customer_table)
 )
 
+# Reciepts 
+formMain.show_receipts_button.clicked.connect(
+    lambda: entry_window.hide_customer_form(formMain.customer_form_frame)
+)
 
 def main():
     window.show()
