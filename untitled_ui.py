@@ -1049,139 +1049,13 @@ class Ui_MainWindow(object):
         self.gridLayout_4 = QGridLayout(self.centralwidget)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
         self.gridLayout_4.setContentsMargins(-1, 30, -1, -1)
-        self.right_frame = QFrame(self.centralwidget)
-        self.right_frame.setObjectName(u"right_frame")
-        sizePolicy1 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy1.setHorizontalStretch(0)
-        sizePolicy1.setVerticalStretch(0)
-        sizePolicy1.setHeightForWidth(self.right_frame.sizePolicy().hasHeightForWidth())
-        self.right_frame.setSizePolicy(sizePolicy1)
-        self.right_frame.setFrameShape(QFrame.Panel)
-        self.right_frame.setFrameShadow(QFrame.Sunken)
-        self.right_frame.setLineWidth(5)
-        self.right_frame.setMidLineWidth(5)
-        self.verticalLayout_2 = QVBoxLayout(self.right_frame)
-        self.verticalLayout_2.setSpacing(0)
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.verticalLayout_2.setContentsMargins(1, 1, 1, 1)
-        self.customer_table = QTableWidget(self.right_frame)
-        if (self.customer_table.columnCount() < 6):
-            self.customer_table.setColumnCount(6)
-        font1 = QFont()
-        font1.setFamilies([u"Arial"])
-        font1.setBold(True)
-        __qtablewidgetitem = QTableWidgetItem()
-        __qtablewidgetitem.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
-        __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
-        __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
-        __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        self.customer_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        if (self.customer_table.rowCount() < 1):
-            self.customer_table.setRowCount(1)
-        self.customer_table.setObjectName(u"customer_table")
-        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy2.setHorizontalStretch(1)
-        sizePolicy2.setVerticalStretch(1)
-        sizePolicy2.setHeightForWidth(self.customer_table.sizePolicy().hasHeightForWidth())
-        self.customer_table.setSizePolicy(sizePolicy2)
-        self.customer_table.setFont(font1)
-        self.customer_table.setFrameShape(QFrame.NoFrame)
-        self.customer_table.setAutoScrollMargin(2)
-        self.customer_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.customer_table.setSelectionBehavior(QAbstractItemView.SelectRows)
-        self.customer_table.setTextElideMode(Qt.ElideMiddle)
-        self.customer_table.setShowGrid(True)
-        self.customer_table.setGridStyle(Qt.SolidLine)
-        self.customer_table.setSortingEnabled(True)
-        self.customer_table.setWordWrap(True)
-        self.customer_table.setCornerButtonEnabled(True)
-        self.customer_table.setRowCount(1)
-        self.customer_table.horizontalHeader().setVisible(True)
-        self.customer_table.horizontalHeader().setCascadingSectionResizes(True)
-        self.customer_table.horizontalHeader().setMinimumSectionSize(68)
-        self.customer_table.horizontalHeader().setDefaultSectionSize(70)
-        self.customer_table.horizontalHeader().setHighlightSections(True)
-        self.customer_table.horizontalHeader().setProperty("showSortIndicator", True)
-        self.customer_table.horizontalHeader().setStretchLastSection(True)
-        self.customer_table.verticalHeader().setVisible(True)
-        self.customer_table.verticalHeader().setCascadingSectionResizes(False)
-        self.customer_table.verticalHeader().setDefaultSectionSize(30)
-        self.customer_table.verticalHeader().setHighlightSections(True)
-        self.customer_table.verticalHeader().setStretchLastSection(False)
-
-        self.verticalLayout_2.addWidget(self.customer_table)
-
-        self.frame_2 = QFrame(self.right_frame)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_3.setSpacing(1)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(1, 1, 1, 1)
-        self.lineEdit = QLineEdit(self.frame_2)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.verticalLayout_3.addWidget(self.lineEdit)
-
-
-        self.verticalLayout_2.addWidget(self.frame_2)
-
-        self.frame = QFrame(self.right_frame)
-        self.frame.setObjectName(u"frame")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout = QHBoxLayout(self.frame)
-        self.horizontalLayout.setSpacing(1)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(1, 1, 1, 1)
-        self.delete_selected_table_button = QPushButton(self.frame)
-        self.delete_selected_table_button.setObjectName(u"delete_selected_table_button")
-
-        self.horizontalLayout.addWidget(self.delete_selected_table_button)
-
-        self.clear_table_button = QPushButton(self.frame)
-        self.clear_table_button.setObjectName(u"clear_table_button")
-
-        self.horizontalLayout.addWidget(self.clear_table_button)
-
-        self.filter_table_button = QPushButton(self.frame)
-        self.filter_table_button.setObjectName(u"filter_table_button")
-
-        self.horizontalLayout.addWidget(self.filter_table_button)
-
-        self.populate_table_button = QPushButton(self.frame)
-        self.populate_table_button.setObjectName(u"populate_table_button")
-
-        self.horizontalLayout.addWidget(self.populate_table_button)
-
-
-        self.verticalLayout_2.addWidget(self.frame)
-
-        self.verticalLayout_2.setStretch(0, 99)
-        self.verticalLayout_2.setStretch(1, 1)
-        self.verticalLayout_2.setStretch(2, 1)
-
-        self.gridLayout_4.addWidget(self.right_frame, 0, 2, 1, 1)
-
         self.left_frame = QFrame(self.centralwidget)
         self.left_frame.setObjectName(u"left_frame")
-        sizePolicy3 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
-        sizePolicy3.setHorizontalStretch(0)
-        sizePolicy3.setVerticalStretch(0)
-        sizePolicy3.setHeightForWidth(self.left_frame.sizePolicy().hasHeightForWidth())
-        self.left_frame.setSizePolicy(sizePolicy3)
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.left_frame.sizePolicy().hasHeightForWidth())
+        self.left_frame.setSizePolicy(sizePolicy1)
         self.left_frame.setLayoutDirection(Qt.LeftToRight)
         self.left_frame.setFrameShape(QFrame.Panel)
         self.left_frame.setFrameShadow(QFrame.Sunken)
@@ -1192,6 +1066,9 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(1, 50, 1, 50)
         self.add_customer_label = QLabel(self.left_frame)
         self.add_customer_label.setObjectName(u"add_customer_label")
+        font1 = QFont()
+        font1.setFamilies([u"Arial"])
+        font1.setBold(True)
         self.add_customer_label.setFont(font1)
         self.add_customer_label.setFrameShape(QFrame.StyledPanel)
         self.add_customer_label.setFrameShadow(QFrame.Sunken)
@@ -1204,6 +1081,9 @@ class Ui_MainWindow(object):
 
         self.customer_entry_box = QFrame(self.left_frame)
         self.customer_entry_box.setObjectName(u"customer_entry_box")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy2.setHorizontalStretch(1)
+        sizePolicy2.setVerticalStretch(1)
         sizePolicy2.setHeightForWidth(self.customer_entry_box.sizePolicy().hasHeightForWidth())
         self.customer_entry_box.setSizePolicy(sizePolicy2)
         self.customer_entry_box.setFont(font)
@@ -1272,19 +1152,19 @@ class Ui_MainWindow(object):
 
         self.save_new_customer_button = QPushButton(self.customer_entry_box)
         self.save_new_customer_button.setObjectName(u"save_new_customer_button")
-        sizePolicy4 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
-        sizePolicy4.setHorizontalStretch(1)
-        sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.save_new_customer_button.sizePolicy().hasHeightForWidth())
-        self.save_new_customer_button.setSizePolicy(sizePolicy4)
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy3.setHorizontalStretch(1)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.save_new_customer_button.sizePolicy().hasHeightForWidth())
+        self.save_new_customer_button.setSizePolicy(sizePolicy3)
         self.save_new_customer_button.setFont(font)
 
         self.formLayout_2.setWidget(7, QFormLayout.LabelRole, self.save_new_customer_button)
 
         self.cancel_new_customer_button = QPushButton(self.customer_entry_box)
         self.cancel_new_customer_button.setObjectName(u"cancel_new_customer_button")
-        sizePolicy4.setHeightForWidth(self.cancel_new_customer_button.sizePolicy().hasHeightForWidth())
-        self.cancel_new_customer_button.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.cancel_new_customer_button.sizePolicy().hasHeightForWidth())
+        self.cancel_new_customer_button.setSizePolicy(sizePolicy3)
         self.cancel_new_customer_button.setFont(font)
 
         self.formLayout_2.setWidget(7, QFormLayout.FieldRole, self.cancel_new_customer_button)
@@ -1376,16 +1256,16 @@ class Ui_MainWindow(object):
 
         self.search_customer_button = QPushButton(self.customer_search_box)
         self.search_customer_button.setObjectName(u"search_customer_button")
-        sizePolicy4.setHeightForWidth(self.search_customer_button.sizePolicy().hasHeightForWidth())
-        self.search_customer_button.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.search_customer_button.sizePolicy().hasHeightForWidth())
+        self.search_customer_button.setSizePolicy(sizePolicy3)
         self.search_customer_button.setFont(font)
 
         self.formLayout_3.setWidget(7, QFormLayout.LabelRole, self.search_customer_button)
 
         self.cancel_search_customer_button = QPushButton(self.customer_search_box)
         self.cancel_search_customer_button.setObjectName(u"cancel_search_customer_button")
-        sizePolicy4.setHeightForWidth(self.cancel_search_customer_button.sizePolicy().hasHeightForWidth())
-        self.cancel_search_customer_button.setSizePolicy(sizePolicy4)
+        sizePolicy3.setHeightForWidth(self.cancel_search_customer_button.sizePolicy().hasHeightForWidth())
+        self.cancel_search_customer_button.setSizePolicy(sizePolicy3)
         self.cancel_search_customer_button.setFont(font)
 
         self.formLayout_3.setWidget(7, QFormLayout.FieldRole, self.cancel_search_customer_button)
@@ -1734,44 +1614,157 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_2.addWidget(self.customer_form_frame)
 
-        self.frame_4 = QFrame(self.user_data_frame)
-        self.frame_4.setObjectName(u"frame_4")
-        self.frame_4.setFrameShape(QFrame.StyledPanel)
-        self.frame_4.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.frame_4)
+        self.buttons_form_frame = QFrame(self.user_data_frame)
+        self.buttons_form_frame.setObjectName(u"buttons_form_frame")
+        self.buttons_form_frame.setFrameShape(QFrame.StyledPanel)
+        self.buttons_form_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_7 = QVBoxLayout(self.buttons_form_frame)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.add_receipt_button = QPushButton(self.frame_4)
-        self.add_receipt_button.setObjectName(u"add_receipt_button")
-        sizePolicy5 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy5.setHorizontalStretch(0)
-        sizePolicy5.setVerticalStretch(0)
-        sizePolicy5.setHeightForWidth(self.add_receipt_button.sizePolicy().hasHeightForWidth())
-        self.add_receipt_button.setSizePolicy(sizePolicy5)
-        self.add_receipt_button.setFont(font)
-        self.add_receipt_button.setFlat(False)
+        self.placeholder_button = QPushButton(self.buttons_form_frame)
+        self.placeholder_button.setObjectName(u"placeholder_button")
+        sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
+        sizePolicy4.setHorizontalStretch(0)
+        sizePolicy4.setVerticalStretch(0)
+        sizePolicy4.setHeightForWidth(self.placeholder_button.sizePolicy().hasHeightForWidth())
+        self.placeholder_button.setSizePolicy(sizePolicy4)
+        self.placeholder_button.setFont(font)
+        self.placeholder_button.setFlat(False)
 
-        self.verticalLayout_7.addWidget(self.add_receipt_button)
+        self.verticalLayout_7.addWidget(self.placeholder_button)
 
-        self.line_18 = QFrame(self.frame_4)
+        self.line_18 = QFrame(self.buttons_form_frame)
         self.line_18.setObjectName(u"line_18")
         self.line_18.setFrameShape(QFrame.HLine)
         self.line_18.setFrameShadow(QFrame.Sunken)
 
         self.verticalLayout_7.addWidget(self.line_18)
 
-        self.show_receipts_button = QPushButton(self.frame_4)
-        self.show_receipts_button.setObjectName(u"show_receipts_button")
-        sizePolicy5.setHeightForWidth(self.show_receipts_button.sizePolicy().hasHeightForWidth())
-        self.show_receipts_button.setSizePolicy(sizePolicy5)
-        self.show_receipts_button.setFont(font)
+        self.new_reciept_button = QPushButton(self.buttons_form_frame)
+        self.new_reciept_button.setObjectName(u"new_reciept_button")
+        sizePolicy4.setHeightForWidth(self.new_reciept_button.sizePolicy().hasHeightForWidth())
+        self.new_reciept_button.setSizePolicy(sizePolicy4)
+        self.new_reciept_button.setFont(font)
 
-        self.verticalLayout_7.addWidget(self.show_receipts_button)
+        self.verticalLayout_7.addWidget(self.new_reciept_button)
 
 
-        self.horizontalLayout_2.addWidget(self.frame_4)
+        self.horizontalLayout_2.addWidget(self.buttons_form_frame)
 
 
         self.verticalLayout_4.addWidget(self.user_data_frame)
+
+        self.add_new_reciept_frame = QFrame(self.middle_frame)
+        self.add_new_reciept_frame.setObjectName(u"add_new_reciept_frame")
+        self.add_new_reciept_frame.setMinimumSize(QSize(0, 293))
+        self.add_new_reciept_frame.setMaximumSize(QSize(16777215, 293))
+        self.add_new_reciept_frame.setFrameShape(QFrame.Panel)
+        self.add_new_reciept_frame.setFrameShadow(QFrame.Raised)
+        self.add_new_reciept_frame.setLineWidth(5)
+        self.add_new_reciept_frame.setMidLineWidth(5)
+        self.horizontalLayout_5 = QHBoxLayout(self.add_new_reciept_frame)
+        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
+        self.line_20 = QFrame(self.add_new_reciept_frame)
+        self.line_20.setObjectName(u"line_20")
+        self.line_20.setFrameShape(QFrame.VLine)
+        self.line_20.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_5.addWidget(self.line_20)
+
+        self.frame_3 = QFrame(self.add_new_reciept_frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.frame_3)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.add_receipt_service = QLineEdit(self.frame_3)
+        self.add_receipt_service.setObjectName(u"add_receipt_service")
+        sizePolicy2.setHeightForWidth(self.add_receipt_service.sizePolicy().hasHeightForWidth())
+        self.add_receipt_service.setSizePolicy(sizePolicy2)
+        self.add_receipt_service.setFont(font)
+        self.add_receipt_service.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.add_receipt_service)
+
+        self.add_receipt_amount = QLineEdit(self.frame_3)
+        self.add_receipt_amount.setObjectName(u"add_receipt_amount")
+        sizePolicy2.setHeightForWidth(self.add_receipt_amount.sizePolicy().hasHeightForWidth())
+        self.add_receipt_amount.setSizePolicy(sizePolicy2)
+        self.add_receipt_amount.setFont(font)
+        self.add_receipt_amount.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.add_receipt_amount)
+
+        self.add_receipt_price = QLineEdit(self.frame_3)
+        self.add_receipt_price.setObjectName(u"add_receipt_price")
+        sizePolicy2.setHeightForWidth(self.add_receipt_price.sizePolicy().hasHeightForWidth())
+        self.add_receipt_price.setSizePolicy(sizePolicy2)
+        self.add_receipt_price.setFont(font)
+        self.add_receipt_price.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.add_receipt_price)
+
+        self.add_receipt_brand = QLineEdit(self.frame_3)
+        self.add_receipt_brand.setObjectName(u"add_receipt_brand")
+        sizePolicy2.setHeightForWidth(self.add_receipt_brand.sizePolicy().hasHeightForWidth())
+        self.add_receipt_brand.setSizePolicy(sizePolicy2)
+        self.add_receipt_brand.setFont(font)
+        self.add_receipt_brand.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.add_receipt_brand)
+
+        self.add_receipt_material = QLineEdit(self.frame_3)
+        self.add_receipt_material.setObjectName(u"add_receipt_material")
+        sizePolicy2.setHeightForWidth(self.add_receipt_material.sizePolicy().hasHeightForWidth())
+        self.add_receipt_material.setSizePolicy(sizePolicy2)
+        self.add_receipt_material.setFont(font)
+        self.add_receipt_material.setAlignment(Qt.AlignCenter)
+
+        self.verticalLayout_9.addWidget(self.add_receipt_material)
+
+
+        self.horizontalLayout_5.addWidget(self.frame_3)
+
+        self.line_19 = QFrame(self.add_new_reciept_frame)
+        self.line_19.setObjectName(u"line_19")
+        self.line_19.setFrameShape(QFrame.VLine)
+        self.line_19.setFrameShadow(QFrame.Sunken)
+
+        self.horizontalLayout_5.addWidget(self.line_19)
+
+        self.frame_4 = QFrame(self.add_new_reciept_frame)
+        self.frame_4.setObjectName(u"frame_4")
+        self.frame_4.setFrameShape(QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame_4)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.add_reciept_button = QPushButton(self.frame_4)
+        self.add_reciept_button.setObjectName(u"add_reciept_button")
+        sizePolicy4.setHeightForWidth(self.add_reciept_button.sizePolicy().hasHeightForWidth())
+        self.add_reciept_button.setSizePolicy(sizePolicy4)
+        self.add_reciept_button.setFont(font)
+
+        self.verticalLayout_8.addWidget(self.add_reciept_button)
+
+        self.line_21 = QFrame(self.frame_4)
+        self.line_21.setObjectName(u"line_21")
+        self.line_21.setFrameShape(QFrame.HLine)
+        self.line_21.setFrameShadow(QFrame.Sunken)
+
+        self.verticalLayout_8.addWidget(self.line_21)
+
+        self.cancel_add_reciept_button = QPushButton(self.frame_4)
+        self.cancel_add_reciept_button.setObjectName(u"cancel_add_reciept_button")
+        sizePolicy4.setHeightForWidth(self.cancel_add_reciept_button.sizePolicy().hasHeightForWidth())
+        self.cancel_add_reciept_button.setSizePolicy(sizePolicy4)
+        self.cancel_add_reciept_button.setFont(font)
+
+        self.verticalLayout_8.addWidget(self.cancel_add_reciept_button)
+
+
+        self.horizontalLayout_5.addWidget(self.frame_4)
+
+
+        self.verticalLayout_4.addWidget(self.add_new_reciept_frame)
 
         self.user_work_orders_frame = QFrame(self.middle_frame)
         self.user_work_orders_frame.setObjectName(u"user_work_orders_frame")
@@ -1786,35 +1779,35 @@ class Ui_MainWindow(object):
             self.customer_reciepts_table.setColumnCount(8)
         font4 = QFont()
         font4.setBold(True)
+        __qtablewidgetitem = QTableWidgetItem()
+        __qtablewidgetitem.setFont(font4);
+        self.customer_reciepts_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        __qtablewidgetitem1 = QTableWidgetItem()
+        __qtablewidgetitem1.setFont(font);
+        self.customer_reciepts_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
+        __qtablewidgetitem2 = QTableWidgetItem()
+        __qtablewidgetitem2.setFont(font);
+        self.customer_reciepts_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
+        __qtablewidgetitem3 = QTableWidgetItem()
+        __qtablewidgetitem3.setFont(font);
+        self.customer_reciepts_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
+        __qtablewidgetitem4 = QTableWidgetItem()
+        __qtablewidgetitem4.setFont(font);
+        self.customer_reciepts_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setFont(font);
+        self.customer_reciepts_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setFont(font4);
-        self.customer_reciepts_table.setHorizontalHeaderItem(0, __qtablewidgetitem6)
+        __qtablewidgetitem6.setFont(font1);
+        self.customer_reciepts_table.setHorizontalHeaderItem(6, __qtablewidgetitem6)
         __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(1, __qtablewidgetitem7)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(2, __qtablewidgetitem8)
-        __qtablewidgetitem9 = QTableWidgetItem()
-        __qtablewidgetitem9.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(3, __qtablewidgetitem9)
-        __qtablewidgetitem10 = QTableWidgetItem()
-        __qtablewidgetitem10.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(4, __qtablewidgetitem10)
-        __qtablewidgetitem11 = QTableWidgetItem()
-        __qtablewidgetitem11.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(5, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font1);
-        self.customer_reciepts_table.setHorizontalHeaderItem(6, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        __qtablewidgetitem13.setFont(font1);
-        self.customer_reciepts_table.setHorizontalHeaderItem(7, __qtablewidgetitem13)
+        __qtablewidgetitem7.setFont(font1);
+        self.customer_reciepts_table.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         if (self.customer_reciepts_table.rowCount() < 1):
             self.customer_reciepts_table.setRowCount(1)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        __qtablewidgetitem14.setFont(font);
-        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem14)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        __qtablewidgetitem8.setFont(font);
+        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem8)
         self.customer_reciepts_table.setObjectName(u"customer_reciepts_table")
         self.customer_reciepts_table.setFont(font)
         self.customer_reciepts_table.setAutoScrollMargin(2)
@@ -1836,9 +1829,129 @@ class Ui_MainWindow(object):
         self.verticalLayout_4.addWidget(self.user_work_orders_frame)
 
         self.verticalLayout_4.setStretch(0, 2)
-        self.verticalLayout_4.setStretch(1, 6)
+        self.verticalLayout_4.setStretch(2, 6)
 
         self.gridLayout_4.addWidget(self.middle_frame, 0, 1, 1, 1)
+
+        self.right_frame = QFrame(self.centralwidget)
+        self.right_frame.setObjectName(u"right_frame")
+        sizePolicy5 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        sizePolicy5.setHorizontalStretch(0)
+        sizePolicy5.setVerticalStretch(0)
+        sizePolicy5.setHeightForWidth(self.right_frame.sizePolicy().hasHeightForWidth())
+        self.right_frame.setSizePolicy(sizePolicy5)
+        self.right_frame.setFrameShape(QFrame.Panel)
+        self.right_frame.setFrameShadow(QFrame.Sunken)
+        self.right_frame.setLineWidth(5)
+        self.right_frame.setMidLineWidth(5)
+        self.verticalLayout_2 = QVBoxLayout(self.right_frame)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(1, 1, 1, 1)
+        self.customer_table = QTableWidget(self.right_frame)
+        if (self.customer_table.columnCount() < 6):
+            self.customer_table.setColumnCount(6)
+        __qtablewidgetitem9 = QTableWidgetItem()
+        __qtablewidgetitem9.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(0, __qtablewidgetitem9)
+        __qtablewidgetitem10 = QTableWidgetItem()
+        __qtablewidgetitem10.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(1, __qtablewidgetitem10)
+        __qtablewidgetitem11 = QTableWidgetItem()
+        __qtablewidgetitem11.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(2, __qtablewidgetitem11)
+        __qtablewidgetitem12 = QTableWidgetItem()
+        __qtablewidgetitem12.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem12)
+        __qtablewidgetitem13 = QTableWidgetItem()
+        __qtablewidgetitem13.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(4, __qtablewidgetitem13)
+        __qtablewidgetitem14 = QTableWidgetItem()
+        self.customer_table.setHorizontalHeaderItem(5, __qtablewidgetitem14)
+        if (self.customer_table.rowCount() < 1):
+            self.customer_table.setRowCount(1)
+        self.customer_table.setObjectName(u"customer_table")
+        sizePolicy2.setHeightForWidth(self.customer_table.sizePolicy().hasHeightForWidth())
+        self.customer_table.setSizePolicy(sizePolicy2)
+        self.customer_table.setFont(font1)
+        self.customer_table.setFrameShape(QFrame.NoFrame)
+        self.customer_table.setAutoScrollMargin(2)
+        self.customer_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self.customer_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self.customer_table.setTextElideMode(Qt.ElideMiddle)
+        self.customer_table.setShowGrid(True)
+        self.customer_table.setGridStyle(Qt.SolidLine)
+        self.customer_table.setSortingEnabled(True)
+        self.customer_table.setWordWrap(True)
+        self.customer_table.setCornerButtonEnabled(True)
+        self.customer_table.setRowCount(1)
+        self.customer_table.horizontalHeader().setVisible(True)
+        self.customer_table.horizontalHeader().setCascadingSectionResizes(True)
+        self.customer_table.horizontalHeader().setMinimumSectionSize(68)
+        self.customer_table.horizontalHeader().setDefaultSectionSize(70)
+        self.customer_table.horizontalHeader().setHighlightSections(True)
+        self.customer_table.horizontalHeader().setProperty("showSortIndicator", True)
+        self.customer_table.horizontalHeader().setStretchLastSection(True)
+        self.customer_table.verticalHeader().setVisible(True)
+        self.customer_table.verticalHeader().setCascadingSectionResizes(False)
+        self.customer_table.verticalHeader().setDefaultSectionSize(30)
+        self.customer_table.verticalHeader().setHighlightSections(True)
+        self.customer_table.verticalHeader().setStretchLastSection(False)
+
+        self.verticalLayout_2.addWidget(self.customer_table)
+
+        self.frame_2 = QFrame(self.right_frame)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_3 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_3.setSpacing(1)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.verticalLayout_3.setContentsMargins(1, 1, 1, 1)
+        self.lineEdit = QLineEdit(self.frame_2)
+        self.lineEdit.setObjectName(u"lineEdit")
+
+        self.verticalLayout_3.addWidget(self.lineEdit)
+
+
+        self.verticalLayout_2.addWidget(self.frame_2)
+
+        self.frame = QFrame(self.right_frame)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout = QHBoxLayout(self.frame)
+        self.horizontalLayout.setSpacing(1)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(1, 1, 1, 1)
+        self.delete_selected_table_button = QPushButton(self.frame)
+        self.delete_selected_table_button.setObjectName(u"delete_selected_table_button")
+
+        self.horizontalLayout.addWidget(self.delete_selected_table_button)
+
+        self.clear_table_button = QPushButton(self.frame)
+        self.clear_table_button.setObjectName(u"clear_table_button")
+
+        self.horizontalLayout.addWidget(self.clear_table_button)
+
+        self.filter_table_button = QPushButton(self.frame)
+        self.filter_table_button.setObjectName(u"filter_table_button")
+
+        self.horizontalLayout.addWidget(self.filter_table_button)
+
+        self.populate_table_button = QPushButton(self.frame)
+        self.populate_table_button.setObjectName(u"populate_table_button")
+
+        self.horizontalLayout.addWidget(self.populate_table_button)
+
+
+        self.verticalLayout_2.addWidget(self.frame)
+
+        self.verticalLayout_2.setStretch(0, 99)
+        self.verticalLayout_2.setStretch(1, 1)
+        self.verticalLayout_2.setStretch(2, 1)
+
+        self.gridLayout_4.addWidget(self.right_frame, 0, 2, 1, 1)
 
         self.gridLayout_4.setColumnStretch(0, 3)
         self.gridLayout_4.setColumnStretch(1, 10)
@@ -1862,20 +1975,6 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Budget Flow", None))
-        ___qtablewidgetitem = self.customer_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
-        ___qtablewidgetitem1 = self.customer_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
-        ___qtablewidgetitem2 = self.customer_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
-        ___qtablewidgetitem3 = self.customer_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
-        ___qtablewidgetitem4 = self.customer_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
-        self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
-        self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))
-        self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
         self.add_customer_label.setText(QCoreApplication.translate("MainWindow", u"Nova Mu\u0161terija", None))
         self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
         self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
@@ -1908,32 +2007,53 @@ class Ui_MainWindow(object):
         self.plates_text_data.setText("")
         self.chasis_text_data.setText("")
         self.id_text_data.setText("")
-        self.add_receipt_button.setText(QCoreApplication.translate("MainWindow", u"Svi\n"
+        self.placeholder_button.setText(QCoreApplication.translate("MainWindow", u"Svi\n"
 "Predra\u010duni", None))
-        self.show_receipts_button.setText(QCoreApplication.translate("MainWindow", u"Novi \n"
+        self.new_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Novi \n"
 "Predra\u010dun", None))
-        ___qtablewidgetitem5 = self.customer_reciepts_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"#ID", None));
-        ___qtablewidgetitem6 = self.customer_reciepts_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
-        ___qtablewidgetitem7 = self.customer_reciepts_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Marka", None));
-        ___qtablewidgetitem8 = self.customer_reciepts_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Cijena[KM]", None));
-        ___qtablewidgetitem9 = self.customer_reciepts_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None));
-        ___qtablewidgetitem10 = self.customer_reciepts_table.horizontalHeaderItem(5)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+        self.add_receipt_service.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rad", None))
+        self.add_receipt_amount.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None))
+        self.add_receipt_price.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Cijena", None))
+        self.add_receipt_brand.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Marka", None))
+        self.add_receipt_material.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Materijal", None))
+        self.add_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Dodaj", None))
+        self.cancel_add_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        ___qtablewidgetitem = self.customer_reciepts_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"#ID", None));
+        ___qtablewidgetitem1 = self.customer_reciepts_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
+        ___qtablewidgetitem2 = self.customer_reciepts_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Marka", None));
+        ___qtablewidgetitem3 = self.customer_reciepts_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Cijena[KM]", None));
+        ___qtablewidgetitem4 = self.customer_reciepts_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None));
+        ___qtablewidgetitem5 = self.customer_reciepts_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
 "Dijelovi[KM]", None));
-        ___qtablewidgetitem11 = self.customer_reciepts_table.horizontalHeaderItem(6)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
-        ___qtablewidgetitem12 = self.customer_reciepts_table.horizontalHeaderItem(7)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+        ___qtablewidgetitem6 = self.customer_reciepts_table.horizontalHeaderItem(6)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
+        ___qtablewidgetitem7 = self.customer_reciepts_table.horizontalHeaderItem(7)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
 "Cijena[KM]", None));
 
         __sortingEnabled = self.customer_reciepts_table.isSortingEnabled()
         self.customer_reciepts_table.setSortingEnabled(False)
         self.customer_reciepts_table.setSortingEnabled(__sortingEnabled)
 
+        ___qtablewidgetitem8 = self.customer_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
+        ___qtablewidgetitem9 = self.customer_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
+        ___qtablewidgetitem10 = self.customer_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
+        ___qtablewidgetitem11 = self.customer_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        ___qtablewidgetitem12 = self.customer_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
+        self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
+        self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))
+        self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
     # retranslateUi
 

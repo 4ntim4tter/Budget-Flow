@@ -14,6 +14,7 @@ formMain.setupUi(window)
 
 db_manager = DataManager("table.db")
 entry_window = WindowOperator()
+formMain.add_new_reciept_frame.hide()
 new_customer_window = formMain.customer_entry_box
 customer_search_window = formMain.customer_search_box
 
@@ -77,8 +78,11 @@ formMain.customer_table.itemDoubleClicked.connect(
 )
 
 # Reciepts 
-formMain.show_receipts_button.clicked.connect(
-    lambda: entry_window.hide_customer_form(formMain.customer_form_frame)
+formMain.new_reciept_button.clicked.connect(
+    lambda: entry_window.hide_customer_form(formMain.user_data_frame, formMain.add_new_reciept_frame)
+)
+formMain.cancel_add_reciept_button.clicked.connect(
+    lambda: entry_window.hide_customer_form(formMain.user_data_frame, formMain.add_new_reciept_frame)
 )
 
 def main():

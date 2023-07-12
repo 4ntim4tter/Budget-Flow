@@ -115,8 +115,10 @@ class WindowOperator:
             int(customer_displayed[0])
         )
 
-    def hide_customer_form(self, customer_form: QFrame):
-        if customer_form.isHidden():
+    def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame):
+        if customer_form.isHidden() and not add_reciept.isHidden():
             customer_form.show()
+            add_reciept.hide()
         else:
             customer_form.hide()
+            add_reciept.show()
