@@ -647,20 +647,11 @@
         "documentation": {}
     },
     {
-        "label": "Material",
-        "kind": 6,
-        "importPath": "reciept",
-        "description": "reciept",
-        "peekOfCode": "class Material:\n    def __init__(self) -> None:\n        self.data: list = []\n    def set_data(self, type: str, brand: str, amount: int, price: int):\n        self.data.append(\n            {\"type\": type, \"brand\": brand, \"amount\": amount, \"price\": price}\n        )\n    def get_data(self):\n        return self.data\nclass Reciept:",
-        "detail": "reciept",
-        "documentation": {}
-    },
-    {
         "label": "Reciept",
         "kind": 6,
         "importPath": "reciept",
         "description": "reciept",
-        "peekOfCode": "class Reciept:\n    def __init__(self) -> None:\n        self.id: int\n        self.customer: int\n        self.material = Material()\n        self.service: float\n        self.full_price: float\n    def get_data(self):\n        return [\n            self.id,",
+        "peekOfCode": "class Reciept:\n    def __init__(self) -> None:\n        self.id: int\n        self.customer: int\n        self.material:str\n        self.service: float\n        self.full_price: float\n    def get_data(self):\n        return [\n            self.id,",
         "detail": "reciept",
         "documentation": {}
     },

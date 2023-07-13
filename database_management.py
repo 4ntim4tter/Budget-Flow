@@ -140,16 +140,23 @@ class DataManager:
                 f"SELECT * FROM {table} WHERE customer_id = {customer_id}"
             )
         rows = self.db_cursor.fetchall()
-        self.db_disconnect()
         for index, row in enumerate(rows):
             reciept.set_data(row)
+            self.db_cursor.execute(
+                f"SELECT type FROM materials WHERE reciept_id = {reciept.id}"
+            )
+            materials = ''
+            for item in self.db_cursor.fetchall():
+                materials += item[0] + ','
             table_widget.setItem(index, 0, QTableWidgetItem(f"{reciept.id}"))
-            table_widget.setItem(index, 1, QTableWidgetItem(f"{reciept.material.get_data()}"))
+            table_widget.setItem(index, 1, QTableWidgetItem(f"{materials[:-1]}"))
             table_widget.setItem(index, 2, QTableWidgetItem(f"{reciept.service}"))
             table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.full_price}"))
             
             table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept.id}"))
             table_widget.insertRow(index + 1)
+        
+        self.db_disconnect()
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
         self.popup_module.set_title("Brisanje")

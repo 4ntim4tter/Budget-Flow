@@ -44,15 +44,16 @@ for i in range(1, 80):
     reciept_id_query = f"SELECT id FROM receipts WHERE id = {i}"
     cursor.execute(reciept_id_query)
     reciept_id = cursor.fetchall()
-    type = fake.word()
-    brand = fake.word()
-    amount = randint(1,5)
-    price = randint(5,70)
-    full_amount = amount * price
-    cursor.execute(
-        "INSERT INTO materials ('reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
-        (reciept_id[0][0], type, brand, amount, price, full_amount),
-        )
+    for _ in range(randint(2,5)):
+        type = fake.word()
+        brand = fake.word()
+        amount = randint(1,5)
+        price = randint(5,70)
+        full_amount = amount * price
+        cursor.execute(
+            "INSERT INTO materials ('reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
+            (reciept_id[0][0], type, brand, amount, price, full_amount),
+            )
 db_connection.commit()
 
 # cursor.execute("SELECT * FROM receipts")
