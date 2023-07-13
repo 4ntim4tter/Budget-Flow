@@ -1,7 +1,9 @@
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem, QWidget
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
 from popup_module import PopupModule
 
 import sqlite3 as sql3
+
+from reciept import Reciept
 
 
 class DataManager:
@@ -36,14 +38,23 @@ class DataManager:
                 f"""CREATE TABLE IF NOT EXISTS {table}(
                     {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
                     {fields[1]} INTEGER,
-                    {fields[2]} STRING, 
-                    {fields[3]} STRING, 
-                    {fields[4]} FLOAT, 
-                    {fields[5]} INTEGER, 
-                    {fields[6]} FLOAT,
+                    {fields[2]} STRING,  
                     {fields[7]} FLOAT,
                     {fields[8]} FLOAT,
-                    FOREIGN KEY ({fields[1]}) REFERENCES customers (id))
+                    FOREIGN KEY ({fields[1]}) REFERENCES customers (id) ON DELETE CASCADE)
+"""
+            )
+        if table == "materials":
+            self.db_cursor.execute(
+                f"""CREATE TABLE IF NOT EXISTS {table}(
+                    {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT,
+                    {fields[1]} INTEGER,
+                    {fields[2]} STRING,
+                    {fields[3]} STRING,
+                    {fields[4]} INTEGER,
+                    {fields[5]} FLOAT,
+                    {fields[6]} FLOAT,
+                    FOREIGN KEY ({fields[1]}) REFERENCES receipts (id) ON DELETE CASCADE)
 """
             )
         self.db_disconnect()
@@ -121,6 +132,7 @@ class DataManager:
             table_widget.insertRow(index + 1)
     
     def customer_receipts_populate_table(self, table:str, table_widget:QTableWidget, customer_id:int):
+        reciept = Reciept()
         self.clear_table(table_widget, 8)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
@@ -131,12 +143,14 @@ class DataManager:
         self.db_disconnect()
         
         for index, row in enumerate(rows):
-            for i in range(8):
-                if i == 0:
-                    table_widget.setItem(index, i, QTableWidgetItem(f"{row[i]}"))
-                else:    
-                    table_widget.setItem(index, i, QTableWidgetItem(f"{row[i + 1]}"))
-            table_widget.setItem(index, 8, QTableWidgetItem(f"{row[0]}"))
+            reciept.set_data(row)
+            table_widget.setItem(index, 0, QTableWidgetItem(f"{reciept.id}"))
+            table_widget.setItem(index, 1, QTableWidgetItem(f"{reciept.material.get_data()}"))
+            table_widget.setItem(index, 2, QTableWidgetItem(f"{reciept.full_amount}"))
+            table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.service}"))
+            table_widget.setItem(index, 4, QTableWidgetItem(f"{reciept.full_price}"))
+            
+            table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept.id}"))
             table_widget.insertRow(index + 1)
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):

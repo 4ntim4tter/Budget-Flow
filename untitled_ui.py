@@ -1775,8 +1775,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3 = QHBoxLayout(self.user_work_orders_frame)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
         self.customer_reciepts_table = QTableWidget(self.user_work_orders_frame)
-        if (self.customer_reciepts_table.columnCount() < 8):
-            self.customer_reciepts_table.setColumnCount(8)
+        if (self.customer_reciepts_table.columnCount() < 5):
+            self.customer_reciepts_table.setColumnCount(5)
         font4 = QFont()
         font4.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
@@ -1789,25 +1789,16 @@ class Ui_MainWindow(object):
         __qtablewidgetitem2.setFont(font);
         self.customer_reciepts_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font);
+        __qtablewidgetitem3.setFont(font1);
         self.customer_reciepts_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font);
+        __qtablewidgetitem4.setFont(font1);
         self.customer_reciepts_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
-        __qtablewidgetitem5 = QTableWidgetItem()
-        __qtablewidgetitem5.setFont(font);
-        self.customer_reciepts_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
-        __qtablewidgetitem6 = QTableWidgetItem()
-        __qtablewidgetitem6.setFont(font1);
-        self.customer_reciepts_table.setHorizontalHeaderItem(6, __qtablewidgetitem6)
-        __qtablewidgetitem7 = QTableWidgetItem()
-        __qtablewidgetitem7.setFont(font1);
-        self.customer_reciepts_table.setHorizontalHeaderItem(7, __qtablewidgetitem7)
         if (self.customer_reciepts_table.rowCount() < 1):
             self.customer_reciepts_table.setRowCount(1)
-        __qtablewidgetitem8 = QTableWidgetItem()
-        __qtablewidgetitem8.setFont(font);
-        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem8)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setFont(font);
+        self.customer_reciepts_table.setItem(0, 0, __qtablewidgetitem5)
         self.customer_reciepts_table.setObjectName(u"customer_reciepts_table")
         self.customer_reciepts_table.setFont(font)
         self.customer_reciepts_table.setAutoScrollMargin(2)
@@ -1851,23 +1842,23 @@ class Ui_MainWindow(object):
         self.customer_table = QTableWidget(self.right_frame)
         if (self.customer_table.columnCount() < 6):
             self.customer_table.setColumnCount(6)
+        __qtablewidgetitem6 = QTableWidgetItem()
+        __qtablewidgetitem6.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(0, __qtablewidgetitem6)
+        __qtablewidgetitem7 = QTableWidgetItem()
+        __qtablewidgetitem7.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(1, __qtablewidgetitem7)
+        __qtablewidgetitem8 = QTableWidgetItem()
+        __qtablewidgetitem8.setFont(font1);
+        self.customer_table.setHorizontalHeaderItem(2, __qtablewidgetitem8)
         __qtablewidgetitem9 = QTableWidgetItem()
         __qtablewidgetitem9.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(0, __qtablewidgetitem9)
+        self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem9)
         __qtablewidgetitem10 = QTableWidgetItem()
         __qtablewidgetitem10.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(1, __qtablewidgetitem10)
+        self.customer_table.setHorizontalHeaderItem(4, __qtablewidgetitem10)
         __qtablewidgetitem11 = QTableWidgetItem()
-        __qtablewidgetitem11.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(2, __qtablewidgetitem11)
-        __qtablewidgetitem12 = QTableWidgetItem()
-        __qtablewidgetitem12.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(3, __qtablewidgetitem12)
-        __qtablewidgetitem13 = QTableWidgetItem()
-        __qtablewidgetitem13.setFont(font1);
-        self.customer_table.setHorizontalHeaderItem(4, __qtablewidgetitem13)
-        __qtablewidgetitem14 = QTableWidgetItem()
-        self.customer_table.setHorizontalHeaderItem(5, __qtablewidgetitem14)
+        self.customer_table.setHorizontalHeaderItem(5, __qtablewidgetitem11)
         if (self.customer_table.rowCount() < 1):
             self.customer_table.setRowCount(1)
         self.customer_table.setObjectName(u"customer_table")
@@ -2023,34 +2014,28 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem1 = self.customer_reciepts_table.horizontalHeaderItem(1)
         ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
         ___qtablewidgetitem2 = self.customer_reciepts_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Marka", None));
-        ___qtablewidgetitem3 = self.customer_reciepts_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Cijena[KM]", None));
-        ___qtablewidgetitem4 = self.customer_reciepts_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None));
-        ___qtablewidgetitem5 = self.customer_reciepts_table.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
 "Dijelovi[KM]", None));
-        ___qtablewidgetitem6 = self.customer_reciepts_table.horizontalHeaderItem(6)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
-        ___qtablewidgetitem7 = self.customer_reciepts_table.horizontalHeaderItem(7)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
+        ___qtablewidgetitem3 = self.customer_reciepts_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
+        ___qtablewidgetitem4 = self.customer_reciepts_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
 "Cijena[KM]", None));
 
         __sortingEnabled = self.customer_reciepts_table.isSortingEnabled()
         self.customer_reciepts_table.setSortingEnabled(False)
         self.customer_reciepts_table.setSortingEnabled(__sortingEnabled)
 
-        ___qtablewidgetitem8 = self.customer_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
-        ___qtablewidgetitem9 = self.customer_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
-        ___qtablewidgetitem10 = self.customer_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
-        ___qtablewidgetitem11 = self.customer_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
-        ___qtablewidgetitem12 = self.customer_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"ID", None));
+        ___qtablewidgetitem5 = self.customer_table.horizontalHeaderItem(0)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
+        ___qtablewidgetitem6 = self.customer_table.horizontalHeaderItem(1)
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
+        ___qtablewidgetitem7 = self.customer_table.horizontalHeaderItem(2)
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
+        ___qtablewidgetitem8 = self.customer_table.horizontalHeaderItem(3)
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        ___qtablewidgetitem9 = self.customer_table.horizontalHeaderItem(4)
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
         self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
         self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))

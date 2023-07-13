@@ -2641,45 +2641,6 @@ Predračun</string>
             </column>
             <column>
              <property name="text">
-              <string>Marka</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>9</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Cijena[KM]</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>9</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
-              <string>Količina</string>
-             </property>
-             <property name="font">
-              <font>
-               <family>Arial</family>
-               <pointsize>9</pointsize>
-               <weight>75</weight>
-               <bold>true</bold>
-              </font>
-             </property>
-            </column>
-            <column>
-             <property name="text">
               <string>Ukupno 
 Dijelovi[KM]</string>
              </property>

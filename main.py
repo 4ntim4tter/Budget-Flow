@@ -28,13 +28,12 @@ db_manager.db_create_table(
         "id",
         "customer_id",
         "material",
-        "brand",
-        "price",
-        "amount",
-        "full_amount",
         "service",
         "full_price",
     ],
+)
+db_manager.db_create_table(
+    "materials", ['id','recipe_id', 'type', 'brand', 'amount', 'price', 'full_amount']
 )
 
 # focus changed signal
