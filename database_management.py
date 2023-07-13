@@ -39,8 +39,8 @@ class DataManager:
                     {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
                     {fields[1]} INTEGER,
                     {fields[2]} STRING,  
-                    {fields[7]} FLOAT,
-                    {fields[8]} FLOAT,
+                    {fields[3]} FLOAT,
+                    {fields[4]} FLOAT,
                     FOREIGN KEY ({fields[1]}) REFERENCES customers (id) ON DELETE CASCADE)
 """
             )
@@ -141,14 +141,12 @@ class DataManager:
             )
         rows = self.db_cursor.fetchall()
         self.db_disconnect()
-        
         for index, row in enumerate(rows):
             reciept.set_data(row)
             table_widget.setItem(index, 0, QTableWidgetItem(f"{reciept.id}"))
             table_widget.setItem(index, 1, QTableWidgetItem(f"{reciept.material.get_data()}"))
-            table_widget.setItem(index, 2, QTableWidgetItem(f"{reciept.full_amount}"))
-            table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.service}"))
-            table_widget.setItem(index, 4, QTableWidgetItem(f"{reciept.full_price}"))
+            table_widget.setItem(index, 2, QTableWidgetItem(f"{reciept.service}"))
+            table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.full_price}"))
             
             table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept.id}"))
             table_widget.insertRow(index + 1)

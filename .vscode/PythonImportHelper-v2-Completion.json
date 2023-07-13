@@ -16,14 +16,6 @@
         "documentation": {}
     },
     {
-        "label": "QWidget",
-        "importPath": "PyQt6.QtWidgets",
-        "description": "PyQt6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtWidgets",
-        "documentation": {}
-    },
-    {
         "label": "QApplication",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
@@ -94,6 +86,14 @@
         "importPath": "sqlite3",
         "description": "sqlite3",
         "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "Reciept",
+        "importPath": "reciept",
+        "description": "reciept",
+        "isExtraImport": true,
+        "detail": "reciept",
         "documentation": {}
     },
     {
@@ -543,7 +543,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\ncursor.execute(\"DELETE FROM receipts\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")",
+        "peekOfCode": "db_connection = sqlite3.connect(\"table.db\")\ncursor = db_connection.cursor()\n# cursor.execute(\"DROP TABLE IF EXISTS customers\")\n# cursor.execute(\"DROP TABLE IF EXISTS receipts\")\n# cursor.execute(\"DROP TABLE IF EXISTS materials\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -552,7 +552,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "cursor = db_connection.cursor()\ncursor.execute(\"DELETE FROM customers\")\ncursor.execute(\"DELETE FROM receipts\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()",
+        "peekOfCode": "cursor = db_connection.cursor()\n# cursor.execute(\"DROP TABLE IF EXISTS customers\")\n# cursor.execute(\"DROP TABLE IF EXISTS receipts\")\n# cursor.execute(\"DROP TABLE IF EXISTS materials\")\nfake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -561,7 +561,7 @@
         "kind": 5,
         "importPath": "faker_db_populate",
         "description": "faker_db_populate",
-        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    cursor.execute(\"DELETE FROM sqlite_sequence WHERE name = 'customers'\")",
+        "peekOfCode": "fake = Faker()\nfake.add_provider(VehicleProvider)\nfor _ in range(20):\n    name = fake.first_name()\n    surname = fake.last_name()\n    phone = fake.bothify(text=\"###-###-###\")\n    vehicle = fake.vehicle_model()\n    plates = fake.bothify(text=\"###-#-???\")\n    chasis = fake.bothify(text=\"???###?##??#?#?#??#\")\n    cursor.execute(",
         "detail": "faker_db_populate",
         "documentation": {}
     },
@@ -579,7 +579,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([])\nwindow = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
+        "peekOfCode": "app = QApplication([])\nwindow = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")",
         "detail": "main",
         "documentation": {}
     },
@@ -588,7 +588,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
+        "peekOfCode": "window = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
         "detail": "main",
         "documentation": {}
     },
@@ -597,7 +597,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "formMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)",
+        "peekOfCode": "formMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
         "detail": "main",
         "documentation": {}
     },
@@ -606,7 +606,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",",
+        "peekOfCode": "db_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(",
         "detail": "main",
         "documentation": {}
     },
@@ -615,7 +615,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "entry_window = WindowOperator()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",\n    [",
+        "peekOfCode": "entry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]\n)\ndb_manager.db_create_table(\n    \"receipts\",",
         "detail": "main",
         "documentation": {}
     },
@@ -647,11 +647,20 @@
         "documentation": {}
     },
     {
+        "label": "Material",
+        "kind": 6,
+        "importPath": "reciept",
+        "description": "reciept",
+        "peekOfCode": "class Material:\n    def __init__(self) -> None:\n        self.data: list = []\n    def set_data(self, type: str, brand: str, amount: int, price: int):\n        self.data.append(\n            {\"type\": type, \"brand\": brand, \"amount\": amount, \"price\": price}\n        )\n    def get_data(self):\n        return self.data\nclass Reciept:",
+        "detail": "reciept",
+        "documentation": {}
+    },
+    {
         "label": "Reciept",
         "kind": 6,
         "importPath": "reciept",
         "description": "reciept",
-        "peekOfCode": "class Reciept:\n    def __init__(\n        self,\n        id: int,\n        customer: str,\n        material: str,\n        brand: str,\n        price: float,\n        amount: float,\n        full_amount: float,",
+        "peekOfCode": "class Reciept:\n    def __init__(self) -> None:\n        self.id: int\n        self.customer: int\n        self.material = Material()\n        self.service: float\n        self.full_price: float\n    def get_data(self):\n        return [\n            self.id,",
         "detail": "reciept",
         "documentation": {}
     },

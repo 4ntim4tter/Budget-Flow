@@ -33,7 +33,7 @@ db_manager.db_create_table(
     ],
 )
 db_manager.db_create_table(
-    "materials", ['id','recipe_id', 'type', 'brand', 'amount', 'price', 'full_amount']
+    "materials", ['id','reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount']
 )
 
 # focus changed signal
