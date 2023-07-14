@@ -38,9 +38,8 @@ class DataManager:
                 f"""CREATE TABLE IF NOT EXISTS {table}(
                     {fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
                     {fields[1]} INTEGER,
-                    {fields[2]} STRING,  
+                    {fields[2]} FLOAT,
                     {fields[3]} FLOAT,
-                    {fields[4]} FLOAT,
                     FOREIGN KEY ({fields[1]}) REFERENCES customers (id) ON DELETE CASCADE)
 """
             )

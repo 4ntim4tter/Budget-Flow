@@ -30,13 +30,12 @@ for _ in range(80):
     customer_id_query = "SELECT id FROM customers ORDER BY RANDOM() LIMIT 1"  
     cursor.execute(customer_id_query)
     customer_id = cursor.fetchone()[0]
-    fake_material = [fake.word(), fake.word()]
     full_amount = randint(50,100)
     service = randint(50, 100)
     full_price = full_amount + service
     cursor.execute(
-        "INSERT INTO receipts (customer_id, material, service, full_price) VALUES (?, ?, ?, ?)",
-        (customer_id, str(fake_material), service, full_price),
+        "INSERT INTO receipts (customer_id, service, full_price) VALUES (?, ?, ?)",
+        (customer_id, service, full_price),
         )
 db_connection.commit()
 
@@ -54,16 +53,5 @@ for i in range(1, 80):
             "INSERT INTO materials ('reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
             (reciept_id[0][0], type, brand, amount, price, full_amount),
             )
-db_connection.commit()
-
-# cursor.execute("SELECT * FROM receipts")
-# all = cursor.fetchall()
-# for item in all:
-#     cursor.execute(
-#         f"SELECT type FROM materials WHERE reciept_id = {item[0]}"
-#     )
-#     reciept_materials = cursor.fetchall()
-#     print(reciept_materials)
-
 db_connection.commit()
 db_connection.close()

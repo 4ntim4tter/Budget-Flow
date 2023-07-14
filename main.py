@@ -27,7 +27,6 @@ db_manager.db_create_table(
     [
         "id",
         "customer_id",
-        "material",
         "service",
         "full_price",
     ],
