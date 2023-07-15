@@ -141,19 +141,30 @@ class DataManager:
         rows = self.db_cursor.fetchall()
         for index, row in enumerate(rows):
             reciept.set_data(row)
+
             self.db_cursor.execute(
                 f"SELECT type FROM materials WHERE reciept_id = {reciept.id}"
             )
             materials = ''
             for item in self.db_cursor.fetchall():
                 materials += item[0] + ','
+
+            self.db_cursor.execute(
+                f"SELECT full_amount FROM materials WHERE reciept_id = {reciept.id}"
+            )
+            full_amount = 0
+            for item in self.db_cursor.fetchall():
+                full_amount += item[0]
+            
             table_widget.setItem(index, 0, QTableWidgetItem(f"{reciept.id}"))
             table_widget.setItem(index, 1, QTableWidgetItem(f"{materials[:-1]}"))
-            table_widget.setItem(index, 2, QTableWidgetItem(f"{reciept.service}"))
-            table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.full_price}"))
-            
+            table_widget.setItem(index, 2, QTableWidgetItem(f"{full_amount}"))
+            table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.service}"))
+            table_widget.setItem(index, 4, QTableWidgetItem(f"{reciept.full_price}"))
             table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept.id}"))
             table_widget.insertRow(index + 1)
+            
+            
         
         self.db_disconnect()
 

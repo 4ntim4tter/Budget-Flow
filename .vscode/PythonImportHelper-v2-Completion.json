@@ -651,7 +651,7 @@
         "kind": 6,
         "importPath": "reciept",
         "description": "reciept",
-        "peekOfCode": "class Reciept:\n    def __init__(self) -> None:\n        self.id: int\n        self.customer: int\n        self.material:str\n        self.service: float\n        self.full_price: float\n    def get_data(self):\n        return [\n            self.id,",
+        "peekOfCode": "class Reciept:\n    def __init__(self) -> None:\n        self.id: int\n        self.customer: int\n        self.service: float\n        self.full_price: float\n    def get_data(self):\n        return [\n            self.id,\n            self.customer,",
         "detail": "reciept",
         "documentation": {}
     },
