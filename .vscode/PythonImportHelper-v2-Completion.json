@@ -64,6 +64,14 @@
         "documentation": {}
     },
     {
+        "label": "QTableWidgetItem",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "PopupModule",
         "importPath": "popup_module",
         "description": "popup_module",
