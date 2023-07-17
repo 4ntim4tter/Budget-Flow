@@ -32,7 +32,7 @@ db_manager.db_create_table(
     ],
 )
 db_manager.db_create_table(
-    "materials", ['id','reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount']
+    "materials", ["id", "reciept_id", "type", "brand", "amount", "price", "full_amount"]
 )
 
 # focus changed signal
@@ -75,13 +75,27 @@ formMain.customer_table.itemDoubleClicked.connect(
     lambda: entry_window.select_customer_from_table(formMain, formMain.customer_table)
 )
 
-# Reciepts 
+# Reciepts
 formMain.new_reciept_button.clicked.connect(
-    lambda: entry_window.hide_customer_form(formMain.user_data_frame, formMain.add_new_reciept_frame)
+    lambda: entry_window.hide_customer_form(
+        formMain.user_data_frame, formMain.add_new_reciept_frame
+    )
 )
 formMain.cancel_add_reciept_button.clicked.connect(
-    lambda: entry_window.hide_customer_form(formMain.user_data_frame, formMain.add_new_reciept_frame)
+    lambda: entry_window.hide_customer_form(
+        formMain.user_data_frame, formMain.add_new_reciept_frame
+    )
 )
+formMain.add_material_button.clicked.connect(
+    lambda: entry_window.add_material_to_recipe(
+        formMain.materials_receipt_table,
+        formMain.add_receipt_material.text(),
+        formMain.add_receipt_brand.text(),
+        formMain.add_receipt_price.text(),
+        formMain.add_receipt_amount.text(),
+    )
+)
+
 
 def main():
     window.show()

@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame
+from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem
 from customer import Customer
 from database_management import DataManager
 from popup_module import PopupModule
@@ -122,3 +122,12 @@ class WindowOperator:
         else:
             customer_form.hide()
             add_reciept.show()
+    
+    def add_material_to_recipe(self, materials_table:QTableWidget, materials_input, brand_input, price_input, amount_input):
+        row_position = materials_table.rowCount() + 1
+        materials_table.insertRow(row_position)
+        print(materials_table.rowCount())
+        materials_table.setItem(row_position, 0, QTableWidgetItem(materials_input))
+        materials_table.setItem(row_position, 1, QTableWidgetItem(brand_input))
+        materials_table.setItem(row_position, 2, QTableWidgetItem(price_input))
+        materials_table.setItem(row_position, 3, QTableWidgetItem(amount_input))
