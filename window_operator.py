@@ -110,9 +110,7 @@ class WindowOperator:
         form.chasis_text_data.setText(str(customer_displayed[6]))
 
         self.db_manager.customer_receipts_populate_table(
-            "receipts", 
-            form.customer_reciepts_table, 
-            int(customer_displayed[0])
+            "receipts", form.customer_reciepts_table, int(customer_displayed[0])
         )
 
     def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame):
@@ -122,12 +120,29 @@ class WindowOperator:
         else:
             customer_form.hide()
             add_reciept.show()
-    
-    def add_material_to_recipe(self, materials_table:QTableWidget, materials_input, brand_input, price_input, amount_input):
-        row_position = materials_table.rowCount() + 1
-        materials_table.insertRow(row_position)
-        print(materials_table.rowCount())
-        materials_table.setItem(row_position, 0, QTableWidgetItem(materials_input))
-        materials_table.setItem(row_position, 1, QTableWidgetItem(brand_input))
-        materials_table.setItem(row_position, 2, QTableWidgetItem(price_input))
-        materials_table.setItem(row_position, 3, QTableWidgetItem(amount_input))
+
+    def add_material_to_recipe(
+        self,
+        materials_table: QTableWidget,
+        materials_input: QLineEdit,
+        brand_input: QLineEdit,
+        price_input: QLineEdit,
+        amount_input: QLineEdit,
+    ):
+        print(materials_table.rowCount(), materials_input.text())
+        materials_table.setItem(
+            materials_table.rowCount()-1, 0, QTableWidgetItem(f"{materials_input.text()}")
+        )
+        materials_table.setItem(
+            materials_table.rowCount()-1, 1, QTableWidgetItem(brand_input.text())
+        )
+        materials_table.setItem(
+            materials_table.rowCount()-1, 2, QTableWidgetItem(price_input.text())
+        )
+        materials_table.setItem(
+            materials_table.rowCount()-1, 3, QTableWidgetItem(amount_input.text())
+        )
+        materials_table.setItem(
+            materials_table.rowCount()-1, 4, QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}")
+        )
+        materials_table.insertRow(materials_table.rowCount())

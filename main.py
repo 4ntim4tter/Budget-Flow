@@ -89,10 +89,10 @@ formMain.cancel_add_reciept_button.clicked.connect(
 formMain.add_material_button.clicked.connect(
     lambda: entry_window.add_material_to_recipe(
         formMain.materials_receipt_table,
-        formMain.add_receipt_material.text(),
-        formMain.add_receipt_brand.text(),
-        formMain.add_receipt_price.text(),
-        formMain.add_receipt_amount.text(),
+        formMain.add_receipt_material,
+        formMain.add_receipt_brand,
+        formMain.add_receipt_price,
+        formMain.add_receipt_amount,
     )
 )
 

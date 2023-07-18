@@ -2554,12 +2554,16 @@ Predračun</string>
                  <bold>true</bold>
                 </font>
                </property>
+               <property name="rowCount">
+                <number>1</number>
+               </property>
                <attribute name="horizontalHeaderDefaultSectionSize">
                 <number>50</number>
                </attribute>
                <attribute name="horizontalHeaderStretchLastSection">
                 <bool>true</bool>
                </attribute>
+               <row/>
                <column>
                 <property name="text">
                  <string>Materijal</string>
