@@ -2366,7 +2366,7 @@ Predračun</string>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_3">
+           <widget class="QFrame" name="material_fields_frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -2536,7 +2536,7 @@ Predračun</string>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_7">
+           <widget class="QFrame" name="table_service_frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>

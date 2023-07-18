@@ -521,6 +521,14 @@
         "documentation": {}
     },
     {
+        "label": "Frame",
+        "importPath": "tkinter",
+        "description": "tkinter",
+        "isExtraImport": true,
+        "detail": "tkinter",
+        "documentation": {}
+    },
+    {
         "label": "Customer",
         "importPath": "customer",
         "description": "customer",
@@ -677,7 +685,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def wipe_entered_data(self, widget):\n        self.popup_module.set_title(\"Brisanje\")\n        self.popup_module.set_question(\"Da li želite obrisati unesene podatke?\")\n        answer = self.popup_module.confirmation_dialog()\n        if answer:\n            widgets = widget.children()",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def popup_window(self, title:str, question:str):\n        self.popup_module.set_title(title)\n        self.popup_module.set_question(question)\n        answer = self.popup_module.confirmation_dialog()\n        return answer\n    def wipe_entered_data(self, widget):  ",
         "detail": "window_operator",
         "documentation": {}
     }

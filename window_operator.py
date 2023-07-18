@@ -1,3 +1,4 @@
+from tkinter import Frame
 from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem
 from customer import Customer
 from database_management import DataManager
@@ -9,28 +10,33 @@ class WindowOperator:
         self.db_manager = DataManager("table.db")
         self.popup_module = PopupModule("Yes", "No", "", "")
 
-    def wipe_entered_data(self, widget):
-        self.popup_module.set_title("Brisanje")
-        self.popup_module.set_question("Da li želite obrisati unesene podatke?")
+    def popup_window(self, title:str, question:str):
+        self.popup_module.set_title(title)
+        self.popup_module.set_question(question)
         answer = self.popup_module.confirmation_dialog()
-        if answer:
-            widgets = widget.children()
-            for child in widgets:
-                if isinstance(child, QLineEdit):
-                    p_text = child.placeholderText()
-                    child.setText("")
-                    child.setInputMask("")
-                    child.setPlaceholderText(p_text)
+        return answer
+
+    def wipe_entered_data(self, widget):  
+        widgets = widget.children()
+        for child in widgets:
+            if isinstance(child, QLineEdit):
+                p_text = child.placeholderText()
+                child.setText("")
+                child.setInputMask("")
+                child.setPlaceholderText(p_text)
+            if isinstance(child, QTableWidget):
+                child.clearContents()
+                child.setRowCount(1)
 
     def store_entered_data(self, table: str, customer: list, entry_widget: QWidget):
         accepted = self.db_manager.db_insert_customer(table, customer)
         if accepted:
             self.wipe_entered_data(entry_widget)
 
-    def hide_opened(self, widget):
-        for item in widget:
-            if hasattr(item, "hide"):
-                item.hide()
+    def wipe_customer_window_data(self, window):
+        answer = self.popup_window("Prekid", "Da li želite obrisati unesene podatke?")
+        if answer:
+            self.wipe_entered_data(window)
 
     def get_customer_values(self, widget):
         customer = Customer(
@@ -129,20 +135,26 @@ class WindowOperator:
         price_input: QLineEdit,
         amount_input: QLineEdit,
     ):
-        print(materials_table.rowCount(), materials_input.text())
         materials_table.setItem(
-            materials_table.rowCount()-1, 0, QTableWidgetItem(f"{materials_input.text()}")
+            materials_table.rowCount() - 1, 0, QTableWidgetItem(f"{materials_input.text()}"),
         )
         materials_table.setItem(
-            materials_table.rowCount()-1, 1, QTableWidgetItem(brand_input.text())
+            materials_table.rowCount() - 1, 1, QTableWidgetItem(brand_input.text())
         )
         materials_table.setItem(
-            materials_table.rowCount()-1, 2, QTableWidgetItem(price_input.text())
+            materials_table.rowCount() - 1, 2, QTableWidgetItem(price_input.text())
         )
         materials_table.setItem(
-            materials_table.rowCount()-1, 3, QTableWidgetItem(amount_input.text())
+            materials_table.rowCount() - 1, 3, QTableWidgetItem(amount_input.text())
         )
         materials_table.setItem(
-            materials_table.rowCount()-1, 4, QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}")
+            materials_table.rowCount() - 1, 4, QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}"),
         )
         materials_table.insertRow(materials_table.rowCount())
+
+    def close_add_new_receipt(self, form):
+        answer = self.popup_window("Prekid", "Prekinuti unos novog predračuna?")
+        if answer:
+            self.wipe_entered_data(form.material_fields_frame)
+            self.wipe_entered_data(form.table_service_frame)
+            self.hide_customer_form(form.user_data_frame, form.add_new_reciept_frame)

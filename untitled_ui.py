@@ -1672,13 +1672,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.line_20)
 
-        self.frame_3 = QFrame(self.add_new_reciept_frame)
-        self.frame_3.setObjectName(u"frame_3")
-        self.frame_3.setFrameShape(QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.frame_3)
+        self.material_fields_frame = QFrame(self.add_new_reciept_frame)
+        self.material_fields_frame.setObjectName(u"material_fields_frame")
+        self.material_fields_frame.setFrameShape(QFrame.StyledPanel)
+        self.material_fields_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_9 = QVBoxLayout(self.material_fields_frame)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.add_receipt_material = QLineEdit(self.frame_3)
+        self.add_receipt_material = QLineEdit(self.material_fields_frame)
         self.add_receipt_material.setObjectName(u"add_receipt_material")
         sizePolicy3.setHeightForWidth(self.add_receipt_material.sizePolicy().hasHeightForWidth())
         self.add_receipt_material.setSizePolicy(sizePolicy3)
@@ -1689,7 +1689,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.add_receipt_material)
 
-        self.add_receipt_brand = QLineEdit(self.frame_3)
+        self.add_receipt_brand = QLineEdit(self.material_fields_frame)
         self.add_receipt_brand.setObjectName(u"add_receipt_brand")
         sizePolicy3.setHeightForWidth(self.add_receipt_brand.sizePolicy().hasHeightForWidth())
         self.add_receipt_brand.setSizePolicy(sizePolicy3)
@@ -1700,7 +1700,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.add_receipt_brand)
 
-        self.add_receipt_price = QLineEdit(self.frame_3)
+        self.add_receipt_price = QLineEdit(self.material_fields_frame)
         self.add_receipt_price.setObjectName(u"add_receipt_price")
         sizePolicy3.setHeightForWidth(self.add_receipt_price.sizePolicy().hasHeightForWidth())
         self.add_receipt_price.setSizePolicy(sizePolicy3)
@@ -1711,7 +1711,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.add_receipt_price)
 
-        self.add_receipt_amount = QLineEdit(self.frame_3)
+        self.add_receipt_amount = QLineEdit(self.material_fields_frame)
         self.add_receipt_amount.setObjectName(u"add_receipt_amount")
         sizePolicy3.setHeightForWidth(self.add_receipt_amount.sizePolicy().hasHeightForWidth())
         self.add_receipt_amount.setSizePolicy(sizePolicy3)
@@ -1722,13 +1722,13 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.add_receipt_amount)
 
-        self.add_material_button = QPushButton(self.frame_3)
+        self.add_material_button = QPushButton(self.material_fields_frame)
         self.add_material_button.setObjectName(u"add_material_button")
 
         self.verticalLayout_9.addWidget(self.add_material_button)
 
 
-        self.horizontalLayout_5.addWidget(self.frame_3)
+        self.horizontalLayout_5.addWidget(self.material_fields_frame)
 
         self.line_19 = QFrame(self.add_new_reciept_frame)
         self.line_19.setObjectName(u"line_19")
@@ -1737,13 +1737,13 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.line_19)
 
-        self.frame_7 = QFrame(self.add_new_reciept_frame)
-        self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
-        self.frame_7.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_10 = QVBoxLayout(self.frame_7)
+        self.table_service_frame = QFrame(self.add_new_reciept_frame)
+        self.table_service_frame.setObjectName(u"table_service_frame")
+        self.table_service_frame.setFrameShape(QFrame.StyledPanel)
+        self.table_service_frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_10 = QVBoxLayout(self.table_service_frame)
         self.verticalLayout_10.setObjectName(u"verticalLayout_10")
-        self.materials_receipt_table = QTableWidget(self.frame_7)
+        self.materials_receipt_table = QTableWidget(self.table_service_frame)
         if (self.materials_receipt_table.columnCount() < 5):
             self.materials_receipt_table.setColumnCount(5)
         font4 = QFont()
@@ -1769,14 +1769,17 @@ class Ui_MainWindow(object):
         __qtablewidgetitem4 = QTableWidgetItem()
         __qtablewidgetitem4.setFont(font5);
         self.materials_receipt_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        if (self.materials_receipt_table.rowCount() < 1):
+            self.materials_receipt_table.setRowCount(1)
         self.materials_receipt_table.setObjectName(u"materials_receipt_table")
         self.materials_receipt_table.setFont(font4)
+        self.materials_receipt_table.setRowCount(1)
         self.materials_receipt_table.horizontalHeader().setDefaultSectionSize(50)
         self.materials_receipt_table.horizontalHeader().setStretchLastSection(True)
 
         self.verticalLayout_10.addWidget(self.materials_receipt_table)
 
-        self.add_receipt_service = QLineEdit(self.frame_7)
+        self.add_receipt_service = QLineEdit(self.table_service_frame)
         self.add_receipt_service.setObjectName(u"add_receipt_service")
         sizePolicy2.setHeightForWidth(self.add_receipt_service.sizePolicy().hasHeightForWidth())
         self.add_receipt_service.setSizePolicy(sizePolicy2)
@@ -1786,7 +1789,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_10.addWidget(self.add_receipt_service)
 
 
-        self.horizontalLayout_5.addWidget(self.frame_7)
+        self.horizontalLayout_5.addWidget(self.table_service_frame)
 
         self.line_22 = QFrame(self.add_new_reciept_frame)
         self.line_22.setObjectName(u"line_22")

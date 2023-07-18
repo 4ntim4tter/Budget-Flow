@@ -40,7 +40,7 @@ app.focusChanged.connect(entry_window.line_focus_changed)
 
 # Customer Entry Window
 formMain.cancel_new_customer_button.clicked.connect(
-    lambda: entry_window.wipe_entered_data(new_customer_window)
+    lambda: entry_window.wipe_customer_window_data(new_customer_window)
 )
 formMain.save_new_customer_button.clicked.connect(
     lambda: entry_window.store_entered_data(
@@ -50,7 +50,7 @@ formMain.save_new_customer_button.clicked.connect(
 
 # Customer Search Window
 formMain.cancel_search_customer_button.clicked.connect(
-    lambda: entry_window.wipe_entered_data(customer_search_window)
+    lambda: entry_window.wipe_customer_window_data(customer_search_window)
 )
 formMain.search_customer_button.clicked.connect(
     lambda: entry_window.search_for_customer(
@@ -82,9 +82,7 @@ formMain.new_reciept_button.clicked.connect(
     )
 )
 formMain.cancel_add_reciept_button.clicked.connect(
-    lambda: entry_window.hide_customer_form(
-        formMain.user_data_frame, formMain.add_new_reciept_frame
-    )
+    lambda: entry_window.close_add_new_receipt(formMain)
 )
 formMain.add_material_button.clicked.connect(
     lambda: entry_window.add_material_to_recipe(
