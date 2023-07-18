@@ -1722,6 +1722,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_9.addWidget(self.add_receipt_amount)
 
+        self.add_material_button = QPushButton(self.frame_3)
+        self.add_material_button.setObjectName(u"add_material_button")
+
+        self.verticalLayout_9.addWidget(self.add_material_button)
+
 
         self.horizontalLayout_5.addWidget(self.frame_3)
 
@@ -2069,6 +2074,7 @@ class Ui_MainWindow(object):
         self.add_receipt_brand.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Marka", None))
         self.add_receipt_price.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Cijena", None))
         self.add_receipt_amount.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None))
+        self.add_material_button.setText(QCoreApplication.translate("MainWindow", u"Dodaj", None))
         ___qtablewidgetitem = self.materials_receipt_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
         ___qtablewidgetitem1 = self.materials_receipt_table.horizontalHeaderItem(1)
