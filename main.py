@@ -78,7 +78,7 @@ formMain.customer_table.itemDoubleClicked.connect(
 # Reciepts
 formMain.new_reciept_button.clicked.connect(
     lambda: entry_window.hide_customer_form(
-        formMain.user_data_frame, formMain.add_new_reciept_frame
+        formMain.user_data_frame, formMain.add_new_reciept_frame, formMain
     )
 )
 formMain.cancel_add_reciept_button.clicked.connect(

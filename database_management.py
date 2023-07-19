@@ -196,3 +196,11 @@ class DataManager:
 
         for i in range(row_size):
             table_widget.setItem(0, i, QTableWidgetItem(""))
+
+    def add_receipt_to_table(self, data:list):
+        self.db_connect(self.database)
+        self.db_cursor.execute(
+                f"INSERT INTO receipts (customer_id, service, full_price) values (?,?,?)",
+                data,
+            )
+        

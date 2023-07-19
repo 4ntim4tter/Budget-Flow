@@ -123,7 +123,9 @@ class WindowOperator:
             "receipts", form.customer_reciepts_table, int(customer_displayed[0])
         )
 
-    def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame):
+    def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame, form):
+        if form.name_text_data.text() == '':
+            pass
         if customer_form.isHidden() and not add_reciept.isHidden():
             customer_form.show()
             add_reciept.hide()
@@ -161,4 +163,14 @@ class WindowOperator:
         if answer:
             self.wipe_entered_data(form.material_fields_frame)
             self.wipe_entered_data(form.table_service_frame)
-            self.hide_customer_form(form.user_data_frame, form.add_new_reciept_frame)
+            self.hide_customer_form(form.user_data_frame, form.add_new_reciept_frame, form)
+            
+    def add_new_receipt(self, form):
+        answer = self.popup_window("Završi", "Završiti i dodati novi predračun?")
+        if answer:
+            
+            
+            data = []
+            self.db_manager.add_receipt_to_table(data)
+            self.wipe_entered_data(form.material_fields_frame)
+            self.wipe_entered_data(form.table_service_frame)

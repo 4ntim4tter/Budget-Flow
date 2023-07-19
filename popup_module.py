@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtCore import Qt
 
 
 class PopupModule:
@@ -9,6 +10,9 @@ class PopupModule:
         self.question = question
         self.style = """QMessageBox {
                 background-color: #333333;
+                border: 2px;
+                border-style: groove;
+                border-color: darkgrey;
             }
 
             QPushButton {
@@ -20,15 +24,17 @@ class PopupModule:
                 color: white;
             }
             """
-            
+
     def set_title(self, title):
         self.title = title
-        
+
     def set_question(self, question):
         self.question = question
 
     def confirmation_dialog(self):
         conf_dialog = QMessageBox()
+        conf_dialog.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        conf_dialog.setIcon(QMessageBox.Icon.Question)
         conf_dialog.setStyleSheet(self.style)
         conf_dialog.setWindowTitle(self.title)
         conf_dialog.setText(self.question)
