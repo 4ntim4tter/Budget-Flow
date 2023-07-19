@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
-from popup_module import PopupModule
+from popup_module import QuestionPopup
 
 import sqlite3 as sql3
 
@@ -11,7 +11,7 @@ class DataManager:
         self.db_link: sql3.Connection
         self.db_cursor: sql3.Cursor
         self.database = database
-        self.popup_module = PopupModule("Yes", "No", "", "")
+        self.popup_module = QuestionPopup("Yes", "No", "", "")
 
     def db_connect(self, database):
         """Connect to database -> Sqlite3

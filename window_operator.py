@@ -2,18 +2,24 @@ from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidg
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
-from popup_module import PopupModule
+from popup_module import QuestionPopup, WarningPopup
 
 
 class WindowOperator:
     def __init__(self) -> None:
         self.db_manager = DataManager("table.db")
-        self.popup_module = PopupModule("Yes", "No", "", "")
+        self.question_box = QuestionPopup("Yes", "No", "", "")
+        self.warning_box = WarningPopup("Upozorenje!", "")
 
-    def popup_window(self, title:str, question:str):
-        self.popup_module.set_title(title)
-        self.popup_module.set_question(question)
-        answer = self.popup_module.confirmation_dialog()
+    def question_popup(self, title:str, question:str):
+        self.question_box.set_title(title)
+        self.question_box.set_question(question)
+        answer = self.question_box.confirmation_dialog()
+        return answer
+    
+    def warning_popup(self, warning:str):
+        self.warning_box.set_warning(warning)
+        answer = self.warning_box.confirmation_dialog()
         return answer
 
     def wipe_entered_data(self, widget):  
@@ -34,7 +40,7 @@ class WindowOperator:
             self.wipe_entered_data(entry_widget)
 
     def wipe_customer_window_data(self, window):
-        answer = self.popup_window("Prekid", "Da li želite obrisati unesene podatke?")
+        answer = self.question_popup("Prekid", "Da li želite obrisati unesene podatke?")
         if answer:
             self.wipe_entered_data(window)
 
@@ -125,7 +131,8 @@ class WindowOperator:
 
     def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame, form):
         if form.name_text_data.text() == '':
-            pass
+            self.warning_popup("Ne možete dodati novi predračun bez selektiranja mušterije!")
+            return
         if customer_form.isHidden() and not add_reciept.isHidden():
             customer_form.show()
             add_reciept.hide()
@@ -159,14 +166,14 @@ class WindowOperator:
         materials_table.insertRow(materials_table.rowCount())
 
     def close_add_new_receipt(self, form):
-        answer = self.popup_window("Prekid", "Prekinuti unos novog predračuna?")
+        answer = self.question_popup("Prekid", "Prekinuti unos novog predračuna?")
         if answer:
             self.wipe_entered_data(form.material_fields_frame)
             self.wipe_entered_data(form.table_service_frame)
             self.hide_customer_form(form.user_data_frame, form.add_new_reciept_frame, form)
             
     def add_new_receipt(self, form):
-        answer = self.popup_window("Završi", "Završiti i dodati novi predračun?")
+        answer = self.question_popup("Završi", "Završiti i dodati novi predračun?")
         if answer:
             
             
