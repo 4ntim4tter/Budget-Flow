@@ -191,11 +191,13 @@ class DataManager:
             # self.populate_customer_table(table, table_widget, (), "")
 
     def clear_table(self, table_widget: QTableWidget, row_size):
-        for i in range(table_widget.rowCount(), 0, -1):
-            table_widget.removeRow(i)
+        table_widget.clearContents()
+        table_widget.setRowCount(1)
+        # for i in range(table_widget.rowCount(), 0, -1):
+        #     table_widget.removeRow(i)
 
-        for i in range(row_size):
-            table_widget.setItem(0, i, QTableWidgetItem(""))
+        # for i in range(row_size):
+        #     table_widget.setItem(0, i, QTableWidgetItem(""))
 
     def add_receipt_to_table(self, data:list):
         self.db_connect(self.database)
