@@ -1,5 +1,5 @@
-from tkinter import Frame
 from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem
+from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import PopupModule
@@ -50,12 +50,16 @@ class WindowOperator:
 
         return customer.get_data()
 
-    def line_focus_changed(self, new, old):
+    def line_focus_changed(self, new, old:QLineEdit):
         if old is not None and hasattr(old, "placeholderText"):
             if old.placeholderText() == "Registracija":
                 old.setInputMask("NNN-N-NNN")
             if old.placeholderText() == "Telefon":
                 old.setInputMask("999-999-999")
+            if old.placeholderText() == "Cijena":
+                old.setValidator(QDoubleValidator())
+            if old.placeholderText() == "Količina":
+                old.setValidator(QDoubleValidator())
 
     def search_for_customer(self, table: str, table_widget: QTableWidget, widget):
         customer = Customer(
