@@ -72,7 +72,7 @@
         "documentation": {}
     },
     {
-        "label": "PopupModule",
+        "label": "QuestionPopup",
         "importPath": "popup_module",
         "description": "popup_module",
         "isExtraImport": true,
@@ -80,7 +80,15 @@
         "documentation": {}
     },
     {
-        "label": "PopupModule",
+        "label": "QuestionPopup",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "WarningPopup",
         "importPath": "popup_module",
         "description": "popup_module",
         "isExtraImport": true,
@@ -158,6 +166,14 @@
         "description": "database_management",
         "isExtraImport": true,
         "detail": "database_management",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtCore",
         "documentation": {}
     },
     {
@@ -521,11 +537,11 @@
         "documentation": {}
     },
     {
-        "label": "Frame",
-        "importPath": "tkinter",
-        "description": "tkinter",
+        "label": "QDoubleValidator",
+        "importPath": "PyQt6.QtGui",
+        "description": "PyQt6.QtGui",
         "isExtraImport": true,
-        "detail": "tkinter",
+        "detail": "PyQt6.QtGui",
         "documentation": {}
     },
     {
@@ -550,7 +566,7 @@
         "kind": 6,
         "importPath": "database_management",
         "description": "database_management",
-        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def db_connect(self, database):\n        \"\"\"Connect to database -> Sqlite3\n        Args:\n            database (string): database table to connect to",
+        "peekOfCode": "class DataManager:\n    def __init__(self, database: str) -> None:\n        self.db_link: sql3.Connection\n        self.db_cursor: sql3.Cursor\n        self.database = database\n        self.popup_module = QuestionPopup(\"Yes\", \"No\", \"\", \"\")\n    def db_connect(self, database):\n        \"\"\"Connect to database -> Sqlite3\n        Args:\n            database (string): database table to connect to",
         "detail": "database_management",
         "documentation": {}
     },
@@ -654,11 +670,20 @@
         "documentation": {}
     },
     {
-        "label": "PopupModule",
+        "label": "QuestionPopup",
         "kind": 6,
         "importPath": "popup_module",
         "description": "popup_module",
-        "peekOfCode": "class PopupModule:\n    def __init__(self, yes: str, no: str, title: str, question: str) -> None:\n        self.yes = yes\n        self.no = no\n        self.title = title\n        self.question = question\n        self.style = \"\"\"QMessageBox {\n                background-color: #333333;\n            }\n            QPushButton {",
+        "peekOfCode": "class QuestionPopup:\n    def __init__(self, yes: str, no: str, title: str, question: str) -> None:\n        self.yes = yes\n        self.no = no\n        self.title = title\n        self.question = question\n        self.style = \"\"\"QMessageBox {\n                background-color: #333333;\n                border: 2px;\n                border-style: groove;",
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "WarningPopup",
+        "kind": 6,
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "peekOfCode": "class WarningPopup:\n    def __init__(self, title: str, warning: str) -> None:\n        self.ok = \"OK\"\n        self.title = title\n        self.warning = warning\n        self.style = \"\"\"QMessageBox {\n                background-color: #333333;\n                border: 2px;\n                border-style: groove;\n                border-color: darkgrey;",
         "detail": "popup_module",
         "documentation": {}
     },
@@ -685,7 +710,7 @@
         "kind": 6,
         "importPath": "window_operator",
         "description": "window_operator",
-        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.popup_module = PopupModule(\"Yes\", \"No\", \"\", \"\")\n    def popup_window(self, title:str, question:str):\n        self.popup_module.set_title(title)\n        self.popup_module.set_question(question)\n        answer = self.popup_module.confirmation_dialog()\n        return answer\n    def wipe_entered_data(self, widget):  ",
+        "peekOfCode": "class WindowOperator:\n    def __init__(self) -> None:\n        self.db_manager = DataManager(\"table.db\")\n        self.question_box = QuestionPopup(\"Yes\", \"No\", \"\", \"\")\n        self.warning_box = WarningPopup(\"Upozorenje!\", \"\")\n    def question_popup(self, title: str, question: str):\n        self.question_box.set_title(title)\n        self.question_box.set_question(question)\n        answer = self.question_box.confirmation_dialog()\n        return answer",
         "detail": "window_operator",
         "documentation": {}
     }
