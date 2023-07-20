@@ -199,10 +199,25 @@ class DataManager:
         # for i in range(row_size):
         #     table_widget.setItem(0, i, QTableWidgetItem(""))
 
-    def add_receipt_to_table(self, data:list):
+    def add_receipt_to_database(self, data:list):
         self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
                 f"INSERT INTO receipts (customer_id, service, full_price) values (?,?,?)",
                 data,
             )
-        
+        self.db_cursor.execute(
+            f"SELECT * FROM receipts ORDER BY id DESC LIMIT 1;"
+        )
+        receipt_id = self.db_cursor.fetchone()[0]
+        self.db_disconnect()
+        return receipt_id
+    
+    def add_materials_to_database(self, data:list):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"INSERT INTO materials (reciept_id, type, brand, amount, price, full_amount) values (?,?,?,?,?,?)",
+            data,
+        )
+        self.db_disconnect()

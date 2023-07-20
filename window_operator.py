@@ -11,18 +11,18 @@ class WindowOperator:
         self.question_box = QuestionPopup("Yes", "No", "", "")
         self.warning_box = WarningPopup("Upozorenje!", "")
 
-    def question_popup(self, title:str, question:str):
+    def question_popup(self, title: str, question: str):
         self.question_box.set_title(title)
         self.question_box.set_question(question)
         answer = self.question_box.confirmation_dialog()
         return answer
-    
-    def warning_popup(self, warning:str):
+
+    def warning_popup(self, warning: str):
         self.warning_box.set_warning(warning)
         answer = self.warning_box.confirmation_dialog()
         return answer
 
-    def wipe_entered_data(self, widget):  
+    def wipe_entered_data(self, widget):
         widgets = widget.children()
         for child in widgets:
             if isinstance(child, QLineEdit):
@@ -56,7 +56,7 @@ class WindowOperator:
 
         return customer.get_data()
 
-    def line_focus_changed(self, new, old:QLineEdit):
+    def line_focus_changed(self, new, old: QLineEdit):
         if old is not None and hasattr(old, "placeholderText"):
             if old.placeholderText() == "Registracija":
                 old.setInputMask("NNN-N-NNN")
@@ -93,7 +93,6 @@ class WindowOperator:
 
         search_param = []
         query_string = ""
-        print(temporary_params)
         for index, item in enumerate(temporary_params):
             temp = "%"
             for part in item.split("-"):
@@ -107,8 +106,6 @@ class WindowOperator:
                 query_string += query[index] + " OR "
 
         query_string = "WHERE " + query_string
-        print(query_string[:-4])
-        print(search_param)
         self.db_manager.search_customers_populate_table(
             table, table_widget, tuple(search_param), query_string[:-4]
         )
@@ -130,8 +127,10 @@ class WindowOperator:
         )
 
     def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame, form):
-        if form.name_text_data.text() == '':
-            self.warning_popup("Ne možete dodati novi predračun bez selektiranja mušterije!")
+        if form.name_text_data.text() == "":
+            self.warning_popup(
+                "Ne možete dodati novi predračun bez selektiranja mušterije!"
+            )
             return
         if customer_form.isHidden() and not add_reciept.isHidden():
             customer_form.show()
@@ -149,7 +148,9 @@ class WindowOperator:
         amount_input: QLineEdit,
     ):
         materials_table.setItem(
-            materials_table.rowCount() - 1, 0, QTableWidgetItem(f"{materials_input.text()}"),
+            materials_table.rowCount() - 1,
+            0,
+            QTableWidgetItem(f"{materials_input.text()}"),
         )
         materials_table.setItem(
             materials_table.rowCount() - 1, 1, QTableWidgetItem(brand_input.text())
@@ -161,7 +162,9 @@ class WindowOperator:
             materials_table.rowCount() - 1, 3, QTableWidgetItem(amount_input.text())
         )
         materials_table.setItem(
-            materials_table.rowCount() - 1, 4, QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}"),
+            materials_table.rowCount() - 1,
+            4,
+            QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}"),
         )
         materials_table.insertRow(materials_table.rowCount())
 
@@ -170,14 +173,34 @@ class WindowOperator:
         if answer:
             self.wipe_entered_data(form.material_fields_frame)
             self.wipe_entered_data(form.table_service_frame)
-            self.hide_customer_form(form.user_data_frame, form.add_new_reciept_frame, form)
-            
+            self.hide_customer_form(
+                form.user_data_frame, form.add_new_reciept_frame, form
+            )
+
     def add_new_receipt(self, form):
         answer = self.question_popup("Završi", "Završiti i dodati novi predračun?")
         if answer:
-            
-            
-            data = []
-            self.db_manager.add_receipt_to_table(data)
+            table: QTableWidget = form.materials_receipt_table
+            full_parts_price = 0
+            for row in range(table.rowCount() - 1):
+                full_parts_price += float(table.item(row, 4).text())
+            reciept_data = [
+                form.id_text_data.text(),
+                form.add_receipt_service.text(),
+                str(full_parts_price + int(form.add_receipt_service.text())),
+            ]
+            receipt_id = self.db_manager.add_receipt_to_database(reciept_data)
+            for row in range(table.rowCount() - 1):
+                materials_data = [receipt_id,
+                    table.item(row,0).text(),
+                    table.item(row,1).text(),
+                    table.item(row,2).text(),
+                    table.item(row,3).text(),
+                    table.item(row,4).text(),
+                ]
+                self.db_manager.add_materials_to_database(materials_data)
             self.wipe_entered_data(form.material_fields_frame)
             self.wipe_entered_data(form.table_service_frame)
+            self.hide_customer_form(
+                form.user_data_frame, form.add_new_reciept_frame, form
+            )

@@ -93,6 +93,9 @@ formMain.add_material_button.clicked.connect(
         formMain.add_receipt_amount,
     )
 )
+formMain.finish_reciept_button.clicked.connect(
+    lambda: entry_window.add_new_receipt(formMain)
+)
 
 
 def main():
