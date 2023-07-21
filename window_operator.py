@@ -147,6 +147,10 @@ class WindowOperator:
         price_input: QLineEdit,
         amount_input: QLineEdit,
     ):
+        if materials_input.text() == "" or brand_input.text() == "" or price_input.text() == "" or amount_input.text() == "":
+            self.warning_box.set_warning("Potrebno je popuniti sva polja!")
+            self.warning_box.confirmation_dialog()
+            return
         materials_table.setItem(
             materials_table.rowCount() - 1,
             0,
@@ -167,6 +171,8 @@ class WindowOperator:
             QTableWidgetItem(f"{int(price_input.text())*int(amount_input.text())}"),
         )
         materials_table.insertRow(materials_table.rowCount())
+
+            
 
     def close_add_new_receipt(self, form):
         answer = self.question_popup("Prekid", "Prekinuti unos novog predračuna?")
