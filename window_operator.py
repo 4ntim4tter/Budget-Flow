@@ -184,6 +184,13 @@ class WindowOperator:
             full_parts_price = 0
             for row in range(table.rowCount() - 1):
                 full_parts_price += float(table.item(row, 4).text())
+
+            if (
+                table.item(0, 0) is None and table.rowCount() <= 1
+            ) or form.add_receipt_service.text() == "":
+                self.warning_box.set_warning("Niste unijeli materijal ili cijenu servisa u predračun!")
+                self.warning_box.confirmation_dialog()
+                return
             reciept_data = [
                 form.id_text_data.text(),
                 form.add_receipt_service.text(),
@@ -191,12 +198,13 @@ class WindowOperator:
             ]
             receipt_id = self.db_manager.add_receipt_to_database(reciept_data)
             for row in range(table.rowCount() - 1):
-                materials_data = [receipt_id,
-                    table.item(row,0).text(),
-                    table.item(row,1).text(),
-                    table.item(row,2).text(),
-                    table.item(row,3).text(),
-                    table.item(row,4).text(),
+                materials_data = [
+                    receipt_id,
+                    table.item(row, 0).text(),
+                    table.item(row, 1).text(),
+                    table.item(row, 2).text(),
+                    table.item(row, 3).text(),
+                    table.item(row, 4).text(),
                 ]
                 self.db_manager.add_materials_to_database(materials_data)
             self.wipe_entered_data(form.material_fields_frame)
