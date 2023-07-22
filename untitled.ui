@@ -2269,7 +2269,7 @@ QProgressBar::chunk
             </property>
             <layout class="QVBoxLayout" name="verticalLayout_7">
              <item>
-              <widget class="QPushButton" name="placeholder_button">
+              <widget class="QPushButton" name="delete_reciept_button">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                  <horstretch>0</horstretch>
@@ -2285,8 +2285,8 @@ QProgressBar::chunk
                 </font>
                </property>
                <property name="text">
-                <string>Svi
-Predračuni</string>
+                <string>Obriši
+Predračun</string>
                </property>
                <property name="flat">
                 <bool>false</bool>

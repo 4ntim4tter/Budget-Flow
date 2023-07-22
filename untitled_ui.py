@@ -1063,7 +1063,7 @@ class Ui_MainWindow(object):
         self.left_frame.setMidLineWidth(5)
         self.verticalLayout = QVBoxLayout(self.left_frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setContentsMargins(1, 50, 1, 50)
+        self.verticalLayout.setContentsMargins(1, 20, 1, 20)
         self.add_customer_label = QLabel(self.left_frame)
         self.add_customer_label.setObjectName(u"add_customer_label")
         font1 = QFont()
@@ -1273,11 +1273,10 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.customer_search_box)
 
-        self.emptyRowFrame = QFrame(self.left_frame)
-        self.emptyRowFrame.setObjectName(u"emptyRowFrame")
-
-        self.verticalLayout.addWidget(self.emptyRowFrame)
-
+        self.verticalLayout.setStretch(0, 1)
+        self.verticalLayout.setStretch(1, 3)
+        self.verticalLayout.setStretch(2, 1)
+        self.verticalLayout.setStretch(3, 3)
 
         self.gridLayout_4.addWidget(self.left_frame, 0, 0, 1, 1)
 
@@ -1622,17 +1621,17 @@ class Ui_MainWindow(object):
         self.buttons_form_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.buttons_form_frame)
         self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.placeholder_button = QPushButton(self.buttons_form_frame)
-        self.placeholder_button.setObjectName(u"placeholder_button")
+        self.delete_reciept_button = QPushButton(self.buttons_form_frame)
+        self.delete_reciept_button.setObjectName(u"delete_reciept_button")
         sizePolicy4 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
         sizePolicy4.setHorizontalStretch(0)
         sizePolicy4.setVerticalStretch(0)
-        sizePolicy4.setHeightForWidth(self.placeholder_button.sizePolicy().hasHeightForWidth())
-        self.placeholder_button.setSizePolicy(sizePolicy4)
-        self.placeholder_button.setFont(font)
-        self.placeholder_button.setFlat(False)
+        sizePolicy4.setHeightForWidth(self.delete_reciept_button.sizePolicy().hasHeightForWidth())
+        self.delete_reciept_button.setSizePolicy(sizePolicy4)
+        self.delete_reciept_button.setFont(font)
+        self.delete_reciept_button.setFlat(False)
 
-        self.verticalLayout_7.addWidget(self.placeholder_button)
+        self.verticalLayout_7.addWidget(self.delete_reciept_button)
 
         self.line_18 = QFrame(self.buttons_form_frame)
         self.line_18.setObjectName(u"line_18")
@@ -2069,8 +2068,8 @@ class Ui_MainWindow(object):
         self.plates_text_data.setText("")
         self.chasis_text_data.setText("")
         self.id_text_data.setText("")
-        self.placeholder_button.setText(QCoreApplication.translate("MainWindow", u"Svi\n"
-"Predra\u010duni", None))
+        self.delete_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i\n"
+"Predra\u010dun", None))
         self.new_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Novi \n"
 "Predra\u010dun", None))
         self.add_receipt_material.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Materijal", None))

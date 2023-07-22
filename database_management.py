@@ -171,7 +171,7 @@ class DataManager:
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
         self.popup_module.set_title("Brisanje")
         self.popup_module.set_question(
-            "Da li želite obrisati mušteriju iz baze podataka? \n (Upozorenje: Ova radnja je nepovratna!)"
+            "Da li želite obrisati mušteriju iz baze podataka?\n(Upozorenje: Ova radnja je nepovratna!)"
         )
         answer = self.popup_module.confirmation_dialog()
         if answer:
@@ -219,5 +219,14 @@ class DataManager:
         self.db_cursor.execute(
             f"INSERT INTO materials (reciept_id, type, brand, amount, price, full_amount) values (?,?,?,?,?,?)",
             data,
+        )
+        self.db_disconnect()
+
+    def delete_reciept_from_database(self, reciept_id:str):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"DELETE FROM receipts WHERE id = ?",
+                    (reciept_id,),
         )
         self.db_disconnect()

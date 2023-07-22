@@ -148,8 +148,7 @@ class WindowOperator:
         amount_input: QLineEdit,
     ):
         if materials_input.text() == "" or brand_input.text() == "" or price_input.text() == "" or amount_input.text() == "":
-            self.warning_box.set_warning("Potrebno je popuniti sva polja!")
-            self.warning_box.confirmation_dialog()
+            self.warning_popup("Potrebno je popuniti sva polja!")
             return
         materials_table.setItem(
             materials_table.rowCount() - 1,
@@ -218,3 +217,14 @@ class WindowOperator:
             self.hide_customer_form(
                 form.user_data_frame, form.add_new_reciept_frame, form
             )
+    
+    def delete_selected_reciept(self, form):
+        answer = self.question_popup("Brisanje", "Da li želite obrisati označeni predračun?\n(Upozorenje: Ova radnja je nepovratna!)")
+        if answer:
+            reciepts_table: QTableWidget = form.customer_reciepts_table
+            if (reciepts_table.selectedItems() != [] and reciepts_table.selectedItems() is not None):
+                selected = reciepts_table.selectedItems()[0]
+                self.db_manager.delete_reciept_from_database(selected.text())
+                reciepts_table.removeRow(reciepts_table.currentRow())
+            else:
+                self.warning_popup("Niste selektirali predračun!")

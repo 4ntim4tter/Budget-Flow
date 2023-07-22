@@ -96,6 +96,9 @@ formMain.add_material_button.clicked.connect(
 formMain.finish_reciept_button.clicked.connect(
     lambda: entry_window.add_new_receipt(formMain)
 )
+formMain.delete_reciept_button.clicked.connect(
+    lambda: entry_window.delete_selected_reciept(formMain)
+)
 
 
 def main():
