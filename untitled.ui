@@ -1029,7 +1029,7 @@ QProgressBar::chunk
      <bold>true</bold>
     </font>
    </property>
-   <layout class="QGridLayout" name="gridLayout_4" columnstretch="3,10,5">
+   <layout class="QGridLayout" name="gridLayout_4" columnstretch="3,10,6">
     <property name="topMargin">
      <number>30</number>
     </property>
@@ -3126,13 +3126,6 @@ Cijena[KM]</string>
            <widget class="QPushButton" name="clear_table_button">
             <property name="text">
              <string>Poništi</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="filter_table_button">
-            <property name="text">
-             <string>Filtriraj</string>
             </property>
            </widget>
           </item>

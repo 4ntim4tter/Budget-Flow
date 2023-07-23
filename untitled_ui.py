@@ -1995,11 +1995,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.clear_table_button)
 
-        self.filter_table_button = QPushButton(self.frame)
-        self.filter_table_button.setObjectName(u"filter_table_button")
-
-        self.horizontalLayout.addWidget(self.filter_table_button)
-
         self.populate_table_button = QPushButton(self.frame)
         self.populate_table_button.setObjectName(u"populate_table_button")
 
@@ -2016,7 +2011,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.setColumnStretch(0, 3)
         self.gridLayout_4.setColumnStretch(1, 10)
-        self.gridLayout_4.setColumnStretch(2, 5)
+        self.gridLayout_4.setColumnStretch(2, 6)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusBar = QStatusBar(MainWindow)
         self.statusBar.setObjectName(u"statusBar")
@@ -2120,7 +2115,6 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
         self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
-        self.filter_table_button.setText(QCoreApplication.translate("MainWindow", u"Filtriraj", None))
         self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
     # retranslateUi
 

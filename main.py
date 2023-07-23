@@ -5,12 +5,17 @@ from window_operator import WindowOperator
 from database_management import DataManager
 
 Form, Window = loadUiType("untitled.ui")
+Receipt, ReceiptWindow = loadUiType("receipt.ui")
 
 app = QApplication([])
 
 window = Window()
 formMain = Form()
 formMain.setupUi(window)
+
+receiptWindow = ReceiptWindow()
+receiptForm = Receipt()
+receiptForm.setupUi(receiptWindow)
 
 db_manager = DataManager("table.db")
 entry_window = WindowOperator()
@@ -98,6 +103,9 @@ formMain.finish_reciept_button.clicked.connect(
 )
 formMain.delete_reciept_button.clicked.connect(
     lambda: entry_window.delete_selected_reciept(formMain)
+)
+formMain.customer_reciepts_table.itemDoubleClicked.connect(
+    lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
 )
 
 

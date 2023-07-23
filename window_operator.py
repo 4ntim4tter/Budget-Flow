@@ -228,3 +228,8 @@ class WindowOperator:
                 reciepts_table.removeRow(reciepts_table.currentRow())
             else:
                 self.warning_popup("Niste selektirali predračun!")
+
+    def select_reciept_from_table(self, form, receipt_form, receipt_window):
+        customer_reciepts_table:QTableWidget = form.customer_reciepts_table
+        receipt_window.show()
+        

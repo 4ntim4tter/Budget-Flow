@@ -273,6 +273,102 @@
         "documentation": {}
     },
     {
+        "label": "QCoreApplication",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDate",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDateTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QLocale",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QMetaObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QPoint",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QRect",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QUrl",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
         "label": "QBrush",
         "importPath": "PySide6.QtGui",
         "description": "PySide6.QtGui",
@@ -398,6 +494,230 @@
         "description": "PySide6.QtGui",
         "isExtraImport": true,
         "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QConicalGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QCursor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFontDatabase",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QImage",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QKeySequence",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QLinearGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QRadialGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTransform",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHBoxLayout",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QHeaderView",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QPushButton",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QSizePolicy",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTableWidget",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTableWidgetItem",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QVBoxLayout",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PySide6.QtWidgets",
         "documentation": {}
     },
     {
@@ -611,7 +931,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([])\nwindow = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")",
+        "peekOfCode": "app = QApplication([])\nwindow = Window()\nformMain = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()",
         "detail": "main",
         "documentation": {}
     },
@@ -620,7 +940,7 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nformMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
+        "peekOfCode": "window = Window()\nformMain = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box",
         "detail": "main",
         "documentation": {}
     },
@@ -629,7 +949,25 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "formMain = Form()\nformMain.setupUi(window)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
+        "peekOfCode": "formMain = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "receiptWindow",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "receiptWindow = ReceiptWindow()\nreceiptForm = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "receiptForm",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "receiptForm = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box\ncustomer_search_window = formMain.customer_search_box\ndb_manager.db_connect(\"table.db\")\ndb_manager.db_create_table(\n    \"customers\", [\"id\", \"name\", \"surname\", \"phone\", \"vehicle\", \"plates\", \"chasis\"]",
         "detail": "main",
         "documentation": {}
     },
@@ -685,6 +1023,15 @@
         "description": "popup_module",
         "peekOfCode": "class WarningPopup:\n    def __init__(self, title: str, warning: str) -> None:\n        self.ok = \"OK\"\n        self.title = title\n        self.warning = warning\n        self.style = \"\"\"QMessageBox {\n                background-color: #333333;\n                border: 2px;\n                border-style: groove;\n                border-color: darkgrey;",
         "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_ReceiptWindow",
+        "kind": 6,
+        "importPath": "receipt_ui",
+        "description": "receipt_ui",
+        "peekOfCode": "class Ui_ReceiptWindow(object):\n    def setupUi(self, ReceiptWindow):\n        if not ReceiptWindow.objectName():\n            ReceiptWindow.setObjectName(u\"ReceiptWindow\")\n        ReceiptWindow.resize(640, 480)\n        sizePolicy = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred)\n        sizePolicy.setHorizontalStretch(0)\n        sizePolicy.setVerticalStretch(0)\n        sizePolicy.setHeightForWidth(ReceiptWindow.sizePolicy().hasHeightForWidth())\n        ReceiptWindow.setSizePolicy(sizePolicy)",
+        "detail": "receipt_ui",
         "documentation": {}
     },
     {
