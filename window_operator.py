@@ -110,7 +110,7 @@ class WindowOperator:
             table, table_widget, tuple(search_param), query_string[:-4]
         )
 
-    def select_customer_from_table(self, form, table_widget: QTableWidget):
+    def select_customer_from_table(self, form, table_widget: QTableWidget): 
         customer_displayed = self.db_manager.veiw_selected_customer(
             "customers", tuple([table_widget.selectedItems()[4].text()])
         )[0]

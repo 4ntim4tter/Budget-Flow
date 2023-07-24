@@ -1,4 +1,5 @@
 from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
+from PyQt6.QtCore import Qt
 from popup_module import QuestionPopup
 
 import sqlite3 as sql3
@@ -105,13 +106,21 @@ class DataManager:
         search_params: tuple,
         query_string: str,
     ):
+        table_widget.sortItems(4, Qt.SortOrder.AscendingOrder)
         rows = self.db_customer_interaction(
             table, table_widget, search_params, query_string
         )
         for index, row in enumerate(rows):
-            for i in range(4):
-                table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
-            table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
+            temp = ""
+            table_widget.setItem(index, 0, QTableWidgetItem(row[1]))
+            table_widget.setItem(index, 1, QTableWidgetItem(row[2]))
+            table_widget.setItem(index, 2, QTableWidgetItem(row[3]))         
+            table_widget.setItem(index, 3, QTableWidgetItem(row[4]))         
+            if int(row[0]) < 10:
+                temp = "0" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            else:
+                table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
 
     def search_customers_populate_table(
@@ -133,6 +142,7 @@ class DataManager:
     def customer_receipts_populate_table(self, table:str, table_widget:QTableWidget, customer_id:int):
         reciept = Reciept()
         self.clear_table(table_widget, 8)
+        table_widget.sortByColumn(0, Qt.SortOrder.AscendingOrder)    
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
@@ -155,17 +165,15 @@ class DataManager:
             full_amount = 0
             for item in self.db_cursor.fetchall():
                 full_amount += item[0]
-            
+
             table_widget.setItem(index, 0, QTableWidgetItem(f"{reciept.id}"))
             table_widget.setItem(index, 1, QTableWidgetItem(f"{materials[:-1]}"))
             table_widget.setItem(index, 2, QTableWidgetItem(f"{full_amount}"))
             table_widget.setItem(index, 3, QTableWidgetItem(f"{reciept.service}"))
             table_widget.setItem(index, 4, QTableWidgetItem(f"{reciept.full_price}"))
-            table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept.id}"))
+            # table_widget.setItem(index, 5, QTableWidgetItem(f"{reciept_id}"))
             table_widget.insertRow(index + 1)
-            
-            
-        
+
         self.db_disconnect()
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):

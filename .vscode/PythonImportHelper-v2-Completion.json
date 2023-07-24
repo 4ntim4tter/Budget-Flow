@@ -72,6 +72,22 @@
         "documentation": {}
     },
     {
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtCore",
+        "documentation": {}
+    },
+    {
         "label": "QuestionPopup",
         "importPath": "popup_module",
         "description": "popup_module",
@@ -166,14 +182,6 @@
         "description": "database_management",
         "isExtraImport": true,
         "detail": "database_management",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PyQt6.QtCore",
-        "description": "PyQt6.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtCore",
         "documentation": {}
     },
     {
