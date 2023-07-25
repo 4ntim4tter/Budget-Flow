@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem
+from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem, QLabel
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
@@ -232,4 +232,22 @@ class WindowOperator:
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table:QTableWidget = form.customer_reciepts_table
         receipt_window.show()
+        receipt_data = self.db_manager.get_selected_reciept_from_database(customer_reciepts_table.selectedItems()[0].text())
+        materials_table:QTableWidget = receipt_form.materials_receipt_table
+        service:QLabel = receipt_form.service_text_label
+        full_price:QLabel = receipt_form.full_price_label
+
+        materials_table.clearContents()
+        materials_table.setRowCount(0)
+
+        for index, item in enumerate(receipt_data[1]):
+            materials_table.insertRow(index)
+            materials_table.setItem(index, 0, QTableWidgetItem(f"{item[2]}"))
+            materials_table.setItem(index, 1, QTableWidgetItem(f"{item[3]}"))
+            materials_table.setItem(index, 2, QTableWidgetItem(f"{item[4]}"))
+            materials_table.setItem(index, 3, QTableWidgetItem(f"{item[5]}"))
+            materials_table.setItem(index, 4, QTableWidgetItem(f"{item[6]}"))
         
+        # print(receipt_data[0][0][2])
+        service.setText(f"{receipt_data[0][0][2]}")
+        full_price.setText(f"{receipt_data[0][0][3]}")

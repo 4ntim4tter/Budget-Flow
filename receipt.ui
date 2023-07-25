@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>Budget Flow</string>
+   <string>Budget Flow - Receipt</string>
   </property>
   <property name="styleSheet">
    <string notr="true">/*Copyright (c) DevSec Studio. All rights reserved.
@@ -1030,7 +1030,7 @@ QProgressBar::chunk
         <property name="font">
          <font>
           <family>Arial</family>
-          <pointsize>7</pointsize>
+          <pointsize>9</pointsize>
           <weight>75</weight>
           <bold>true</bold>
          </font>
@@ -1052,7 +1052,7 @@ QProgressBar::chunk
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>7</pointsize>
+           <pointsize>9</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1065,7 +1065,7 @@ QProgressBar::chunk
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>7</pointsize>
+           <pointsize>9</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1078,7 +1078,7 @@ QProgressBar::chunk
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>7</pointsize>
+           <pointsize>9</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1091,7 +1091,7 @@ QProgressBar::chunk
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>7</pointsize>
+           <pointsize>9</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1105,7 +1105,7 @@ Cijena[KM]</string>
          <property name="font">
           <font>
            <family>Arial</family>
-           <pointsize>6</pointsize>
+           <pointsize>9</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>
@@ -1121,7 +1121,7 @@ Cijena[KM]</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <layout class="QHBoxLayout" name="horizontalLayout">
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,3,2,3">
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
@@ -1130,7 +1130,7 @@ Cijena[KM]</string>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label_4">
+          <widget class="QLabel" name="service_text_label">
            <property name="text">
             <string/>
            </property>
@@ -1144,7 +1144,7 @@ Cijena[KM]</string>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="label">
+          <widget class="QLabel" name="full_price_label">
            <property name="text">
             <string/>
            </property>

@@ -1050,7 +1050,7 @@ class Ui_ReceiptWindow(object):
             self.materials_receipt_table.setColumnCount(5)
         font = QFont()
         font.setFamilies([u"Arial"])
-        font.setPointSize(7)
+        font.setPointSize(9)
         font.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font);
@@ -1064,12 +1064,8 @@ class Ui_ReceiptWindow(object):
         __qtablewidgetitem3 = QTableWidgetItem()
         __qtablewidgetitem3.setFont(font);
         self.materials_receipt_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
-        font1 = QFont()
-        font1.setFamilies([u"Arial"])
-        font1.setPointSize(6)
-        font1.setBold(True)
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font1);
+        __qtablewidgetitem4.setFont(font);
         self.materials_receipt_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
         if (self.materials_receipt_table.rowCount() < 1):
             self.materials_receipt_table.setRowCount(1)
@@ -1092,21 +1088,25 @@ class Ui_ReceiptWindow(object):
 
         self.horizontalLayout.addWidget(self.label_3)
 
-        self.label_4 = QLabel(self.frame_2)
-        self.label_4.setObjectName(u"label_4")
+        self.service_text_label = QLabel(self.frame_2)
+        self.service_text_label.setObjectName(u"service_text_label")
 
-        self.horizontalLayout.addWidget(self.label_4)
+        self.horizontalLayout.addWidget(self.service_text_label)
 
         self.label_2 = QLabel(self.frame_2)
         self.label_2.setObjectName(u"label_2")
 
         self.horizontalLayout.addWidget(self.label_2)
 
-        self.label = QLabel(self.frame_2)
-        self.label.setObjectName(u"label")
+        self.full_price_label = QLabel(self.frame_2)
+        self.full_price_label.setObjectName(u"full_price_label")
 
-        self.horizontalLayout.addWidget(self.label)
+        self.horizontalLayout.addWidget(self.full_price_label)
 
+        self.horizontalLayout.setStretch(0, 2)
+        self.horizontalLayout.setStretch(1, 3)
+        self.horizontalLayout.setStretch(2, 2)
+        self.horizontalLayout.setStretch(3, 3)
 
         self.verticalLayout_2.addWidget(self.frame_2)
 
@@ -1139,7 +1139,7 @@ class Ui_ReceiptWindow(object):
     # setupUi
 
     def retranslateUi(self, ReceiptWindow):
-        ReceiptWindow.setWindowTitle(QCoreApplication.translate("ReceiptWindow", u"Budget Flow", None))
+        ReceiptWindow.setWindowTitle(QCoreApplication.translate("ReceiptWindow", u"Budget Flow - Receipt", None))
         ___qtablewidgetitem = self.materials_receipt_table.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("ReceiptWindow", u"Materijal", None));
         ___qtablewidgetitem1 = self.materials_receipt_table.horizontalHeaderItem(1)
@@ -1152,9 +1152,9 @@ class Ui_ReceiptWindow(object):
         ___qtablewidgetitem4.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupna \n"
 "Cijena[KM]", None));
         self.label_3.setText(QCoreApplication.translate("ReceiptWindow", u"Rad:", None))
-        self.label_4.setText("")
+        self.service_text_label.setText("")
         self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupno[KM]:", None))
-        self.label.setText("")
+        self.full_price_label.setText("")
         self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Odustani", None))
         self.print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Printaj", None))
     # retranslateUi

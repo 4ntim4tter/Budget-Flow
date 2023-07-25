@@ -238,3 +238,20 @@ class DataManager:
                     (reciept_id,),
         )
         self.db_disconnect()
+
+    def get_selected_reciept_from_database(self, reciept_id:str):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"SELECT * FROM receipts WHERE id = ?", 
+            (reciept_id,),
+        )
+        reciept_data = self.db_cursor.fetchall()
+
+        self.db_cursor.execute(
+            f"SELECT * FROM materials WHERE reciept_id = ?", 
+            (reciept_id,),
+        )
+        material_data = self.db_cursor.fetchall()
+        self.db_disconnect()
+        return [reciept_data, material_data]
