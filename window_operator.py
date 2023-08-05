@@ -3,6 +3,7 @@ from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
+import webbrowser
 
 
 class WindowOperator:
@@ -251,3 +252,13 @@ class WindowOperator:
         # print(receipt_data[0][0][2])
         service.setText(f"{receipt_data[0][0][2]}")
         full_price.setText(f"{receipt_data[0][0][3]}")
+    
+    def open_browser_for_print(self, reciept_window, form):
+        materials_table: QTableWidget = form.materials_receipt_table
+        service: QLabel = form.service_text_label
+        full_price: QLabel = form.full_price_label
+
+        webbrowser.open("www.google.com", 1)
+
+    def cancel_receipt_printing(self, receipt_window):
+        receipt_window.close()

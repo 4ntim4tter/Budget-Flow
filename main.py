@@ -107,6 +107,13 @@ formMain.delete_reciept_button.clicked.connect(
 formMain.customer_reciepts_table.itemDoubleClicked.connect(
     lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
 )
+receiptForm.print_reciept_button.clicked.connect(
+    lambda: entry_window.open_browser_for_print(receiptWindow, receiptForm)
+)
+receiptForm.cancel_print_reciept_button.clicked.connect(
+    lambda: entry_window.cancel_receipt_printing(receiptWindow)
+)
+
 
 
 def main():

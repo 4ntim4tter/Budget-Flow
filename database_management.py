@@ -117,6 +117,15 @@ class DataManager:
             table_widget.setItem(index, 2, QTableWidgetItem(row[3]))         
             table_widget.setItem(index, 3, QTableWidgetItem(row[4]))         
             if int(row[0]) < 10:
+                temp = "0000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 100:
+                temp = "000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 1000:
+                temp = "00" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 10000:
                 temp = "0" + str(row[0])
                 table_widget.setItem(index, 4, QTableWidgetItem(temp))
             else:

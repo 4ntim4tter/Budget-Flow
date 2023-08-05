@@ -641,6 +641,15 @@
         "documentation": {}
     },
     {
+        "label": "PySide6.QtWidgets",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "PySide6.QtWidgets",
+        "description": "PySide6.QtWidgets",
+        "detail": "PySide6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "QApplication",
         "importPath": "PySide6.QtWidgets",
         "description": "PySide6.QtWidgets",
