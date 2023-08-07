@@ -1,8 +1,17 @@
-from PyQt6.QtWidgets import QLineEdit, QWidget, QTableWidget, QFrame, QTableWidgetItem, QLabel
+import datetime
+from PyQt6.QtWidgets import (
+    QLineEdit,
+    QWidget,
+    QTableWidget,
+    QFrame,
+    QTableWidgetItem,
+    QLabel,
+)
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
+from receipt_html import receipt_table, receipt_data_header, receipt_data
 import webbrowser
 
 
@@ -111,7 +120,7 @@ class WindowOperator:
             table, table_widget, tuple(search_param), query_string[:-4]
         )
 
-    def select_customer_from_table(self, form, table_widget: QTableWidget): 
+    def select_customer_from_table(self, form, table_widget: QTableWidget):
         customer_displayed = self.db_manager.veiw_selected_customer(
             "customers", tuple([table_widget.selectedItems()[4].text()])
         )[0]
@@ -148,7 +157,12 @@ class WindowOperator:
         price_input: QLineEdit,
         amount_input: QLineEdit,
     ):
-        if materials_input.text() == "" or brand_input.text() == "" or price_input.text() == "" or amount_input.text() == "":
+        if (
+            materials_input.text() == ""
+            or brand_input.text() == ""
+            or price_input.text() == ""
+            or amount_input.text() == ""
+        ):
             self.warning_popup("Potrebno je popuniti sva polja!")
             return
         materials_table.setItem(
@@ -172,8 +186,6 @@ class WindowOperator:
         )
         materials_table.insertRow(materials_table.rowCount())
 
-            
-
     def close_add_new_receipt(self, form):
         answer = self.question_popup("Prekid", "Prekinuti unos novog predračuna?")
         if answer:
@@ -194,7 +206,9 @@ class WindowOperator:
             if (
                 table.item(0, 0) is None and table.rowCount() <= 1
             ) or form.add_receipt_service.text() == "":
-                self.warning_box.set_warning("Niste unijeli materijal ili cijenu servisa u predračun!")
+                self.warning_box.set_warning(
+                    "Niste unijeli materijal ili cijenu servisa u predračun!"
+                )
                 self.warning_box.confirmation_dialog()
                 return
             reciept_data = [
@@ -218,12 +232,18 @@ class WindowOperator:
             self.hide_customer_form(
                 form.user_data_frame, form.add_new_reciept_frame, form
             )
-    
+
     def delete_selected_reciept(self, form):
-        answer = self.question_popup("Brisanje", "Da li želite obrisati označeni predračun?\n(Upozorenje: Ova radnja je nepovratna!)")
+        answer = self.question_popup(
+            "Brisanje",
+            "Da li želite obrisati označeni predračun?\n(Upozorenje: Ova radnja je nepovratna!)",
+        )
         if answer:
             reciepts_table: QTableWidget = form.customer_reciepts_table
-            if (reciepts_table.selectedItems() != [] and reciepts_table.selectedItems() is not None):
+            if (
+                reciepts_table.selectedItems() != []
+                and reciepts_table.selectedItems() is not None
+            ):
                 selected = reciepts_table.selectedItems()[0]
                 self.db_manager.delete_reciept_from_database(selected.text())
                 reciepts_table.removeRow(reciepts_table.currentRow())
@@ -231,12 +251,14 @@ class WindowOperator:
                 self.warning_popup("Niste selektirali predračun!")
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
-        customer_reciepts_table:QTableWidget = form.customer_reciepts_table
+        customer_reciepts_table: QTableWidget = form.customer_reciepts_table
         receipt_window.show()
-        receipt_data = self.db_manager.get_selected_reciept_from_database(customer_reciepts_table.selectedItems()[0].text())
-        materials_table:QTableWidget = receipt_form.materials_receipt_table
-        service:QLabel = receipt_form.service_text_label
-        full_price:QLabel = receipt_form.full_price_label
+        receipt_data = self.db_manager.get_selected_reciept_from_database(
+            customer_reciepts_table.selectedItems()[0].text()
+        )
+        materials_table: QTableWidget = receipt_form.materials_receipt_table
+        service: QLabel = receipt_form.service_text_label
+        full_price: QLabel = receipt_form.full_price_label
 
         materials_table.clearContents()
         materials_table.setRowCount(0)
@@ -248,17 +270,50 @@ class WindowOperator:
             materials_table.setItem(index, 2, QTableWidgetItem(f"{item[4]}"))
             materials_table.setItem(index, 3, QTableWidgetItem(f"{item[5]}"))
             materials_table.setItem(index, 4, QTableWidgetItem(f"{item[6]}"))
-        
+
         # print(receipt_data[0][0][2])
         service.setText(f"{receipt_data[0][0][2]}")
         full_price.setText(f"{receipt_data[0][0][3]}")
-    
-    def open_browser_for_print(self, reciept_window, form):
-        materials_table: QTableWidget = form.materials_receipt_table
-        service: QLabel = form.service_text_label
-        full_price: QLabel = form.full_price_label
 
-        webbrowser.open("www.google.com", 1)
+    def open_browser_for_print(
+        self, user_data: dict, selected_receipt: list, table_items: QTableWidget
+    ):
+        service: str = selected_receipt[3].text()
+        total_price: str = selected_receipt[2].text()
+        final_price: str = selected_receipt[4].text()
+        customer_name: str = user_data["name"]
+        customer_car: str = user_data["vehicle"]
+        customer_plates: str = user_data["plates"]
+        to_browser: str = receipt_data_header
+        temp: str = ""
+
+        for i in range(table_items.rowCount()):
+            temp += receipt_data.format(
+                material=table_items.item(i, 0).text(),
+                model=table_items.item(i, 1).text(),
+                price=table_items.item(i, 3).text(),
+                amount=table_items.item(i, 2).text(),
+                final_price=table_items.item(i, 4).text(),
+            )
+            temp += "\n"
+
+        to_browser = to_browser.format(materials=temp)
+
+        with open("data.html", "w", encoding="utf-8") as html_form:
+            html_form.write(
+                receipt_table.format(
+                    todays_date=datetime.date.today().strftime("%d.%m.%Y.g."),
+                    customer_name=customer_name,
+                    customer_car=customer_car,
+                    customer_reg=customer_plates,
+                    work_price=service,
+                    total_price=total_price,
+                    final_price=final_price,
+                    to_browser=to_browser,
+                )
+            )
+
+        webbrowser.open("data.html", 1)
 
     def cancel_receipt_printing(self, receipt_window):
         receipt_window.close()

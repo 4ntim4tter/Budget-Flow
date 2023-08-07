@@ -108,7 +108,15 @@ formMain.customer_reciepts_table.itemDoubleClicked.connect(
     lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
 )
 receiptForm.print_reciept_button.clicked.connect(
-    lambda: entry_window.open_browser_for_print(receiptWindow, receiptForm)
+    lambda: entry_window.open_browser_for_print(
+        {
+            'name':formMain.name_text_data.text() + " " + formMain.surname_text_data.text(),
+            'vehicle':formMain.vehicle_text_data.text(),
+            'plates':formMain.plates_text_data.text(),
+        },
+        formMain.customer_reciepts_table.selectedItems(),
+        receiptForm.materials_receipt_table
+    )
 )
 receiptForm.cancel_print_reciept_button.clicked.connect(
     lambda: entry_window.cancel_receipt_printing(receiptWindow)
