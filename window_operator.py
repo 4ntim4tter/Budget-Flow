@@ -6,6 +6,7 @@ from PyQt6.QtWidgets import (
     QFrame,
     QTableWidgetItem,
     QLabel,
+    QCheckBox
 )
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
@@ -103,6 +104,8 @@ class WindowOperator:
 
         search_param = []
         query_string = ""
+        checkbox:QCheckBox = widget.archive_checkbox
+        archived:bool = checkbox.isChecked()
         for index, item in enumerate(temporary_params):
             temp = "%"
             for part in item.split("-"):
@@ -114,10 +117,14 @@ class WindowOperator:
             elif item != "":
                 search_param.append(item)
                 query_string += query[index] + " OR "
-
-        query_string = "WHERE " + query_string
+        print(query_string)
+        if query_string == "":
+            query_string = f"WHERE archived = {int(archived)}"
+        else:
+            query_string = "WHERE (" + query_string[:-4] + f") AND (archived = {int(archived)})"
+        print(query_string)
         self.db_manager.search_customers_populate_table(
-            table, table_widget, tuple(search_param), query_string[:-4]
+            table, table_widget, tuple(search_param), query_string
         )
 
     def select_customer_from_table(self, form, table_widget: QTableWidget):

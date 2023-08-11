@@ -25,7 +25,7 @@ customer_search_window = formMain.customer_search_box
 
 db_manager.db_connect("table.db")
 db_manager.db_create_table(
-    "customers", ["id", "name", "surname", "phone", "vehicle", "plates", "chasis"]
+    "customers", ["id", "name", "surname", "phone", "vehicle", "plates", "chasis", "archived"]
 )
 db_manager.db_create_table(
     "receipts",

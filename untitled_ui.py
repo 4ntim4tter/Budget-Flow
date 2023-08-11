@@ -15,11 +15,11 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QAbstractItemView, QApplication, QFormLayout, QFrame,
-    QGridLayout, QHBoxLayout, QHeaderView, QLabel,
-    QLineEdit, QMainWindow, QPushButton, QSizePolicy,
-    QStatusBar, QTableWidget, QTableWidgetItem, QVBoxLayout,
-    QWidget)
+from PySide6.QtWidgets import (QAbstractItemView, QApplication, QCheckBox, QFormLayout,
+    QFrame, QGridLayout, QHBoxLayout, QHeaderView,
+    QLabel, QLineEdit, QMainWindow, QPushButton,
+    QSizePolicy, QStatusBar, QTableWidget, QTableWidgetItem,
+    QVBoxLayout, QWidget)
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -1204,7 +1204,7 @@ class Ui_MainWindow(object):
         self.search_customer_name.setFont(font)
         self.search_customer_name.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(1, QFormLayout.SpanningRole, self.search_customer_name)
+        self.formLayout_3.setWidget(0, QFormLayout.SpanningRole, self.search_customer_name)
 
         self.search_customer_surname = QLineEdit(self.customer_search_box)
         self.search_customer_surname.setObjectName(u"search_customer_surname")
@@ -1213,7 +1213,7 @@ class Ui_MainWindow(object):
         self.search_customer_surname.setFont(font)
         self.search_customer_surname.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(2, QFormLayout.SpanningRole, self.search_customer_surname)
+        self.formLayout_3.setWidget(1, QFormLayout.SpanningRole, self.search_customer_surname)
 
         self.search_customer_phone = QLineEdit(self.customer_search_box)
         self.search_customer_phone.setObjectName(u"search_customer_phone")
@@ -1223,7 +1223,7 @@ class Ui_MainWindow(object):
         self.search_customer_phone.setMaxLength(32767)
         self.search_customer_phone.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(3, QFormLayout.SpanningRole, self.search_customer_phone)
+        self.formLayout_3.setWidget(2, QFormLayout.SpanningRole, self.search_customer_phone)
 
         self.search_customer_vehicle = QLineEdit(self.customer_search_box)
         self.search_customer_vehicle.setObjectName(u"search_customer_vehicle")
@@ -1233,7 +1233,7 @@ class Ui_MainWindow(object):
         self.search_customer_vehicle.setAlignment(Qt.AlignCenter)
         self.search_customer_vehicle.setDragEnabled(False)
 
-        self.formLayout_3.setWidget(4, QFormLayout.SpanningRole, self.search_customer_vehicle)
+        self.formLayout_3.setWidget(3, QFormLayout.SpanningRole, self.search_customer_vehicle)
 
         self.search_customer_plates = QLineEdit(self.customer_search_box)
         self.search_customer_plates.setObjectName(u"search_customer_plates")
@@ -1242,7 +1242,7 @@ class Ui_MainWindow(object):
         self.search_customer_plates.setFont(font)
         self.search_customer_plates.setAlignment(Qt.AlignCenter)
 
-        self.formLayout_3.setWidget(5, QFormLayout.SpanningRole, self.search_customer_plates)
+        self.formLayout_3.setWidget(4, QFormLayout.SpanningRole, self.search_customer_plates)
 
         self.search_customer_chasis = QLineEdit(self.customer_search_box)
         self.search_customer_chasis.setObjectName(u"search_customer_chasis")
@@ -1252,7 +1252,7 @@ class Ui_MainWindow(object):
         self.search_customer_chasis.setAlignment(Qt.AlignCenter)
         self.search_customer_chasis.setDragEnabled(False)
 
-        self.formLayout_3.setWidget(6, QFormLayout.SpanningRole, self.search_customer_chasis)
+        self.formLayout_3.setWidget(5, QFormLayout.SpanningRole, self.search_customer_chasis)
 
         self.search_customer_button = QPushButton(self.customer_search_box)
         self.search_customer_button.setObjectName(u"search_customer_button")
@@ -1269,6 +1269,11 @@ class Ui_MainWindow(object):
         self.cancel_search_customer_button.setFont(font)
 
         self.formLayout_3.setWidget(7, QFormLayout.FieldRole, self.cancel_search_customer_button)
+
+        self.archive_checkbox = QCheckBox(self.customer_search_box)
+        self.archive_checkbox.setObjectName(u"archive_checkbox")
+
+        self.formLayout_3.setWidget(6, QFormLayout.SpanningRole, self.archive_checkbox)
 
 
         self.verticalLayout.addWidget(self.customer_search_box)
@@ -2049,6 +2054,7 @@ class Ui_MainWindow(object):
         self.search_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
         self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Tra\u017ei", None))
         self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        self.archive_checkbox.setText(QCoreApplication.translate("MainWindow", u"Pretraga Arhive", None))
         self.name_label.setText(QCoreApplication.translate("MainWindow", u"Ime:", None))
         self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Prezime:", None))
         self.phone_label.setText(QCoreApplication.translate("MainWindow", u"#Telefon:", None))

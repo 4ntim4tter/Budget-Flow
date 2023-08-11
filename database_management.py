@@ -32,7 +32,14 @@ class DataManager:
         self.db_cursor = self.db_link.cursor()
         if table == "customers":
             self.db_cursor.execute(
-                f"CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, {fields[1]} STRING, {fields[2]} STRING, {fields[3]} STRING, {fields[4]} STRING, {fields[5]} STRING, {fields[6]} STRING)"
+                f"""CREATE TABLE IF NOT EXISTS {table}({fields[0]} INTEGER PRIMARY KEY AUTOINCREMENT, 
+                {fields[1]} STRING, 
+                {fields[2]} STRING, 
+                {fields[3]} STRING, 
+                {fields[4]} STRING, 
+                {fields[5]} STRING, 
+                {fields[6]} STRING,
+                {fields[7]} INTEGER DEFAULT 0)"""
             )
         if table == "receipts":
             self.db_cursor.execute(
@@ -79,8 +86,8 @@ class DataManager:
         self.clear_table(table_widget, 5)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        if search_params == () or query_string == "" or query_string == "WH":
-            self.db_cursor.execute(f"SELECT * FROM {table}")
+        if query_string == "":
+            self.db_cursor.execute(f"SELECT * FROM {table} WHERE archived = 0")
         else:
             self.db_cursor.execute(
                 f"SELECT * FROM {table} {query_string}",
@@ -114,8 +121,8 @@ class DataManager:
             temp = ""
             table_widget.setItem(index, 0, QTableWidgetItem(row[1]))
             table_widget.setItem(index, 1, QTableWidgetItem(row[2]))
-            table_widget.setItem(index, 2, QTableWidgetItem(row[3]))         
-            table_widget.setItem(index, 3, QTableWidgetItem(row[4]))         
+            table_widget.setItem(index, 2, QTableWidgetItem(row[3]))
+            table_widget.setItem(index, 3, QTableWidgetItem(row[4]))
             if int(row[0]) < 10:
                 temp = "0000" + str(row[0])
                 table_widget.setItem(index, 4, QTableWidgetItem(temp))
@@ -143,20 +150,38 @@ class DataManager:
             table, table_widget, search_params, query_string
         )
         for index, row in enumerate(rows):
-            for i in range(4):
-                table_widget.setItem(index, i, QTableWidgetItem(row[i + 1]))
-            table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
+            temp = ""
+            table_widget.setItem(index, 0, QTableWidgetItem(row[1]))
+            table_widget.setItem(index, 1, QTableWidgetItem(row[2]))
+            table_widget.setItem(index, 2, QTableWidgetItem(row[3]))
+            table_widget.setItem(index, 3, QTableWidgetItem(row[4]))
+            if int(row[0]) < 10:
+                temp = "0000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 100:
+                temp = "000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 1000:
+                temp = "00" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 10000:
+                temp = "0" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            else:
+                table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
-    
-    def customer_receipts_populate_table(self, table:str, table_widget:QTableWidget, customer_id:int):
+
+    def customer_receipts_populate_table(
+        self, table: str, table_widget: QTableWidget, customer_id: int
+    ):
         reciept = Reciept()
         self.clear_table(table_widget, 8)
-        table_widget.sortByColumn(0, Qt.SortOrder.AscendingOrder)    
+        table_widget.sortByColumn(0, Qt.SortOrder.AscendingOrder)
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
-                f"SELECT * FROM {table} WHERE customer_id = {customer_id}"
-            )
+            f"SELECT * FROM {table} WHERE customer_id = {customer_id}"
+        )
         rows = self.db_cursor.fetchall()
         for index, row in enumerate(rows):
             reciept.set_data(row)
@@ -164,9 +189,9 @@ class DataManager:
             self.db_cursor.execute(
                 f"SELECT type FROM materials WHERE reciept_id = {reciept.id}"
             )
-            materials = ''
+            materials = ""
             for item in self.db_cursor.fetchall():
-                materials += item[0] + ','
+                materials += item[0] + ","
 
             self.db_cursor.execute(
                 f"SELECT full_amount FROM materials WHERE reciept_id = {reciept.id}"
@@ -216,21 +241,19 @@ class DataManager:
         # for i in range(row_size):
         #     table_widget.setItem(0, i, QTableWidgetItem(""))
 
-    def add_receipt_to_database(self, data:list):
+    def add_receipt_to_database(self, data: list):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
-                f"INSERT INTO receipts (customer_id, service, full_price) values (?,?,?)",
-                data,
-            )
-        self.db_cursor.execute(
-            f"SELECT * FROM receipts ORDER BY id DESC LIMIT 1;"
+            f"INSERT INTO receipts (customer_id, service, full_price) values (?,?,?)",
+            data,
         )
+        self.db_cursor.execute(f"SELECT * FROM receipts ORDER BY id DESC LIMIT 1;")
         receipt_id = self.db_cursor.fetchone()[0]
         self.db_disconnect()
         return receipt_id
-    
-    def add_materials_to_database(self, data:list):
+
+    def add_materials_to_database(self, data: list):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
@@ -239,26 +262,26 @@ class DataManager:
         )
         self.db_disconnect()
 
-    def delete_reciept_from_database(self, reciept_id:str):
+    def delete_reciept_from_database(self, reciept_id: str):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
             f"DELETE FROM receipts WHERE id = ?",
-                    (reciept_id,),
+            (reciept_id,),
         )
         self.db_disconnect()
 
-    def get_selected_reciept_from_database(self, reciept_id:str):
+    def get_selected_reciept_from_database(self, reciept_id: str):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
-            f"SELECT * FROM receipts WHERE id = ?", 
+            f"SELECT * FROM receipts WHERE id = ?",
             (reciept_id,),
         )
         reciept_data = self.db_cursor.fetchall()
 
         self.db_cursor.execute(
-            f"SELECT * FROM materials WHERE reciept_id = ?", 
+            f"SELECT * FROM materials WHERE reciept_id = ?",
             (reciept_id,),
         )
         material_data = self.db_cursor.fetchall()
