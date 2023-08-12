@@ -324,3 +324,31 @@ class WindowOperator:
 
     def cancel_receipt_printing(self, receipt_window):
         receipt_window.close()
+
+    def populate_customer_table_archived(self,db_table:str, table_widget:QTableWidget):
+        rows = self.db_manager.get_archived_entries(db_table)
+
+        table_widget.clearContents()
+        table_widget.setRowCount(1)
+
+        for index, row in enumerate(rows):
+            temp = ""
+            table_widget.setItem(index, 0, QTableWidgetItem(row[1]))
+            table_widget.setItem(index, 1, QTableWidgetItem(row[2]))
+            table_widget.setItem(index, 2, QTableWidgetItem(row[3]))
+            table_widget.setItem(index, 3, QTableWidgetItem(row[4]))
+            if int(row[0]) < 10:
+                temp = "0000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 100:
+                temp = "000" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 1000:
+                temp = "00" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            elif int(row[0]) < 10000:
+                temp = "0" + str(row[0])
+                table_widget.setItem(index, 4, QTableWidgetItem(temp))
+            else:
+                table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
+            table_widget.insertRow(index + 1)

@@ -287,3 +287,12 @@ class DataManager:
         material_data = self.db_cursor.fetchall()
         self.db_disconnect()
         return [reciept_data, material_data]
+    
+    def get_archived_entries(self, table:str):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"SELECT * FROM {table} WHERE archived = 1"
+        )
+        archived_customers = self.db_cursor.fetchall()
+        return archived_customers

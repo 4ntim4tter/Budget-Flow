@@ -3092,9 +3092,6 @@ Cijena[KM]</string>
           <property name="bottomMargin">
            <number>1</number>
           </property>
-          <item>
-           <widget class="QLineEdit" name="lineEdit"/>
-          </item>
          </layout>
         </widget>
        </item>
@@ -3140,6 +3137,13 @@ Cijena[KM]</string>
            <widget class="QPushButton" name="populate_table_button">
             <property name="text">
              <string>Prikaži Sve</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="show_archived_button">
+            <property name="text">
+             <string>Arhivirano</string>
             </property>
            </widget>
           </item>

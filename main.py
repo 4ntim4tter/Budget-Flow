@@ -69,6 +69,11 @@ formMain.populate_table_button.clicked.connect(
         "customers", formMain.customer_table, (), ""
     )
 )
+formMain.show_archived_button.clicked.connect(
+    lambda: entry_window.populate_customer_table_archived(
+        "customers", formMain.customer_table
+    )
+)
 formMain.clear_table_button.clicked.connect(
     lambda: db_manager.clear_table(formMain.customer_table, 5)
 )
