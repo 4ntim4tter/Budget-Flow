@@ -74,8 +74,8 @@ formMain.show_archived_button.clicked.connect(
         "customers", formMain.customer_table
     )
 )
-formMain.clear_table_button.clicked.connect(
-    lambda: db_manager.clear_table(formMain.customer_table, 5)
+formMain.archive_selected_button.clicked.connect(
+    lambda: entry_window.change_customer_archive_status(formMain)
 )
 formMain.delete_selected_table_button.clicked.connect(
     lambda: db_manager.delete_selected_customer("customers", formMain.customer_table)

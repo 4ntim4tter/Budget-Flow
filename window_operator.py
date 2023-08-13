@@ -117,12 +117,10 @@ class WindowOperator:
             elif item != "":
                 search_param.append(item)
                 query_string += query[index] + " OR "
-        print(query_string)
         if query_string == "":
             query_string = f"WHERE archived = {int(archived)}"
         else:
             query_string = "WHERE (" + query_string[:-4] + f") AND (archived = {int(archived)})"
-        print(query_string)
         self.db_manager.search_customers_populate_table(
             table, table_widget, tuple(search_param), query_string
         )
@@ -255,7 +253,7 @@ class WindowOperator:
                 self.db_manager.delete_reciept_from_database(selected.text())
                 reciepts_table.removeRow(reciepts_table.currentRow())
             else:
-                self.warning_popup("Niste selektirali predračun!")
+                self.warning_popup("Niste označili predračun!")
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table: QTableWidget = form.customer_reciepts_table
@@ -278,7 +276,6 @@ class WindowOperator:
             materials_table.setItem(index, 3, QTableWidgetItem(f"{item[5]}"))
             materials_table.setItem(index, 4, QTableWidgetItem(f"{item[6]}"))
 
-        # print(receipt_data[0][0][2])
         service.setText(f"{receipt_data[0][0][2]}")
         full_price.setText(f"{receipt_data[0][0][3]}")
 
@@ -352,3 +349,15 @@ class WindowOperator:
             else:
                 table_widget.setItem(index, 4, QTableWidgetItem(f"{row[0]}"))
             table_widget.insertRow(index + 1)
+
+    def change_customer_archive_status(self, form_widget):
+        answer = self.question_popup(
+            "Arhiviranje",
+            "Da li želite arhivirati označenu mušteriju?",
+        )
+        if answer:
+            table_widget:QTableWidget = form_widget.customer_table
+            if table_widget.selectedItems() != []:
+                self.db_manager.change_archive_status(table_widget.selectedItems()[4].text().lstrip('0'))
+            else:
+                self.warning_popup("Niste označili mušteriju!")

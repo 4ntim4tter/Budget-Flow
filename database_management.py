@@ -295,4 +295,22 @@ class DataManager:
             f"SELECT * FROM {table} WHERE archived = 1"
         )
         archived_customers = self.db_cursor.fetchall()
+        self.db_disconnect()
         return archived_customers
+    
+    def change_archive_status(self, id:str):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"SELECT archived FROM customers WHERE id = {id}"
+        )
+        archived = self.db_cursor.fetchall()[0][0]
+        if archived == 0:
+            self.db_cursor.execute(
+                f"UPDATE customers SET archived = 1 WHERE id = {id}"
+            )
+        else:
+            self.db_cursor.execute(
+                f"UPDATE customers SET archived = 0 WHERE id = {id}"
+            )
+        self.db_disconnect()

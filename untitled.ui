@@ -3127,13 +3127,6 @@ Cijena[KM]</string>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="clear_table_button">
-            <property name="text">
-             <string>Poništi</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QPushButton" name="populate_table_button">
             <property name="text">
              <string>Prikaži Sve</string>
@@ -3143,7 +3136,14 @@ Cijena[KM]</string>
           <item>
            <widget class="QPushButton" name="show_archived_button">
             <property name="text">
-             <string>Arhivirano</string>
+             <string>Prikaži Arihvu</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="archive_selected_button">
+            <property name="text">
+             <string>Arhiviraj/Vrati</string>
             </property>
            </widget>
           </item>
