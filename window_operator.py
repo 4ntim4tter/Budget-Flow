@@ -1,12 +1,12 @@
 import datetime
 from PyQt6.QtWidgets import (
-    QLineEdit,
     QWidget,
     QTableWidget,
     QFrame,
     QTableWidgetItem,
     QLabel,
-    QCheckBox
+    QCheckBox,
+    QLineEdit
 )
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
@@ -46,6 +46,9 @@ class WindowOperator:
                 child.setRowCount(1)
 
     def store_entered_data(self, table: str, customer: list, entry_widget: QWidget):
+        if '' in customer:
+            self.warning_popup("Potrebno je popuniti sva polja!")
+            return 0 
         accepted = self.db_manager.db_insert_customer(table, customer)
         if accepted:
             self.wipe_entered_data(entry_widget)

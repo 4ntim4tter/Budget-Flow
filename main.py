@@ -1,5 +1,6 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication
+from receipt_ui import Ui_ReceiptWindow
 from untitled_ui import Ui_MainWindow
 
 from window_operator import WindowOperator
@@ -15,7 +16,7 @@ formMain:Ui_MainWindow = Form()
 formMain.setupUi(window)
 
 receiptWindow = ReceiptWindow()
-receiptForm = Receipt()
+receiptForm:Ui_ReceiptWindow = Receipt()
 receiptForm.setupUi(receiptWindow)
 
 db_manager = DataManager("table.db")
@@ -127,8 +128,6 @@ receiptForm.print_reciept_button.clicked.connect(
 receiptForm.cancel_print_reciept_button.clicked.connect(
     lambda: entry_window.cancel_receipt_printing(receiptWindow)
 )
-
-
 
 def main():
     window.show()
