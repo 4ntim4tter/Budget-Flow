@@ -1,6 +1,5 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication
-from PyQt6.QtGui import QFont
 from untitled_ui import Ui_MainWindow
 
 from window_operator import WindowOperator
@@ -133,7 +132,17 @@ receiptForm.cancel_print_reciept_button.clicked.connect(
 
 def main():
     window.show()
-    # window.showMaximized()
+    app.setStyleSheet(
+        """QLabel,
+        QPushButton, 
+        QLineEdit, 
+        QTableWidget, 
+        QTableWidgetItem,
+        QTableView,
+        QHeaderView::section
+        {font-family: Rec Mono Casual;}"""
+        )
+    window.showMaximized()
     app.exec()
 
 
