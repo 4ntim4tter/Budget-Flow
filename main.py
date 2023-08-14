@@ -1,5 +1,7 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication
+from PyQt6.QtGui import QFont
+from untitled_ui import Ui_MainWindow
 
 from window_operator import WindowOperator
 from database_management import DataManager
@@ -10,7 +12,7 @@ Receipt, ReceiptWindow = loadUiType("receipt.ui")
 app = QApplication([])
 
 window = Window()
-formMain = Form()
+formMain:Ui_MainWindow = Form()
 formMain.setupUi(window)
 
 receiptWindow = ReceiptWindow()
@@ -137,3 +139,8 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+
+#- DELETE ENTRY IN RECEIPT
+#- MODIFY ENTRY IN RECEIPT

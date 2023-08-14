@@ -13,6 +13,7 @@ cursor = db_connection.cursor()
 fake = Faker()
 fake.add_provider(VehicleProvider)
 
+#customer
 for _ in range(20):
     name = fake.first_name()
     surname = fake.last_name()
@@ -26,6 +27,7 @@ for _ in range(20):
     )
 db_connection.commit()
 
+#receipts
 for _ in range(80):
     customer_id_query = "SELECT id FROM customers ORDER BY RANDOM() LIMIT 1"
     cursor.execute(customer_id_query)
@@ -37,13 +39,13 @@ for _ in range(80):
     )
 db_connection.commit()
 
-for i in range(1, 80):
+#materials
+for i in range(1, 81):
     reciept_id_query = f"SELECT id FROM receipts WHERE id = {i}"
     reciept_service_query = f"SELECT service FROM receipts WHERE id = {i}"
     customer_id_query = "SELECT id FROM customers ORDER BY RANDOM() LIMIT 1"
     cursor.execute(customer_id_query)
     customer_id = cursor.fetchone()[0]
-    service = randint(50, 100)
     cursor.execute(reciept_id_query)
     reciept_id = cursor.fetchall()
     cursor.execute(reciept_service_query)
