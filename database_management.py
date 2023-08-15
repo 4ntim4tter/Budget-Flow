@@ -1,5 +1,5 @@
-from PySide6.QtWidgets import QTableWidget, QTableWidgetItem
-from PySide6.QtCore import Qt
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
 from popup_module import QuestionPopup
 
 import sqlite3 as sql3
@@ -113,7 +113,7 @@ class DataManager:
         search_params: tuple,
         query_string: str,
     ):
-        table_widget.sortItems(4, Qt.SortOrder.AscendingOrder)
+        table_widget.sortItems(4)
         rows = self.db_customer_interaction(
             table, table_widget, search_params, query_string
         )
