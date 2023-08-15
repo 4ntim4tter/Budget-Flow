@@ -2778,7 +2778,7 @@ Cijena[KM]</string>
              <bool>true</bool>
             </attribute>
             <attribute name="horizontalHeaderDefaultSectionSize">
-             <number>100</number>
+             <number>115</number>
             </attribute>
             <attribute name="horizontalHeaderMinimumSectionSize">
              <number>75</number>
@@ -2971,7 +2971,7 @@ Cijena[KM]</string>
           <bool>true</bool>
          </attribute>
          <attribute name="horizontalHeaderDefaultSectionSize">
-          <number>70</number>
+          <number>85</number>
          </attribute>
          <attribute name="horizontalHeaderHighlightSections">
           <bool>true</bool>

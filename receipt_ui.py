@@ -1121,6 +1121,16 @@ class Ui_ReceiptWindow(object):
 
         self.horizontalLayout_2.addWidget(self.cancel_print_reciept_button)
 
+        self.delete_entry_button = QPushButton(self.frame_3)
+        self.delete_entry_button.setObjectName(u"delete_entry_button")
+
+        self.horizontalLayout_2.addWidget(self.delete_entry_button)
+
+        self.modify_reciept_button = QPushButton(self.frame_3)
+        self.modify_reciept_button.setObjectName(u"modify_reciept_button")
+
+        self.horizontalLayout_2.addWidget(self.modify_reciept_button)
+
         self.print_reciept_button = QPushButton(self.frame_3)
         self.print_reciept_button.setObjectName(u"print_reciept_button")
 
@@ -1156,6 +1166,8 @@ class Ui_ReceiptWindow(object):
         self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupno[KM]:", None))
         self.full_price_label.setText("")
         self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Odustani", None))
+        self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Obri\u0161i", None))
+        self.modify_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Spremi", None))
         self.print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Printaj", None))
     # retranslateUi
 

@@ -1170,6 +1170,20 @@ Cijena[KM]</string>
           </widget>
          </item>
          <item>
+          <widget class="QPushButton" name="delete_entry_button">
+           <property name="text">
+            <string>Obriši</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="modify_reciept_button">
+           <property name="text">
+            <string>Spremi</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPushButton" name="print_reciept_button">
            <property name="text">
             <string>Printaj</string>
