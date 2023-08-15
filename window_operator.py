@@ -1,5 +1,5 @@
 import datetime
-from PyQt6.QtWidgets import (
+from PySide6.QtWidgets import (
     QWidget,
     QTableWidget,
     QFrame,
@@ -8,7 +8,7 @@ from PyQt6.QtWidgets import (
     QCheckBox,
     QLineEdit
 )
-from PyQt6.QtGui import QDoubleValidator
+from PySide6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup

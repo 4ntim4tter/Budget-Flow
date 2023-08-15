@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import QTableWidget, QTableWidgetItem
-from PyQt6.QtCore import Qt
+from PySide6.QtWidgets import QTableWidget, QTableWidgetItem
+from PySide6.QtCore import Qt
 from popup_module import QuestionPopup
 
 import sqlite3 as sql3

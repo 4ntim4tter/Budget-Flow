@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'untitled.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.1
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1885,7 +1885,7 @@ class Ui_MainWindow(object):
         self.customer_reciepts_table.setRowCount(1)
         self.customer_reciepts_table.horizontalHeader().setCascadingSectionResizes(True)
         self.customer_reciepts_table.horizontalHeader().setMinimumSectionSize(75)
-        self.customer_reciepts_table.horizontalHeader().setDefaultSectionSize(100)
+        self.customer_reciepts_table.horizontalHeader().setDefaultSectionSize(115)
         self.customer_reciepts_table.horizontalHeader().setProperty("showSortIndicator", True)
         self.customer_reciepts_table.horizontalHeader().setStretchLastSection(True)
         self.customer_reciepts_table.verticalHeader().setVisible(True)
@@ -1954,7 +1954,7 @@ class Ui_MainWindow(object):
         self.customer_table.horizontalHeader().setVisible(True)
         self.customer_table.horizontalHeader().setCascadingSectionResizes(True)
         self.customer_table.horizontalHeader().setMinimumSectionSize(68)
-        self.customer_table.horizontalHeader().setDefaultSectionSize(70)
+        self.customer_table.horizontalHeader().setDefaultSectionSize(85)
         self.customer_table.horizontalHeader().setHighlightSections(True)
         self.customer_table.horizontalHeader().setProperty("showSortIndicator", True)
         self.customer_table.horizontalHeader().setStretchLastSection(True)
@@ -1974,11 +1974,6 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setSpacing(1)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.verticalLayout_3.setContentsMargins(1, 1, 1, 1)
-        self.lineEdit = QLineEdit(self.frame_2)
-        self.lineEdit.setObjectName(u"lineEdit")
-
-        self.verticalLayout_3.addWidget(self.lineEdit)
-
 
         self.verticalLayout_2.addWidget(self.frame_2)
 
@@ -1995,15 +1990,20 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout.addWidget(self.delete_selected_table_button)
 
-        self.clear_table_button = QPushButton(self.frame)
-        self.clear_table_button.setObjectName(u"clear_table_button")
-
-        self.horizontalLayout.addWidget(self.clear_table_button)
-
         self.populate_table_button = QPushButton(self.frame)
         self.populate_table_button.setObjectName(u"populate_table_button")
 
         self.horizontalLayout.addWidget(self.populate_table_button)
+
+        self.show_archived_button = QPushButton(self.frame)
+        self.show_archived_button.setObjectName(u"show_archived_button")
+
+        self.horizontalLayout.addWidget(self.show_archived_button)
+
+        self.archive_selected_button = QPushButton(self.frame)
+        self.archive_selected_button.setObjectName(u"archive_selected_button")
+
+        self.horizontalLayout.addWidget(self.archive_selected_button)
 
 
         self.verticalLayout_2.addWidget(self.frame)
@@ -2120,7 +2120,8 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem14 = self.customer_table.horizontalHeaderItem(4)
         ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"ID", None));
         self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
-        self.clear_table_button.setText(QCoreApplication.translate("MainWindow", u"Poni\u0161ti", None))
         self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
+        self.show_archived_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Arihvu", None))
+        self.archive_selected_button.setText(QCoreApplication.translate("MainWindow", u"Arhiviraj/Vrati", None))
     # retranslateUi
 
