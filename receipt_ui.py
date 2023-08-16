@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'receipt.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.5.1
+## Created by: Qt User Interface Compiler version 6.5.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -1166,7 +1166,7 @@ class Ui_ReceiptWindow(object):
         self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupno[KM]:", None))
         self.full_price_label.setText("")
         self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Odustani", None))
-        self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Obri\u0161i", None))
+        self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Brisanje", None))
         self.modify_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Spremi", None))
         self.print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Printaj", None))
     # retranslateUi

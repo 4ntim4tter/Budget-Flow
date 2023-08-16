@@ -1172,7 +1172,7 @@ Cijena[KM]</string>
          <item>
           <widget class="QPushButton" name="delete_entry_button">
            <property name="text">
-            <string>Obriši</string>
+            <string>Brisanje</string>
            </property>
           </widget>
          </item>

@@ -1,18 +1,667 @@
 [
     {
-        "label": "QTableWidget",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
         "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
+        "detail": "PyQt6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTableWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
         "documentation": {}
     },
     {
         "label": "QTableWidgetItem",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
         "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QApplication",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QMessageBox",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTableWidget",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QFrame",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QTableWidgetItem",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLabel",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QCheckBox",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QLineEdit",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionPopup",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "QuestionPopup",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "WarningPopup",
+        "importPath": "popup_module",
+        "description": "popup_module",
+        "isExtraImport": true,
+        "detail": "popup_module",
+        "documentation": {}
+    },
+    {
+        "label": "sqlite3",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlite3",
+        "description": "sqlite3",
+        "detail": "sqlite3",
+        "documentation": {}
+    },
+    {
+        "label": "Reciept",
+        "importPath": "reciept",
+        "description": "reciept",
+        "isExtraImport": true,
+        "detail": "reciept",
+        "documentation": {}
+    },
+    {
+        "label": "randint",
+        "importPath": "random",
+        "description": "random",
+        "isExtraImport": true,
+        "detail": "random",
+        "documentation": {}
+    },
+    {
+        "label": "Faker",
+        "importPath": "faker",
+        "description": "faker",
+        "isExtraImport": true,
+        "detail": "faker",
+        "documentation": {}
+    },
+    {
+        "label": "VehicleProvider",
+        "importPath": "faker_vehicle",
+        "description": "faker_vehicle",
+        "isExtraImport": true,
+        "detail": "faker_vehicle",
+        "documentation": {}
+    },
+    {
+        "label": "loadUiType",
+        "importPath": "PyQt6.uic.load_ui",
+        "description": "PyQt6.uic.load_ui",
+        "isExtraImport": true,
+        "detail": "PyQt6.uic.load_ui",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_ReceiptWindow",
+        "importPath": "receipt_ui",
+        "description": "receipt_ui",
+        "isExtraImport": true,
+        "detail": "receipt_ui",
+        "documentation": {}
+    },
+    {
+        "label": "Ui_MainWindow",
+        "importPath": "untitled_ui",
+        "description": "untitled_ui",
+        "isExtraImport": true,
+        "detail": "untitled_ui",
+        "documentation": {}
+    },
+    {
+        "label": "WindowOperator",
+        "importPath": "window_operator",
+        "description": "window_operator",
+        "isExtraImport": true,
+        "detail": "window_operator",
+        "documentation": {}
+    },
+    {
+        "label": "DataManager",
+        "importPath": "database_management",
+        "description": "database_management",
+        "isExtraImport": true,
+        "detail": "database_management",
+        "documentation": {}
+    },
+    {
+        "label": "DataManager",
+        "importPath": "database_management",
+        "description": "database_management",
+        "isExtraImport": true,
+        "detail": "database_management",
+        "documentation": {}
+    },
+    {
+        "label": "QCoreApplication",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDate",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDateTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QLocale",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QMetaObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QPoint",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QRect",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QUrl",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QCoreApplication",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDate",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QDateTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QLocale",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QMetaObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QObject",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QPoint",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QRect",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QSize",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QTime",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QUrl",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "Qt",
+        "importPath": "PySide6.QtCore",
+        "description": "PySide6.QtCore",
+        "isExtraImport": true,
+        "detail": "PySide6.QtCore",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QConicalGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QCursor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFontDatabase",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QImage",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QKeySequence",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QLinearGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QRadialGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTransform",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QBrush",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QColor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QConicalGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QCursor",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFont",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QFontDatabase",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QIcon",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QImage",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QKeySequence",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QLinearGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPainter",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPalette",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QPixmap",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QRadialGradient",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
+        "documentation": {}
+    },
+    {
+        "label": "QTransform",
+        "importPath": "PySide6.QtGui",
+        "description": "PySide6.QtGui",
+        "isExtraImport": true,
+        "detail": "PySide6.QtGui",
         "documentation": {}
     },
     {
@@ -256,669 +905,20 @@
         "documentation": {}
     },
     {
-        "label": "QWidget",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QTableWidget",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QFrame",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QTableWidgetItem",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QLabel",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QCheckBox",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QLineEdit",
-        "importPath": "PySide6.QtWidgets",
-        "description": "PySide6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PySide6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QCoreApplication",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QDate",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QDateTime",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QLocale",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QMetaObject",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QObject",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QPoint",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QRect",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QSize",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QTime",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QUrl",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QCoreApplication",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QDate",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QDateTime",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QLocale",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QMetaObject",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QObject",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QPoint",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QRect",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QSize",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QTime",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QUrl",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PySide6.QtCore",
-        "description": "PySide6.QtCore",
-        "isExtraImport": true,
-        "detail": "PySide6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QuestionPopup",
-        "importPath": "popup_module",
-        "description": "popup_module",
-        "isExtraImport": true,
-        "detail": "popup_module",
-        "documentation": {}
-    },
-    {
-        "label": "QuestionPopup",
-        "importPath": "popup_module",
-        "description": "popup_module",
-        "isExtraImport": true,
-        "detail": "popup_module",
-        "documentation": {}
-    },
-    {
-        "label": "WarningPopup",
-        "importPath": "popup_module",
-        "description": "popup_module",
-        "isExtraImport": true,
-        "detail": "popup_module",
-        "documentation": {}
-    },
-    {
-        "label": "sqlite3",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "sqlite3",
-        "description": "sqlite3",
-        "detail": "sqlite3",
-        "documentation": {}
-    },
-    {
-        "label": "Reciept",
-        "importPath": "reciept",
-        "description": "reciept",
-        "isExtraImport": true,
-        "detail": "reciept",
-        "documentation": {}
-    },
-    {
-        "label": "randint",
-        "importPath": "random",
-        "description": "random",
-        "isExtraImport": true,
-        "detail": "random",
-        "documentation": {}
-    },
-    {
-        "label": "Faker",
-        "importPath": "faker",
-        "description": "faker",
-        "isExtraImport": true,
-        "detail": "faker",
-        "documentation": {}
-    },
-    {
-        "label": "VehicleProvider",
-        "importPath": "faker_vehicle",
-        "description": "faker_vehicle",
-        "isExtraImport": true,
-        "detail": "faker_vehicle",
-        "documentation": {}
-    },
-    {
-        "label": "loadUiType",
-        "importPath": "PyQt6.uic.load_ui",
-        "description": "PyQt6.uic.load_ui",
-        "isExtraImport": true,
-        "detail": "PyQt6.uic.load_ui",
-        "documentation": {}
-    },
-    {
-        "label": "QApplication",
-        "importPath": "PyQt6.QtWidgets",
-        "description": "PyQt6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "QMessageBox",
-        "importPath": "PyQt6.QtWidgets",
-        "description": "PyQt6.QtWidgets",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtWidgets",
-        "documentation": {}
-    },
-    {
-        "label": "Ui_ReceiptWindow",
-        "importPath": "receipt_ui",
-        "description": "receipt_ui",
-        "isExtraImport": true,
-        "detail": "receipt_ui",
-        "documentation": {}
-    },
-    {
-        "label": "Ui_MainWindow",
-        "importPath": "untitled_ui",
-        "description": "untitled_ui",
-        "isExtraImport": true,
-        "detail": "untitled_ui",
-        "documentation": {}
-    },
-    {
-        "label": "WindowOperator",
-        "importPath": "window_operator",
-        "description": "window_operator",
-        "isExtraImport": true,
-        "detail": "window_operator",
-        "documentation": {}
-    },
-    {
-        "label": "DataManager",
-        "importPath": "database_management",
-        "description": "database_management",
-        "isExtraImport": true,
-        "detail": "database_management",
-        "documentation": {}
-    },
-    {
-        "label": "DataManager",
-        "importPath": "database_management",
-        "description": "database_management",
-        "isExtraImport": true,
-        "detail": "database_management",
-        "documentation": {}
-    },
-    {
-        "label": "Qt",
-        "importPath": "PyQt6.QtCore",
-        "description": "PyQt6.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtCore",
-        "documentation": {}
-    },
-    {
-        "label": "QBrush",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QColor",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QConicalGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QCursor",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QFont",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QFontDatabase",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QIcon",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QImage",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QKeySequence",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QLinearGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPainter",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPalette",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPixmap",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QRadialGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QTransform",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QBrush",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QColor",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QConicalGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QCursor",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QFont",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QFontDatabase",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QIcon",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QImage",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QKeySequence",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QLinearGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPainter",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPalette",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QPixmap",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QRadialGradient",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QTransform",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
-        "label": "QDoubleValidator",
-        "importPath": "PySide6.QtGui",
-        "description": "PySide6.QtGui",
-        "isExtraImport": true,
-        "detail": "PySide6.QtGui",
-        "documentation": {}
-    },
-    {
         "label": "datetime",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "datetime",
         "description": "datetime",
         "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "QDoubleValidator",
+        "importPath": "PyQt6.QtGui",
+        "description": "PyQt6.QtGui",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtGui",
         "documentation": {}
     },
     {
