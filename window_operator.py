@@ -9,7 +9,8 @@ from PyQt6.QtWidgets import (
     QLineEdit,
     QDialog,
 ) 
-from PyQt6.QtGui import QDoubleValidator, QCloseEvent
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
@@ -261,6 +262,7 @@ class WindowOperator:
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table: QTableWidget = form.customer_reciepts_table
+        receipt_window.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         receipt_window.show()
         receipt_data = self.db_manager.get_selected_reciept_from_database(
             customer_reciepts_table.selectedItems()[0].text()

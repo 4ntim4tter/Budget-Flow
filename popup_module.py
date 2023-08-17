@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QMessageBox
+from PyQt6.QtWidgets import QMessageBox, QAbstractButton
 from PyQt6.QtCore import Qt
 
 
@@ -41,7 +41,7 @@ class QuestionPopup:
         conf_dialog.setStandardButtons(
             QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No
         )
-        yes_button = conf_dialog.button(QMessageBox.StandardButton.Yes)
+        yes_button = conf_dialog.button(QMessageBox.StandardButton.Yes) 
         yes_button.setText(self.yes)
         yes_button.setStyleSheet(self.style)
         no_button = conf_dialog.button(QMessageBox.StandardButton.No)

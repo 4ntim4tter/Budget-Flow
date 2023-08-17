@@ -16,6 +16,14 @@
         "documentation": {}
     },
     {
+        "label": "Qt",
+        "importPath": "PyQt6.QtCore",
+        "description": "PyQt6.QtCore",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtCore",
+        "documentation": {}
+    },
+    {
         "label": "QTableWidget",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
@@ -41,6 +49,14 @@
     },
     {
         "label": "QMessageBox",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QAbstractButton",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
         "isExtraImport": true,
@@ -97,6 +113,14 @@
     },
     {
         "label": "QLineEdit",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
+        "label": "QDialog",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
         "isExtraImport": true,
@@ -1147,7 +1171,7 @@
         "kind": 6,
         "importPath": "receipt_ui",
         "description": "receipt_ui",
-        "peekOfCode": "class Ui_ReceiptWindow(object):\n    def setupUi(self, ReceiptWindow):\n        if not ReceiptWindow.objectName():\n            ReceiptWindow.setObjectName(u\"ReceiptWindow\")\n        ReceiptWindow.resize(640, 480)\n        sizePolicy = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred)\n        sizePolicy.setHorizontalStretch(0)\n        sizePolicy.setVerticalStretch(0)\n        sizePolicy.setHeightForWidth(ReceiptWindow.sizePolicy().hasHeightForWidth())\n        ReceiptWindow.setSizePolicy(sizePolicy)",
+        "peekOfCode": "class Ui_ReceiptWindow(object):\n    def setupUi(self, ReceiptWindow):\n        if not ReceiptWindow.objectName():\n            ReceiptWindow.setObjectName(u\"ReceiptWindow\")\n        ReceiptWindow.resize(720, 520)\n        sizePolicy = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred)\n        sizePolicy.setHorizontalStretch(0)\n        sizePolicy.setVerticalStretch(0)\n        sizePolicy.setHeightForWidth(ReceiptWindow.sizePolicy().hasHeightForWidth())\n        ReceiptWindow.setSizePolicy(sizePolicy)",
         "detail": "receipt_ui",
         "documentation": {}
     },
