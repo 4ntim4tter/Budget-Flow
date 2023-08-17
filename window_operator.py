@@ -6,9 +6,10 @@ from PyQt6.QtWidgets import (
     QTableWidgetItem,
     QLabel,
     QCheckBox,
-    QLineEdit
-)
-from PyQt6.QtGui import QDoubleValidator
+    QLineEdit,
+    QDialog,
+) 
+from PyQt6.QtGui import QDoubleValidator, QCloseEvent
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
@@ -324,7 +325,7 @@ class WindowOperator:
 
         webbrowser.open("data.html", 1)
 
-    def cancel_receipt_printing(self, receipt_window, form, table):
+    def cancel_receipt_printing(self, receipt_window:QDialog, form, table):
         answer = self.question_popup(
             "Zatvoriti?",
             "Da li ste sigurni?"
