@@ -273,11 +273,12 @@ class WindowOperator:
 
         for index, item in enumerate(receipt_data[1]):
             materials_table.insertRow(index)
-            materials_table.setItem(index, 0, QTableWidgetItem(f"{item[2]}"))
-            materials_table.setItem(index, 1, QTableWidgetItem(f"{item[3]}"))
-            materials_table.setItem(index, 2, QTableWidgetItem(f"{item[4]}"))
-            materials_table.setItem(index, 3, QTableWidgetItem(f"{item[5]}"))
-            materials_table.setItem(index, 4, QTableWidgetItem(f"{item[6]}"))
+            materials_table.setItem(index, 0, QTableWidgetItem(f"{item[0]}"))
+            materials_table.setItem(index, 1, QTableWidgetItem(f"{item[2]}"))
+            materials_table.setItem(index, 2, QTableWidgetItem(f"{item[3]}"))
+            materials_table.setItem(index, 3, QTableWidgetItem(f"{item[4]}"))
+            materials_table.setItem(index, 4, QTableWidgetItem(f"{item[5]}"))
+            materials_table.setItem(index, 5, QTableWidgetItem(f"{item[6]}"))
 
         service.setText(f"{receipt_data[0][0][2]}")
         full_price.setText(f"{receipt_data[0][0][3]}")
@@ -285,6 +286,7 @@ class WindowOperator:
     def open_browser_for_print(
         self, user_data: dict, selected_receipt: list, table_items: QTableWidget
     ):
+
         service: str = selected_receipt[3].text()
         total_price: str = selected_receipt[2].text()
         final_price: str = selected_receipt[4].text()
@@ -296,11 +298,11 @@ class WindowOperator:
 
         for i in range(table_items.rowCount()):
             temp += receipt_data.format(
-                material=table_items.item(i, 0).text(),
-                model=table_items.item(i, 1).text(),
+                material=table_items.item(i, 1).text(),
+                model=table_items.item(i, 2).text(),
                 price=table_items.item(i, 3).text(),
-                amount=table_items.item(i, 2).text(),
-                final_price=table_items.item(i, 4).text(),
+                amount=table_items.item(i, 4).text(),
+                final_price=table_items.item(i, 5).text(),
             )
             temp += "\n"
 
@@ -322,8 +324,14 @@ class WindowOperator:
 
         webbrowser.open("data.html", 1)
 
-    def cancel_receipt_printing(self, receipt_window):
-        receipt_window.close()
+    def cancel_receipt_printing(self, receipt_window, form, table):
+        answer = self.question_popup(
+            "Zatvoriti?",
+            "Da li ste sigurni?"
+        )
+        if answer:
+            receipt_window.close()
+            self.select_customer_from_table(form, table)
 
     def populate_customer_table_archived(self,db_table:str, table_widget:QTableWidget):
         rows = self.db_manager.get_archived_entries(db_table)
@@ -364,3 +372,17 @@ class WindowOperator:
                 self.db_manager.change_archive_status(table_widget.selectedItems()[4].text().lstrip('0'))
             else:
                 self.warning_popup("Niste označili mušteriju!")
+    
+    def delete_entry_from_receipt(self, reciept_table:QTableWidget):
+        answer = self.question_popup(
+            "Brisanje",
+            "Da li želite obrisati označeni materijal?\n(Upozorenje: Ova radnja je nepovratna!)"
+        )
+        if answer:
+            if reciept_table.selectedItems() != []:
+                reciept_table.selectRow(reciept_table.currentRow())
+                selected_row = reciept_table.selectedItems()[0].text()
+                reciept_table.removeRow(reciept_table.currentRow())
+                self.db_manager.delete_selected_material(selected_row)
+            else:
+                self.warning_popup("Niste označili materijal!")

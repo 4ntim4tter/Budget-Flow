@@ -23,7 +23,7 @@ class Ui_ReceiptWindow(object):
     def setupUi(self, ReceiptWindow):
         if not ReceiptWindow.objectName():
             ReceiptWindow.setObjectName(u"ReceiptWindow")
-        ReceiptWindow.resize(640, 480)
+        ReceiptWindow.resize(720, 520)
         sizePolicy = QSizePolicy(QSizePolicy.Ignored, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -1046,31 +1046,37 @@ class Ui_ReceiptWindow(object):
         self.verticalLayout_2 = QVBoxLayout(self.frame)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.materials_receipt_table = QTableWidget(self.frame)
-        if (self.materials_receipt_table.columnCount() < 5):
-            self.materials_receipt_table.setColumnCount(5)
+        if (self.materials_receipt_table.columnCount() < 6):
+            self.materials_receipt_table.setColumnCount(6)
         font = QFont()
         font.setFamilies([u"Arial"])
-        font.setPointSize(9)
         font.setBold(True)
         __qtablewidgetitem = QTableWidgetItem()
         __qtablewidgetitem.setFont(font);
         self.materials_receipt_table.setHorizontalHeaderItem(0, __qtablewidgetitem)
+        font1 = QFont()
+        font1.setFamilies([u"Arial"])
+        font1.setPointSize(9)
+        font1.setBold(True)
         __qtablewidgetitem1 = QTableWidgetItem()
-        __qtablewidgetitem1.setFont(font);
+        __qtablewidgetitem1.setFont(font1);
         self.materials_receipt_table.setHorizontalHeaderItem(1, __qtablewidgetitem1)
         __qtablewidgetitem2 = QTableWidgetItem()
-        __qtablewidgetitem2.setFont(font);
+        __qtablewidgetitem2.setFont(font1);
         self.materials_receipt_table.setHorizontalHeaderItem(2, __qtablewidgetitem2)
         __qtablewidgetitem3 = QTableWidgetItem()
-        __qtablewidgetitem3.setFont(font);
+        __qtablewidgetitem3.setFont(font1);
         self.materials_receipt_table.setHorizontalHeaderItem(3, __qtablewidgetitem3)
         __qtablewidgetitem4 = QTableWidgetItem()
-        __qtablewidgetitem4.setFont(font);
+        __qtablewidgetitem4.setFont(font1);
         self.materials_receipt_table.setHorizontalHeaderItem(4, __qtablewidgetitem4)
+        __qtablewidgetitem5 = QTableWidgetItem()
+        __qtablewidgetitem5.setFont(font1);
+        self.materials_receipt_table.setHorizontalHeaderItem(5, __qtablewidgetitem5)
         if (self.materials_receipt_table.rowCount() < 1):
             self.materials_receipt_table.setRowCount(1)
         self.materials_receipt_table.setObjectName(u"materials_receipt_table")
-        self.materials_receipt_table.setFont(font)
+        self.materials_receipt_table.setFont(font1)
         self.materials_receipt_table.setRowCount(1)
         self.materials_receipt_table.horizontalHeader().setDefaultSectionSize(100)
         self.materials_receipt_table.horizontalHeader().setStretchLastSection(True)
@@ -1151,15 +1157,17 @@ class Ui_ReceiptWindow(object):
     def retranslateUi(self, ReceiptWindow):
         ReceiptWindow.setWindowTitle(QCoreApplication.translate("ReceiptWindow", u"Budget Flow - Receipt", None))
         ___qtablewidgetitem = self.materials_receipt_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("ReceiptWindow", u"Materijal", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("ReceiptWindow", u"#ID", None));
         ___qtablewidgetitem1 = self.materials_receipt_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("ReceiptWindow", u"Marka", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("ReceiptWindow", u"Materijal", None));
         ___qtablewidgetitem2 = self.materials_receipt_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("ReceiptWindow", u"Cijena", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("ReceiptWindow", u"Marka", None));
         ___qtablewidgetitem3 = self.materials_receipt_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("ReceiptWindow", u"Koli\u010dina", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("ReceiptWindow", u"Cijena", None));
         ___qtablewidgetitem4 = self.materials_receipt_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupna \n"
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("ReceiptWindow", u"Koli\u010dina", None));
+        ___qtablewidgetitem5 = self.materials_receipt_table.horizontalHeaderItem(5)
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupna \n"
 "Cijena[KM]", None));
         self.label_3.setText(QCoreApplication.translate("ReceiptWindow", u"Rad:", None))
         self.service_text_label.setText("")

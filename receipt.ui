@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>640</width>
-    <height>480</height>
+    <width>720</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -1045,6 +1045,18 @@ QProgressBar::chunk
          <bool>true</bool>
         </attribute>
         <row/>
+        <column>
+         <property name="text">
+          <string>#ID</string>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
         <column>
          <property name="text">
           <string>Materijal</string>

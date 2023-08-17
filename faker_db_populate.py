@@ -60,7 +60,7 @@ for i in range(1, 81):
         full_price += full_amount
         cursor.execute(
             "INSERT INTO materials ('reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
-            (reciept_id[0][0], type, brand, amount, price, full_amount),
+            (reciept_id[0][0], type, brand, price, amount, full_amount),
         )
     cursor.execute(
         f"UPDATE receipts SET full_price = ? WHERE id = {i}", (full_price+receipt_service[0],))

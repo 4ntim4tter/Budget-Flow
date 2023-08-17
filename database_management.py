@@ -314,3 +314,11 @@ class DataManager:
                 f"UPDATE customers SET archived = 0 WHERE id = {id}"
             )
         self.db_disconnect()
+
+    def delete_selected_material(self, id:str):
+        self.db_connect(self.database)
+        self.db_cursor  = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"DELETE FROM materials WHERE id = {id}"
+        )
+        self.db_disconnect()
