@@ -1,5 +1,5 @@
 from PyQt6.uic.load_ui import loadUiType
-from PyQt6.QtWidgets import QApplication
+from PyQt6.QtWidgets import QApplication, QMainWindow
 from receipt_ui import Ui_ReceiptWindow
 from untitled_ui import Ui_MainWindow
 
@@ -11,7 +11,7 @@ Receipt, ReceiptWindow = loadUiType("receipt.ui")
 
 app = QApplication([])
 
-window = Window()
+window:QMainWindow = Window()
 formMain:Ui_MainWindow = Form()
 formMain.setupUi(window)
 
@@ -146,7 +146,6 @@ def main():
         )
     window.showMaximized()
     app.exec()
-
 
 if __name__ == "__main__":
     main()
