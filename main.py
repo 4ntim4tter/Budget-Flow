@@ -132,6 +132,10 @@ receiptForm.delete_entry_button.clicked.connect(
     lambda: entry_window.delete_entry_from_receipt(receiptForm.materials_receipt_table)
 )
 
+receiptForm.modify_reciept_button.clicked.connect(
+    lambda: entry_window.modify_receipt_entry(receiptForm.materials_receipt_table)
+)
+
 def main():
     window.show()
     app.setStyleSheet(
@@ -153,5 +157,5 @@ if __name__ == "__main__":
 
 
 
-#- DELETE ENTRY IN RECEIPT
 #- MODIFY ENTRY IN RECEIPT
+#- IMPLEMENT CLOSE APPLICATION

@@ -389,3 +389,11 @@ class WindowOperator:
                 self.db_manager.delete_selected_material(selected_row)
             else:
                 self.warning_popup("Niste označili materijal!")
+
+    def modify_receipt_entry(self, reciept_table: QTableWidget):
+        answer = self.question_popup(
+            "Modificiranje",
+            "Da li želite modifikovati označeni unos?"
+        )
+        if answer:
+            print("Woo!")
