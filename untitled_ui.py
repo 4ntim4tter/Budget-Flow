@@ -1047,8 +1047,9 @@ class Ui_MainWindow(object):
         self.centralwidget.setSizePolicy(sizePolicy)
         self.centralwidget.setFont(font)
         self.gridLayout_4 = QGridLayout(self.centralwidget)
+        self.gridLayout_4.setSpacing(4)
         self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.gridLayout_4.setContentsMargins(-1, 30, -1, -1)
+        self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
         self.left_frame = QFrame(self.centralwidget)
         self.left_frame.setObjectName(u"left_frame")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -1277,6 +1278,11 @@ class Ui_MainWindow(object):
 
 
         self.verticalLayout.addWidget(self.customer_search_box)
+
+        self.close_register_button = QPushButton(self.left_frame)
+        self.close_register_button.setObjectName(u"close_register_button")
+
+        self.verticalLayout.addWidget(self.close_register_button)
 
         self.verticalLayout.setStretch(0, 1)
         self.verticalLayout.setStretch(1, 3)
@@ -2055,6 +2061,7 @@ class Ui_MainWindow(object):
         self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Tra\u017ei", None))
         self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
         self.archive_checkbox.setText(QCoreApplication.translate("MainWindow", u"Pretraga Arhive", None))
+        self.close_register_button.setText(QCoreApplication.translate("MainWindow", u"Zatvori Kasu", None))
         self.name_label.setText(QCoreApplication.translate("MainWindow", u"Ime:", None))
         self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Prezime:", None))
         self.phone_label.setText(QCoreApplication.translate("MainWindow", u"#Telefon:", None))

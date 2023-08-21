@@ -1,5 +1,6 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtCore import Qt
 from receipt_ui import Ui_ReceiptWindow
 from untitled_ui import Ui_MainWindow
 
@@ -114,6 +115,9 @@ formMain.delete_reciept_button.clicked.connect(
 formMain.customer_reciepts_table.itemDoubleClicked.connect(
     lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
 )
+formMain.close_register_button.clicked.connect(
+    lambda: entry_window.close_application(app)
+)
 receiptForm.print_reciept_button.clicked.connect(
     lambda: entry_window.open_browser_for_print(
         {
@@ -145,12 +149,11 @@ def main():
         {font-family: Rec Mono Casual;}"""
         )
     window.showMaximized()
+    window.showFullScreen()
     app.exec()
 
 if __name__ == "__main__":
     main()
 
 
-
-#- DELETE ENTRY IN RECEIPT
 #- MODIFY ENTRY IN RECEIPT

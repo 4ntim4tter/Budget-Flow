@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import (
     QCheckBox,
     QLineEdit,
     QDialog,
+    QApplication
 ) 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QDoubleValidator
@@ -389,3 +390,9 @@ class WindowOperator:
                 self.db_manager.delete_selected_material(selected_row)
             else:
                 self.warning_popup("Niste označili materijal!")
+
+    def close_application(self, app:QApplication):
+        answer = self.question_popup("Zatvaranje", "Da li želite zatvoriti kasu?")
+        
+        if answer:
+            app.quit()
