@@ -1175,7 +1175,7 @@ class Ui_ReceiptWindow(object):
         self.service_text_label.setText("")
         self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupno[KM]:", None))
         self.full_price_label.setText("")
-        self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Odustani", None))
+        self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Zatvori", None))
         self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Brisanje", None))
         self.modify_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Spremi", None))
         self.print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Printaj", None))

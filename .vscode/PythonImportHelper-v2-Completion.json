@@ -48,6 +48,14 @@
         "documentation": {}
     },
     {
+        "label": "QMainWindow",
+        "importPath": "PyQt6.QtWidgets",
+        "description": "PyQt6.QtWidgets",
+        "isExtraImport": true,
+        "detail": "PyQt6.QtWidgets",
+        "documentation": {}
+    },
+    {
         "label": "QMessageBox",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
@@ -1045,16 +1053,16 @@
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "app = QApplication([])\nwindow = Window()\nformMain:Ui_MainWindow = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm:Ui_ReceiptWindow = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()",
+        "peekOfCode": "app = QApplication([])\nwindow:QMainWindow = Window()\nformMain:Ui_MainWindow = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm:Ui_ReceiptWindow = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()",
         "detail": "main",
         "documentation": {}
     },
     {
-        "label": "window",
+        "label": "window:QMainWindow",
         "kind": 5,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "window = Window()\nformMain:Ui_MainWindow = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm:Ui_ReceiptWindow = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box",
+        "peekOfCode": "window:QMainWindow = Window()\nformMain:Ui_MainWindow = Form()\nformMain.setupUi(window)\nreceiptWindow = ReceiptWindow()\nreceiptForm:Ui_ReceiptWindow = Receipt()\nreceiptForm.setupUi(receiptWindow)\ndb_manager = DataManager(\"table.db\")\nentry_window = WindowOperator()\nformMain.add_new_reciept_frame.hide()\nnew_customer_window = formMain.customer_entry_box",
         "detail": "main",
         "documentation": {}
     },

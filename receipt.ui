@@ -1192,7 +1192,7 @@ Cijena[KM]</string>
          <item>
           <widget class="QPushButton" name="cancel_print_reciept_button">
            <property name="text">
-            <string>Odustani</string>
+            <string>Zatvori</string>
            </property>
           </widget>
          </item>

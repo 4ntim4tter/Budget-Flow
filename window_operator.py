@@ -391,8 +391,18 @@ class WindowOperator:
             else:
                 self.warning_popup("Niste označili materijal!")
 
+<<<<<<< HEAD
     def close_application(self, app:QApplication):
         answer = self.question_popup("Zatvaranje", "Da li želite zatvoriti kasu?")
         
         if answer:
             app.quit()
+=======
+    def modify_receipt_entry(self, reciept_table: QTableWidget):
+        answer = self.question_popup(
+            "Modificiranje",
+            "Da li želite modifikovati označeni unos?"
+        )
+        if answer:
+            print("Woo!")
+>>>>>>> b02d1dd717eab85ca290da3433cb0b1ead1ebcd4
