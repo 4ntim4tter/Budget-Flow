@@ -322,3 +322,14 @@ class DataManager:
             f"DELETE FROM materials WHERE id = {id}"
         )
         self.db_disconnect()
+        
+    def update_selected_reciept_entry(self, entry:list[QTableWidgetItem]):
+        self.db_connect(self.database)
+        self.db_cursor = self.db_link.cursor()
+        self.db_cursor.execute(
+            f"SELECT * FROM materials WHERE id = {entry[0].text()}"
+        )
+        data = self.db_cursor.fetchone()
+        print(data)
+        
+        self.db_disconnect()
