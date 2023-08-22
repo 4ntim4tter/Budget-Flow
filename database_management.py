@@ -329,7 +329,16 @@ class DataManager:
         self.db_cursor.execute(
             f"SELECT * FROM materials WHERE id = {entry[0].text()}"
         )
-        data = self.db_cursor.fetchone()
-        print(data)
+        data = list(map(str, self.db_cursor.fetchone()))
+        temp = []
+        data.pop(1)
+        
+        for item in entry:
+            temp.append(item.text())
+        
+        print(data, temp)
+        
+        if data == temp:
+            print('Yaaassss!!!')
         
         self.db_disconnect()
