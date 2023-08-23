@@ -24,14 +24,6 @@
         "documentation": {}
     },
     {
-        "label": "Qt",
-        "importPath": "PyQt6.QtCore",
-        "description": "PyQt6.QtCore",
-        "isExtraImport": true,
-        "detail": "PyQt6.QtCore",
-        "documentation": {}
-    },
-    {
         "label": "QTableWidget",
         "importPath": "PyQt6.QtWidgets",
         "description": "PyQt6.QtWidgets",
@@ -222,6 +214,14 @@
         "description": "PyQt6.uic.load_ui",
         "isExtraImport": true,
         "detail": "PyQt6.uic.load_ui",
+        "documentation": {}
+    },
+    {
+        "label": "QtCore",
+        "importPath": "PyQt6",
+        "description": "PyQt6",
+        "isExtraImport": true,
+        "detail": "PyQt6",
         "documentation": {}
     },
     {
