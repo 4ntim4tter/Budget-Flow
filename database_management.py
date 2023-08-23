@@ -323,23 +323,33 @@ class DataManager:
         )
         self.db_disconnect()
         
-    def update_selected_reciept_entry(self, entry:list[QTableWidgetItem]):
+    def update_selected_reciept_entry(self, table:QTableWidget):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        self.db_cursor.execute(
-            f"SELECT * FROM materials WHERE id = {entry[0].text()}"
-        )
-        data = list(map(str, self.db_cursor.fetchone()))
-        data.pop(1)
-        temp = []
         
-        for item in entry:
-            temp.append(item.text())
+        # for item in entry:
+        #     temp.append(item.text())
         
-        if data != temp:
+
+        table_data = []
+        difference:bool = False
+        for i in range(table.rowCount()):
+            temp = []
+            for j in range(table.columnCount()):
+                temp.append(table.item(i, j).text())
+            table_data.append(temp)
             self.db_cursor.execute(
+                f"SELECT * FROM materials WHERE id = {table_data[i][0]}"
+            )
+            data = list(map(str, self.db_cursor.fetchone()))
+            data.pop(1)
+            if data != table_data[i]:
+                difference = True
+                self.db_cursor.execute(
                 f"UPDATE materials SET type = ?, brand = ?, amount = ?, price = ?, full_amount = ? WHERE id = ?", 
-                (temp[1],temp[2],temp[3],temp[4],str(float(temp[4])*float(temp[3])), entry[0].text())
+                (table_data[i][1],table_data[i][2],table_data[i][3],table_data[i][4],str(float(table_data[i][4])*float(table_data[i][3])), table_data[i][0])
             )
         
         self.db_disconnect()
+        
+        return difference

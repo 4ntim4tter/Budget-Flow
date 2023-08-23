@@ -1,6 +1,6 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from PyQt6.QtCore import Qt
+from PyQt6 import QtCore
 from receipt_ui import Ui_ReceiptWindow
 from untitled_ui import Ui_MainWindow
 
@@ -139,6 +139,7 @@ receiptForm.delete_entry_button.clicked.connect(
 receiptForm.modify_reciept_button.clicked.connect(
     lambda: entry_window.modify_receipt_entry(receiptForm.materials_receipt_table)
 )
+
 
 def main():
     window.show()

@@ -403,8 +403,9 @@ class WindowOperator:
             "Da li želite modifikovati označeni unos?"
         )
         if answer:
-            if reciept_table.selectedItems() != []:
-                reciept_table.selectRow(reciept_table.currentRow())
-                selected_material = reciept_table.selectedItems()
-                self.db_manager.update_selected_reciept_entry(selected_material)
+            difference = self.db_manager.update_selected_reciept_entry(reciept_table)
+            if not difference:
+                self.warning_popup(
+                    "Nije bilo modifikacije."
+                )
             
