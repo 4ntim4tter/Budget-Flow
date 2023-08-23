@@ -330,15 +330,16 @@ class DataManager:
             f"SELECT * FROM materials WHERE id = {entry[0].text()}"
         )
         data = list(map(str, self.db_cursor.fetchone()))
-        temp = []
         data.pop(1)
+        temp = []
         
         for item in entry:
             temp.append(item.text())
         
-        print(data, temp)
-        
-        if data == temp:
-            print('Yaaassss!!!')
+        if data != temp:
+            self.db_cursor.execute(
+                f"UPDATE materials SET type = ?, brand = ?, amount = ?, price = ?, full_amount = ? WHERE id = ?", 
+                (temp[1],temp[2],temp[3],temp[4],str(float(temp[4])*float(temp[3])), entry[0].text())
+            )
         
         self.db_disconnect()
