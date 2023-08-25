@@ -137,7 +137,7 @@ receiptForm.delete_entry_button.clicked.connect(
 )
 
 receiptForm.modify_reciept_button.clicked.connect(
-    lambda: entry_window.modify_receipt_entry(receiptForm.materials_receipt_table)
+    lambda: entry_window.modify_receipt_entry(receiptForm.materials_receipt_table, formMain, formMain.customer_table)
 )
 
 

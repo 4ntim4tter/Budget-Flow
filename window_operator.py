@@ -280,8 +280,8 @@ class WindowOperator:
             materials_table.setItem(index, 0, QTableWidgetItem(f"{item[0]}"))
             materials_table.setItem(index, 1, QTableWidgetItem(f"{item[2]}"))
             materials_table.setItem(index, 2, QTableWidgetItem(f"{item[3]}"))
-            materials_table.setItem(index, 3, QTableWidgetItem(f"{item[4]}"))
-            materials_table.setItem(index, 4, QTableWidgetItem(f"{item[5]}"))
+            materials_table.setItem(index, 3, QTableWidgetItem(f"{item[5]}"))
+            materials_table.setItem(index, 4, QTableWidgetItem(f"{item[4]}"))
             materials_table.setItem(index, 5, QTableWidgetItem(f"{item[6]}"))
 
         service.setText(f"{receipt_data[0][0][2]}")
@@ -397,13 +397,14 @@ class WindowOperator:
         if answer:
             app.quit()
             
-    def modify_receipt_entry(self, reciept_table: QTableWidget):
+    def modify_receipt_entry(self, reciept_table: QTableWidget, form, form_table:QTableWidget):
         answer = self.question_popup(
             "Modificiranje",
             "Da li želite modifikovati označeni unos?"
         )
         if answer:
             difference = self.db_manager.update_selected_reciept_entry(reciept_table)
+            self.select_customer_from_table(form, form_table)
             if not difference:
                 self.warning_popup(
                     "Nije bilo modifikacije."

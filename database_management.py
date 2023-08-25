@@ -326,13 +326,11 @@ class DataManager:
     def update_selected_reciept_entry(self, table:QTableWidget):
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
-        
-        # for item in entry:
-        #     temp.append(item.text())
-        
 
         table_data = []
         difference:bool = False
+        total_price:float = 0.0
+        recipe_id:str = ''
         for i in range(table.rowCount()):
             temp = []
             for j in range(table.columnCount()):
@@ -342,13 +340,26 @@ class DataManager:
                 f"SELECT * FROM materials WHERE id = {table_data[i][0]}"
             )
             data = list(map(str, self.db_cursor.fetchone()))
-            data.pop(1)
+            recipe_id = data.pop(1)
+
             if data != table_data[i]:
                 difference = True
                 self.db_cursor.execute(
                 f"UPDATE materials SET type = ?, brand = ?, amount = ?, price = ?, full_amount = ? WHERE id = ?", 
-                (table_data[i][1],table_data[i][2],table_data[i][3],table_data[i][4],str(float(table_data[i][4])*float(table_data[i][3])), table_data[i][0])
+                (table_data[i][1],table_data[i][2],table_data[i][3],table_data[i][4],str(float(table_data[i][3])*float(table_data[i][4])), table_data[i][0])
             )
+                total_price += float(table_data[i][3])*float(table_data[i][4])
+
+        self.db_cursor.execute(
+            f"SELECT service FROM receipts WHERE id = {recipe_id}"
+        )
+        service = self.db_cursor.fetchone()
+        
+        total_price += service[0]
+        
+        self.db_cursor.execute(
+            f"UPDATE receipts SET full_price = {total_price} WHERE id = {recipe_id}"
+        )
         
         self.db_disconnect()
         

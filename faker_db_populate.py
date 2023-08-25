@@ -59,7 +59,7 @@ for i in range(1, 81):
         full_amount = amount * price
         full_price += full_amount
         cursor.execute(
-            "INSERT INTO materials ('reciept_id', 'type', 'brand', 'amount', 'price', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
+            "INSERT INTO materials ('reciept_id', 'type', 'brand', 'price', 'amount', 'full_amount') VALUES (?, ?, ?, ?, ?, ?)",
             (reciept_id[0][0], type, brand, price, amount, full_amount),
         )
     cursor.execute(
