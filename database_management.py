@@ -345,7 +345,7 @@ class DataManager:
             if data != table_data[i]:
                 difference = True
                 self.db_cursor.execute(
-                f"UPDATE materials SET type = ?, brand = ?, amount = ?, price = ?, full_amount = ? WHERE id = ?", 
+                f"UPDATE materials SET type = ?, brand = ?, price = ?, amount = ?, full_amount = ? WHERE id = ?", 
                 (table_data[i][1],table_data[i][2],table_data[i][3],table_data[i][4],str(float(table_data[i][3])*float(table_data[i][4])), table_data[i][0])
             )
                 total_price += float(table_data[i][3])*float(table_data[i][4])
