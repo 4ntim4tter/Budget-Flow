@@ -133,7 +133,7 @@ receiptForm.cancel_print_reciept_button.clicked.connect(
     lambda: entry_window.cancel_receipt_printing(receiptWindow, formMain, formMain.customer_table)
 )
 receiptForm.delete_entry_button.clicked.connect(
-    lambda: entry_window.delete_entry_from_receipt(receiptForm.materials_receipt_table)
+    lambda: entry_window.delete_entry_from_receipt(receiptForm.materials_receipt_table, formMain, formMain.customer_table)
 )
 
 receiptForm.modify_reciept_button.clicked.connect(

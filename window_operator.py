@@ -377,7 +377,7 @@ class WindowOperator:
             else:
                 self.warning_popup("Niste označili mušteriju!")
     
-    def delete_entry_from_receipt(self, reciept_table:QTableWidget):
+    def delete_entry_from_receipt(self, reciept_table:QTableWidget, form, form_table:QTableWidget):
         answer = self.question_popup(
             "Brisanje",
             "Da li želite obrisati označeni materijal?\n(Upozorenje: Ova radnja je nepovratna!)"
@@ -388,6 +388,7 @@ class WindowOperator:
                 selected_row = reciept_table.selectedItems()[0].text()
                 reciept_table.removeRow(reciept_table.currentRow())
                 self.db_manager.delete_selected_material(selected_row)
+                self.select_customer_from_table(form, form_table)
             else:
                 self.warning_popup("Niste označili materijal!")
 
