@@ -257,7 +257,7 @@ class DataManager:
         self.db_connect(self.database)
         self.db_cursor = self.db_link.cursor()
         self.db_cursor.execute(
-            f"INSERT INTO materials (reciept_id, type, brand, amount, price, full_amount) values (?,?,?,?,?,?)",
+            f"INSERT INTO materials (reciept_id, type, brand, price, amount, full_amount) values (?,?,?,?,?,?)",
             data,
         )
         self.db_disconnect()
