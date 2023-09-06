@@ -11,12 +11,12 @@ Receipt, ReceiptWindow = loadUiType("englishRec.ui")
 
 app = QApplication([])
 
-window:QMainWindow = Window()
-formMain:Ui_MainWindow = Form()
+window: QMainWindow = Window()
+formMain: Ui_MainWindow = Form()
 formMain.setupUi(window)
 
 receiptWindow = ReceiptWindow()
-receiptForm:Ui_ReceiptWindow = Receipt()
+receiptForm: Ui_ReceiptWindow = Receipt()
 receiptForm.setupUi(receiptWindow)
 
 db_manager = DataManager("table.db")
@@ -27,7 +27,8 @@ customer_search_window = formMain.customer_search_box
 
 db_manager.db_connect("table.db")
 db_manager.db_create_table(
-    "customers", ["id", "name", "surname", "phone", "vehicle", "plates", "chasis", "archived"]
+    "customers",
+    ["id", "name", "surname", "phone", "vehicle", "plates", "chasis", "archived"],
 )
 db_manager.db_create_table(
     "receipts",
@@ -120,23 +121,31 @@ formMain.close_register_button.clicked.connect(
 receiptForm.print_reciept_button.clicked.connect(
     lambda: entry_window.open_browser_for_print(
         {
-            'name':formMain.name_text_data.text() + " " + formMain.surname_text_data.text(),
-            'vehicle':formMain.vehicle_text_data.text(),
-            'plates':formMain.plates_text_data.text(),
+            "name": formMain.name_text_data.text()
+            + " "
+            + formMain.surname_text_data.text(),
+            "vehicle": formMain.vehicle_text_data.text(),
+            "plates": formMain.plates_text_data.text(),
         },
         formMain.customer_reciepts_table.selectedItems(),
-        receiptForm.materials_receipt_table
+        receiptForm.materials_receipt_table,
     )
 )
 receiptForm.cancel_print_reciept_button.clicked.connect(
-    lambda: entry_window.cancel_receipt_printing(receiptWindow, formMain, formMain.customer_table)
+    lambda: entry_window.cancel_receipt_printing(
+        receiptWindow, formMain, formMain.customer_table
+    )
 )
 receiptForm.delete_entry_button.clicked.connect(
-    lambda: entry_window.delete_entry_from_receipt(receiptForm.materials_receipt_table, formMain, formMain.customer_table)
+    lambda: entry_window.delete_entry_from_receipt(
+        receiptForm.materials_receipt_table, formMain, formMain.customer_table
+    )
 )
 
 receiptForm.modify_reciept_button.clicked.connect(
-    lambda: entry_window.modify_receipt_entry(receiptForm.materials_receipt_table, formMain, formMain.customer_table)
+    lambda: entry_window.modify_receipt_entry(
+        receiptForm.materials_receipt_table, formMain, formMain.customer_table
+    )
 )
 
 
@@ -151,11 +160,11 @@ def main():
         QTableView,
         QHeaderView::section
         {font-family: Rec Mono Casual;}"""
-        )
+    )
     window.showMaximized()
-    window.showFullScreen()
+    # window.showFullScreen()
     app.exec()
+
 
 if __name__ == "__main__":
     main()
-

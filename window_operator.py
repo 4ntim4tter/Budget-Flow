@@ -290,7 +290,6 @@ class WindowOperator:
     def open_browser_for_print(
         self, user_data: dict, selected_receipt: list, table_items: QTableWidget
     ):
-
         service: str = selected_receipt[3].text()
         total_price: str = selected_receipt[2].text()
         final_price: str = selected_receipt[4].text()
@@ -384,11 +383,15 @@ class WindowOperator:
         )
         if answer:
             if reciept_table.selectedItems() != []:
+                customer_reciepts:QTableWidget = form.customer_reciepts_table
                 reciept_table.selectRow(reciept_table.currentRow())
                 selected_row = reciept_table.selectedItems()[0].text()
                 reciept_table.removeRow(reciept_table.currentRow())
                 self.db_manager.delete_selected_material(selected_row)
+                for index in range(customer_reciepts.rowCount()):
+                    print(customer_reciepts.itemAt(index, 0))
                 self.select_customer_from_table(form, form_table)
+                self.db_manager.update_selected_reciept_entry(reciept_table)
             else:
                 self.warning_popup("Niste označili materijal!")
 
