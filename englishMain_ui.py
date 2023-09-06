@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'untitled.ui'
+## Form generated from reading UI file 'englishMain.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.5.2
 ##
@@ -2042,33 +2042,33 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"Budget Flow", None))
-        self.add_customer_label.setText(QCoreApplication.translate("MainWindow", u"Nova Mu\u0161terija", None))
-        self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
-        self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
-        self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
-        self.add_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vozilo", None))
-        self.add_customer_plates.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registracija", None))
-        self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
-        self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Unos", None))
-        self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        self.add_customer_label.setText(QCoreApplication.translate("MainWindow", u"New Customer", None))
+        self.add_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"First Name", None))
+        self.add_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last Name", None))
+        self.add_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
+        self.add_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vehicle", None))
+        self.add_customer_plates.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registration", None))
+        self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chassis Number", None))
+        self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Save", None))
+        self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.search_customer_label.setText(QCoreApplication.translate("MainWindow", u"Pretraga Mu\u0161terije", None))
-        self.search_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Ime", None))
-        self.search_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Prezime", None))
-        self.search_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Telefon", None))
-        self.search_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vozilo", None))
-        self.search_customer_plates.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registracija", None))
-        self.search_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Broj \u0160asije", None))
-        self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Tra\u017ei", None))
-        self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
-        self.archive_checkbox.setText(QCoreApplication.translate("MainWindow", u"Pretraga Arhive", None))
-        self.close_register_button.setText(QCoreApplication.translate("MainWindow", u"Zatvori Kasu", None))
-        self.name_label.setText(QCoreApplication.translate("MainWindow", u"Ime:", None))
-        self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Prezime:", None))
-        self.phone_label.setText(QCoreApplication.translate("MainWindow", u"#Telefon:", None))
-        self.vehicle_label.setText(QCoreApplication.translate("MainWindow", u"Vozilo:", None))
-        self.plates_label.setText(QCoreApplication.translate("MainWindow", u"#Registracija:", None))
-        self.chasis_label.setText(QCoreApplication.translate("MainWindow", u"#\u0160asija:", None))
-        self.ID_label.setText(QCoreApplication.translate("MainWindow", u"#ID:", None))
+        self.search_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"First Name", None))
+        self.search_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last Name", None))
+        self.search_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
+        self.search_customer_vehicle.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Vehicle", None))
+        self.search_customer_plates.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Registration", None))
+        self.search_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chassis Number", None))
+        self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Search", None))
+        self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
+        self.archive_checkbox.setText(QCoreApplication.translate("MainWindow", u"Search Archive", None))
+        self.close_register_button.setText(QCoreApplication.translate("MainWindow", u"Close Register", None))
+        self.name_label.setText(QCoreApplication.translate("MainWindow", u"First Name:", None))
+        self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Last Name:", None))
+        self.phone_label.setText(QCoreApplication.translate("MainWindow", u"Phone #:", None))
+        self.vehicle_label.setText(QCoreApplication.translate("MainWindow", u"Vehicle:", None))
+        self.plates_label.setText(QCoreApplication.translate("MainWindow", u"Registration #:", None))
+        self.chasis_label.setText(QCoreApplication.translate("MainWindow", u"Chassis #:", None))
+        self.ID_label.setText(QCoreApplication.translate("MainWindow", u"Customer ID:", None))
         self.name_text_data.setText("")
         self.surname_text_data.setText("")
         self.phone_text_data.setText("")
@@ -2076,59 +2076,56 @@ class Ui_MainWindow(object):
         self.plates_text_data.setText("")
         self.chasis_text_data.setText("")
         self.id_text_data.setText("")
-        self.delete_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i\n"
-"Predra\u010dun", None))
-        self.new_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Novi \n"
-"Predra\u010dun", None))
-        self.add_receipt_material.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Materijal", None))
-        self.add_receipt_brand.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Marka", None))
-        self.add_receipt_price.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Cijena", None))
-        self.add_receipt_amount.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None))
-        self.add_material_button.setText(QCoreApplication.translate("MainWindow", u"Dodaj", None))
+        self.delete_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Delete\n"
+"Bill", None))
+        self.new_reciept_button.setText(QCoreApplication.translate("MainWindow", u"New\n"
+"Bill", None))
+        self.add_receipt_material.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Material", None))
+        self.add_receipt_brand.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Brand", None))
+        self.add_receipt_price.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Price", None))
+        self.add_receipt_amount.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Amount", None))
+        self.add_material_button.setText(QCoreApplication.translate("MainWindow", u"Add", None))
         ___qtablewidgetitem = self.materials_receipt_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
+        ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Material", None));
         ___qtablewidgetitem1 = self.materials_receipt_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Marka", None));
+        ___qtablewidgetitem1.setText(QCoreApplication.translate("MainWindow", u"Brand", None));
         ___qtablewidgetitem2 = self.materials_receipt_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Cijena", None));
+        ___qtablewidgetitem2.setText(QCoreApplication.translate("MainWindow", u"Price", None));
         ___qtablewidgetitem3 = self.materials_receipt_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Koli\u010dina", None));
+        ___qtablewidgetitem3.setText(QCoreApplication.translate("MainWindow", u"Amount", None));
         ___qtablewidgetitem4 = self.materials_receipt_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Ukupna \n"
-"Cijena[KM]", None));
-        self.add_receipt_service.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Rad", None))
-        self.finish_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Zavr\u0161i", None))
-        self.cancel_add_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Odustani", None))
+        ___qtablewidgetitem4.setText(QCoreApplication.translate("MainWindow", u"Full Price[KM]", None));
+        self.add_receipt_service.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Work", None))
+        self.finish_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Add Bill", None))
+        self.cancel_add_reciept_button.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         ___qtablewidgetitem5 = self.customer_reciepts_table.horizontalHeaderItem(0)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("MainWindow", u"#ID", None));
         ___qtablewidgetitem6 = self.customer_reciepts_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Materijal", None));
+        ___qtablewidgetitem6.setText(QCoreApplication.translate("MainWindow", u"Material", None));
         ___qtablewidgetitem7 = self.customer_reciepts_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
-"Dijelovi[KM]", None));
+        ___qtablewidgetitem7.setText(QCoreApplication.translate("MainWindow", u"Parts Price[KM]", None));
         ___qtablewidgetitem8 = self.customer_reciepts_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Rad[KM]", None));
+        ___qtablewidgetitem8.setText(QCoreApplication.translate("MainWindow", u"Work[KM]", None));
         ___qtablewidgetitem9 = self.customer_reciepts_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Ukupno \n"
-"Cijena[KM]", None));
+        ___qtablewidgetitem9.setText(QCoreApplication.translate("MainWindow", u"Total Price[KM]", None));
 
         __sortingEnabled = self.customer_reciepts_table.isSortingEnabled()
         self.customer_reciepts_table.setSortingEnabled(False)
         self.customer_reciepts_table.setSortingEnabled(__sortingEnabled)
 
         ___qtablewidgetitem10 = self.customer_table.horizontalHeaderItem(0)
-        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"Ime", None));
+        ___qtablewidgetitem10.setText(QCoreApplication.translate("MainWindow", u"First Name", None));
         ___qtablewidgetitem11 = self.customer_table.horizontalHeaderItem(1)
-        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Prezime", None));
+        ___qtablewidgetitem11.setText(QCoreApplication.translate("MainWindow", u"Last Name", None));
         ___qtablewidgetitem12 = self.customer_table.horizontalHeaderItem(2)
-        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Telefon", None));
+        ___qtablewidgetitem12.setText(QCoreApplication.translate("MainWindow", u"Phone #", None));
         ___qtablewidgetitem13 = self.customer_table.horizontalHeaderItem(3)
-        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Vozilo", None));
+        ___qtablewidgetitem13.setText(QCoreApplication.translate("MainWindow", u"Vehicle", None));
         ___qtablewidgetitem14 = self.customer_table.horizontalHeaderItem(4)
-        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"ID", None));
-        self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Obri\u0161i", None))
-        self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Sve", None))
-        self.show_archived_button.setText(QCoreApplication.translate("MainWindow", u"Prika\u017ei Arihvu", None))
-        self.archive_selected_button.setText(QCoreApplication.translate("MainWindow", u"Arhiviraj/Vrati", None))
+        ___qtablewidgetitem14.setText(QCoreApplication.translate("MainWindow", u"Customer ID", None));
+        self.delete_selected_table_button.setText(QCoreApplication.translate("MainWindow", u"Delete", None))
+        self.populate_table_button.setText(QCoreApplication.translate("MainWindow", u"Show All", None))
+        self.show_archived_button.setText(QCoreApplication.translate("MainWindow", u"Show Archive", None))
+        self.archive_selected_button.setText(QCoreApplication.translate("MainWindow", u"Archive/Undo", None))
     # retranslateUi
 

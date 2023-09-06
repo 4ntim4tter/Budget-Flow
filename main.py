@@ -1,14 +1,13 @@
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow
-from PyQt6 import QtCore
-from receipt_ui import Ui_ReceiptWindow
-from untitled_ui import Ui_MainWindow
+from bosnianMain_ui import Ui_MainWindow
+from bosnianRec_ui import Ui_ReceiptWindow
 
 from window_operator import WindowOperator
 from database_management import DataManager
 
-Form, Window = loadUiType("untitled.ui")
-Receipt, ReceiptWindow = loadUiType("receipt.ui")
+Form, Window = loadUiType("englishMain.ui")
+Receipt, ReceiptWindow = loadUiType("englishRec.ui")
 
 app = QApplication([])
 
@@ -159,8 +158,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-#- MODIFY ENTRY IN RECEIPT
 
