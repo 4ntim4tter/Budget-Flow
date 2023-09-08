@@ -384,12 +384,11 @@ class WindowOperator:
         if answer:
             if reciept_table.selectedItems() != []:
                 customer_reciepts:QTableWidget = form.customer_reciepts_table
+                selected_customer = customer_reciepts.selectedItems()[0].row()
                 reciept_table.selectRow(reciept_table.currentRow())
                 selected_row = reciept_table.selectedItems()[0].text()
                 reciept_table.removeRow(reciept_table.currentRow())
                 self.db_manager.delete_selected_material(selected_row)
-                for index in range(customer_reciepts.rowCount()):
-                    print(customer_reciepts.itemAt(index, 0))
                 self.select_customer_from_table(form, form_table)
                 self.db_manager.update_selected_reciept_entry(reciept_table)
             else:
