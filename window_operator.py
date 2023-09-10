@@ -263,7 +263,8 @@ class WindowOperator:
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table: QTableWidget = form.customer_reciepts_table
-        receipt_window.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        receipt_window.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
+        receipt_window.showMaximized()
         receipt_window.show()
         receipt_data = self.db_manager.get_selected_reciept_from_database(
             customer_reciepts_table.selectedItems()[0].text()
@@ -327,15 +328,6 @@ class WindowOperator:
 
         webbrowser.open("data.html", 1)
 
-    def cancel_receipt_printing(self, receipt_window:QDialog, form, table):
-        answer = self.question_popup(
-            "Zatvoriti?",
-            "Da li ste sigurni?"
-        )
-        if answer:
-            receipt_window.close()
-            self.select_customer_from_table(form, table)
-
     def populate_customer_table_archived(self,db_table:str, table_widget:QTableWidget):
         rows = self.db_manager.get_archived_entries(db_table)
 
@@ -376,6 +368,19 @@ class WindowOperator:
             else:
                 self.warning_popup("Niste označili mušteriju!")
     
+    def cancel_receipt_printing(self, receipt_window:QDialog, form, table):
+        answer = self.question_popup(
+            "Zatvoriti?",
+            "Da li ste sigurni?"
+        )
+        
+        if answer:
+            customer_reciepts:QTableWidget = form.customer_reciepts_table
+            selected_customer = customer_reciepts.selectedItems()[0].row()
+            receipt_window.close()
+            self.select_customer_from_table(form, table)
+            customer_reciepts.selectRow(selected_customer)
+            
     def delete_entry_from_receipt(self, reciept_table:QTableWidget, form, form_table:QTableWidget):
         answer = self.question_popup(
             "Brisanje",
@@ -391,6 +396,7 @@ class WindowOperator:
                 self.db_manager.delete_selected_material(selected_row)
                 self.select_customer_from_table(form, form_table)
                 self.db_manager.update_selected_reciept_entry(reciept_table)
+                customer_reciepts.selectRow(selected_customer)
             else:
                 self.warning_popup("Niste označili materijal!")
 
@@ -405,9 +411,13 @@ class WindowOperator:
             "Modificiranje",
             "Da li želite modifikovati označeni unos?"
         )
+        
         if answer:
             difference = self.db_manager.update_selected_reciept_entry(reciept_table)
+            customer_reciepts:QTableWidget = form.customer_reciepts_table
+            selected_customer = customer_reciepts.selectedItems()[0].row()
             self.select_customer_from_table(form, form_table)
+            customer_reciepts.selectRow(selected_customer)
             if not difference:
                 self.warning_popup(
                     "Nije bilo modifikacije."

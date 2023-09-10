@@ -33,7 +33,7 @@ class QuestionPopup:
 
     def confirmation_dialog(self):
         conf_dialog = QMessageBox()
-        conf_dialog.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        conf_dialog.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
         conf_dialog.setIcon(QMessageBox.Icon.Question)
         conf_dialog.setStyleSheet(self.style)
         conf_dialog.setWindowTitle(self.title)
@@ -84,7 +84,7 @@ class WarningPopup:
 
     def confirmation_dialog(self):
         conf_dialog = QMessageBox()
-        conf_dialog.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        conf_dialog.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
         conf_dialog.setIcon(QMessageBox.Icon.Warning)
         conf_dialog.setStyleSheet(self.style)
         conf_dialog.setWindowTitle(self.title)
