@@ -1279,6 +1279,11 @@ class Ui_MainWindow(object):
 
         self.verticalLayout.addWidget(self.customer_search_box)
 
+        self.settings_button = QPushButton(self.left_frame)
+        self.settings_button.setObjectName(u"settings_button")
+
+        self.verticalLayout.addWidget(self.settings_button)
+
         self.close_register_button = QPushButton(self.left_frame)
         self.close_register_button.setObjectName(u"close_register_button")
 
@@ -2061,6 +2066,7 @@ class Ui_MainWindow(object):
         self.search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Search", None))
         self.cancel_search_customer_button.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
         self.archive_checkbox.setText(QCoreApplication.translate("MainWindow", u"Search Archive", None))
+        self.settings_button.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.close_register_button.setText(QCoreApplication.translate("MainWindow", u"Close Register", None))
         self.name_label.setText(QCoreApplication.translate("MainWindow", u"First Name:", None))
         self.surname_label.setText(QCoreApplication.translate("MainWindow", u"Last Name:", None))

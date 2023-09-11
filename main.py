@@ -2,12 +2,14 @@ from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from bosnianMain_ui import Ui_MainWindow
 from bosnianRec_ui import Ui_ReceiptWindow
+from englishSettings_ui import Ui_SettingsWindow
 
 from window_operator import WindowOperator
 from database_management import DataManager
 
 Form, Window = loadUiType("englishMain.ui")
 Receipt, ReceiptWindow = loadUiType("englishRec.ui")
+Settings, SettingsWindow = loadUiType("englishSettings.ui")
 
 app = QApplication([])
 
@@ -18,6 +20,10 @@ formMain.setupUi(window)
 receiptWindow = ReceiptWindow()
 receiptForm: Ui_ReceiptWindow = Receipt()
 receiptForm.setupUi(receiptWindow)
+
+settingsWindow = SettingsWindow()
+settingsForm: Ui_SettingsWindow = Settings()
+settingsForm.setupUi(settingsWindow)
 
 db_manager = DataManager("table.db")
 entry_window = WindowOperator()
@@ -117,6 +123,9 @@ formMain.customer_reciepts_table.itemDoubleClicked.connect(
 )
 formMain.close_register_button.clicked.connect(
     lambda: entry_window.close_application(app)
+)
+formMain.settings_button.clicked.connect(
+    lambda: entry_window.open_settings(settingsForm, settingsWindow)
 )
 receiptForm.print_reciept_button.clicked.connect(
     lambda: entry_window.open_browser_for_print(

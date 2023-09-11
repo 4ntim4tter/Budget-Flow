@@ -423,3 +423,5 @@ class WindowOperator:
                     "Nije bilo modifikacije."
                 )
             
+    def open_settings(self, settingsForm, settingsWindow):
+        settingsWindow.show()
