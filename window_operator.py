@@ -8,6 +8,7 @@ from PyQt6.QtWidgets import (
     QCheckBox,
     QLineEdit,
     QDialog,
+    QComboBox,
     QApplication
 ) 
 from PyQt6.QtCore import Qt
@@ -424,4 +425,28 @@ class WindowOperator:
                 )
             
     def open_settings(self, settingsForm, settingsWindow):
+        settingsWindow.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.FramelessWindowHint)
         settingsWindow.show()
+    
+    def cancel_settings(self, settingsForm, settingsWindow):
+        answer = self.question_popup("Zatvaranje", "Da li želite zatvoriti postavke bez spremanja?")
+        if answer:
+            settingsWindow.close()
+            
+    def save_settings(self, settingsForm, settingsWindow, mainWindow):
+        answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
+        if answer:
+            language_box: QComboBox = settingsForm.language_combo
+            temp=""
+            with open("settings.cfg", "r", encoding="utf-8") as settings_config:
+                temp = settings_config.read()
+                settings_config.seek(0)
+                language_setting = settings_config.readlines()[0].removeprefix("language=").strip().lower()
+                selected_language = language_box.currentText().lower().strip()
+                if selected_language != language_setting:
+                    temp = temp.replace(language_setting, selected_language)
+
+            with open("settings.cfg", "w", encoding="utf-8") as settings_config:
+                settings_config.write(temp)
+            mainWindow.update()
+            settingsWindow.close()

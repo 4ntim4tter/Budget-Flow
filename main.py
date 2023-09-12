@@ -8,13 +8,20 @@ from englishSettings_ui import Ui_SettingsWindow
 from window_operator import WindowOperator
 from database_management import DataManager
 
-if not os.path.isfile("settings.cfg"):
-    with open("settings.cfg", "w", encoding="utf-8") as settings_config:
+
+with open("settings.cfg", "+r", encoding="utf-8") as settings_config:
+    if not os.path.isfile("settings.cfg"):
         settings_config.write(
-            """Language=english\nFullscreen=1"""
+            """language=english\nfullscreen=1"""
+        )
+    if settings_config.read() == "":
+        settings_config.seek(0)
+        print(settings_config.read())
+        settings_config.write(
+            """language=english\nfullscreen=1"""
         )
 
-with open("settings.cfg", "r") as settings_config:
+with open("settings.cfg", "r", encoding="utf-8") as settings_config:
     if "english" in settings_config.readlines()[0]:
         Form, Window = loadUiType("englishMain.ui")
         Receipt, ReceiptWindow = loadUiType("englishRec.ui")
@@ -168,6 +175,18 @@ receiptForm.delete_entry_button.clicked.connect(
 receiptForm.modify_reciept_button.clicked.connect(
     lambda: entry_window.modify_receipt_entry(
         receiptForm.materials_receipt_table, formMain, formMain.customer_table
+    )
+)
+
+settingsForm.cancel_settings_button.clicked.connect(
+    lambda: entry_window.cancel_settings(
+        settingsForm, settingsWindow
+    )
+)
+
+settingsForm.save_settings_button.clicked.connect(
+    lambda: entry_window.save_settings(
+        settingsForm, settingsWindow, window
     )
 )
 
