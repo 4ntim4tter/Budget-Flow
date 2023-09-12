@@ -443,6 +443,8 @@ class WindowOperator:
                 settings_config.seek(0)
                 language_setting = settings_config.readlines()[0].removeprefix("language=").strip().lower()
                 selected_language = language_box.currentText().lower().strip()
+                if selected_language == "engleski":
+                    selected_language = "english"
                 if selected_language != language_setting:
                     temp = temp.replace(language_setting, selected_language)
 
