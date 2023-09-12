@@ -1,3 +1,4 @@
+import os
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow
 from bosnianMain_ui import Ui_MainWindow
@@ -7,9 +8,21 @@ from englishSettings_ui import Ui_SettingsWindow
 from window_operator import WindowOperator
 from database_management import DataManager
 
-Form, Window = loadUiType("englishMain.ui")
-Receipt, ReceiptWindow = loadUiType("englishRec.ui")
-Settings, SettingsWindow = loadUiType("englishSettings.ui")
+if not os.path.isfile("settings.cfg"):
+    with open("settings.cfg", "w", encoding="utf-8") as settings_config:
+        settings_config.write(
+            """Language=english\nFullscreen=1"""
+        )
+
+with open("settings.cfg", "r") as settings_config:
+    if "english" in settings_config.readlines()[0]:
+        Form, Window = loadUiType("englishMain.ui")
+        Receipt, ReceiptWindow = loadUiType("englishRec.ui")
+        Settings, SettingsWindow = loadUiType("englishSettings.ui")
+    else:
+        Form, Window = loadUiType("bosnianMain.ui")
+        Receipt, ReceiptWindow = loadUiType("bosnianRec.ui")
+        Settings, SettingsWindow = loadUiType("bosnianSettings.ui")    
 
 app = QApplication([])
 
@@ -30,6 +43,7 @@ entry_window = WindowOperator()
 formMain.add_new_reciept_frame.hide()
 new_customer_window = formMain.customer_entry_box
 customer_search_window = formMain.customer_search_box
+
 
 db_manager.db_connect("table.db")
 db_manager.db_create_table(
