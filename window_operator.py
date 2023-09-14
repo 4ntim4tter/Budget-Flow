@@ -9,7 +9,8 @@ from PyQt6.QtWidgets import (
     QLineEdit,
     QDialog,
     QComboBox,
-    QApplication
+    QApplication,
+    QMainWindow
 ) 
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QDoubleValidator
@@ -433,10 +434,11 @@ class WindowOperator:
         if answer:
             settingsWindow.close()
             
-    def save_settings(self, settingsForm, settingsWindow, mainWindow):
+    def save_settings(self, settingsForm, settingsWindow, mainWindow:QMainWindow):
         answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
         if answer:
             language_box: QComboBox = settingsForm.language_combo
+            full_screen: QCheckBox = settingsForm.full_screen_check
             temp=""
             with open("settings.cfg", "r", encoding="utf-8") as settings_config:
                 temp = settings_config.read()
@@ -450,5 +452,5 @@ class WindowOperator:
 
             with open("settings.cfg", "w", encoding="utf-8") as settings_config:
                 settings_config.write(temp)
-            mainWindow.update()
+            mainWindow.show()
             settingsWindow.close()
