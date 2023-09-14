@@ -20,16 +20,17 @@ with open("settings.cfg", "+r", encoding="utf-8") as settings_config:
         settings_config.write(
             """language=english\nfullscreen=1"""
         )
+        
+db_manager = DataManager("table.db")
+entry_window = WindowOperator()
 
 with open("settings.cfg", "r", encoding="utf-8") as settings_config:
     if "english" in settings_config.readlines()[0]:
-        Form, Window = loadUiType("englishMain.ui")
-        Receipt, ReceiptWindow = loadUiType("englishRec.ui")
-        Settings, SettingsWindow = loadUiType("englishSettings.ui")
+        language = "english"
+        Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow = entry_window.load_ui(language)
     else:
-        Form, Window = loadUiType("bosnianMain.ui")
-        Receipt, ReceiptWindow = loadUiType("bosnianRec.ui")
-        Settings, SettingsWindow = loadUiType("bosnianSettings.ui")    
+        language = "bosnian"    
+        Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow = entry_window.load_ui(language)
 
 app = QApplication([])
 
@@ -45,11 +46,14 @@ settingsWindow = SettingsWindow()
 settingsForm: Ui_SettingsWindow = Settings()
 settingsForm.setupUi(settingsWindow)
 
-db_manager = DataManager("table.db")
-entry_window = WindowOperator()
 formMain.add_new_reciept_frame.hide()
 new_customer_window = formMain.customer_entry_box
 customer_search_window = formMain.customer_search_box
+
+if language == "english":
+    settingsForm.language_combo.setCurrentIndex(0)
+else:
+    settingsForm.language_combo.setCurrentIndex(1)
 
 
 db_manager.db_connect("table.db")
@@ -186,7 +190,7 @@ settingsForm.cancel_settings_button.clicked.connect(
 
 settingsForm.save_settings_button.clicked.connect(
     lambda: entry_window.save_settings(
-        settingsForm, settingsWindow, window
+        settingsForm, settingsWindow
     )
 )
 

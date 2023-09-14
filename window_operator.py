@@ -10,8 +10,8 @@ from PyQt6.QtWidgets import (
     QDialog,
     QComboBox,
     QApplication,
-    QMainWindow
 ) 
+from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
@@ -434,7 +434,7 @@ class WindowOperator:
         if answer:
             settingsWindow.close()
             
-    def save_settings(self, settingsForm, settingsWindow, mainWindow:QMainWindow):
+    def save_settings(self, settingsForm, settingsWindow):
         answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
         if answer:
             language_box: QComboBox = settingsForm.language_combo
@@ -452,5 +452,16 @@ class WindowOperator:
 
             with open("settings.cfg", "w", encoding="utf-8") as settings_config:
                 settings_config.write(temp)
-            mainWindow.show()
             settingsWindow.close()
+            
+    def load_ui(self, language:str):
+        if language == "english":
+            Form, Window = loadUiType("englishMain.ui")
+            Receipt, ReceiptWindow = loadUiType("englishRec.ui")
+            Settings, SettingsWindow = loadUiType("englishSettings.ui")
+        else:
+            Form, Window = loadUiType("bosnianMain.ui")
+            Receipt, ReceiptWindow = loadUiType("bosnianRec.ui")
+            Settings, SettingsWindow = loadUiType("bosnianSettings.ui")  
+            
+        return (Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow)
