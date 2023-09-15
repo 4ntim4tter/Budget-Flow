@@ -1,4 +1,5 @@
 import os
+from re import S
 from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
 from bosnianMain_ui import Ui_MainWindow
 from bosnianRec_ui import Ui_ReceiptWindow
@@ -31,27 +32,14 @@ with open("settings.cfg", "r", encoding="utf-8") as settings_config:
         language = "bosnian"    
     
 ui_loader = LoadUi(language)
-    
-Form:Ui_MainWindow = ui_loader.ui_language_default()[0]
-Window:QMainWindow = ui_loader.ui_language_default()[1]
-Receipt:Ui_ReceiptWindow = ui_loader.ui_language_default()[2]
-ReceiptWindow:QDialog = ui_loader.ui_language_default()[3]
-Settings:Ui_SettingsWindow = ui_loader.ui_language_default()[4]
-SettingsWindow:QDialog = ui_loader.ui_language_default()[5]
-
 app = QApplication([])
-
-window: QMainWindow = Window()
-formMain: Ui_MainWindow = Form()
-formMain.setupUi(window)
-
-receiptWindow = ReceiptWindow()
-receiptForm: Ui_ReceiptWindow = Receipt()
-receiptForm.setupUi(receiptWindow)
-
-settingsWindow = SettingsWindow()
-settingsForm: Ui_SettingsWindow = Settings()
-settingsForm.setupUi(settingsWindow)
+    
+window:QMainWindow = ui_loader.ui_language_default()[1]
+formMain:Ui_MainWindow = ui_loader.ui_language_default()[0]
+receiptWindow:QDialog = ui_loader.ui_language_default()[3]
+receiptForm:Ui_ReceiptWindow = ui_loader.ui_language_default()[2]
+settingsWindow:QDialog = ui_loader.ui_language_default()[5]
+settingsForm:Ui_SettingsWindow = ui_loader.ui_language_default()[4]
 
 formMain.add_new_reciept_frame.hide()
 new_customer_window = formMain.customer_entry_box
@@ -201,23 +189,6 @@ settingsForm.save_settings_button.clicked.connect(
     )
 )
 
-
-def main():
-    window.show()
-    app.setStyleSheet(
-        """QLabel,
-        QPushButton, 
-        QLineEdit, 
-        QTableWidget, 
-        QTableWidgetItem,
-        QTableView,
-        QHeaderView::section
-        {font-family: Rec Mono Casual;}"""
-    )
-    window.showMaximized()
-    # window.showFullScreen()
-    app.exec()
-
-
 if __name__ == "__main__":
-    main()
+    ui_loader.set_style()
+    ui_loader.run()
