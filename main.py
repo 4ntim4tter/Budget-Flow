@@ -1,12 +1,12 @@
 import os
-from PyQt6.uic.load_ui import loadUiType
-from PyQt6.QtWidgets import QApplication, QMainWindow
+from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
 from bosnianMain_ui import Ui_MainWindow
 from bosnianRec_ui import Ui_ReceiptWindow
 from englishSettings_ui import Ui_SettingsWindow
 
 from window_operator import WindowOperator
 from database_management import DataManager
+from load_ui import LoadUi
 
 
 with open("settings.cfg", "+r", encoding="utf-8") as settings_config:
@@ -27,10 +27,17 @@ entry_window = WindowOperator()
 with open("settings.cfg", "r", encoding="utf-8") as settings_config:
     if "english" in settings_config.readlines()[0]:
         language = "english"
-        Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow = entry_window.load_ui(language)
     else:
         language = "bosnian"    
-        Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow = entry_window.load_ui(language)
+    
+ui_loader = LoadUi(language)
+    
+Form:Ui_MainWindow = ui_loader.ui_language_default()[0]
+Window:QMainWindow = ui_loader.ui_language_default()[1]
+Receipt:Ui_ReceiptWindow = ui_loader.ui_language_default()[2]
+ReceiptWindow:QDialog = ui_loader.ui_language_default()[3]
+Settings:Ui_SettingsWindow = ui_loader.ui_language_default()[4]
+SettingsWindow:QDialog = ui_loader.ui_language_default()[5]
 
 app = QApplication([])
 

@@ -11,7 +11,6 @@ from PyQt6.QtWidgets import (
     QComboBox,
     QApplication,
 ) 
-from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtCore import Qt
 from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
@@ -453,15 +452,4 @@ class WindowOperator:
             with open("settings.cfg", "w", encoding="utf-8") as settings_config:
                 settings_config.write(temp)
             settingsWindow.close()
-            
-    def load_ui(self, language:str):
-        if language == "english":
-            Form, Window = loadUiType("englishMain.ui")
-            Receipt, ReceiptWindow = loadUiType("englishRec.ui")
-            Settings, SettingsWindow = loadUiType("englishSettings.ui")
-        else:
-            Form, Window = loadUiType("bosnianMain.ui")
-            Receipt, ReceiptWindow = loadUiType("bosnianRec.ui")
-            Settings, SettingsWindow = loadUiType("bosnianSettings.ui")  
-            
-        return (Form, Window, Receipt, ReceiptWindow, Settings, SettingsWindow)
+        
