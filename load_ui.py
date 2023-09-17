@@ -1,3 +1,4 @@
+import sys
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
 
@@ -9,6 +10,7 @@ from englishSettings_ui import Ui_SettingsWindow
 class LoadUi:
     def __init__(self, language: str):
         self.app = QApplication([])
+        # self.app.focusChanged.connect(entry_window.line_focus_changed)
         
         self.default_language = language
         self.MainForm:Ui_MainWindow
@@ -62,9 +64,37 @@ class LoadUi:
             QHeaderView::section
             {font-family: Rec Mono Casual;}"""
         )
+        
+    def change_language(self, language:str):       
+        if language == "english":
+            self.MainForm, self.MainWindow = loadUiType("englishMain.ui")
+            self.ReceiptForm, self.ReceiptWindow = loadUiType("englishRec.ui")
+            self.SettingsForm, self.SettingsWindow = loadUiType("englishSettings.ui")
+        else:
+            self.MainForm, self.MainWindow = loadUiType("bosnianMain.ui")
+            self.ReceiptForm, self.ReceiptWindow = loadUiType("bosnianRec.ui")
+            self.SettingsForm, self.SettingsWindow = loadUiType("bosnianSettings.ui")
+            
+        self.form = self.MainForm()
+        self.window = self.MainWindow()
+        self.form.setupUi(self.window)
+        
+        self.formReceipt = self.ReceiptForm()
+        self.windowReceipt = self.ReceiptWindow()
+        self.formReceipt.setupUi(self.windowReceipt)
+        
+        self.formSettings = self.SettingsForm()
+        self.windowSettings = self.SettingsWindow()
+        self.formSettings.setupUi(self.windowSettings)
+        
+        self.window.close()
+        self.windowReceipt.close()
+        self.windowSettings.close()
+        self.run()
 
+    def get_app(self):
+        return self.app
+    
     def run(self):
         self.window.show()
-        self.window.showMaximized()
-        # window.showFullScreen()
         self.app.exec()

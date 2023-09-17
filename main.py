@@ -32,7 +32,6 @@ with open("settings.cfg", "r", encoding="utf-8") as settings_config:
         language = "bosnian"    
     
 ui_loader = LoadUi(language)
-app = QApplication([])
     
 window:QMainWindow = ui_loader.ui_language_default()[1]
 formMain:Ui_MainWindow = ui_loader.ui_language_default()[0]
@@ -68,9 +67,6 @@ db_manager.db_create_table(
 db_manager.db_create_table(
     "materials", ["id", "reciept_id", "type", "brand", "amount", "price", "full_amount"]
 )
-
-# focus changed signal
-app.focusChanged.connect(entry_window.line_focus_changed)
 
 # Customer Entry Window
 formMain.cancel_new_customer_button.clicked.connect(
@@ -142,7 +138,7 @@ formMain.customer_reciepts_table.itemDoubleClicked.connect(
     lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
 )
 formMain.close_register_button.clicked.connect(
-    lambda: entry_window.close_application(app)
+    lambda: entry_window.close_application(ui_loader.get_app())
 )
 formMain.settings_button.clicked.connect(
     lambda: entry_window.open_settings(settingsForm, settingsWindow)
@@ -185,7 +181,7 @@ settingsForm.cancel_settings_button.clicked.connect(
 
 settingsForm.save_settings_button.clicked.connect(
     lambda: entry_window.save_settings(
-        settingsForm, settingsWindow
+        settingsForm, settingsWindow, ui_loader
     )
 )
 
