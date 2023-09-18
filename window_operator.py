@@ -450,5 +450,5 @@ class WindowOperator:
 
             with open("settings.cfg", "w", encoding="utf-8") as settings_config:
                 settings_config.write(temp)
-            lang_loader.change_language(selected_language)
+            lang_loader.change_language()
         

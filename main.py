@@ -1,9 +1,4 @@
 import os
-from re import S
-from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
-from bosnianMain_ui import Ui_MainWindow
-from bosnianRec_ui import Ui_ReceiptWindow
-from englishSettings_ui import Ui_SettingsWindow
 
 from window_operator import WindowOperator
 from database_management import DataManager
@@ -31,23 +26,12 @@ with open("settings.cfg", "r", encoding="utf-8") as settings_config:
     else:
         language = "bosnian"    
     
-ui_loader = LoadUi(language)
-    
-window:QMainWindow = ui_loader.ui_language_default()[1]
-formMain:Ui_MainWindow = ui_loader.ui_language_default()[0]
-receiptWindow:QDialog = ui_loader.ui_language_default()[3]
-receiptForm:Ui_ReceiptWindow = ui_loader.ui_language_default()[2]
-settingsWindow:QDialog = ui_loader.ui_language_default()[5]
-settingsForm:Ui_SettingsWindow = ui_loader.ui_language_default()[4]
-
-formMain.add_new_reciept_frame.hide()
-new_customer_window = formMain.customer_entry_box
-customer_search_window = formMain.customer_search_box
+ui_loader = LoadUi(language, entry_window)
 
 if language == "english":
-    settingsForm.language_combo.setCurrentIndex(0)
+    ui_loader.formSettings.language_combo.setCurrentIndex(0)
 else:
-    settingsForm.language_combo.setCurrentIndex(1)
+    ui_loader.formSettings.language_combo.setCurrentIndex(1)
 
 
 db_manager.db_connect("table.db")
@@ -69,119 +53,119 @@ db_manager.db_create_table(
 )
 
 # Customer Entry Window
-formMain.cancel_new_customer_button.clicked.connect(
-    lambda: entry_window.wipe_customer_window_data(new_customer_window)
+ui_loader.form.cancel_new_customer_button.clicked.connect(
+    lambda: entry_window.wipe_customer_window_data(ui_loader.form.customer_entry_box)
 )
-formMain.save_new_customer_button.clicked.connect(
+ui_loader.form.save_new_customer_button.clicked.connect(
     lambda: entry_window.store_entered_data(
-        "customers", entry_window.get_customer_values(formMain), new_customer_window
+        "customers", entry_window.get_customer_values(ui_loader.form), ui_loader.form.customer_entry_box
     )
 )
 
 # Customer Search Window
-formMain.cancel_search_customer_button.clicked.connect(
-    lambda: entry_window.wipe_customer_window_data(customer_search_window)
+ui_loader.form.cancel_search_customer_button.clicked.connect(
+    lambda: entry_window.wipe_customer_window_data(ui_loader.form.customer_search_box)
 )
-formMain.search_customer_button.clicked.connect(
+ui_loader.form.search_customer_button.clicked.connect(
     lambda: entry_window.search_for_customer(
-        "customers", formMain.customer_table, formMain
+        "customers", ui_loader.form.customer_table, ui_loader.form
     )
 )
 
 # Customer Table
-formMain.populate_table_button.clicked.connect(
+ui_loader.form.populate_table_button.clicked.connect(
     lambda: db_manager.populate_customer_table(
-        "customers", formMain.customer_table, (), ""
+        "customers", ui_loader.form.customer_table, (), ""
     )
 )
-formMain.show_archived_button.clicked.connect(
+ui_loader.form.show_archived_button.clicked.connect(
     lambda: entry_window.populate_customer_table_archived(
-        "customers", formMain.customer_table
+        "customers", ui_loader.form.customer_table
     )
 )
-formMain.archive_selected_button.clicked.connect(
-    lambda: entry_window.change_customer_archive_status(formMain)
+ui_loader.form.archive_selected_button.clicked.connect(
+    lambda: entry_window.change_customer_archive_status(ui_loader.form)
 )
-formMain.delete_selected_table_button.clicked.connect(
-    lambda: db_manager.delete_selected_customer("customers", formMain.customer_table)
+ui_loader.form.delete_selected_table_button.clicked.connect(
+    lambda: db_manager.delete_selected_customer("customers", ui_loader.form.customer_table)
 )
 
-formMain.customer_table.itemDoubleClicked.connect(
-    lambda: entry_window.select_customer_from_table(formMain, formMain.customer_table)
+ui_loader.form.customer_table.itemDoubleClicked.connect(
+    lambda: entry_window.select_customer_from_table(ui_loader.form, ui_loader.form.customer_table)
 )
 
 # Reciepts
-formMain.new_reciept_button.clicked.connect(
+ui_loader.form.new_reciept_button.clicked.connect(
     lambda: entry_window.hide_customer_form(
-        formMain.user_data_frame, formMain.add_new_reciept_frame, formMain
+        ui_loader.form.user_data_frame, ui_loader.form.add_new_reciept_frame, ui_loader.form
     )
 )
-formMain.cancel_add_reciept_button.clicked.connect(
-    lambda: entry_window.close_add_new_receipt(formMain)
+ui_loader.form.cancel_add_reciept_button.clicked.connect(
+    lambda: entry_window.close_add_new_receipt(ui_loader.form)
 )
-formMain.add_material_button.clicked.connect(
+ui_loader.form.add_material_button.clicked.connect(
     lambda: entry_window.add_material_to_recipe(
-        formMain.materials_receipt_table,
-        formMain.add_receipt_material,
-        formMain.add_receipt_brand,
-        formMain.add_receipt_price,
-        formMain.add_receipt_amount,
+        ui_loader.form.materials_receipt_table,
+        ui_loader.form.add_receipt_material,
+        ui_loader.form.add_receipt_brand,
+        ui_loader.form.add_receipt_price,
+        ui_loader.form.add_receipt_amount,
     )
 )
-formMain.finish_reciept_button.clicked.connect(
-    lambda: entry_window.add_new_receipt(formMain)
+ui_loader.form.finish_reciept_button.clicked.connect(
+    lambda: entry_window.add_new_receipt(ui_loader.form)
 )
-formMain.delete_reciept_button.clicked.connect(
-    lambda: entry_window.delete_selected_reciept(formMain)
+ui_loader.form.delete_reciept_button.clicked.connect(
+    lambda: entry_window.delete_selected_reciept(ui_loader.form)
 )
-formMain.customer_reciepts_table.itemDoubleClicked.connect(
-    lambda: entry_window.select_reciept_from_table(formMain, receiptForm, receiptWindow)
+ui_loader.form.customer_reciepts_table.itemDoubleClicked.connect(
+    lambda: entry_window.select_reciept_from_table(ui_loader.form, ui_loader.formReceipt, ui_loader.windowReceipt)
 )
-formMain.close_register_button.clicked.connect(
+ui_loader.form.close_register_button.clicked.connect(
     lambda: entry_window.close_application(ui_loader.get_app())
 )
-formMain.settings_button.clicked.connect(
-    lambda: entry_window.open_settings(settingsForm, settingsWindow)
+ui_loader.form.settings_button.clicked.connect(
+    lambda: entry_window.open_settings(ui_loader.formSettings, ui_loader.windowSettings)
 )
-receiptForm.print_reciept_button.clicked.connect(
+ui_loader.formReceipt.print_reciept_button.clicked.connect(
     lambda: entry_window.open_browser_for_print(
         {
-            "name": formMain.name_text_data.text()
+            "name": ui_loader.form.name_text_data.text()
             + " "
-            + formMain.surname_text_data.text(),
-            "vehicle": formMain.vehicle_text_data.text(),
-            "plates": formMain.plates_text_data.text(),
+            + ui_loader.form.surname_text_data.text(),
+            "vehicle": ui_loader.form.vehicle_text_data.text(),
+            "plates": ui_loader.form.plates_text_data.text(),
         },
-        formMain.customer_reciepts_table.selectedItems(),
-        receiptForm.materials_receipt_table,
+        ui_loader.form.customer_reciepts_table.selectedItems(),
+        ui_loader.formReceipt.materials_receipt_table,
     )
 )
-receiptForm.cancel_print_reciept_button.clicked.connect(
+ui_loader.formReceipt.cancel_print_reciept_button.clicked.connect(
     lambda: entry_window.cancel_receipt_printing(
-        receiptWindow, formMain, formMain.customer_table
+        ui_loader.windowReceipt, ui_loader.form, ui_loader.form.customer_table
     )
 )
-receiptForm.delete_entry_button.clicked.connect(
+ui_loader.formReceipt.delete_entry_button.clicked.connect(
     lambda: entry_window.delete_entry_from_receipt(
-        receiptForm.materials_receipt_table, formMain, formMain.customer_table
+        ui_loader.formReceipt.materials_receipt_table, ui_loader.form, ui_loader.form.customer_table
     )
 )
 
-receiptForm.modify_reciept_button.clicked.connect(
+ui_loader.formReceipt.modify_reciept_button.clicked.connect(
     lambda: entry_window.modify_receipt_entry(
-        receiptForm.materials_receipt_table, formMain, formMain.customer_table
+        ui_loader.formReceipt.materials_receipt_table, ui_loader.form, ui_loader.form.customer_table
     )
 )
 
-settingsForm.cancel_settings_button.clicked.connect(
+ui_loader.formSettings.cancel_settings_button.clicked.connect(
     lambda: entry_window.cancel_settings(
-        settingsForm, settingsWindow
+        ui_loader.formSettings, ui_loader.windowSettings
     )
 )
 
-settingsForm.save_settings_button.clicked.connect(
+ui_loader.formSettings.save_settings_button.clicked.connect(
     lambda: entry_window.save_settings(
-        settingsForm, settingsWindow, ui_loader
+        ui_loader.formSettings, ui_loader.windowSettings, ui_loader
     )
 )
 
