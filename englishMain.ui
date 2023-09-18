@@ -1362,7 +1362,7 @@ QProgressBar::chunk
           <number>5</number>
          </property>
          <property name="text">
-          <string>Pretraga Mušterije</string>
+          <string>Customer Search</string>
          </property>
          <property name="textFormat">
           <enum>Qt::AutoText</enum>

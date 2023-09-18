@@ -2056,7 +2056,7 @@ class Ui_MainWindow(object):
         self.add_customer_chasis.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Chassis Number", None))
         self.save_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Save", None))
         self.cancel_new_customer_button.setText(QCoreApplication.translate("MainWindow", u"Cancel", None))
-        self.search_customer_label.setText(QCoreApplication.translate("MainWindow", u"Pretraga Mu\u0161terije", None))
+        self.search_customer_label.setText(QCoreApplication.translate("MainWindow", u"Customer Search", None))
         self.search_customer_name.setPlaceholderText(QCoreApplication.translate("MainWindow", u"First Name", None))
         self.search_customer_surname.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Last Name", None))
         self.search_customer_phone.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Phone Number", None))
