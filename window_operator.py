@@ -434,21 +434,32 @@ class WindowOperator:
         if answer:
             settingsWindow.close()
             
-    def save_settings(self, settingsForm, settingsWindow, lang_loader:LoadUi):
+    def save_settings(self, settingsForm, settingsWindow, ui_loader:LoadUi):
         answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
         if answer:
             language_box: QComboBox = settingsForm.language_combo
+            screen_checkbox: QCheckBox = settingsForm.full_screen_check
             temp=""
+            check=False
             with open("settings.cfg", "r", encoding="utf-8") as settings_config:
                 temp = settings_config.read()
                 settings_config.seek(0)
                 language_setting = settings_config.readlines()[0].removeprefix("language=").strip().lower()
+                settings_config.seek(0)
+                screen_size = settings_config.readlines()[1].removeprefix("fullscreen=").strip().lower()
                 selected_language = language_box.currentText().lower().strip()
+                screen_check = screen_checkbox.isChecked()
                 if selected_language == "engleski":
                     selected_language = "english"
                 if selected_language != language_setting:
                     temp = temp.replace(language_setting, selected_language)
-
+                if screen_size != screen_check:
+                    temp_num = int(screen_check)
+                    temp = temp.replace(screen_size, str(temp_num))
+                    check = screen_check
+                
             with open("settings.cfg", "w", encoding="utf-8") as settings_config:
                 settings_config.write(temp)
-            lang_loader.change_language(selected_language)
+            ui_loader.change_language(selected_language)
+            ui_loader.change_screen_size(check)
+            

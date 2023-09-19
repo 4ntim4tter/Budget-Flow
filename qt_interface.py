@@ -1,6 +1,17 @@
-        
-class AppInterface():
-    def __init__(self, entry_window, db_manager, form, window, formReciept, windowRecepit, formSettings, windowSettings, app, loader):
+class AppInterface:
+    def __init__(
+        self,
+        entry_window,
+        db_manager,
+        form,
+        window,
+        formReciept,
+        windowRecepit,
+        formSettings,
+        windowSettings,
+        app,
+        loader,
+    ):
         self._form = form
         self._window = window
         self._entry_window = entry_window
@@ -13,17 +24,23 @@ class AppInterface():
         self._loader = loader
 
         self._form.cancel_new_customer_button.clicked.connect(
-            lambda: self._entry_window.wipe_customer_window_data(self._form.customer_entry_box)
+            lambda: self._entry_window.wipe_customer_window_data(
+                self._form.customer_entry_box
+            )
         )
         self._form.save_new_customer_button.clicked.connect(
             lambda: self._entry_window.store_entered_data(
-                "customers", self._entry_window.get_customer_values(self._form), self._form.customer_entry_box
+                "customers",
+                self._entry_window.get_customer_values(self._form),
+                self._form.customer_entry_box,
             )
         )
 
         # Customer Search Window
         self._form.cancel_search_customer_button.clicked.connect(
-            lambda: self._entry_window.wipe_customer_window_data(self._form.customer_search_box)
+            lambda: self._entry_window.wipe_customer_window_data(
+                self._form.customer_search_box
+            )
         )
         self._form.search_customer_button.clicked.connect(
             lambda: self._entry_window.search_for_customer(
@@ -46,11 +63,15 @@ class AppInterface():
             lambda: self._entry_window.change_customer_archive_status(self._form)
         )
         self._form.delete_selected_table_button.clicked.connect(
-            lambda: self._db_manager.delete_selected_customer("customers", self._form.customer_table)
+            lambda: self._db_manager.delete_selected_customer(
+                "customers", self._form.customer_table
+            )
         )
 
         self._form.customer_table.itemDoubleClicked.connect(
-            lambda: self._entry_window.select_customer_from_table(self._form, self._form.customer_table)
+            lambda: self._entry_window.select_customer_from_table(
+                self._form, self._form.customer_table
+            )
         )
 
         # Reciepts
@@ -78,13 +99,17 @@ class AppInterface():
             lambda: self._entry_window.delete_selected_reciept(self._form)
         )
         self._form.customer_reciepts_table.itemDoubleClicked.connect(
-            lambda: self._entry_window.select_reciept_from_table(self._form, self._formReceipt, self._windowReceipt)
+            lambda: self._entry_window.select_reciept_from_table(
+                self._form, self._formReceipt, self._windowReceipt
+            )
         )
         self._form.close_register_button.clicked.connect(
             lambda: self._entry_window.close_application(self._app)
         )
         self._form.settings_button.clicked.connect(
-            lambda: self._entry_window.open_settings(self._formSettings, self._windowSettings)
+            lambda: self._entry_window.open_settings(
+                self._formSettings, self._windowSettings
+            )
         )
         self._formReceipt.print_reciept_button.clicked.connect(
             lambda: self._entry_window.open_browser_for_print(
@@ -106,13 +131,17 @@ class AppInterface():
         )
         self._formReceipt.delete_entry_button.clicked.connect(
             lambda: self._entry_window.delete_entry_from_receipt(
-                self._formReceipt.materials_receipt_table, self._form, self._form.customer_table
+                self._formReceipt.materials_receipt_table,
+                self._form,
+                self._form.customer_table,
             )
         )
 
         self._formReceipt.modify_reciept_button.clicked.connect(
             lambda: self._entry_window.modify_receipt_entry(
-                self._formReceipt.materials_receipt_table, self._form, self._form.customer_table
+                self._formReceipt.materials_receipt_table,
+                self._form,
+                self._form.customer_table,
             )
         )
 

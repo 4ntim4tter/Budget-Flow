@@ -8,11 +8,12 @@ from qt_interface import AppInterface
 
 
 class LoadUi:
-    def __init__(self, language: str, entry_window, db_manager):
+    def __init__(self, language: str, entry_window, db_manager, screen: bool):
         self.app = QApplication([])
         self._entry_window = entry_window
         self._default_language = language
         self._db_manager = db_manager
+        self._screen = screen
 
         self._MainFormEnglish, self._MainWindowEnglish = loadUiType("englishMain.ui")
         self._ReceiptFormEnglish, self._ReceiptWindowEnglish = loadUiType(
@@ -63,6 +64,10 @@ class LoadUi:
         else:
             self.formSettings.language_combo.setCurrentIndex(1)
 
+        if self._screen:
+            self.window.showFullScreen()
+            self.formSettings.full_screen_check.setChecked(True)
+            
         self.app_interface = AppInterface(
             self._entry_window,
             self._db_manager,
@@ -73,7 +78,7 @@ class LoadUi:
             self.formSettings,
             self.windowSettings,
             self.app,
-            self
+            self,
         )
 
     def set_style(self):
@@ -136,12 +141,17 @@ class LoadUi:
             self.formSettings,
             self.windowSettings,
             self.app,
-            self
+            self,
         )
         self.window.show()
 
     def get_app(self):
         return self.app
+    
+    def change_screen_size(self, screen: bool):
+        if screen:
+            self.window.showFullScreen()
+            self.formSettings.full_screen_check.setChecked(True)
 
     def run(self):
         self.set_style()
