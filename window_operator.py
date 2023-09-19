@@ -17,6 +17,7 @@ from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
 from receipt_html import receipt_table, receipt_data_header, receipt_data
+from load_ui import LoadUi
 import webbrowser
 
 
@@ -433,7 +434,7 @@ class WindowOperator:
         if answer:
             settingsWindow.close()
             
-    def save_settings(self, settingsForm, settingsWindow, lang_loader):
+    def save_settings(self, settingsForm, settingsWindow, lang_loader:LoadUi):
         answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
         if answer:
             language_box: QComboBox = settingsForm.language_combo
