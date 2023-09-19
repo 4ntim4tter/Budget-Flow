@@ -1,6 +1,6 @@
         
 class AppInterface():
-    def __init__(self, entry_window, db_manager, form, window, formReciept, windowRecepit, formSettings, windowSettings):
+    def __init__(self, entry_window, db_manager, form, window, formReciept, windowRecepit, formSettings, windowSettings, app, loader):
         self._form = form
         self._window = window
         self._entry_window = entry_window
@@ -9,6 +9,8 @@ class AppInterface():
         self._windowReceipt = windowRecepit
         self._formSettings = formSettings
         self._windowSettings = windowSettings
+        self._app = app
+        self._loader = loader
 
         self._form.cancel_new_customer_button.clicked.connect(
             lambda: self._entry_window.wipe_customer_window_data(self._form.customer_entry_box)
@@ -79,7 +81,7 @@ class AppInterface():
             lambda: self._entry_window.select_reciept_from_table(self._form, self._formReceipt, self._windowReceipt)
         )
         self._form.close_register_button.clicked.connect(
-            lambda: self._entry_window.close_application(self.get_app())
+            lambda: self._entry_window.close_application(self._app)
         )
         self._form.settings_button.clicked.connect(
             lambda: self._entry_window.open_settings(self._formSettings, self._windowSettings)
@@ -122,6 +124,6 @@ class AppInterface():
 
         self._formSettings.save_settings_button.clicked.connect(
             lambda: self._entry_window.save_settings(
-                self._formSettings, self._windowSettings, self
+                self._formSettings, self._windowSettings, self._loader
             )
         )
