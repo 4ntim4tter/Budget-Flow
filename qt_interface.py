@@ -153,6 +153,6 @@ class AppInterface:
 
         self._formSettings.save_settings_button.clicked.connect(
             lambda: self._entry_window.save_settings(
-                self._formSettings, self._windowSettings, self._loader
+                self._formSettings, self._loader
             )
         )

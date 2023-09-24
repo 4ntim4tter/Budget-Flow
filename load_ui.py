@@ -5,6 +5,7 @@ from bosnianMain_ui import Ui_MainWindow
 from bosnianRec_ui import Ui_ReceiptWindow
 from englishSettings_ui import Ui_SettingsWindow
 from qt_interface import AppInterface
+from database_management import DataManager
 
 
 class LoadUi:
@@ -94,7 +95,6 @@ class LoadUi:
         )
 
     def change_language(self, language):
-        # I HATE THIS DUPLICATE CODE BUT I CAN'T FIGURE OUT A BETTER WAY
         self.window.hide()
         self.windowReceipt.hide()
         self.windowSettings.hide()
@@ -122,7 +122,7 @@ class LoadUi:
             self.formSettings: Ui_SettingsWindow = self._SettingsFormBosnian()
             self.windowSettings: QDialog = self._SettingsWindowBosnian()
             self.formSettings.setupUi(self.windowSettings)
-
+            
         self.form.add_new_reciept_frame.hide()
         self.app.focusChanged.connect(self._entry_window.line_focus_changed)
 

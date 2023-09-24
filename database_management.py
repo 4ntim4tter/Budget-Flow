@@ -8,11 +8,12 @@ from reciept import Reciept
 
 
 class DataManager:
-    def __init__(self, database: str) -> None:
+    def __init__(self, database: str, language:str) -> None:
+        self._language = language
         self.db_link: sql3.Connection
         self.db_cursor: sql3.Cursor
         self.database = database
-        self.popup_module = QuestionPopup("Yes", "No", "", "")
+        self.popup_module = QuestionPopup(self._language)
 
     def db_connect(self, database):
         """Connect to database -> Sqlite3
@@ -67,8 +68,6 @@ class DataManager:
         self.db_disconnect()
 
     def db_insert_customer(self, table: str, customer: list):
-        self.popup_module.set_title("Unos")
-        self.popup_module.set_question("Da li želite spremiti unesene podatke?")
         answer = self.popup_module.confirmation_dialog()
         if answer:
             self.db_connect(self.database)
@@ -211,11 +210,7 @@ class DataManager:
         self.db_disconnect()
 
     def delete_selected_customer(self, table: str, table_widget: QTableWidget):
-        self.popup_module.set_title("Brisanje")
-        self.popup_module.set_question(
-            "Da li želite obrisati mušteriju iz baze podataka?\n(Upozorenje: Ova radnja je nepovratna!)"
-        )
-        answer = self.popup_module.confirmation_dialog()
+        answer = self.popup_module.confirmation_dialog_warning()
         if answer:
             if (
                 table_widget.selectedItems() != []

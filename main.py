@@ -16,8 +16,21 @@ with open("settings.cfg", "+r", encoding="utf-8") as settings_config:
             """language=english\nfullscreen=1"""
         )
         
-db_manager = DataManager("table.db")
-entry_window = WindowOperator()
+with open("settings.cfg", "r", encoding="utf-8") as settings_config:
+    if "english" in settings_config.readlines()[0]:
+        language = "english"
+    else:
+        language = "bosnian"
+    
+    settings_config.seek(0)
+    
+    if "1" in settings_config.readlines()[1]:
+        screen = True
+    else:
+        screen = False
+        
+db_manager = DataManager("table.db", language)
+entry_window = WindowOperator(language)
 
 db_manager.db_connect("table.db")
 db_manager.db_create_table(
@@ -37,18 +50,6 @@ db_manager.db_create_table(
     "materials", ["id", "reciept_id", "type", "brand", "amount", "price", "full_amount"]
 )
 
-with open("settings.cfg", "r", encoding="utf-8") as settings_config:
-    if "english" in settings_config.readlines()[0]:
-        language = "english"
-    else:
-        language = "bosnian"
-    
-    settings_config.seek(0)
-    
-    if "1" in settings_config.readlines()[1]:
-        screen = True
-    else:
-        screen = False
 
 ui_loader = LoadUi(language, entry_window, db_manager, screen)
 

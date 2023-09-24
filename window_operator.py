@@ -22,22 +22,16 @@ import webbrowser
 
 
 class WindowOperator:
-    def __init__(self) -> None:
-        self.db_manager = DataManager("table.db")
-        self.question_box = QuestionPopup("Yes", "No", "", "")
-        self.warning_box = WarningPopup("Upozorenje!", "")
+    def __init__(self, language:str) -> None:
+        self._language = language
+        self.db_manager = DataManager("table.db", language)
+        self.question_box:QuestionPopup = QuestionPopup(self._language)
+        self.warning_box:WarningPopup = WarningPopup(self._language)
 
-    def question_popup(self, title: str, question: str):
-        self.question_box.set_title(title)
-        self.question_box.set_question(question)
-        answer = self.question_box.confirmation_dialog()
-        return answer
-
-    def warning_popup(self, warning: str):
-        self.warning_box.set_warning(warning)
-        answer = self.warning_box.confirmation_dialog()
-        return answer
-
+    def reset_popup_language(self, language:str):
+        self.question_box:QuestionPopup = QuestionPopup(language)
+        self.warning_box:WarningPopup = WarningPopup(language)
+        
     def wipe_entered_data(self, widget):
         widgets = widget.children()
         for child in widgets:
@@ -52,14 +46,14 @@ class WindowOperator:
 
     def store_entered_data(self, table: str, customer: list, entry_widget: QWidget):
         if '' in customer:
-            self.warning_popup("Potrebno je popuniti sva polja!")
+            self.warning_box.confirmation_dialog()
             return 0 
         accepted = self.db_manager.db_insert_customer(table, customer)
         if accepted:
             self.wipe_entered_data(entry_widget)
 
     def wipe_customer_window_data(self, window):
-        answer = self.question_popup("Prekid", "Da li želite obrisati unesene podatke?")
+        answer = self.question_box.confirmation_dialog()
         if answer:
             self.wipe_entered_data(window)
 
@@ -151,9 +145,7 @@ class WindowOperator:
 
     def hide_customer_form(self, customer_form: QFrame, add_reciept: QFrame, form):
         if form.name_text_data.text() == "":
-            self.warning_popup(
-                "Ne možete dodati novi predračun bez selektiranja mušterije!"
-            )
+            self.warning_box.confirmation_dialog()
             return
         if customer_form.isHidden() and not add_reciept.isHidden():
             customer_form.show()
@@ -176,7 +168,7 @@ class WindowOperator:
             or price_input.text() == ""
             or amount_input.text() == ""
         ):
-            self.warning_popup("Potrebno je popuniti sva polja!")
+            self.warning_box.confirmation_dialog()
             return
         materials_table.setItem(
             materials_table.rowCount() - 1,
@@ -200,7 +192,7 @@ class WindowOperator:
         materials_table.insertRow(materials_table.rowCount())
 
     def close_add_new_receipt(self, form):
-        answer = self.question_popup("Prekid", "Prekinuti unos novog predračuna?")
+        answer = self.question_box.confirmation_dialog()
         if answer:
             self.wipe_entered_data(form.material_fields_frame)
             self.wipe_entered_data(form.table_service_frame)
@@ -209,7 +201,7 @@ class WindowOperator:
             )
 
     def add_new_receipt(self, form):
-        answer = self.question_popup("Završi", "Završiti i dodati novi predračun?")
+        answer = self.question_box.confirmation_dialog()
         if answer:
             table: QTableWidget = form.materials_receipt_table
             full_parts_price = 0
@@ -247,10 +239,7 @@ class WindowOperator:
             )
 
     def delete_selected_reciept(self, form):
-        answer = self.question_popup(
-            "Brisanje",
-            "Da li želite obrisati označeni predračun?\n(Upozorenje: Ova radnja je nepovratna!)",
-        )
+        answer = self.question_box.confirmation_dialog_warning()
         if answer:
             reciepts_table: QTableWidget = form.customer_reciepts_table
             if (
@@ -261,7 +250,7 @@ class WindowOperator:
                 self.db_manager.delete_reciept_from_database(selected.text())
                 reciepts_table.removeRow(reciepts_table.currentRow())
             else:
-                self.warning_popup("Niste označili predračun!")
+                self.warning_box.confirmation_dialog()
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table: QTableWidget = form.customer_reciepts_table
@@ -359,22 +348,16 @@ class WindowOperator:
             table_widget.insertRow(index + 1)
 
     def change_customer_archive_status(self, form_widget):
-        answer = self.question_popup(
-            "Arhiviranje",
-            "Da li želite arhivirati označenu mušteriju?",
-        )
+        answer = self.question_box.confirmation_dialog()
         if answer:
             table_widget:QTableWidget = form_widget.customer_table
             if table_widget.selectedItems() != []:
                 self.db_manager.change_archive_status(table_widget.selectedItems()[4].text().lstrip('0'))
             else:
-                self.warning_popup("Niste označili mušteriju!")
+                self.warning_box.confirmation_dialog()
     
     def cancel_receipt_printing(self, receipt_window:QDialog, form, table):
-        answer = self.question_popup(
-            "Zatvoriti?",
-            "Da li ste sigurni?"
-        )
+        answer = self.question_box.confirmation_dialog()
         
         if answer:
             customer_reciepts:QTableWidget = form.customer_reciepts_table
@@ -384,10 +367,7 @@ class WindowOperator:
             customer_reciepts.selectRow(selected_customer)
             
     def delete_entry_from_receipt(self, reciept_table:QTableWidget, form, form_table:QTableWidget):
-        answer = self.question_popup(
-            "Brisanje",
-            "Da li želite obrisati označeni materijal?\n(Upozorenje: Ova radnja je nepovratna!)"
-        )
+        answer = self.question_box.confirmation_dialog_warning()
         if answer:
             if reciept_table.selectedItems() != []:
                 customer_reciepts:QTableWidget = form.customer_reciepts_table
@@ -400,19 +380,16 @@ class WindowOperator:
                 self.db_manager.update_selected_reciept_entry(reciept_table)
                 customer_reciepts.selectRow(selected_customer)
             else:
-                self.warning_popup("Niste označili materijal!")
+                self.warning_box.confirmation_dialog()
 
     def close_application(self, app:QApplication):
-        answer = self.question_popup("Zatvaranje", "Da li želite zatvoriti kasu?")
+        answer = self.question_box.confirmation_dialog()
         
         if answer:
             app.quit()
             
     def modify_receipt_entry(self, reciept_table: QTableWidget, form, form_table:QTableWidget):
-        answer = self.question_popup(
-            "Modificiranje",
-            "Da li želite modifikovati označeni unos?"
-        )
+        answer = self.question_box.confirmation_dialog()
         
         if answer:
             difference = self.db_manager.update_selected_reciept_entry(reciept_table)
@@ -421,21 +398,19 @@ class WindowOperator:
             self.select_customer_from_table(form, form_table)
             customer_reciepts.selectRow(selected_customer)
             if not difference:
-                self.warning_popup(
-                    "Nije bilo modifikacije."
-                )
+                self.warning_box.confirmation_dialog()
             
     def open_settings(self, settingsForm, settingsWindow):
         settingsWindow.setWindowFlags(Qt.WindowType.WindowStaysOnTopHint | Qt.WindowType.FramelessWindowHint)
         settingsWindow.show()
     
     def cancel_settings(self, settingsForm, settingsWindow):
-        answer = self.question_popup("Zatvaranje", "Da li želite zatvoriti postavke bez spremanja?")
+        answer = self.question_box.confirmation_dialog()
         if answer:
             settingsWindow.close()
             
-    def save_settings(self, settingsForm, settingsWindow, ui_loader:LoadUi):
-        answer = self.question_popup("Spremanje", "Da li želite spremiti postavke?")
+    def save_settings(self, settingsForm, ui_loader:LoadUi):
+        answer = self.question_box.confirmation_dialog()
         if answer:
             language_box: QComboBox = settingsForm.language_combo
             screen_checkbox: QCheckBox = settingsForm.full_screen_check
@@ -462,4 +437,4 @@ class WindowOperator:
                 settings_config.write(temp)
             ui_loader.change_language(selected_language)
             ui_loader.change_screen_size(check)
-            
+            self.reset_popup_language(selected_language)
