@@ -91,7 +91,7 @@ class LoadUi:
             QTableWidgetItem,
             QTableView,
             QHeaderView::section
-            {font-family: Rec Mono Casual;}"""
+            {font-family: Lucida Console;}"""
         )
 
     def change_language(self, language):
