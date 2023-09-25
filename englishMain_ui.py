@@ -248,7 +248,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -257,8 +257,8 @@ class Ui_MainWindow(object):
 "QPushButton::pressed\n"
 "{\n"
 "	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
-"	border"
-                        ": 1px solid #b78620;\n"
+"	borde"
+                        "r: 1px solid #b78620;\n"
 "\n"
 "}\n"
 "\n"
@@ -305,8 +305,8 @@ class Ui_MainWindow(object):
 "	border-color: #666;\n"
 "	border-bottom: none;\n"
 "	padding: 5px;\n"
-"	padding-le"
-                        "ft: 15px;\n"
+"	padding-l"
+                        "eft: 15px;\n"
 "	padding-right: 15px;\n"
 "\n"
 "}\n"
@@ -373,8 +373,8 @@ class Ui_MainWindow(object):
 "\n"
 "QComboBox::disabled\n"
 "{\n"
-"	"
-                        "background-color: #404040;\n"
+""
+                        "	background-color: #404040;\n"
 "	color: #656565;\n"
 "	border-color: #051a39;\n"
 "\n"
@@ -425,8 +425,8 @@ class Ui_MainWindow(object):
 "QSpinBox,\n"
 "QDateTimeEdit \n"
 "{\n"
-"    backgroun"
-                        "d-color: #131313;\n"
+"    backgrou"
+                        "nd-color: #131313;\n"
 "	color : #eee;\n"
 "	border: 1px solid #343434;\n"
 "	padding: 3px;\n"
@@ -485,9 +485,9 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"\n"
 ""
-                        "QSpinBox::down-button:hover, \n"
+                        "\n"
+"QSpinBox::down-button:hover, \n"
 "QDateTimeEdit::down-button:hover\n"
 "{\n"
 "	background-color: #585858;\n"
@@ -542,8 +542,8 @@ class Ui_MainWindow(object):
 "QHeaderView::section\n"
 "{\n"
 "    \n"
-"	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x"
-                        "2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));\n"
+"	background-color: qlineargradient(spread:pad, x1:0.494, y1"
+                        ":0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));\n"
 "	border: 1px solid #000;\n"
 "    color: #fff;\n"
 "    text-align: left;\n"
@@ -584,8 +584,8 @@ class Ui_MainWindow(object):
 "\n"
 "QHeaderView::section::vertical\n"
 "{\n"
-"    border-top: 1p"
-                        "x solid #353635;\n"
+"    border-to"
+                        "p: 1px solid #353635;\n"
 "\n"
 "}\n"
 "\n"
@@ -641,9 +641,9 @@ class Ui_MainWindow(object):
 "QTreeView::branch:has-children:!has-siblings:closed,\n"
 "QTreeView::branch:closed:has-children:has-siblings \n"
 "{\n"
-"	image: url(://tree-closed.png);\n"
-""
-                        "\n"
+"	image: url(://tree-closed.png"
+                        ");\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -695,8 +695,8 @@ class Ui_MainWindow(object):
 "QListView::item:selected \n"
 "{\n"
 "	background-color: #b78620;\n"
-"	border: 1px soli"
-                        "d #b78620;\n"
+"	border: 1"
+                        "px solid #b78620;\n"
 "	color: #fff;\n"
 "\n"
 "}\n"
@@ -759,8 +759,8 @@ class Ui_MainWindow(object):
 "\n"
 "QCheckBox::indicator:unchecked:hover\n"
 "{\n"
-"	border: 1"
-                        "px solid #b78620; \n"
+"	bo"
+                        "rder: 1px solid #b78620; \n"
 "\n"
 "}\n"
 "\n"
@@ -825,8 +825,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QSlider::add-page:horizontal"
-                        " \n"
+"QSlider::add-page:hor"
+                        "izontal \n"
 "{\n"
 "	background-color: #131313;\n"
 "\n"
@@ -890,8 +890,8 @@ class Ui_MainWindow(object):
 "\n"
 "QScrollBar::handle:horizontal\n"
 "{\n"
-"	backgrou"
-                        "nd-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
+"	b"
+                        "ackground-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
 "	border: 1px solid #2d2d2d;\n"
 "    min-height: 20px;\n"
 "\n"
@@ -929,8 +929,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::left-arro"
-                        "w:horizontal\n"
+"QScrollBar::le"
+                        "ft-arrow:horizontal\n"
 "{\n"
 "    image: url(://arrow-left.png);\n"
 "    width: 6px;\n"
@@ -976,8 +976,8 @@ class Ui_MainWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::sub-line:v"
-                        "ertical\n"
+"QScrollBar::sub"
+                        "-line:vertical\n"
 "{\n"
 "	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
 "	border: 1px solid #2d2d2d;\n"
@@ -1185,7 +1185,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1216,7 +1216,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -1360,7 +1360,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1390,7 +1390,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -1448,7 +1448,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1482,7 +1482,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1868,11 +1868,8 @@ class Ui_MainWindow(object):
 
         self.new_reciept_button = QPushButton(self.buttons_form_frame)
         self.new_reciept_button.setObjectName(u"new_reciept_button")
-        sizePolicy7 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
-        sizePolicy7.setHorizontalStretch(0)
-        sizePolicy7.setVerticalStretch(0)
-        sizePolicy7.setHeightForWidth(self.new_reciept_button.sizePolicy().hasHeightForWidth())
-        self.new_reciept_button.setSizePolicy(sizePolicy7)
+        sizePolicy1.setHeightForWidth(self.new_reciept_button.sizePolicy().hasHeightForWidth())
+        self.new_reciept_button.setSizePolicy(sizePolicy1)
         self.new_reciept_button.setMaximumSize(QSize(16777215, 50))
         self.new_reciept_button.setFont(font)
         self.new_reciept_button.setStyleSheet(u"QPushButton::flat\n"
@@ -1883,7 +1880,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1902,11 +1899,8 @@ class Ui_MainWindow(object):
 
         self.delete_reciept_button = QPushButton(self.buttons_form_frame)
         self.delete_reciept_button.setObjectName(u"delete_reciept_button")
-        sizePolicy8 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Preferred)
-        sizePolicy8.setHorizontalStretch(0)
-        sizePolicy8.setVerticalStretch(0)
-        sizePolicy8.setHeightForWidth(self.delete_reciept_button.sizePolicy().hasHeightForWidth())
-        self.delete_reciept_button.setSizePolicy(sizePolicy8)
+        sizePolicy1.setHeightForWidth(self.delete_reciept_button.sizePolicy().hasHeightForWidth())
+        self.delete_reciept_button.setSizePolicy(sizePolicy1)
         self.delete_reciept_button.setMaximumSize(QSize(16777215, 50))
         self.delete_reciept_button.setFont(font)
         self.delete_reciept_button.setStyleSheet(u"QPushButton::flat\n"
@@ -1917,7 +1911,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -2031,7 +2025,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -2141,8 +2135,11 @@ class Ui_MainWindow(object):
 
         self.finish_reciept_button = QPushButton(self.frame_4)
         self.finish_reciept_button.setObjectName(u"finish_reciept_button")
-        sizePolicy6.setHeightForWidth(self.finish_reciept_button.sizePolicy().hasHeightForWidth())
-        self.finish_reciept_button.setSizePolicy(sizePolicy6)
+        sizePolicy7 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy7.setHorizontalStretch(0)
+        sizePolicy7.setVerticalStretch(0)
+        sizePolicy7.setHeightForWidth(self.finish_reciept_button.sizePolicy().hasHeightForWidth())
+        self.finish_reciept_button.setSizePolicy(sizePolicy7)
         self.finish_reciept_button.setMaximumSize(QSize(16777215, 50))
         self.finish_reciept_button.setFont(font)
         self.finish_reciept_button.setStyleSheet(u"QPushButton::flat\n"
@@ -2153,7 +2150,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -2172,8 +2169,8 @@ class Ui_MainWindow(object):
 
         self.cancel_add_reciept_button = QPushButton(self.frame_4)
         self.cancel_add_reciept_button.setObjectName(u"cancel_add_reciept_button")
-        sizePolicy6.setHeightForWidth(self.cancel_add_reciept_button.sizePolicy().hasHeightForWidth())
-        self.cancel_add_reciept_button.setSizePolicy(sizePolicy6)
+        sizePolicy1.setHeightForWidth(self.cancel_add_reciept_button.sizePolicy().hasHeightForWidth())
+        self.cancel_add_reciept_button.setSizePolicy(sizePolicy1)
         self.cancel_add_reciept_button.setMaximumSize(QSize(16777215, 50))
         self.cancel_add_reciept_button.setFont(font)
         self.cancel_add_reciept_button.setStyleSheet(u"QPushButton::flat\n"
@@ -2184,7 +2181,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -2334,32 +2331,18 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.customer_table)
 
-        self.frame_2 = QFrame(self.right_frame)
-        self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_3 = QVBoxLayout(self.frame_2)
-        self.verticalLayout_3.setSpacing(1)
-        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
-        self.verticalLayout_3.setContentsMargins(1, 1, 1, 1)
-
-        self.verticalLayout_2.addWidget(self.frame_2)
-
         self.frame = QFrame(self.right_frame)
         self.frame.setObjectName(u"frame")
         self.frame.setFrameShape(QFrame.StyledPanel)
         self.frame.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame)
-        self.horizontalLayout.setSpacing(1)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(1, 1, 1, 1)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.delete_selected_table_button = QPushButton(self.frame)
         self.delete_selected_table_button.setObjectName(u"delete_selected_table_button")
-        sizePolicy9 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
-        sizePolicy9.setHorizontalStretch(0)
-        sizePolicy9.setVerticalStretch(0)
-        sizePolicy9.setHeightForWidth(self.delete_selected_table_button.sizePolicy().hasHeightForWidth())
-        self.delete_selected_table_button.setSizePolicy(sizePolicy9)
+        sizePolicy1.setHeightForWidth(self.delete_selected_table_button.sizePolicy().hasHeightForWidth())
+        self.delete_selected_table_button.setSizePolicy(sizePolicy1)
         self.delete_selected_table_button.setStyleSheet(u"QPushButton::flat\n"
 "{\n"
 "	background-color: rgb(143, 0, 0);\n"
@@ -2368,7 +2351,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -2386,6 +2369,8 @@ class Ui_MainWindow(object):
 
         self.populate_table_button = QPushButton(self.frame)
         self.populate_table_button.setObjectName(u"populate_table_button")
+        sizePolicy1.setHeightForWidth(self.populate_table_button.sizePolicy().hasHeightForWidth())
+        self.populate_table_button.setSizePolicy(sizePolicy1)
         self.populate_table_button.setStyleSheet(u"QPushButton::flat\n"
 "{\n"
 "	background-color: rgb(68, 204, 0);\n"
@@ -2394,7 +2379,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -2413,6 +2398,8 @@ class Ui_MainWindow(object):
 
         self.show_archived_button = QPushButton(self.frame)
         self.show_archived_button.setObjectName(u"show_archived_button")
+        sizePolicy1.setHeightForWidth(self.show_archived_button.sizePolicy().hasHeightForWidth())
+        self.show_archived_button.setSizePolicy(sizePolicy1)
         self.show_archived_button.setStyleSheet(u"QPushButton::flat\n"
 "{\n"
 "	background-color: rgb(68, 204, 0);\n"
@@ -2421,7 +2408,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -2440,6 +2427,8 @@ class Ui_MainWindow(object):
 
         self.archive_selected_button = QPushButton(self.frame)
         self.archive_selected_button.setObjectName(u"archive_selected_button")
+        sizePolicy1.setHeightForWidth(self.archive_selected_button.sizePolicy().hasHeightForWidth())
+        self.archive_selected_button.setSizePolicy(sizePolicy1)
         self.archive_selected_button.setStyleSheet(u"QPushButton::flat\n"
 "{\n"
 "	\n"
@@ -2449,7 +2438,7 @@ class Ui_MainWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -2468,9 +2457,8 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_2.addWidget(self.frame)
 
-        self.verticalLayout_2.setStretch(0, 99)
-        self.verticalLayout_2.setStretch(1, 1)
-        self.verticalLayout_2.setStretch(2, 1)
+        self.verticalLayout_2.setStretch(0, 95)
+        self.verticalLayout_2.setStretch(1, 5)
 
         self.gridLayout_4.addWidget(self.right_frame, 0, 2, 1, 1)
 

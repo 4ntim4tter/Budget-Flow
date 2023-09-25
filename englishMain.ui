@@ -237,7 +237,7 @@ QPushButton::disabled
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -1368,7 +1368,7 @@ QProgressBar::chunk
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -1421,7 +1421,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -1741,7 +1741,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -1788,7 +1788,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -1869,7 +1869,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -1915,7 +1915,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -2715,7 +2715,7 @@ QPushButton::pressed
              <item>
               <widget class="QPushButton" name="new_reciept_button">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -2743,7 +2743,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -2769,7 +2769,7 @@ Bill</string>
              <item>
               <widget class="QPushButton" name="delete_reciept_button">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -2797,7 +2797,7 @@ Bill</string>
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -3075,7 +3075,7 @@ Bill</string>
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -3304,7 +3304,7 @@ QPushButton::pressed
              <item>
               <widget class="QPushButton" name="finish_reciept_button">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -3332,7 +3332,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -3357,7 +3357,7 @@ QPushButton::pressed
              <item>
               <widget class="QPushButton" name="cancel_add_reciept_button">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
@@ -3385,7 +3385,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -3591,7 +3591,7 @@ QPushButton::pressed
       <property name="midLineWidth">
        <number>5</number>
       </property>
-      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="99,1,1">
+      <layout class="QVBoxLayout" name="verticalLayout_2" stretch="95,5">
        <property name="spacing">
         <number>0</number>
        </property>
@@ -3760,33 +3760,6 @@ QPushButton::pressed
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_2">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <property name="spacing">
-           <number>1</number>
-          </property>
-          <property name="leftMargin">
-           <number>1</number>
-          </property>
-          <property name="topMargin">
-           <number>1</number>
-          </property>
-          <property name="rightMargin">
-           <number>1</number>
-          </property>
-          <property name="bottomMargin">
-           <number>1</number>
-          </property>
-         </layout>
-        </widget>
-       </item>
-       <item>
         <widget class="QFrame" name="frame">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
@@ -3796,24 +3769,24 @@ QPushButton::pressed
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <property name="spacing">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="leftMargin">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="topMargin">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="rightMargin">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="bottomMargin">
-           <number>1</number>
+           <number>0</number>
           </property>
           <item>
            <widget class="QPushButton" name="delete_selected_table_button">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -3827,7 +3800,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
@@ -3850,6 +3823,12 @@ QPushButton::pressed
           </item>
           <item>
            <widget class="QPushButton" name="populate_table_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton::flat
 {
@@ -3859,7 +3838,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -3883,6 +3862,12 @@ QPushButton::pressed
           </item>
           <item>
            <widget class="QPushButton" name="show_archived_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton::flat
 {
@@ -3892,7 +3877,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	color:white;
 	border: 1px solid  rgb(0, 85, 255);
 
@@ -3916,6 +3901,12 @@ QPushButton::pressed
           </item>
           <item>
            <widget class="QPushButton" name="archive_selected_button">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="styleSheet">
              <string notr="true">QPushButton::flat
 {
@@ -3926,7 +3917,7 @@ QPushButton::pressed
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 20%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }

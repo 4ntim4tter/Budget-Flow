@@ -1041,7 +1041,9 @@ class Ui_ReceiptWindow(object):
         self.frame.setLineWidth(5)
         self.frame.setMidLineWidth(5)
         self.verticalLayout_2 = QVBoxLayout(self.frame)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.materials_receipt_table = QTableWidget(self.frame)
         if (self.materials_receipt_table.columnCount() < 6):
             self.materials_receipt_table.setColumnCount(6)
@@ -1085,7 +1087,9 @@ class Ui_ReceiptWindow(object):
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame_2)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
 
@@ -1118,7 +1122,9 @@ class Ui_ReceiptWindow(object):
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.cancel_print_reciept_button = QPushButton(self.frame_3)
         self.cancel_print_reciept_button.setObjectName(u"cancel_print_reciept_button")
         sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -1135,7 +1141,7 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -1163,7 +1169,7 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
@@ -1191,7 +1197,7 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1220,7 +1226,7 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	color:white;\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
@@ -1240,6 +1246,9 @@ class Ui_ReceiptWindow(object):
 
         self.verticalLayout_2.addWidget(self.frame_3)
 
+        self.verticalLayout_2.setStretch(0, 9)
+        self.verticalLayout_2.setStretch(1, 1)
+        self.verticalLayout_2.setStretch(2, 1)
 
         self.verticalLayout.addWidget(self.frame)
 
