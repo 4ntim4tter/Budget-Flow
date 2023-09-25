@@ -50,7 +50,6 @@ db_manager.db_create_table(
     "materials", ["id", "reciept_id", "type", "brand", "amount", "price", "full_amount"]
 )
 
-
 ui_loader = LoadUi(language, entry_window, db_manager, screen)
 
 if __name__ == "__main__":
