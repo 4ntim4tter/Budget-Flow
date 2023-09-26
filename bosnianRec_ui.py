@@ -55,9 +55,10 @@ class Ui_ReceiptWindow(object):
 "/*-----QWidget-----*/\n"
 "QWidget\n"
 "{\n"
-"	background-color: #3a3a3a;\n"
+"	\n"
+"	background-color: rgb(36, 39, 68);\n"
 "	color: #fff;\n"
-"	selection-background-color: #b78620;\n"
+"	selection-background-color: rgb(0, 255, 127);\n"
 "	selection-color: #000;\n"
 "\n"
 "}\n"
@@ -100,9 +101,9 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QMenuBar::item:pressed \n"
 "{\n"
-"	background-color: rgb(183, 134, 32);\n"
-""
-                        "	border: 1px solid #b78620;\n"
+"	background-color:"
+                        " rgb(183, 134, 32);\n"
+"	border: 1px solid #b78620;\n"
 "	color: #fff;\n"
 "\n"
 "}\n"
@@ -156,8 +157,8 @@ class Ui_ReceiptWindow(object):
 "/*-----QToolBar-----*/\n"
 "QToolBar\n"
 "{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(69, 69, 69, 255),stop"
-                        ":1 rgba(58, 58, 58, 255));\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rg"
+                        "ba(69, 69, 69, 255),stop:1 rgba(58, 58, 58, 255));\n"
 "	border-top: none;\n"
 "	border-bottom: 1px solid #4f4f4f;\n"
 "	border-left: 1px solid #4f4f4f;\n"
@@ -205,8 +206,8 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QToolButton:checked\n"
 "{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(57, 57, 57, 255),stop:1 rgba(50, 50, "
-                        "50, 255));\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(57, 57, 57, 2"
+                        "55),stop:1 rgba(50, 50, 50, 255));\n"
 "	border: 1px solid #222;\n"
 "}\n"
 "\n"
@@ -228,10 +229,8 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::flat\n"
 "{\n"
-"	background-color: transparent;\n"
-"	border: none;\n"
-"	color: #fff;\n"
-"\n"
+"	background-color: rgb(24, 25, 45);\n"
+"	color:white;\n"
 "}\n"
 "\n"
 "\n"
@@ -246,19 +245,19 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgba(183, 134, 32, 20%);\n"
-"	border: 1px solid #b78620;\n"
+"	background-color: rgb(0, 85, 255, 10%);\n"
+"	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"
 "\n"
 "\n"
 "QPushButton::pressed\n"
 "{\n"
-"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));\n"
-"	border: 1px solid #b78620;\n"
+"	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
+"	border"
+                        ": 1px solid #b78620;\n"
 "\n"
-""
-                        "}\n"
+"}\n"
 "\n"
 "\n"
 "QPushButton::checked\n"
@@ -272,12 +271,10 @@ class Ui_ReceiptWindow(object):
 "/*-----QLineEdit-----*/\n"
 "QLineEdit\n"
 "{\n"
-"	background-color: #131313;\n"
+"	background-color: rgb(15, 16, 29);\n"
 "	color : #eee;\n"
-"	border: 1px solid #343434;\n"
+"	border: 1px solid rgb(0, 0, 0);;\n"
 "	border-radius: 2px;\n"
-"	padding: 3px;\n"
-"	padding-left: 5px;\n"
 "\n"
 "}\n"
 "\n"
@@ -305,8 +302,8 @@ class Ui_ReceiptWindow(object):
 "	border-color: #666;\n"
 "	border-bottom: none;\n"
 "	padding: 5px;\n"
-"	padding-lef"
-                        "t: 15px;\n"
+"	padding-le"
+                        "ft: 15px;\n"
 "	padding-right: 15px;\n"
 "\n"
 "}\n"
@@ -373,8 +370,8 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QComboBox::disabled\n"
 "{\n"
-"	b"
-                        "ackground-color: #404040;\n"
+"	"
+                        "background-color: #404040;\n"
 "	color: #656565;\n"
 "	border-color: #051a39;\n"
 "\n"
@@ -425,8 +422,8 @@ class Ui_ReceiptWindow(object):
 "QSpinBox,\n"
 "QDateTimeEdit \n"
 "{\n"
-"    background"
-                        "-color: #131313;\n"
+"    backgroun"
+                        "d-color: #131313;\n"
 "	color : #eee;\n"
 "	border: 1px solid #343434;\n"
 "	padding: 3px;\n"
@@ -541,8 +538,9 @@ class Ui_ReceiptWindow(object):
 "/*-----QHeaderView-----*/\n"
 "QHeaderView::section\n"
 "{\n"
-"    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2"
-                        ":1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));\n"
+"    \n"
+"	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x"
+                        "2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));\n"
 "	border: 1px solid #000;\n"
 "    color: #fff;\n"
 "    text-align: left;\n"
@@ -550,6 +548,12 @@ class Ui_ReceiptWindow(object):
 "	\n"
 "}\n"
 "\n"
+"QTableCornerButton::section {\n"
+"	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));\n"
+"	border: 1px solid #000;\n"
+"    color: #fff;\n"
+"	padding: 4px;\n"
+"}\n"
 "\n"
 "QHeaderView::section:disabled\n"
 "{\n"
@@ -577,7 +581,8 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QHeaderView::section::vertical\n"
 "{\n"
-"    border-top: 1px solid #353635;\n"
+"    border-top: 1p"
+                        "x solid #353635;\n"
 "\n"
 "}\n"
 "\n"
@@ -593,16 +598,6 @@ class Ui_ReceiptWindow(object):
 "QHeaderView::section::horizontal\n"
 "{\n"
 "    border-left: 1px solid #353635;\n"
-"\n"
-""
-                        "}\n"
-"\n"
-"\n"
-"QTableCornerButton::section\n"
-"{\n"
-"    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));\n"
-"	border: 1px solid #000;\n"
-"    color: #fff;\n"
 "\n"
 "}\n"
 "\n"
@@ -644,12 +639,12 @@ class Ui_ReceiptWindow(object):
 "QTreeView::branch:closed:has-children:has-siblings \n"
 "{\n"
 "	image: url(://tree-closed.png);\n"
-"\n"
+""
+                        "\n"
 "}\n"
 "\n"
 "\n"
-"QTreeView::branc"
-                        "h:open:has-children:!has-siblings,\n"
+"QTreeView::branch:open:has-children:!has-siblings,\n"
 "QTreeView::branch:open:has-children:has-siblings  \n"
 "{\n"
 "	image: url(://tree-open.png);\n"
@@ -661,7 +656,7 @@ class Ui_ReceiptWindow(object):
 "QListView \n"
 "{\n"
 "	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 83, 83, 255),stop:0.293269 rgba(81, 81, 81, 255),stop:0.634615 rgba(79, 79, 79, 255),stop:1 rgba(83, 83, 83, 255));\n"
-"    border : none;\n"
+"    border: black;\n"
 "    color: white;\n"
 "    show-decoration-selected: 1; \n"
 "    outline: 0;\n"
@@ -697,11 +692,11 @@ class Ui_ReceiptWindow(object):
 "QListView::item:selected \n"
 "{\n"
 "	background-color: #b78620;\n"
-"	border: 1px solid #b78620;\n"
+"	border: 1px soli"
+                        "d #b78620;\n"
 "	color: #fff;\n"
 "\n"
-""
-                        "}\n"
+"}\n"
 "\n"
 "\n"
 "QListView::item:selected:!active \n"
@@ -734,7 +729,7 @@ class Ui_ReceiptWindow(object):
 "QCheckBox\n"
 "{\n"
 "	background-color: transparent;\n"
-"    color: lightgray;\n"
+"   color:rgb(15, 16, 29)\n"
 "	border: none;\n"
 "\n"
 "}\n"
@@ -761,13 +756,13 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QCheckBox::indicator:unchecked:hover\n"
 "{\n"
-"	border: 1px solid #b78620; \n"
+"	border: 1"
+                        "px solid #b78620; \n"
 "\n"
 "}\n"
 "\n"
 "\n"
-""
-                        "QCheckBox::disabled\n"
+"QCheckBox::disabled\n"
 "{\n"
 "	color: #656565;\n"
 "\n"
@@ -827,11 +822,11 @@ class Ui_ReceiptWindow(object):
 "}\n"
 "\n"
 "\n"
-"QSlider::add-page:horizontal \n"
+"QSlider::add-page:horizontal"
+                        " \n"
 "{\n"
 "	background-color: #131313;\n"
-""
-                        "\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -892,8 +887,8 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QScrollBar::handle:horizontal\n"
 "{\n"
-"	background-color: qlineargradient(spread:repeat, x1:"
-                        "1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
+"	backgrou"
+                        "nd-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
 "	border: 1px solid #2d2d2d;\n"
 "    min-height: 20px;\n"
 "\n"
@@ -931,10 +926,10 @@ class Ui_ReceiptWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::left-arrow:horizontal\n"
+"QScrollBar::left-arro"
+                        "w:horizontal\n"
 "{\n"
-"    image: url(://arr"
-                        "ow-left.png);\n"
+"    image: url(://arrow-left.png);\n"
 "    width: 6px;\n"
 "    height: 6px;\n"
 "\n"
@@ -978,10 +973,10 @@ class Ui_ReceiptWindow(object):
 "}\n"
 "\n"
 "\n"
-"QScrollBar::sub-line:vertical\n"
+"QScrollBar::sub-line:v"
+                        "ertical\n"
 "{\n"
-"	background-color: qlinear"
-                        "gradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
+"	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(97, 97, 97, 255),stop:1 rgba(90, 90, 90, 255));\n"
 "	border: 1px solid #2d2d2d;\n"
 "    height: 15px;\n"
 "    subcontrol-position: top;\n"
@@ -1046,7 +1041,9 @@ class Ui_ReceiptWindow(object):
         self.frame.setLineWidth(5)
         self.frame.setMidLineWidth(5)
         self.verticalLayout_2 = QVBoxLayout(self.frame)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.materials_receipt_table = QTableWidget(self.frame)
         if (self.materials_receipt_table.columnCount() < 6):
             self.materials_receipt_table.setColumnCount(6)
@@ -1090,7 +1087,9 @@ class Ui_ReceiptWindow(object):
         self.frame_2.setFrameShape(QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.frame_2)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
         self.label_3 = QLabel(self.frame_2)
         self.label_3.setObjectName(u"label_3")
 
@@ -1123,30 +1122,133 @@ class Ui_ReceiptWindow(object):
         self.frame_3.setFrameShape(QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_2 = QHBoxLayout(self.frame_3)
+        self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.cancel_print_reciept_button = QPushButton(self.frame_3)
         self.cancel_print_reciept_button.setObjectName(u"cancel_print_reciept_button")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.cancel_print_reciept_button.sizePolicy().hasHeightForWidth())
+        self.cancel_print_reciept_button.setSizePolicy(sizePolicy1)
+        self.cancel_print_reciept_button.setStyleSheet(u"QPushButton::flat\n"
+"{\n"
+"	\n"
+"	background-color: rgb(134, 49, 0);\n"
+"	color:white;\n"
+"}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
+"	border: 1px solid  rgb(0, 85, 255);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}")
+        self.cancel_print_reciept_button.setFlat(True)
 
         self.horizontalLayout_2.addWidget(self.cancel_print_reciept_button)
 
         self.delete_entry_button = QPushButton(self.frame_3)
         self.delete_entry_button.setObjectName(u"delete_entry_button")
+        sizePolicy1.setHeightForWidth(self.delete_entry_button.sizePolicy().hasHeightForWidth())
+        self.delete_entry_button.setSizePolicy(sizePolicy1)
+        self.delete_entry_button.setStyleSheet(u"QPushButton::flat\n"
+"{\n"
+"	background-color: rgb(143, 0, 0);\n"
+"	color:white;\n"
+"}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
+"	border: 1px solid  rgb(0, 85, 255);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}")
+        self.delete_entry_button.setFlat(True)
 
         self.horizontalLayout_2.addWidget(self.delete_entry_button)
 
         self.modify_reciept_button = QPushButton(self.frame_3)
         self.modify_reciept_button.setObjectName(u"modify_reciept_button")
+        sizePolicy1.setHeightForWidth(self.modify_reciept_button.sizePolicy().hasHeightForWidth())
+        self.modify_reciept_button.setSizePolicy(sizePolicy1)
+        self.modify_reciept_button.setStyleSheet(u"QPushButton::flat\n"
+"{\n"
+"	background-color: rgb(68, 204, 0);\n"
+"	color:black;\n"
+"}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
+"	color:white;\n"
+"	border: 1px solid  rgb(0, 85, 255);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}")
+        self.modify_reciept_button.setFlat(True)
 
         self.horizontalLayout_2.addWidget(self.modify_reciept_button)
 
         self.print_reciept_button = QPushButton(self.frame_3)
         self.print_reciept_button.setObjectName(u"print_reciept_button")
+        sizePolicy1.setHeightForWidth(self.print_reciept_button.sizePolicy().hasHeightForWidth())
+        self.print_reciept_button.setSizePolicy(sizePolicy1)
+        self.print_reciept_button.setStyleSheet(u"QPushButton::flat\n"
+"{\n"
+"	background-color: rgb(68, 204, 0);\n"
+"	color:black;\n"
+"}\n"
+"\n"
+"QPushButton::hover\n"
+"{\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
+"	color:white;\n"
+"	border: 1px solid  rgb(0, 85, 255);\n"
+"\n"
+"}\n"
+"\n"
+"\n"
+"QPushButton::pressed\n"
+"{\n"
+"	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));\n"
+"	border: 1px solid #b78620;\n"
+"\n"
+"}")
+        self.print_reciept_button.setFlat(True)
 
         self.horizontalLayout_2.addWidget(self.print_reciept_button)
 
 
         self.verticalLayout_2.addWidget(self.frame_3)
 
+        self.verticalLayout_2.setStretch(0, 9)
+        self.verticalLayout_2.setStretch(1, 1)
+        self.verticalLayout_2.setStretch(2, 1)
 
         self.verticalLayout.addWidget(self.frame)
 
@@ -1169,14 +1271,13 @@ class Ui_ReceiptWindow(object):
         ___qtablewidgetitem4 = self.materials_receipt_table.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("ReceiptWindow", u"Koli\u010dina", None));
         ___qtablewidgetitem5 = self.materials_receipt_table.horizontalHeaderItem(5)
-        ___qtablewidgetitem5.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupna \n"
-"Cijena[KM]", None));
+        ___qtablewidgetitem5.setText(QCoreApplication.translate("ReceiptWindow", u"Cijena Dijelova[KM]", None));
         self.label_3.setText(QCoreApplication.translate("ReceiptWindow", u"Rad:", None))
         self.service_text_label.setText("")
-        self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Ukupno[KM]:", None))
+        self.label_2.setText(QCoreApplication.translate("ReceiptWindow", u"Total[KM]:", None))
         self.full_price_label.setText("")
-        self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Zatvori", None))
-        self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Brisanje", None))
+        self.cancel_print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Odustani", None))
+        self.delete_entry_button.setText(QCoreApplication.translate("ReceiptWindow", u"Obri\u0161i", None))
         self.modify_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Spremi", None))
         self.print_reciept_button.setText(QCoreApplication.translate("ReceiptWindow", u"Printaj", None))
     # retranslateUi

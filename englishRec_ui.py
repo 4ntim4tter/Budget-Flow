@@ -245,7 +245,7 @@ class Ui_ReceiptWindow(object):
 "\n"
 "QPushButton::hover\n"
 "{\n"
-"	background-color: rgb(0, 85, 255, 10%);\n"
+"	background-color: rgba(0, 85, 255, 20%);\n"
 "	border: 1px solid  rgb(0, 85, 255);\n"
 "\n"
 "}\n"

@@ -45,9 +45,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 /*-----QWidget-----*/
 QWidget
 {
-	background-color: #3a3a3a;
+	
+	background-color: rgb(36, 39, 68);
 	color: #fff;
-	selection-background-color: #b78620;
+	selection-background-color: rgb(0, 255, 127);
 	selection-color: #000;
 
 }
@@ -215,10 +216,8 @@ QPushButton
 
 QPushButton::flat
 {
-	background-color: transparent;
-	border: none;
-	color: #fff;
-
+	background-color: rgb(24, 25, 45);
+	color:white;
 }
 
 
@@ -233,15 +232,15 @@ QPushButton::disabled
 
 QPushButton::hover
 {
-	background-color: rgba(183, 134, 32, 20%);
-	border: 1px solid #b78620;
+	background-color: rgb(0, 85, 255, 10%);
+	border: 1px solid  rgb(0, 85, 255);
 
 }
 
 
 QPushButton::pressed
 {
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
 	border: 1px solid #b78620;
 
 }
@@ -258,12 +257,10 @@ QPushButton::checked
 /*-----QLineEdit-----*/
 QLineEdit
 {
-	background-color: #131313;
+	background-color: rgb(15, 16, 29);
 	color : #eee;
-	border: 1px solid #343434;
+	border: 1px solid rgb(0, 0, 0);;
 	border-radius: 2px;
-	padding: 3px;
-	padding-left: 5px;
 
 }
 
@@ -523,7 +520,8 @@ QGroupBox::title
 /*-----QHeaderView-----*/
 QHeaderView::section
 {
-    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));
+    
+	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));
 	border: 1px solid #000;
     color: #fff;
     text-align: left;
@@ -531,6 +529,12 @@ QHeaderView::section
 	
 }
 
+QTableCornerButton::section {
+	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));
+	border: 1px solid #000;
+    color: #fff;
+	padding: 4px;
+}
 
 QHeaderView::section:disabled
 {
@@ -574,15 +578,6 @@ QHeaderView::section::horizontal::only-one
 QHeaderView::section::horizontal
 {
     border-left: 1px solid #353635;
-
-}
-
-
-QTableCornerButton::section
-{
-    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));
-	border: 1px solid #000;
-    color: #fff;
 
 }
 
@@ -640,7 +635,7 @@ QTreeView::branch:open:has-children:has-siblings
 QListView 
 {
 	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 83, 83, 255),stop:0.293269 rgba(81, 81, 81, 255),stop:0.634615 rgba(79, 79, 79, 255),stop:1 rgba(83, 83, 83, 255));
-    border : none;
+    border: black;
     color: white;
     show-decoration-selected: 1; 
     outline: 0;
@@ -712,7 +707,7 @@ QListView::item:hover {
 QCheckBox
 {
 	background-color: transparent;
-    color: lightgray;
+   color:rgb(15, 16, 29)
 	border: none;
 
 }
@@ -1039,7 +1034,22 @@ QProgressBar::chunk
      <property name="midLineWidth">
       <number>5</number>
      </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="9,1,1">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
       <item>
        <widget class="QTableWidget" name="materials_receipt_table">
         <property name="font">
@@ -1126,8 +1136,7 @@ QProgressBar::chunk
         </column>
         <column>
          <property name="text">
-          <string>Ukupna 
-Cijena[KM]</string>
+          <string>Cijena Dijelova[KM]</string>
          </property>
          <property name="font">
           <font>
@@ -1149,6 +1158,21 @@ Cijena[KM]</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,3,2,3">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QLabel" name="label_3">
            <property name="text">
@@ -1166,7 +1190,7 @@ Cijena[KM]</string>
          <item>
           <widget class="QLabel" name="label_2">
            <property name="text">
-            <string>Ukupno[KM]:</string>
+            <string>Total[KM]:</string>
            </property>
           </widget>
          </item>
@@ -1189,31 +1213,173 @@ Cijena[KM]</string>
          <enum>QFrame::Raised</enum>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
          <item>
           <widget class="QPushButton" name="cancel_print_reciept_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	
+	background-color: rgb(134, 49, 0);
+	color:white;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
-            <string>Zatvori</string>
+            <string>Odustani</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="delete_entry_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	background-color: rgb(143, 0, 0);
+	color:white;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
-            <string>Brisanje</string>
+            <string>Obriši</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="modify_reciept_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	background-color: rgb(68, 204, 0);
+	color:black;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	color:white;
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
             <string>Spremi</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="print_reciept_button">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	background-color: rgb(68, 204, 0);
+	color:black;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	color:white;
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
             <string>Printaj</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>

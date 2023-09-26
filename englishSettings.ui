@@ -39,9 +39,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SO
 /*-----QWidget-----*/
 QWidget
 {
-	background-color: #3a3a3a;
+	
+	background-color: rgb(36, 39, 68);
 	color: #fff;
-	selection-background-color: #b78620;
+	selection-background-color: rgb(0, 255, 127);
 	selection-color: #000;
 
 }
@@ -209,10 +210,8 @@ QPushButton
 
 QPushButton::flat
 {
-	background-color: transparent;
-	border: none;
-	color: #fff;
-
+	background-color: rgb(24, 25, 45);
+	color:white;
 }
 
 
@@ -227,15 +226,15 @@ QPushButton::disabled
 
 QPushButton::hover
 {
-	background-color: rgba(183, 134, 32, 20%);
-	border: 1px solid #b78620;
+	background-color: rgb(0, 85, 255, 10%);
+	border: 1px solid  rgb(0, 85, 255);
 
 }
 
 
 QPushButton::pressed
 {
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(74, 74, 74, 255),stop:1 rgba(49, 49, 49, 255));
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
 	border: 1px solid #b78620;
 
 }
@@ -252,12 +251,10 @@ QPushButton::checked
 /*-----QLineEdit-----*/
 QLineEdit
 {
-	background-color: #131313;
+	background-color: rgb(15, 16, 29);
 	color : #eee;
-	border: 1px solid #343434;
+	border: 1px solid rgb(0, 0, 0);;
 	border-radius: 2px;
-	padding: 3px;
-	padding-left: 5px;
 
 }
 
@@ -341,7 +338,7 @@ QTabBar::tab:!selected:hover
 /*-----QComboBox-----*/
 QComboBox
 {
-    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(84, 84, 84, 255),stop:1 rgba(59, 59, 59, 255));
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(18, 19, 36, 255), stop:1 rgba(255, 255, 255, 255));
     border: 1px solid #000;
     padding-left: 6px;
     color: #ffffff;
@@ -369,7 +366,8 @@ QComboBox:on
 
 QComboBox QAbstractItemView
 {
-    background-color: #383838;
+    
+	background-color: rgb(89, 90, 102);
     color: #ffffff;
     border: 1px solid black;
     selection-background-color: #b78620;
@@ -380,7 +378,7 @@ QComboBox QAbstractItemView
 
 QComboBox::drop-down
 {
-	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(57, 57, 57, 255),stop:1 rgba(50, 50, 50, 255));
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(18, 19, 36, 255), stop:1 rgba(255, 255, 255, 255));
     subcontrol-origin: padding;
     subcontrol-position: top right;
     width: 15px;
@@ -517,7 +515,8 @@ QGroupBox::title
 /*-----QHeaderView-----*/
 QHeaderView::section
 {
-    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));
+    
+	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));
 	border: 1px solid #000;
     color: #fff;
     text-align: left;
@@ -525,6 +524,12 @@ QHeaderView::section
 	
 }
 
+QTableCornerButton::section {
+	background-color: qlineargradient(spread:pad, x1:0.494, y1:0, x2:0.506, y2:1, stop:0.323864 rgba(18, 19, 36, 255), stop:1 rgba(102, 102, 102, 255));
+	border: 1px solid #000;
+    color: #fff;
+	padding: 4px;
+}
 
 QHeaderView::section:disabled
 {
@@ -568,15 +573,6 @@ QHeaderView::section::horizontal::only-one
 QHeaderView::section::horizontal
 {
     border-left: 1px solid #353635;
-
-}
-
-
-QTableCornerButton::section
-{
-    background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(60, 60, 60, 255),stop:1 rgba(50, 50, 50, 255));
-	border: 1px solid #000;
-    color: #fff;
 
 }
 
@@ -634,7 +630,7 @@ QTreeView::branch:open:has-children:has-siblings
 QListView 
 {
 	background-color: qlineargradient(spread:repeat, x1:1, y1:0, x2:1, y2:1, stop:0 rgba(83, 83, 83, 255),stop:0.293269 rgba(81, 81, 81, 255),stop:0.634615 rgba(79, 79, 79, 255),stop:1 rgba(83, 83, 83, 255));
-    border : none;
+    border: black;
     color: white;
     show-decoration-selected: 1; 
     outline: 0;
@@ -706,7 +702,7 @@ QListView::item:hover {
 QCheckBox
 {
 	background-color: transparent;
-    color: lightgray;
+   color:rgb(15, 16, 29)
 	border: none;
 
 }
@@ -1052,19 +1048,31 @@ QProgressBar::chunk
       <item>
        <widget class="QFrame" name="options_frame">
         <property name="frameShape">
-         <enum>QFrame::Panel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Plain</enum>
         </property>
         <property name="lineWidth">
-         <number>5</number>
+         <number>0</number>
         </property>
         <property name="midLineWidth">
-         <number>5</number>
+         <number>0</number>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="2,0">
          <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
           <number>0</number>
          </property>
          <item>
@@ -1152,32 +1160,96 @@ QProgressBar::chunk
       <item>
        <widget class="QFrame" name="buttons_frame">
         <property name="frameShape">
-         <enum>QFrame::Panel</enum>
+         <enum>QFrame::NoFrame</enum>
         </property>
         <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
+         <enum>QFrame::Plain</enum>
         </property>
         <property name="lineWidth">
-         <number>5</number>
+         <number>0</number>
         </property>
         <property name="midLineWidth">
-         <number>5</number>
+         <number>0</number>
         </property>
         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0,0">
          <property name="spacing">
-          <number>6</number>
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
          </property>
          <item>
           <widget class="QPushButton" name="save_settings_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	background-color: rgb(68, 204, 0);
+	color:black;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	color:white;
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
             <string>Save</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QPushButton" name="cancel_settings_button">
+           <property name="styleSheet">
+            <string notr="true">QPushButton::flat
+{
+	
+	background-color: rgb(134, 49, 0);
+	color:white;
+}
+
+QPushButton::hover
+{
+	background-color: rgba(0, 85, 255, 20%);
+	border: 1px solid  rgb(0, 85, 255);
+
+}
+
+
+QPushButton::pressed
+{
+	background-color: qlineargradient(spread:pad, x1:0.489, y1:0, x2:0.494, y2:1, stop:0.102273 rgba(0, 0, 0, 255), stop:0.880682 rgba(9, 31, 198, 167));
+	border: 1px solid #b78620;
+
+}</string>
+           </property>
            <property name="text">
             <string>Cancel</string>
+           </property>
+           <property name="flat">
+            <bool>true</bool>
            </property>
           </widget>
          </item>
