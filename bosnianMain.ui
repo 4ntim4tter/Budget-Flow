@@ -3957,6 +3957,34 @@ QPushButton::pressed
   <tabstop>add_customer_chasis</tabstop>
   <tabstop>save_new_customer_button</tabstop>
   <tabstop>cancel_new_customer_button</tabstop>
+  <tabstop>search_customer_name</tabstop>
+  <tabstop>search_customer_surname</tabstop>
+  <tabstop>search_customer_phone</tabstop>
+  <tabstop>search_customer_vehicle</tabstop>
+  <tabstop>search_customer_plates</tabstop>
+  <tabstop>search_customer_chasis</tabstop>
+  <tabstop>search_customer_button</tabstop>
+  <tabstop>cancel_search_customer_button</tabstop>
+  <tabstop>archive_checkbox</tabstop>
+  <tabstop>settings_button</tabstop>
+  <tabstop>close_register_button</tabstop>
+  <tabstop>new_reciept_button</tabstop>
+  <tabstop>delete_reciept_button</tabstop>
+  <tabstop>delete_selected_table_button</tabstop>
+  <tabstop>populate_table_button</tabstop>
+  <tabstop>show_archived_button</tabstop>
+  <tabstop>archive_selected_button</tabstop>
+  <tabstop>add_receipt_material</tabstop>
+  <tabstop>add_receipt_brand</tabstop>
+  <tabstop>add_receipt_price</tabstop>
+  <tabstop>add_receipt_amount</tabstop>
+  <tabstop>add_material_button</tabstop>
+  <tabstop>customer_reciepts_table</tabstop>
+  <tabstop>add_receipt_service</tabstop>
+  <tabstop>finish_reciept_button</tabstop>
+  <tabstop>cancel_add_reciept_button</tabstop>
+  <tabstop>customer_table</tabstop>
+  <tabstop>materials_receipt_table</tabstop>
  </tabstops>
  <resources/>
  <connections/>
