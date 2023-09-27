@@ -18,6 +18,10 @@ class QuestionPopup:
 QMessageBox
 {
     background-color: rgb(36, 39, 68);
+    border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
 }
 
 QMessageBox QLabel
@@ -136,6 +140,10 @@ class WarningPopup:
 QMessageBox
 {
     background-color: rgb(36, 39, 68);
+    border-style: solid;
+	border-width: 1px;
+	border-radius: 3px;
+	border-color: #051a39;
 }
 
 

@@ -4,17 +4,17 @@ from window_operator import WindowOperator
 from database_management import DataManager
 from load_ui import LoadUi
 
-
-with open("settings.cfg", "+r", encoding="utf-8") as settings_config:
-    if not os.path.isfile("settings.cfg"):
+if not os.path.isfile("settings.cfg"):
+    with open("settings.cfg", "w", encoding="utf-8") as settings_config:
         settings_config.write(
             """language=english\nfullscreen=1"""
         )
+with open("settings.cfg", "+w", encoding="utf-8") as settings_config:
     if settings_config.read() == "":
-        settings_config.seek(0)
-        settings_config.write(
-            """language=english\nfullscreen=1"""
-        )
+            settings_config.seek(0)
+            settings_config.write(
+                """language=english\nfullscreen=1"""
+            )
         
 with open("settings.cfg", "r", encoding="utf-8") as settings_config:
     if "english" in settings_config.readlines()[0]:

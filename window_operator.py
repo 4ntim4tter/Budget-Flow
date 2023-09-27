@@ -254,8 +254,8 @@ class WindowOperator:
 
     def select_reciept_from_table(self, form, receipt_form, receipt_window):
         customer_reciepts_table: QTableWidget = form.customer_reciepts_table
-        receipt_window.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint)
-        receipt_window.showMaximized()
+        receipt_window.setWindowFlags(Qt.WindowType.FramelessWindowHint)
+        receipt_window.showFullScreen()
         receipt_window.show()
         receipt_data = self.db_manager.get_selected_reciept_from_database(
             customer_reciepts_table.selectedItems()[0].text()
