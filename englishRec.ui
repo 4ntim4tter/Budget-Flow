@@ -232,7 +232,7 @@ QPushButton::disabled
 
 QPushButton::hover
 {
-	background-color: rgb(0, 85, 255, 10%);
+	background-color: rgba(0, 85, 255, 10%);
 	border: 1px solid  rgb(0, 85, 255);
 
 }
