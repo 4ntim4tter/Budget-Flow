@@ -1,3 +1,4 @@
+import os
 from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
 
@@ -15,22 +16,31 @@ class LoadUi:
         self._default_language = language
         self._db_manager = db_manager
         self._screen = screen
+        
+        if os.path.isfile("englishMain.ui"):
+            self.englishMainUi = "englishMain.ui"
+            self.englishRecUi = "englishRec.ui"
+            self.englishSettingsUi = "englishSettings.ui"   
+            
+            self.bosnianMainUi = "bosnianMain.ui"
+            self.bosnianRecUi = "bosnianRec.ui"
+            self.bosnianSettingsUi = "bosnianSettings.ui"
+        else:
+            self.englishMainUi = "_internal/englishMain.ui"
+            self.englishRecUi = "_internal/englishRec.ui"
+            self.englishSettingsUi = "_internal/englishSettings.ui"   
+            
+            self.bosnianMainUi = "_internal/bosnianMain.ui"
+            self.bosnianRecUi = "_internal/bosnianRec.ui"
+            self.bosnianSettingsUi = "_internal/bosnianSettings.ui"
 
-        self._MainFormEnglish, self._MainWindowEnglish = loadUiType("englishMain.ui")
-        self._ReceiptFormEnglish, self._ReceiptWindowEnglish = loadUiType(
-            "englishRec.ui"
-        )
-        self._SettingsFormEnglish, self._SettingsWindowEnglish = loadUiType(
-            "englishSettings.ui"
-        )
+        self._MainFormEnglish, self._MainWindowEnglish = loadUiType(self.englishMainUi)
+        self._ReceiptFormEnglish, self._ReceiptWindowEnglish = loadUiType(self.englishRecUi)
+        self._SettingsFormEnglish, self._SettingsWindowEnglish = loadUiType(self.englishSettingsUi)
 
-        self._MainFormBosnian, self._MainWindowBosnian = loadUiType("bosnianMain.ui")
-        self._ReceiptFormBosnian, self._ReceiptWindowBosnian = loadUiType(
-            "bosnianRec.ui"
-        )
-        self._SettingsFormBosnian, self._SettingsWindowBosnian = loadUiType(
-            "bosnianSettings.ui"
-        )
+        self._MainFormBosnian, self._MainWindowBosnian = loadUiType(self.bosnianMainUi)
+        self._ReceiptFormBosnian, self._ReceiptWindowBosnian = loadUiType(self.bosnianRecUi)
+        self._SettingsFormBosnian, self._SettingsWindowBosnian = loadUiType(self.bosnianSettingsUi)
 
         if self._default_language == "english":
             self.form: Ui_MainWindow = self._MainFormEnglish()
