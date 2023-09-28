@@ -71,7 +71,7 @@ class WindowOperator:
 
     def line_focus_changed(self, new, old: QLineEdit):
         if old is not None and hasattr(old, "placeholderText"):
-            if old.placeholderText() == "Registracija":
+            if old.placeholderText() == "Registracija" or old.placeholderText() == "Registration":
                 old.setInputMask("NNN-N-NNN")
             if old.placeholderText() == "Telefon":
                 old.setInputMask("999-999-999")
