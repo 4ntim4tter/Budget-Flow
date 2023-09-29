@@ -73,11 +73,13 @@ class WindowOperator:
         if old is not None and hasattr(old, "placeholderText"):
             if old.placeholderText() == "Registracija" or old.placeholderText() == "Registration":
                 old.setInputMask("NNN-N-NNN")
-            if old.placeholderText() == "Telefon":
+            if old.placeholderText() == "Telefon" or old.placeholderText() == "Phone Number":
                 old.setInputMask("999-999-999")
-            if old.placeholderText() == "Cijena":
+            if old.placeholderText() == "Cijena" or old.placeholderText() == "Price":
                 old.setValidator(QDoubleValidator())
-            if old.placeholderText() == "Količina":
+            if old.placeholderText() == "Količina" or old.placeholderText() == "Amount":
+                old.setValidator(QDoubleValidator())
+            if old.placeholderText() == "Rad" or old.placeholderText() == "Work":
                 old.setValidator(QDoubleValidator())
 
     def search_for_customer(self, table: str, table_widget: QTableWidget, widget):
