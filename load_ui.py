@@ -1,12 +1,11 @@
 import os
-from PyQt6.uic.load_ui import loadUiType
 from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
+from PyQt6.uic.load_ui import loadUiType
 
 from bosnianMain_ui import Ui_MainWindow
 from bosnianRec_ui import Ui_ReceiptWindow
 from englishSettings_ui import Ui_SettingsWindow
 from qt_interface import AppInterface
-from database_management import DataManager
 
 
 class LoadUi:

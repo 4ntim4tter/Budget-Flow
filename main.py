@@ -1,8 +1,8 @@
 import os
 
+from load_ui import LoadUi
 from window_operator import WindowOperator
 from database_management import DataManager
-from load_ui import LoadUi
 
 if not os.path.isfile("settings.cfg"):
     with open("settings.cfg", "w", encoding="utf-8") as settings_config:
