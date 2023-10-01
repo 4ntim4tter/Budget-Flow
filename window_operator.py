@@ -1,4 +1,5 @@
 import datetime
+import os
 from PyQt6.QtWidgets import (
     QWidget,
     QTableWidget,
@@ -16,7 +17,7 @@ from PyQt6.QtGui import QDoubleValidator
 from customer import Customer
 from database_management import DataManager
 from popup_module import QuestionPopup, WarningPopup
-from receipt_html import receipt_table, receipt_data_header, receipt_data
+from receipt_html import receipt_table_dev, receipt_table_release, receipt_data_header, receipt_data
 from load_ui import LoadUi
 import webbrowser
 
@@ -305,19 +306,34 @@ class WindowOperator:
 
         to_browser = to_browser.format(materials=temp)
 
-        with open("data.html", "w", encoding="utf-8") as html_form:
-            html_form.write(
-                receipt_table.format(
-                    todays_date=datetime.date.today().strftime("%d.%m.%Y.g."),
-                    customer_name=customer_name,
-                    customer_car=customer_car,
-                    customer_reg=customer_plates,
-                    work_price=service,
-                    total_price=total_price,
-                    final_price=final_price,
-                    to_browser=to_browser,
+        if os.path.isdir("_internal"):
+            with open("data.html", "w", encoding="utf-8") as html_form:
+                html_form.write(
+                    receipt_table_release.format(
+                        todays_date=datetime.date.today().strftime("%d.%m.%Y.g."),
+                        customer_name=customer_name,
+                        customer_car=customer_car,
+                        customer_reg=customer_plates,
+                        work_price=service,
+                        total_price=total_price,
+                        final_price=final_price,
+                        to_browser=to_browser,
+                    )
                 )
-            )
+        else:
+            with open("data.html", "w", encoding="utf-8") as html_form:
+                html_form.write(
+                    receipt_table_dev.format(
+                        todays_date=datetime.date.today().strftime("%d.%m.%Y.g."),
+                        customer_name=customer_name,
+                        customer_car=customer_car,
+                        customer_reg=customer_plates,
+                        work_price=service,
+                        total_price=total_price,
+                        final_price=final_price,
+                        to_browser=to_browser,
+                    )
+                )
 
         webbrowser.open("data.html", 1)
 
