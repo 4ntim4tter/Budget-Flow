@@ -1,5 +1,5 @@
 import os
-
+#pyinstaller --add-data "bosnianMain.ui;." --add-data "bosnianRec.ui;." --add-data "bosnianSettings.ui;." --add-data "englishMain.ui;." --add-data "englishRec.ui;." --add-data "englishSettings.ui;." --hidden-import PyQt6 --hidden-import PyQt6.QtWidgets main.py
 from load_ui import LoadUi
 from window_operator import WindowOperator
 from database_management import DataManager
